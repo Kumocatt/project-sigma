@@ -1,0 +1,128 @@
+"aa" = (/turf/terrain/factory/floor,/turf/terrain/factory/wall/w17,/turf/grass,/area)
+"ab" = (/turf/terrain/factory/floor,/turf/terrain/factory/wall/w14,/turf/grass,/area)
+"ac" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor/f3,/turf/grass,/area)
+"ad" = (/turf/terrain/factory/floor,/turf/grass,/area)
+"ae" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/grass,/area)
+"af" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor/f4,/turf/grass,/area)
+"ag" = (/turf/terrain/factory/floor,/turf/terrain/factory/acid/a2,/turf/terrain/factory/floor,/turf/grass,/area)
+"ah" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/wall/w26,/turf/grass,/area)
+"ai" = (/turf/terrain/factory/wall/w23,/turf/grass,/area)
+"aj" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/wall/w25,/turf/grass,/area)
+"ak" = (/turf/terrain/factory/floor,/turf/terrain/factory/acid/a6,/turf/terrain/factory/floor,/turf/grass,/area)
+"al" = (/turf/terrain/factory/floor,/turf/terrain/factory/acid/a2,/turf/terrain/factory/floor,/turf/terrain/factory/wall/w25,/turf/grass,/area)
+"am" = (/turf/terrain/factory/floor,/turf/terrain/factory/wall/w11,/turf/grass,/area)
+"an" = (/turf/terrain/factory/floor,/turf/terrain/factory/acid/a2,/turf/terrain/factory/acid/a2,/turf/terrain/factory/floor,/turf/terrain/factory/wall/w25,/turf/grass,/area)
+"ao" = (/turf/terrain/factory/floor,/turf/terrain/factory/acid/a2,/turf/terrain/factory/acid/a2,/turf/terrain/factory/floor,/turf/grass,/area)
+"ap" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/wall/w11,/turf/grass,/area)
+"aq" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/wall/w26,/turf/terrain/factory/bridge/b16,/turf/grass,/area)
+"ar" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/wall/w14,/turf/terrain/factory/wall/w11,/turf/terrain/factory/bridge/b19,/turf/grass,/area)
+"as" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/wall/w25,/turf/terrain/factory/bridge/b22,/turf/grass,/area)
+"at" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/wall/w26,/turf/terrain/factory/bridge/b15,/turf/grass,/area)
+"au" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/wall/w11,/turf/terrain/factory/acid/a4,/turf/terrain/factory/bridge/b5,/turf/grass,/area)
+"av" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/acid/a5,/turf/terrain/factory/wall/w11,/turf/terrain/factory/acid/a5,/turf/terrain/factory/bridge/b5,/turf/grass,/area)
+"aw" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/acid/a5,/turf/terrain/factory/wall/w11,/turf/terrain/factory/acid/a6,/turf/terrain/factory/bridge/b5,/turf/grass,/area)
+"ax" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/wall/w25,/turf/terrain/factory/bridge/b21,/turf/grass,/area)
+"ay" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/floor/f4,/turf/grass,/area)
+"az" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/acid,/turf/terrain/factory/bridge/b5,/turf/grass,/area)
+"aA" = (/turf/terrain/factory/floor,/turf/terrain/factory/acid/a2,/turf/terrain/factory/floor,/turf/terrain/factory/acid/a2,/turf/terrain/factory/bridge/b5,/turf/grass,/area)
+"aB" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/acid/a2,/turf/terrain/factory/bridge/b5,/turf/grass,/area)
+"aC" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/acid/a3,/turf/terrain/factory/bridge/b5,/turf/grass,/area)
+"aD" = (/turf/terrain/factory/floor,/turf/terrain/factory/acid/a2,/turf/terrain/factory/floor,/turf/terrain/factory/acid/a3,/turf/terrain/factory/bridge/b5,/turf/grass,/area)
+"aE" = (/turf/terrain/factory/floor,/turf/terrain/factory/acid/a2,/turf/terrain/factory/floor,/turf/terrain/factory/wall/w25,/turf/terrain/factory/bridge/b21,/turf/grass,/area)
+"aF" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/wall/w26,/turf/terrain/factory/bridge/b14,/turf/grass,/area)
+"aG" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/acid,/turf/terrain/factory/bridge/b17,/turf/grass,/area)
+"aH" = (/turf/terrain/factory/floor,/turf/terrain/factory/acid/a2,/turf/terrain/factory/floor,/turf/terrain/factory/acid/a2,/turf/terrain/factory/bridge/b17,/turf/grass,/area)
+"aI" = (/turf/terrain/factory/floor,/turf/terrain/factory/acid/a2,/turf/terrain/factory/floor,/turf/terrain/factory/acid/a3,/turf/terrain/factory/bridge/b17,/turf/grass,/area)
+"aJ" = (/turf/terrain/factory/floor,/turf/terrain/factory/acid/a2,/turf/terrain/factory/floor,/turf/terrain/factory/wall/w25,/turf/terrain/factory/bridge/b20,/turf/grass,/area)
+"aK" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/acid,/turf/grass,/area)
+"aL" = (/turf/terrain/factory/floor,/turf/terrain/factory/acid/a2,/turf/terrain/factory/floor,/turf/terrain/factory/acid/a2,/turf/grass,/area)
+"aM" = (/turf/terrain/factory/floor,/turf/terrain/factory/acid/a2,/turf/terrain/factory/floor,/turf/terrain/factory/acid/a3,/turf/grass,/area)
+"aN" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/wall/w24,/turf/grass,/area)
+"aO" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/acid/a2,/turf/grass,/area)
+"aP" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/acid/a3,/turf/grass,/area)
+"aQ" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/wall/w22,/turf/grass,/area)
+"aR" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/wall/w23,/turf/grass,/area)
+"aS" = (/turf/terrain/factory/floor,/turf/terrain/factory/wall/w23,/turf/grass,/area)
+"aT" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/wall/w17,/turf/grass,/area)
+"aU" = (/turf/terrain/factory/floor,/turf/terrain/factory/acid,/turf/grass,/area)
+"aV" = (/turf/terrain/factory/floor,/turf/terrain/factory/acid/a2,/turf/grass,/area)
+"aW" = (/turf/terrain/factory/floor,/turf/terrain/factory/acid/a3,/turf/grass,/area)
+"aX" = (/turf/terrain/factory/floor,/turf/terrain/factory/wall/w14,/turf/terrain/factory/wall/w14,/turf/grass,/area)
+"aY" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/wall/w14,/turf/terrain/factory/wall/w11,/turf/grass,/area)
+"aZ" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/acid/a5,/turf/terrain/factory/wall/w11,/turf/terrain/factory/acid/a5,/turf/grass,/area)
+"ba" = (/turf/terrain/factory/floor,/turf/terrain/factory/floor,/turf/terrain/factory/acid/a5,/turf/terrain/factory/acid/a2,/turf/grass,/area)
+"bb" = (/turf/terrain/factory/floor,/turf/terrain/factory/acid/a5,/turf/terrain/factory/acid/a2,/turf/grass,/area)
+"bc" = (/turf/terrain/factory/floor,/turf/terrain/factory/acid/a5,/turf/terrain/factory/wall/w11,/turf/terrain/factory/acid/a5,/turf/grass,/area)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
+acacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacac
+adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadad
+adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadad
+adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadad
+adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadad
+adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadad
+adadadadadadadadadadadadadadadadadadadaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadafadadadadadadadadadadadaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeaeaeagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeaeaeagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeaeaeagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeaeaeagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeaeaeagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeaeaeagagagagagaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeaeaeagagagagagaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeahaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiajaeaeaeaeaeaeaeaeaeagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaajaeaeaeaeaeaeaeaeaeagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaajaeakaeaeaeaeaeaeaeagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaalagaeakaeaeaeaeaeaeagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeahababababababababababababababababalagagaeakaeaeaeaeaeagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeahamamamamamamamamamamamamamamamamanaoagagaeaeaeaeaeaeagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeahapapapapapapapapapapapapapapapapanaoagagaeaeaeaeaeaeagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeahapapapapapapapapapapapapapapapapalagagaeaeaeaeaeaeaeagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeahapapapapapapapapapapapapapapapapalagaeaeaeaeaeaeaeaeagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeaqararararararararararararararararasaeaeaeaeaeaeaeaeaeagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeatauavavavavavavavavavavavavavavawaxaeaeaeaeaeaeayaeaeagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeatazaAaAaAaAaAaBaBaBaBaBaBaBaBaBaCaxaeaeaeaeaeaeaeaeaeagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeatazaAaAaAaAaAaAaAaAaAaAaAaAaAaAaDaEagagagagagagagagagagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeaFaGaHaHaHaHaHaHaHaHaHaHaHaHaHaHaIaJagagagagagagagagagagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeahaKaLaLaLaLaLaLaLaLaLaLaLaLaLaLaMalagagagagagagagagagagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeahaKaLaLaLaLaLaLaLaLaLaLaLaLaLaLaMalagagagagagagagagagagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+adadadadadadadadadadadadadadadadadadadaeahaKaLaLaLaLaLaLaLaLaLaLaLaLaLaLaMalagagagagagagagagagagagagagagaeaeaeaeaeaeaeaeaeaeaeaeadadadadadad
+aiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaNaKaOaOaOaOaOaOaOaOaOaOaOaOaOaOaPaQaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaSaSaSaSaSaS
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaTaTaKaOaOaOaOaOaOaOaOaOaOaOaOaOaOaPaTaTaTaTaTaTaTaTaTaTaTaTaTaTaTaTaTaTaTaTaTaTaTaTaTaTaTaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaUaVaVaVaVaVaVaVaVaVaVaVaVaVaVaWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaUaVaVaVaVaVaVaVaVaVaVaVaVaVaVaWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+abababababababababababababababababababababaUaVaVaVaVaVaVaVaVaVaVaVaVaVaVaWabaXababababababababababababababababababababababababababababababab
+amamamamamamamamamamamamamamamamamamamamamaUaVaVaVaVaVaVaVaVaVaVaVaVaVaVaWamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamam
+apapapapapapapapapapapapapapapapapapapapapaKaOaOaOaOaOaOaOaOaOaVaVaVaVaVaWamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamam
+apapapapapapapapapapapapapapapapapapapapapaKaOaOaOaOaOaOaOaOaOaVaVaVaVaVaWamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamam
+apapapapapapapapapapapapapapapapapapapapapaKaOaOaOaOaOaOaOaOaOaVaVaVaVaVaWamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamam
+aYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaKaOaOaOaOaOaOaOaOaOaVaVaVaVaVaWamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamam
+aZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZbaaOaOaOaOaOaOaOaOaOaVaVaVaVaVbbbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbc
+aOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaV
+aOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaV
+aOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaV
+aOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaV
+aOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaV
+aOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaV
+aOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaV
+aOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaV
+aOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaV
+aOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaV
+aOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaV
+aOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaV
+aOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaV
+aOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaV
+aOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaV
+aOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaV
+aOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaV
+"}

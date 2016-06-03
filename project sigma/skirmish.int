@@ -1,0 +1,19 @@
+// BEGIN_INTERNALS
+/*
+LAST_COMPILE_TIME: 1464923739
+PACKAGE_RSC_NAME: C:\Users\Kumorii\Dropbox\SKIRMISH\skirmish_rsc.zip
+DIR: combat enemies environment game interface maps player references\#libraries 
+AUTO_FILE_DIR: ON
+PACKAGE_DMB_INFO: 
+MAP_ICON_TYPE: 0
+PACKAGE_DME_NAME: C:\Users\Kumorii\Dropbox\SKIRMISH\skirmish_src.zip
+LAST_COMPILE_VERSION: 510.1344
+PACKAGE_TYPE: 0
+PACKAGE_DME_START: 
+WINDOW: player\_Clothes.dmi;player\customization.dm;player\huds.dm;player\base.dm;player\_BaseT.dmi
+PACKAGE_DME_INFO: 
+FILE: player\base.dm
+PACKAGE_DMB_NAME: C:\Users\Kumorii\Dropbox\SKIRMISH\skirmish.zip
+PACKAGE_DME_DEMO: 
+*/
+// END_INTERNALS
