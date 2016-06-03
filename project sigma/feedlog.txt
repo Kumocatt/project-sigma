@@ -2245,3 +2245,83 @@ spawn en(the crawler (/mob/npc/hostile/crawler))
 /game (/game): init wave()
 /game (/game): init game()
 /game (/game): wait loop()
+runtime error: pick() from empty list
+proc name: spawn en (/proc/spawn_en)
+  source file: matchmaking.dm,10
+  usr: (src)
+  src: null
+  call stack:
+spawn en(the feeder (/mob/npc/hostile/feeder))
+/game (/game): init wave()
+/game (/game): init game()
+/game (/game): wait loop()
+runtime error: pick() from empty list
+proc name: spawn en (/proc/spawn_en)
+  source file: matchmaking.dm,10
+  usr: (src)
+  src: null
+  call stack:
+spawn en(the crawler (/mob/npc/hostile/crawler))
+/game (/game): init wave()
+/game (/game): init game()
+/game (/game): wait loop()
+runtime error: pick() from empty list
+proc name: spawn en (/proc/spawn_en)
+  source file: matchmaking.dm,10
+  usr: (src)
+  src: null
+  call stack:
+spawn en(the crawler (/mob/npc/hostile/crawler))
+/game (/game): init wave()
+/game (/game): init game()
+/game (/game): wait loop()
+runtime error: pick() from empty list
+proc name: spawn en (/proc/spawn_en)
+  source file: matchmaking.dm,10
+  usr: (src)
+  src: null
+  call stack:
+spawn en(the feeder (/mob/npc/hostile/feeder))
+/game (/game): init wave()
+/game (/game): init game()
+/game (/game): wait loop()
+runtime error: pick() from empty list
+proc name: spawn en (/proc/spawn_en)
+  source file: matchmaking.dm,10
+  usr: (src)
+  src: null
+  call stack:
+spawn en(the crawler (/mob/npc/hostile/crawler))
+/game (/game): init wave()
+/game (/game): init game()
+/game (/game): wait loop()
+runtime error: pick() from empty list
+proc name: spawn en (/proc/spawn_en)
+  source file: matchmaking.dm,10
+  usr: (src)
+  src: null
+  call stack:
+spawn en(the crawler (/mob/npc/hostile/crawler))
+/game (/game): init wave()
+/game (/game): init game()
+/game (/game): wait loop()
+runtime error: pick() from empty list
+proc name: spawn en (/proc/spawn_en)
+  source file: matchmaking.dm,10
+  usr: (src)
+  src: null
+  call stack:
+spawn en(the brute (/mob/npc/hostile/brute))
+/game (/game): init wave()
+/game (/game): init game()
+/game (/game): wait loop()
+runtime error: pick() from empty list
+proc name: spawn en (/proc/spawn_en)
+  source file: matchmaking.dm,10
+  usr: (src)
+  src: null
+  call stack:
+spawn en(the feeder (/mob/npc/hostile/feeder))
+/game (/game): init wave()
+/game (/game): init game()
+/game (/game): wait loop()

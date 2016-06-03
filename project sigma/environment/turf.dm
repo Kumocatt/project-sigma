@@ -50,15 +50,15 @@ obj
 			icon_state	= "hedge tr"
 			layer		= MOB_LAYER
 		chainlink
-			icon		= '_new x32.dmi'
+			icon		= '32x32.dmi'
 			icon_state	= "chainlink1-t"
 			layer		= MOB_LAYER+2
 		chainlinkL
-			icon		= '_new x32.dmi'
+			icon		= '32x32.dmi'
 			icon_state	= "chainlink2-t"
 			layer		= MOB_LAYER+2
 		chainlinkR
-			icon		= '_new x32.dmi'
+			icon		= '32x32.dmi'
 			icon_state	= "chainlink3-t"
 			layer		= MOB_LAYER+2
 
@@ -85,7 +85,7 @@ obj
 
 
 turf
-	icon = '_new x16.dmi'
+	icon = '16x16.dmi'
 	grass
 		icon_state = "grass1"
 		New()
@@ -134,7 +134,7 @@ turf
 		/* pretty much any non-ground set piece goes under here.
 		*/
 		hedge
-			icon		= '_new x16.dmi'
+			icon		= '16x16.dmi'
 			icon_state	= "hedge b"
 			density		= 1
 			layer		= TURF_LAYER+0.2
@@ -143,7 +143,7 @@ turf
 				..()
 				overlays += new /obj/overlays/hedge_t
 		hedge_l
-			icon		= '_new x16.dmi'
+			icon		= '16x16.dmi'
 			icon_state	= "hedge bl"
 			density		= 1
 			layer		= TURF_LAYER+0.2
@@ -152,7 +152,7 @@ turf
 				..()
 				overlays += new /obj/overlays/hedge_tl
 		hedge_r
-			icon		= '_new x16.dmi'
+			icon		= '16x16.dmi'
 			icon_state	= "hedge br"
 			density		= 1
 			layer		= TURF_LAYER+0.2
@@ -161,7 +161,7 @@ turf
 				..()
 				overlays += new /obj/overlays/hedge_tr
 		sidewalk
-			icon			= '_new x32.dmi'
+			icon			= 'new32x32.dmi'
 			icon_state		= "sidewalk1"
 			layer			= TURF_LAYER+0.1
 			s2/icon_state	= "sidewalk2"
@@ -173,7 +173,7 @@ turf
 			s8/icon_state	= "sidewalk8"
 			s9/icon_state	= "sidewalk9"
 		chainlink
-			icon			= '_new x32.dmi'
+			icon			= '32x32.dmi'
 			icon_state		= "chainlink1-b"
 			density			= 1
 			layer			= TURF_LAYER+2
@@ -195,12 +195,12 @@ turf
 					..()
 					overlays += new /obj/overlays/chainlinkR
 		crosswalk
-			icon			= '_new x32.dmi'
+			icon			= 'new32x32.dmi'
 			icon_state		= "crosswalk1"
 			layer			= TURF_LAYER+0.1
 			c2/icon_state	= "crosswalk2"
 		grass_edges
-			icon			= '_new x16.dmi'
+			icon			= '16x16.dmi'
 			layer			= TURF_LAYER+0.01
 			e1/icon_state	= "grassedge1"
 			e2/icon_state	= "grassedge2"
@@ -211,7 +211,7 @@ turf
 			e7/icon_state	= "grassedge7"
 			e8/icon_state	= "grassedge8"
 		roadline
-			icon			= '_new x16.dmi'
+			icon			= '16x16.dmi'
 			icon_state		= "roadline1"
 			layer			= TURF_LAYER+0.1
 			rl2/icon_state	= "roadline2"
