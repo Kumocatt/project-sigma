@@ -1,0 +1,166 @@
+"aa" = (/turf/buildings/roof/r5,/area)
+"ab" = (/turf/buildings/roof/r2,/area)
+"ac" = (/turf/buildings/roof/r5,/turf/buildings/roof/r10,/area)
+"ad" = (/turf/buildings/b2,/area)
+"ae" = (/turf/buildings/roof/r4,/area)
+"af" = (/turf/buildings/roof,/area)
+"ag" = (/turf/buildings/roof/r5,/turf/buildings/roof/r11,/area)
+"ah" = (/turf/buildings,/area)
+"ai" = (/turf/buildings/b6,/area)
+"aj" = (/turf/buildings/roof/r3,/area)
+"ak" = (/obj/terrain/hedge,/turf/grass,/area)
+"al" = (/turf/grass,/area)
+"am" = (/obj/item/health_pack,/turf/grass,/area)
+"an" = (/obj/terrain/trashbag,/turf/grass,/area)
+"ao" = (/turf/terrain/tree,/turf/grass,/area)
+"ap" = (/obj/terrain/dense,/turf/grass,/area)
+"aq" = (/turf/buildings/b7,/area)
+"ar" = (/obj/terrain/dumpster,/turf/grass,/area)
+"as" = (/obj/barricade/crate,/turf/grass,/area)
+"at" = (/obj/barricade/barrel,/turf/grass,/area)
+"au" = (/obj/terrain/grass_edges/e7,/obj/terrain/trashbag,/turf/dirt,/area)
+"av" = (/obj/terrain/grass_edges/e8,/turf/dirt,/area)
+"aw" = (/obj/terrain/grass_edges/e7,/turf/dirt,/area)
+"ax" = (/obj/terrain/grass_edges/e1,/turf/dirt,/area)
+"ay" = (/obj/terrain/grass_edges/e5,/turf/dirt,/area)
+"az" = (/turf/dirt,/area)
+"aA" = (/obj/terrain/poster,/turf/buildings/b6,/area)
+"aB" = (/obj/terrain/grass_edges/e3,/turf/dirt,/area)
+"aC" = (/obj/terrain/grass_edges/e2,/turf/dirt,/area)
+"aD" = (/obj/terrain/grass_edges/e5,/obj/terrain/cart,/turf/dirt,/area)
+"aE" = (/obj/terrain/poster,/turf/buildings/b2,/area)
+"aF" = (/obj/terrain/chainlink,/turf/grass,/area)
+"aG" = (/obj/terrain/chainlink,/obj/terrain/grass_edges/e5,/turf/dirt,/area)
+"aH" = (/obj/terrain/grass_edges/e4,/turf/dirt,/area)
+"aI" = (/obj/terrain/chainlink,/obj/terrain/grass_edges/e6,/turf/dirt,/area)
+"aJ" = (/obj/terrain/poster,/turf/buildings,/area)
+"aK" = (/obj/enemy_spawn,/turf/grass,/area)
+"aL" = (/obj/barricade/cone,/obj/terrain/grass_edges/e4,/turf/dirt,/area)
+"aM" = (/obj/terrain/grass_edges/e4,/obj/terrain/trashbag,/turf/dirt,/area)
+"aN" = (/obj/terrain/hedge,/obj/terrain/grass_edges/e6,/turf/dirt,/area)
+"aO" = (/obj/terrain/grass_edges/e1,/obj/terrain/grass_edges/e7,/turf/road,/area)
+"aP" = (/obj/terrain/grass_edges/e1,/turf/road,/area)
+"aQ" = (/turf/road,/turf/buildings/b3,/area)
+"aR" = (/turf/road,/turf/buildings/b4,/area)
+"aS" = (/turf/road,/obj/terrain/door,/turf/buildings/b4,/area)
+"aT" = (/turf/road,/turf/buildings/b5,/area)
+"aU" = (/obj/terrain/grass_edges/e8,/turf/road,/area)
+"aV" = (/obj/terrain/grass_edges/e5,/turf/grass,/area)
+"aW" = (/obj/terrain/grass_edges/e7,/turf/road,/area)
+"aX" = (/obj/barricade/cone,/turf/grass,/area)
+"aY" = (/obj/terrain/grass_edges/e3,/turf/road,/area)
+"aZ" = (/turf/road,/area)
+"ba" = (/obj/terrain/grass_edges/e2,/turf/road,/area)
+"bb" = (/obj/terrain/cart,/turf/grass,/area)
+"bc" = (/obj/terrain/grass_edges/e4,/turf/grass,/area)
+"bd" = (/obj/player_spawn,/obj/terrain/grass_edges/e6,/turf/dirt,/area)
+"be" = (/obj/terrain/grass_edges/e4,/turf/road,/area)
+"bf" = (/turf/grass,/obj/terrain/effects/firefly,/area)
+"bg" = (/obj/barricade/cone,/obj/terrain/grass_edges/e1,/turf/road,/area)
+"bh" = (/obj/player_spawn,/turf/road,/area)
+"bi" = (/turf/road,/obj/terrain/effects/firefly,/area)
+"bj" = (/obj/barricade/crate,/obj/terrain/grass_edges/e4,/turf/road,/area)
+"bk" = (/obj/terrain/grass_edges/e8,/obj/terrain/cart,/turf/road,/area)
+"bl" = (/obj/terrain/sewer,/turf/road,/area)
+"bm" = (/obj/barricade/cone,/turf/road,/area)
+"bn" = (/obj/terrain/grass_edges/e6,/turf/road,/area)
+"bo" = (/obj/barricade/crate,/obj/terrain/grass_edges/e3,/turf/grass,/area)
+"bp" = (/obj/barricade/crate,/turf/road,/area)
+"bq" = (/obj/terrain/grass_edges/e5,/turf/road,/area)
+"br" = (/obj/player_spawn,/obj/terrain/grass_edges/e8,/turf/road,/area)
+"bs" = (/obj/terrain/grass_edges/e3,/obj/terrain/cart,/turf/road,/area)
+"bt" = (/obj/player_spawn,/turf/grass,/area)
+"bu" = (/obj/item/special/shuriken,/obj/terrain/grass_edges/e5,/turf/road,/area)
+"bv" = (/obj/terrain/cart,/turf/road,/area)
+"bw" = (/obj/barricade/cone,/obj/terrain/grass_edges/e3,/turf/road,/area)
+"bx" = (/obj/terrain/pentagram,/turf/road,/area)
+"by" = (/obj/item/revive_pack,/turf/grass,/area)
+"bz" = (/obj/terrain/chainlink,/obj/terrain/grass_edges/e4,/turf/road,/area)
+"bA" = (/obj/terrain/chainlink,/obj/terrain/grass_edges/e6,/turf/road,/area)
+"bB" = (/obj/terrain/chainlink,/obj/terrain/grass_edges/e5,/turf/road,/area)
+"bC" = (/obj/enemy_spawn,/obj/terrain/sidewalk,/turf/road,/area)
+"bD" = (/obj/terrain/sidewalk,/turf/road,/area)
+"bE" = (/obj/terrain/crosswalk,/turf/road,/area)
+"bF" = (/obj/terrain/grass_edges/e2,/obj/terrain/crosswalk,/turf/road,/area)
+"bG" = (/obj/barricade/barrel,/obj/terrain/sidewalk,/turf/road,/area)
+"bH" = (/obj/terrain/grass_edges/e3,/obj/terrain/crosswalk,/turf/road,/area)
+"bI" = (/obj/enemy_spawn,/turf/road,/area)
+"bJ" = (/obj/terrain/drain,/turf/road,/area)
+"bK" = (/obj/terrain/crosswalk/c2,/turf/road,/area)
+"bL" = (/obj/item/special/molotov,/obj/terrain/grass_edges/e1,/turf/road,/area)
+"bM" = (/obj/item/special/molotov,/turf/road,/area)
+"bN" = (/obj/terrain/car,/turf/road,/area)
+"bO" = (/obj/barricade/barrel,/turf/road,/area)
+"bP" = (/obj/enemy_spawn,/obj/terrain/roadline,/turf/road,/area)
+"bQ" = (/obj/terrain/roadline,/turf/road,/area)
+"bR" = (/obj/barricade/crate,/obj/terrain/roadline,/turf/road,/area)
+"bS" = (/turf/road,/obj/terrain/roadline,/obj/terrain/effects/firefly,/area)
+"bT" = (/turf/road,/obj/terrain/crosswalk/c2,/obj/terrain/effects/firefly,/area)
+"bU" = (/obj/terrain/helipad,/turf/road,/area)
+"bV" = (/obj/enemy_spawn,/obj/terrain/sidewalk2,/turf/grass,/area)
+"bW" = (/obj/terrain/sidewalk2,/turf/grass,/area)
+"bX" = (/obj/barricade/barrel,/obj/terrain/sidewalk2,/turf/grass,/area)
+"bY" = (/obj/terrain/car2,/turf/grass,/area)
+"bZ" = (/obj/terrain/guardrail/r4,/turf/grass,/area)
+"ca" = (/obj/terrain/guardrail/r5,/turf/grass,/area)
+"cb" = (/obj/terrain/guardrail/r6,/turf/grass,/area)
+"cc" = (/obj/terrain/grass_edges/e6,/turf/dirt,/area)
+"cd" = (/obj/barricade/barrel,/turf/terrain/tree,/turf/grass,/area)
+"ce" = (/obj/enemy_spawn,/obj/terrain/grass_edges/e3,/turf/dirt,/area)
+"cf" = (/obj/enemy_spawn,/turf/dirt,/area)
+"cg" = (/obj/enemy_spawn,/obj/terrain/grass_edges/e1,/turf/dirt,/area)
+"ch" = (/obj/enemy_spawn,/obj/terrain/grass_edges/e6,/turf/dirt,/area)
+"ci" = (/obj/terrain/gothic_fence,/turf/grass,/area)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+abababababababababababacaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+adadadadadadadadadadadaeaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+adadadadadadadadadadadaeaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+adadadadadadadadadadadaeaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+adadadadadadadadadadadaeaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+adadadadadadadadadadadaeaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+adadadadadadadadadadadafabababababababababababababacaaaaaaaaagabababababababacaaaaaaaaaaaaaaaaaaaaaa
+ahahahahahahahahahahahaiadadadadadadadadadadadadadafababababajadadadadadadadaeaaaaaaaaaaaaaaaaaaaaaa
+akalamanalalalaoalapapaiadadadadadadadadadadadadadaiadadadadaqadadadadadadadaeaaaaaaaaaaaaaaaaaaaaaa
+alalalalaralalanananalaiadadadadadadadadadadadadadaiadadadadaqadadadadadadadaeaaaaaaaaaaaaaaaaaaaaaa
+alalalasalatalanauavalaiadadadadadadadadadadadadadaiadadadadaqadadadadadadadaeaaaaaaaaaaaaaaaaaaaaaa
+alalasalalawaxavayazavaAadadadadadadadadadadadadadaiadadadadaqadadadadadadadaeaaaaaaaaaaaaaaaaaaaaaa
+alalalalasaBazaCalaDazaiadadadadadadadadadadadaEadaiadadadadaqadadadadadadadaeaaaaaaaaaaaaaaaaaaaaaa
+aFalalalalaGaHaIalaFayahahahahahahahahaJahahahahahaiadadadadaqahahahahahahahaeaaaaaaaaaaaaaaaaaaaaaa
+aKalasalalalatatalalalayaLaMaNalakalalaOaPaPaPaPaPaQaRaSaRaRaTaPaUalaVakalanaeaaaaaaaaaaaaaaaaaaaaaa
+aKalalalawavalaWaPaUalalaXanalalalalalaYaZaZaZaZaZaZaZaZaZaZaZaZbaalbbaVbcalaeaaaaaaaaaaaaaaaaaaaaaa
+aKalalalaybdalaYaZaZaUalalalanaWaPaPaPaZaZaZaZaZaZaZaZbebeaZaZaZaZaUalalalaVafababababababababababab
+aKalalalalalbfaYaZaZaZbgaPaPaPaZaZaZaZaZaZaZbhaZaZaZbaalbfaYaZaZaZaZaUalalalaiadadadadadadadadadadad
+aKalaWaPaPaPaPaZaZaZaZaZbhaZaZaZaZaZaZaZaZaZaZbibebjbaalalaYaZaZbhaZaZaPbkalaiadadadadadadadadadadad
+aKalaYblaZaZaZaZaZaZbmaZaZaZaZaZaZaZaZaZaZaZaZbnalalboaPaPaZaZaZaZaZaZaZaZaUaiadadadadadadadadadadad
+aKaWaZaZaZaZbebeaZaZaZaZaZaZaZaZaZaZaZaZbpaZbaalalalbqbeaZaZaZbebeaZaZaZbhbaaiadadadadaEadadadadadad
+aKbqaZaZaZbaalalbqaZbmaZaZaZaZaZaZaZaZaZaZaZbaalaWbralalaYaZbnalalbsaZaZaZbaaiadadadadadaEadadadadad
+aKalbqbebebnalalbtaYbmaZaZaZaZaZaZaZbhaZaZaZbnalbubnalbfaYbaalbbalaYbvaZaZbaaiadadadadadadadadadadad
+aKalalalalalalalalbqaZaZaZaZaZaZaZaZaZaZaZbaalalalalalaWaZbaalalbbaYaZbvaZbaahahahahahahahahahahahah
+aKalalalalalalalalalbwbxaZaZaZaZaZaZaZaZaZbnalalaWaPaPaZaZaZaPaPaPaZaZaZaZbaakalaoanapapalakalakalby
+aoaXapapalalakalakalaYaZaZaZaZaZbzbebzbebAalaFalbBbebzbebzbeaZaZaZaZaZaZbebnalalalalanalalalalalalaK
+aKalalalatalalalalalaYaZaZaZaZbaalalatatalalalatatatalalalalaYaZaZaZaZbaalalalalasalasalalalalalalaK
+bCaZbDaZbDaZbDaZbDaZbEbEbEbEbEbFbDaZbDaZbGaZbDaZbGaZbDaZbDaZbHbEbEbEbEbEbDaZbDaZbDaZbDbpbDaZbDaZbDbI
+bIaZaZaZbJaZaZaZbKaZaZaZaZaZaZaZaPaPaPaPaPaPaPaPbLaPaPaPaPaPaZbmaZaZaZaZbKaZaZaZaZaZaZaZaZaZbJaZaZbI
+bIaZaZaZaZaZaZaZaZaZaZbpaZaZaZaZaZaZaZaZaZaZbMaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZbI
+bIaZaZaZaZaZaZaZbKaZaZaZbpaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZbmaZaZaZbKaZaZaZaZaZaZaZaZaZaZaZaZbI
+bIaZaZbNaZaZaZbOaZaZaZaZaZaZbpaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZbmaZaZaZaZaZaZaZbiaZaZaZaZaZaZaZaZbI
+bIaZaZaZaZaZbOaZbKaZaZaZaZbpaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZbKaZaZaZaZaZaZaZaZaZaZaZaZbI
+bIaZaZaZaZaZaZaZaZaZaZaZbpbpaZaZbiaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZbmaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZbI
+bPbQbQbQbQbQbQaZbKaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZbmaZaZbKaZaZbQbRbQbQbQbSbQbQbQbQbP
+bIaZaZaZbiaZaZaZaZaZaZaZaZaZbpaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZbObOaZaZaZaZaZaZaZbI
+bIaZaZaZaZaZaZaZbTaZaZaZaZaZaZaZaZaZaZaZbUaZaZaZaZaZaZaZaZaZaZaZaZbmaZaZbKaZaZbpaZaZbOaZaZaZaZaZaZbI
+bIaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZbmaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZbI
+bIaZaZaZaZaZaZaZbKaZaZbpaZaZaZaZaZaZbmbmaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZbKaZaZaZaZaZaZaZaZaZaZaZaZbI
+bIaZaZaZaZaZaZaZaZaZaZbpbpaZaZaZbmaZaZaZaZbmaZaZaZaZaZaZaZbiaZaZbmaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZbI
+bIaZaZaZaZaZaZaZbKaZbpaZaZaZaZaZaZaZaZaZaZaZaZbmaZaZaZaZaZaZaZbmaZaZaZaZbKaZaZaZaZbObNaZaZaZaZaZaZbI
+bIaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZbebebebebebebebeaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZaZbOaZaZaZaZaZaZbI
+bValbWalbWalbWalbXatbWalbWalbWalalalalalalalalalbWalbWalbWalbWalbWalbWalbWalbWalbWalbWalbWalbWalbWaK
+aKalalalalalalbfalalatalakalalalbYalalalanalalalalalalalalalalalalalalalalalalalalalalalalalalalalaK
+bZbZbZcaalalalalalalalalalalalalalalalalalbfalalcbbZbZbZbZbZbZbZbZbZbZbZbZbZcaalalalalcbbZbZbZbZbZbZ
+alalaoalapapalalalalalalalalalalalalalalalalalalalalalawaxavalalakaoalapapalalalalalatatalalalalalal
+aoalapapalalaoalapapalalalawaxavalalalalawaxavalalalawazaHccalalalalalalalalbfalalalalcdalapapalalal
+alalalalalbbalalalalalalawazazaCalalawaxazaHccalalalayccalalalalalalalalalalalaoalapapalalalalalalal
+alalalbbalalalalalalalaKcecfcfcfcgcgcfcfchaKaKaKaKaKaKaKaKaKaKalcicicicicicicicicicicicicicicicicici
+"}

@@ -1,0 +1,18 @@
+// BEGIN_INTERNALS
+/*
+LAST_COMPILE_TIME: 1460503213
+DIR: combat enemies environment game interface maps references\#libraries 
+PACKAGE_RSC_NAME: C:\Users\Kumorii\Dropbox\SKIRMISH\skirmish_rsc.zip
+AUTO_FILE_DIR: ON
+PACKAGE_DMB_INFO: 
+MAP_ICON_TYPE: 0
+PACKAGE_DME_NAME: C:\Users\Kumorii\Dropbox\SKIRMISH\skirmish_src.zip
+LAST_COMPILE_VERSION: 510.1332
+PACKAGE_DME_START: 
+PACKAGE_TYPE: 0
+WINDOW: game\matchmaking.dm;environment\turf.dm
+PACKAGE_DME_INFO: 
+PACKAGE_DME_DEMO: 
+PACKAGE_DMB_NAME: C:\Users\Kumorii\Dropbox\SKIRMISH\skirmish.zip
+*/
+// END_INTERNALS

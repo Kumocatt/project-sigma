@@ -1,0 +1,76 @@
+// DM Environment file for skirmish.dme.
+// All manual changes should be made outside the BEGIN_ and END_ blocks.
+// New source code should be placed in .dm files: choose File/New --> Code File.
+
+// BEGIN_INTERNALS
+// END_INTERNALS
+
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+#define FILE_DIR "audio"
+#define FILE_DIR "audio/music"
+#define FILE_DIR "audio/sounds"
+#define FILE_DIR "audio/sounds/misc"
+#define FILE_DIR "combat"
+#define FILE_DIR "effects"
+#define FILE_DIR "enemies"
+#define FILE_DIR "environment"
+#define FILE_DIR "game"
+#define FILE_DIR "interface"
+#define FILE_DIR "player"
+#define FILE_DIR "promo & teasers"
+#define FILE_DIR "systems"
+// END_FILE_DIR
+
+// BEGIN_PREFERENCES
+// END_PREFERENCES
+
+// BEGIN_INCLUDE
+#include "_new turf.dm"
+#include "combat\#new controls.dm"
+#include "combat\airstrike.dm"
+#include "combat\controls.dm"
+#include "combat\explosions.dm"
+#include "combat\guns.dm"
+#include "combat\health_management.dm"
+#include "combat\knockback.dm"
+#include "combat\projectiles.dm"
+#include "combat\specials.dm"
+#include "effects\arrow guide.dm"
+#include "effects\audio.dm"
+#include "effects\camera lead.dm"
+#include "effects\daynight.dm"
+#include "effects\gore.dm"
+#include "effects\lighting.dm"
+#include "enemies\enemies.dm"
+#include "environment\barricades.dm"
+#include "environment\hazards.dm"
+#include "environment\turf.dm"
+#include "game\competitive points.dm"
+#include "game\drops.dm"
+#include "game\matchmaking.dm"
+#include "game\scoreboard.dm"
+#include "interface\_setup.dm"
+#include "interface\lobby.dm"
+#include "interface\screen objects.dm"
+#include "interface\skin.dmf"
+#include "maps\maps.dm"
+#include "maps\map000.dmm"
+#include "misc\spawndel.dm"
+#include "player\_main.dm"
+#include "player\base.dm"
+#include "player\customization.dm"
+#include "player\floating chat.dm"
+#include "player\huds.dm"
+#include "player\interact.dm"
+#include "player\movement.dm"
+#include "player\nametags.dm"
+#include "player\screenshake.dm"
+#include "player\spectating.dm"
+#include "player\sprinting.dm"
+#include "references\#libraries\absolute positions.dm"
+#include "references\#libraries\map info.dm"
+#include "references\#libraries\map instancing.dm"
+#include "systems\object pooling.dm"
+// END_INCLUDE
+

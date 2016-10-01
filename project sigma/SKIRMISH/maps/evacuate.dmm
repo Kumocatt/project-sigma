@@ -1,0 +1,301 @@
+"aa" = (/turf/buildings/roof/r5,/area)
+"ab" = (/turf/buildings/roof/r6,/area)
+"ac" = (/turf/road,/area)
+"ad" = (/turf/terrain/grass_edges/e2,/turf/road,/area)
+"ae" = (/turf/grass,/area)
+"af" = (/turf/terrain/roadlineB,/turf/road,/area)
+"ag" = (/turf/buildings/roof/r4,/area)
+"ah" = (/obj/hazard/fire,/turf/buildings/roof/r5,/area)
+"ai" = (/obj/hazard/fire,/turf/road,/area)
+"aj" = (/obj/barricade/barrel,/turf/road,/area)
+"ak" = (/obj/barricade/crate,/turf/road,/area)
+"al" = (/turf/terrain/grass_edges/e2,/obj/barricade/cone,/turf/road,/area)
+"am" = (/obj/barricade/crate,/turf/grass,/area)
+"an" = (/obj/barricade/cone,/turf/grass,/area)
+"ao" = (/turf/terrain/sidewalk3,/obj/barricade/crate,/turf/terrain/effects/firefly,/turf/grass,/area)
+"ap" = (/turf/terrain/traffic_guard,/turf/road,/area)
+"aq" = (/turf/terrain/cart,/turf/road,/area)
+"ar" = (/turf/terrain/sidewalk3,/obj/barricade/cone,/turf/road,/area)
+"as" = (/turf/terrain/chainlink,/turf/road,/area)
+"at" = (/turf/terrain/grass_edges/e2,/obj/barricade/crate,/turf/road,/area)
+"au" = (/obj/barricade/cone,/turf/terrain/effects/firefly,/turf/grass,/area)
+"av" = (/obj/barricade/cone,/turf/road,/area)
+"aw" = (/turf/terrain/roadlineB,/obj/barricade/crate,/turf/road,/area)
+"ax" = (/obj/barricade/barrel,/turf/grass,/area)
+"ay" = (/turf/terrain/effects/firefly,/turf/buildings/roof/r5,/area)
+"az" = (/obj/markers/dense,/turf/road,/area)
+"aA" = (/turf/terrain/effects/firefly,/obj/markers/dense,/turf/road,/area)
+"aB" = (/turf/terrain/trashbag,/turf/road,/area)
+"aC" = (/turf/terrain/box{layer = 4},/turf/road,/area)
+"aD" = (/turf/terrain/bottle,/turf/road,/area)
+"aE" = (/turf/terrain/sidewalk3,/obj/barricade/crate,/turf/grass,/area)
+"aF" = (/turf/terrain/effects/firefly,/turf/road,/area)
+"aG" = (/turf/terrain/roadlineB,/obj/barricade/cone,/turf/road,/area)
+"aH" = (/turf/terrain/sidewalk3,/obj/hazard/fire,/turf/road,/area)
+"aI" = (/turf/terrain/trashbag,/turf/grass,/area)
+"aJ" = (/turf/terrain/sewer,/turf/terrain/trashbag,/turf/road,/area)
+"aK" = (/turf/terrain/grass_edges/e2,/turf/terrain/cart,/turf/road,/area)
+"aL" = (/obj/hazard/fire,/turf/grass,/area)
+"aM" = (/turf/terrain/car,/obj/markers/dense,/turf/road,/area)
+"aN" = (/obj/barricade/crate,/obj/markers/dense,/turf/road,/area)
+"aO" = (/obj/barricade/cone,/obj/markers/dense,/turf/road,/area)
+"aP" = (/turf/terrain/roadlineB,/obj/markers/dense,/turf/road,/area)
+"aQ" = (/turf/terrain/dumpster,/obj/markers/dense,/turf/road,/area)
+"aR" = (/turf/terrain/newspaper,/turf/road,/area)
+"aS" = (/obj/markers/enemy_spawn,/turf/grass,/area)
+"aT" = (/turf/terrain/traffic_guard,/turf/grass,/area)
+"aU" = (/turf/terrain/sidewalk3,/turf/grass,/area)
+"aV" = (/turf/terrain/car2,/obj/markers/dense,/turf/road,/area)
+"aW" = (/turf/terrain/sidewalk3,/turf/terrain/traffic_guard,/turf/road,/area)
+"aX" = (/turf/terrain/trashbag{layer = 3},/turf/road,/area)
+"aY" = (/turf/terrain/blood,/obj/markers/enemy_spawn,/turf/grass,/area)
+"aZ" = (/obj/markers/enemy_spawn,/turf/road,/area)
+"ba" = (/turf/terrain/blood,/obj/markers/enemy_spawn,/turf/road,/area)
+"bb" = (/turf/terrain/roadlineB,/obj/markers/enemy_spawn,/turf/road,/area)
+"bc" = (/turf/terrain/blood,/turf/road,/area)
+"bd" = (/turf/terrain/blood,/turf/grass,/area)
+"be" = (/turf/terrain/roadlineB,/turf/terrain/blood,/turf/road,/area)
+"bf" = (/turf/terrain/sidewalk3,/turf/road,/area)
+"bg" = (/obj/item/gun/LB02,/turf/grass,/area)
+"bh" = (/turf/terrain/bottle,/obj/hazard/portal,/turf/road,/area)
+"bi" = (/turf/terrain/effects/cloud,/turf/buildings/roof/r5,/area)
+"bj" = (/turf/buildings/roof/r5,/turf/buildings/roof/r13,/area)
+"bk" = (/turf/buildings/roof/r8,/area)
+"bl" = (/obj/hazard/fire,/turf/buildings/roof/r8,/area)
+"bm" = (/turf/road,/turf/buildings/roof/r9,/area)
+"bn" = (/turf/terrain/billboard,/turf/buildings/roof/r5,/area)
+"bo" = (/turf/buildings/roof,/area)
+"bp" = (/turf/buildings/roof/r2,/area)
+"bq" = (/turf/buildings/b6,/area)
+"br" = (/turf/buildings/b2,/area)
+"bs" = (/turf/terrain/grass_edges/e2,/turf/terrain/chainlink,/turf/road,/area)
+"bt" = (/turf/terrain/window,/turf/buildings/b2,/area)
+"bu" = (/turf/terrain/poster,/turf/buildings/b2,/area)
+"bv" = (/turf/terrain/helipad,/turf/buildings/roof/r5,/area)
+"bw" = (/turf/terrain/effects/cloud,/turf/grass,/area)
+"bx" = (/turf/terrain/effects/firefly,/turf/buildings/roof/r2,/area)
+"by" = (/turf/buildings/roof/r5,/turf/buildings/roof/r10,/area)
+"bz" = (/turf/buildings/roof/r5,/turf/buildings/roof/r11,/area)
+"bA" = (/obj/hazard/fire,/turf/buildings/roof/r2,/area)
+"bB" = (/turf/buildings/roof/r3,/area)
+"bC" = (/turf/terrain/effects/firefly,/turf/grass,/area)
+"bD" = (/turf/terrain/effects/firefly,/turf/buildings/b2,/area)
+"bE" = (/turf/buildings/b7,/area)
+"bF" = (/turf/terrain/pole/p3,/turf/road,/area)
+"bG" = (/turf/terrain/pole/p4,/turf/road,/area)
+"bH" = (/turf/terrain/roadlineB,/turf/terrain/pole/p4,/turf/road,/area)
+"bI" = (/turf/terrain/pole/p4,/turf/terrain/bottle,/turf/road,/area)
+"bJ" = (/turf/terrain/pole/p5,/turf/road,/area)
+"bK" = (/obj/hazard/fire,/turf/buildings/b2,/area)
+"bL" = (/turf/terrain/effects/firefly,/turf/buildings/b7,/area)
+"bM" = (/turf/terrain/sidewalk3,/turf/terrain/effects/firefly,/turf/grass,/area)
+"bN" = (/turf/terrain/pole/p2,/turf/road,/area)
+"bO" = (/turf/terrain/stoplight,/turf/road,/area)
+"bP" = (/turf/terrain/window,/obj/hazard/fire,/turf/buildings/b2,/area)
+"bQ" = (/turf/terrain/grass_edges/e4,/turf/buildings,/area)
+"bR" = (/turf/terrain/grass_edges/e4,/turf/terrain/effects/firefly,/turf/buildings,/area)
+"bS" = (/turf/terrain/grass_edges/e6,/turf/road,/area)
+"bT" = (/turf/terrain/tree,/turf/grass,/area)
+"bU" = (/obj/markers/dense,/turf/grass,/area)
+"bV" = (/turf/terrain/bottle,/turf/grass,/area)
+"bW" = (/turf/terrain/hedge,/turf/grass,/area)
+"bX" = (/turf/dirt,/turf/terrain/trashbag,/turf/buildings/b3,/area)
+"bY" = (/turf/dirt,/turf/terrain/door,/turf/buildings/b4,/area)
+"bZ" = (/turf/dirt,/turf/buildings/b4,/area)
+"ca" = (/turf/dirt,/turf/terrain/bottle,/turf/buildings/b5,/area)
+"cb" = (/turf/terrain/guardrail/r2,/turf/grass,/area)
+"cc" = (/turf/terrain/guardrail/r4,/turf/grass,/area)
+"cd" = (/turf/terrain/guardrail/r4,/obj/markers/dense,/turf/grass,/area)
+"ce" = (/turf/terrain/pole,/turf/road,/area)
+"cf" = (/obj/item/gun/red_baron,/turf/road,/area)
+"cg" = (/turf/terrain/sidewalk,/turf/road,/area)
+"ch" = (/turf/terrain/bottle,/turf/terrain/effects/firefly,/turf/road,/area)
+"ci" = (/turf/terrain/crosswalk,/turf/road,/area)
+"cj" = (/turf/terrain/sidewalk,/obj/barricade/crate,/turf/road,/area)
+"ck" = (/turf/terrain/sidewalk,/obj/hazard/fire,/turf/road,/area)
+"cl" = (/turf/terrain/sidewalk,/obj/markers/dense,/turf/road,/area)
+"cm" = (/turf/terrain/drain,/turf/road,/area)
+"cn" = (/obj/markers/player_spawn,/turf/road,/area)
+"co" = (/turf/terrain/crosswalk/c2,/turf/road,/area)
+"cp" = (/turf/terrain/traffic_guard/tg2,/turf/road,/area)
+"cq" = (/obj/item/special/molotov,/turf/road,/area)
+"cr" = (/turf/terrain/crosswalk/c2,/obj/markers/player_spawn,/turf/road,/area)
+"cs" = (/turf/terrain/roadline,/obj/markers/enemy_spawn,/turf/road,/area)
+"ct" = (/turf/terrain/roadline,/turf/road,/area)
+"cu" = (/turf/terrain/roadline,/turf/terrain/bottle,/turf/road,/area)
+"cv" = (/turf/terrain/roadline,/turf/terrain/trashbag,/turf/road,/area)
+"cw" = (/turf/terrain/roadline,/turf/terrain/effects/firefly,/turf/road,/area)
+"cx" = (/turf/terrain/roadline,/turf/terrain/bottle,/obj/markers/enemy_spawn,/turf/road,/area)
+"cy" = (/turf/terrain/roadline,/obj/markers/dense,/turf/road,/area)
+"cz" = (/turf/terrain/roadline,/obj/hazard/fire,/turf/road,/area)
+"cA" = (/obj/item/gun/shotgun,/turf/road,/area)
+"cB" = (/obj/item/special/cowbell,/turf/road,/area)
+"cC" = (/obj/item/shield,/turf/road,/area)
+"cD" = (/turf/terrain/effects/cloud,/turf/road,/area)
+"cE" = (/obj/item/special/airsupport,/turf/road,/area)
+"cF" = (/obj/hazard/portal,/turf/road,/area)
+"cG" = (/turf/buildings/roof/r8{density = 0; layer = 10},/area)
+"cH" = (/turf/road,/obj/barricade/crate,/turf/buildings/roof/r9{density = 0; layer = 10},/area)
+"cI" = (/obj/item/gun/sk47,/turf/road,/area)
+"cJ" = (/turf/buildings/roof/r5{density = 0; layer = 10},/area)
+"cK" = (/turf/buildings/roof/r6{density = 0; layer = 10; name = "r6 elevated"},/area)
+"cL" = (/turf/terrain/sewer,/turf/road,/area)
+"cM" = (/turf/terrain/sidewalk2,/turf/terrain/chainlink,/turf/buildings/roof/r5{density = 0; layer = 10},/area)
+"cN" = (/turf/terrain/sidewalk2,/turf/terrain/chainlink,/turf/road,/area)
+"cO" = (/turf/terrain/sidewalk2,/turf/road,/area)
+"cP" = (/turf/terrain/chainlink3,/turf/road,/area)
+"cQ" = (/turf/terrain/sidewalk2,/turf/terrain/gothic_fence,/turf/road,/area)
+"cR" = (/turf/terrain/gothic_fence,/turf/road,/area)
+"cS" = (/turf/terrain/sidewalk2,/obj/markers/dense,/turf/terrain/gothic_fence,/turf/road,/area)
+"cT" = (/obj/markers/dense,/turf/terrain/gothic_fence,/turf/road,/area)
+"cU" = (/turf/terrain/bottle,/turf/terrain/gothic_fence,/turf/road,/area)
+"cV" = (/turf/terrain/sidewalk2,/obj/barricade/crate,/turf/terrain/gothic_fence,/turf/road,/area)
+"cW" = (/obj/barricade/crate,/turf/terrain/gothic_fence,/turf/road,/area)
+"cX" = (/turf/terrain/sidewalk2,/obj/barricade/cone,/turf/terrain/gothic_fence,/turf/road,/area)
+"cY" = (/turf/terrain/grass_edges/e1,/turf/terrain/grass_edges/e3,/turf/road,/area)
+"cZ" = (/turf/terrain/grass_edges/e1,/turf/road,/area)
+"da" = (/turf/terrain/grass_edges/e1,/turf/terrain/bottle,/turf/road,/area)
+"db" = (/turf/terrain/grass_edges/e8,/turf/road,/area)
+"dc" = (/turf/terrain/trashbag,/turf/terrain/chainlink3,/turf/grass,/area)
+"dd" = (/turf/terrain/gothic2,/turf/grass,/area)
+"de" = (/turf/terrain/grass_edges/e3,/turf/terrain/bottle,/turf/road,/area)
+"df" = (/turf/terrain/tree,/turf/road,/area)
+"dg" = (/turf/terrain/grass_edges/e7,/turf/dirt,/area)
+"dh" = (/turf/terrain/grass_edges/e1,/turf/dirt,/area)
+"di" = (/turf/terrain/grass_edges/e8,/turf/dirt,/area)
+"dj" = (/turf/terrain/grass_edges/e3,/turf/road,/area)
+"dk" = (/turf/terrain/grass_edges/e8,/turf/terrain/chainlink3,/turf/road,/area)
+"dl" = (/turf/dirt,/area)
+"dm" = (/turf/terrain/grass_edges/e6,/turf/dirt,/area)
+"dn" = (/turf/terrain/grass_edges/e2,/turf/terrain/chainlink3,/turf/road,/area)
+"do" = (/turf/terrain/sidewalk3,/obj/barricade/barrel,/turf/grass,/area)
+"dp" = (/turf/terrain/grass_edges/e5,/turf/dirt,/area)
+"dq" = (/turf/terrain/grass_edges/e4,/turf/dirt,/area)
+"dr" = (/turf/terrain/cart,/turf/grass,/area)
+"ds" = (/turf/terrain/payphone,/turf/buildings,/area)
+"dt" = (/turf/buildings,/area)
+"du" = (/turf/terrain/effects/firefly,/obj/barricade/crate,/turf/road,/area)
+"dv" = (/turf/terrain/tombstone,/turf/grass,/area)
+"dw" = (/turf/terrain/grass_edges/e7,/turf/terrain/bottle,/turf/road,/area)
+"dx" = (/turf/terrain/grass_edges/e1,/turf/terrain/trashbag,/turf/road,/area)
+"dy" = (/turf/terrain/grass_edges/e3,/turf/dirt,/area)
+"dz" = (/turf/terrain/grass_edges/e3,/turf/terrain/trashbag,/turf/road,/area)
+"dA" = (/turf/terrain/grass_edges/e2,/turf/dirt,/area)
+"dB" = (/turf/terrain/grass_edges/e4,/turf/road,/area)
+"dC" = (/turf/terrain/grass_edges/e4,/obj/barricade/cone,/turf/road,/area)
+"dD" = (/turf/terrain/pentagram,/turf/road,/area)
+"dE" = (/turf/terrain/grass_edges/e7,/turf/road,/area)
+"dF" = (/turf/terrain/grass_edges/e5,/turf/road,/area)
+"dG" = (/turf/terrain/grass_edges/e4,/turf/terrain/blood,/turf/road,/area)
+"dH" = (/turf/terrain/grass_edges/e4,/obj/barricade/barrel,/turf/road,/area)
+"dI" = (/turf/terrain/grass_edges/e2,/turf/terrain/effects/firefly,/turf/road,/area)
+"dJ" = (/turf/terrain/grass_edges/e4,/turf/terrain/effects/firefly,/turf/road,/area)
+"dK" = (/turf/terrain/roadlineB,/turf/terrain/grass_edges/e3,/obj/hazard/portal,/turf/road,/area)
+"dL" = (/turf/terrain/grass_edges/e2,/turf/terrain/grass_edges/e3,/turf/road,/area)
+"dM" = (/turf/terrain/roadlineB,/turf/terrain/grass_edges/e3,/turf/road,/area)
+"dN" = (/turf/terrain/grass_edges/e4,/turf/terrain/grass_edges/e1,/turf/terrain/bottle,/turf/road,/area)
+"dO" = (/turf/terrain/grass_edges/e7,/obj/markers/enemy_spawn,/turf/dirt,/area)
+"dP" = (/turf/terrain/grass_edges/e8,/obj/markers/enemy_spawn,/turf/dirt,/area)
+"dQ" = (/turf/terrain/roadlineB,/turf/terrain/grass_edges/e5,/turf/road,/area)
+"dR" = (/turf/terrain/grass_edges/e5,/turf/terrain/cart,/turf/grass,/area)
+"dS" = (/turf/terrain/grass_edges/e4,/turf/terrain/grass_edges/e1,/turf/road,/area)
+"dT" = (/turf/terrain/grass_edges/e2,/turf/terrain/blood,/turf/terrain/chainlink3,/turf/road,/area)
+"dU" = (/turf/terrain/grass_edges/e5,/turf/terrain/sewer,/turf/dirt,/area)
+"dV" = (/turf/terrain/grass_edges/e6,/turf/terrain/grass_edges/e3,/turf/terrain/trashbag,/turf/road,/area)
+"dW" = (/turf/terrain/chainlink,/turf/terrain/grass_edges/e4,/turf/road,/area)
+"dX" = (/turf/terrain/chainlink,/turf/terrain/grass_edges/e6,/turf/road,/area)
+"dY" = (/turf/terrain/chainlink,/turf/grass,/area)
+"dZ" = (/turf/terrain/chainlink,/turf/terrain/grass_edges/e5,/turf/road,/area)
+"ea" = (/turf/terrain/chainlink,/turf/terrain/grass_edges/e4,/turf/terrain/blood,/turf/road,/area)
+"eb" = (/turf/terrain/grass_edges/e6,/turf/terrain/chainlink3,/turf/road,/area)
+"ec" = (/turf/terrain/sidewalk3,/turf/terrain/blood,/turf/road,/area)
+"ed" = (/turf/terrain/tree,/turf/terrain/pond/p8,/turf/grass,/area)
+"ee" = (/turf/terrain/pond/p9,/turf/grass,/area)
+"ef" = (/turf/terrain/tree,/obj/barricade/barrel,/turf/grass,/area)
+"eg" = (/turf/terrain/blood,/obj/markers/dense,/turf/grass,/area)
+"eh" = (/turf/terrain/roadlineB,/turf/terrain/grass_edges/e1,/turf/road,/area)
+"ei" = (/turf/terrain/pond/p5,/turf/grass,/area)
+"ej" = (/turf/terrain/grass_edges/e7,/turf/terrain/pond/p6,/turf/dirt,/area)
+"ek" = (/turf/terrain/grass_edges/e8,/turf/terrain/bottle,/turf/dirt,/area)
+"el" = (/turf/terrain/blood,/turf/terrain/bottle,/turf/grass,/area)
+"em" = (/turf/terrain/car2,/obj/markers/dense,/turf/grass,/area)
+"en" = (/turf/terrain/sidewalk3,/obj/markers/dense,/turf/road,/area)
+"eo" = (/turf/terrain/grass_edges/e4,/turf/terrain/effects/firefly,/turf/dirt,/area)
+"ep" = (/turf/terrain/grass_edges/e5,/turf/terrain/pond/p5,/turf/terrain/pond/p13,/turf/dirt,/area)
+"eq" = (/turf/terrain/grass_edges/e6,/turf/terrain/pond/p9,/turf/dirt,/area)
+"er" = (/turf/terrain/pond/p6,/turf/grass,/area)
+"es" = (/turf/terrain/sidewalk3,/obj/markers/enemy_spawn,/turf/road,/area)
+
+(1,1,1) = {"
+aaaaaaaaaaaaabacacacacacacacacacacadaeaeaeacacacacacacacacacafacacacacacacacacaeaeaeagaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaahaaaaaaaaabacacacacaiacacajakakalamanaoajapacaiacakacajapafajaqacapacaiacaranaeaeagaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaabasacasacasacasacasacatauamanavavakaiakavavacavawavakakavajakavaiaeaxaeagaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaayaaabazaAazaBaBaCacaDaDaiadamanaEavakazazazazajajaFaGakajaBajavavajaHaeaeaIagaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+ayaaaaahaaaaabazazazaDaBacaJacaDacaKaeamaLacaiaMazazazaNaOaNaPaiacavakakacakakanaIanagaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaahabaQazazaRaDaBacacacacadaSaTaUacaqacakapacaVazazaPaBazaNazaNaiacaWaeaTaeagaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaabaXaFacaBacaDaDacavacadaeaSaYaZaZbaaZbabababaaZbbaFaMazazazacacbcbdaeaeagaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaayaaaaaaabaFacacacacacacacacacadbdaeaUbcacacbcacacbcbcacbeacacaBacbcaZbabfbgaeaeagaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+ahaaaaaaaaaaabacbhacacacajacacaFacalaeaeaeacaFacacbcbcacacacafbcacbcbcacbcacacaeaeaeagaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaabacacacacajacajacacacadaeaeaUacacacacbcacacacacafacbcacacaFacacbfaeaeaeagaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaabacacacacacacacacacacadaeaeaeacacacacacacacacacafbcbcacacacacacacaeaeaeagaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaahaaabacacacacacacaFacacavadaeaeaUacacacacacacacacacafacbcacacacacacbfaeaeaeagaaaaaaaaaaaaaaaaaaaaaabiaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaabjbkblbkblbkbkbkbkbkbmadaeaeaeacacacacacaqacacacafaFacacacacacacacaeaeaeagbnaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaahaaaaaaaaaaaaaaaaaaaaahaaaaaaabadaeaeaUacacacacacacacacacafacacacaZaDacacbfaeaeaebobpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbp
+aaaaaaaaaaahaaayaaaaaaaaaaaaahaaabadaeaeaeacacacacacacacacacafacacacacacacacacaeaeaebqbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbr
+aaaaaaaaaaaaaaaaaaaaaaayaaaaaaaaabadaeaeaUacacavacacaZacacacafacacacacacacacbfaeaeaebqbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbr
+aaaaaaaaaaayaaaaahaaaaaaaaaaaaaaabbsaeaeaeacacacacacacacacacafaqacacacacacacacaeaeaebqbtbrbrbrbrbrbrbtbrbrbrbrbrbrbtbrbrbrbrbrbrbtbrbrbrbrbr
+aaayaaaaaaaaaaaaaaaaaaaaaaaaaaaaabadaeaeaUacacacacacacacacacafacacaqacacacacbfaeaeaebqbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbr
+aaaaaaaaaaaaaaayaaaaaaaaaaaaaaaaabadaeaeaeacacacacacacaDacacafacacacacacacacacaeaeaebqbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbubrbrbrbrbrbrbrbrbrbr
+aaaaaaaaahaaaaahaaaabvaaaaaaaaayabadaebwaUacacacacacaFacacacafacacacacacacacbfaeaeaebqbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbr
+bpbpbpbxbyahaabzbpbpbAbpbAbpbpbpbBadbCaeaeacacacacavacacacacafacacacacacacacacaeaeaebqbtbrbrbrbrbrbrbtbrbrbrbrbrbrbtbrbrbrbrbrbrbtbrbrbrbrbr
+brbrbrbrbobpbpbBbrbrbrbrbDbrbrbrbEadaeaeaUacacacacacacacacacafacacacaDacaDacbfaeaeaebqbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbr
+brbrbrbrbqbrbrbEbubrbrbrbrbrbrbrbEadaeaeaebFbGbGbGbGbGbGbGbGbHbGbGbGbGbIbJacacaeaeaebqbrbrbrbubrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbr
+bKbKbrbrbqbrbrbLbrbKbKbrbrbKbubrbLadaeaebMbNacacacbOacacacacafacacacbOacacacbfaeaeaebqbrbrbrbrbubrbrbrbrbrbrbrbrbrbrbrbrbrbrbubrbrbrbrbrbrbr
+bPbKbrbrbqbrbrbEbrbPbKbrbrbPbrbrbEadaeaeaebNavacacacacapacacafacacacacacacacacaeaeaebqbtbrbrbrbrbrbrbtbrbrbrbrbrbrbtbrbrbrbrbrbrbtbrbrbrbrbr
+bQbQbQbQbqbKbrbEbQbRbQbQbQbRbQbQbQbSaeaeaUbNacacacacacacacacafapacacacacacacbfaeaeaIbQbQbQbQbQbQbQbQbQbQbQbQbQbQbQbQbQbQbQbQbQbQbQbQbQbQbQbQ
+aeaeaeaebqbrbrbEaeaebTaebUbUaeaeaeaeaeaeaebNacacapacacacacacafacacacacacapacacaeaebVaIaebWaebWaeaeaeaebTaebUbUaeaeaeaeaeaeaeaebWaebWaeaeaeae
+bWaebWaebXbYbZcabWaebWaeaxaIbVbWaebWaeaeaUbNacacacacacacacacafacacacacacacacbfaeaeaecbcccccccccccccccccccccccccccccccccccccccccdcdcdcdcccccc
+aqacaDacacaZaZaBacaqacacaDacacacacacacacacceacacacacacacacacacacacacacacacacacacacacacaDaBacaDacacacacacajacacacaccfacacaDaDakaVazazazaiaiac
+cgaqcgchcgaccgaccgaccgaFcgaccgaccgaccgaccgacacciacciacciacciacciacciacciaccicgaccgaccgaccgaccgaccgaccgaccgaccgaccgaccgaFcgaDcjakckacclazclaz
+aZacacacacacacaFacacacacacacacaccmacacacacaccnacaDacacacacacaFacaccnacacacacacacacacacacaDacacacacacacacacacacacacacacacacacacaDcmacaMazazaz
+aZacacaFacacacacacacacacacacacacacacacaccoacacacacacacaccnacacacacacacacacaccoacacacacacacacacacacacacacacaccpacacakacacacacaqacacaiacaiacac
+aZacacacacaqacacacaFacacacacacaFacacacacacacacaDacacaFacaDacacaFacacacaDacacacacacacacacacacacacacacacacacacacacakakakacacacaZacacazazazazac
+aZacacacacacacacacacacacacacacacaccqacaccoacacacaBacacacacacacacacacacacacaccoacacacacaFacacacacacacacacacacacacakacacacacacaZaiacaMazazazac
+aZaFacacaZacacaqacacacacacacacacacacacacacacaFacaqacaiacaiacaqacaiacacacacacacacacacacacacacacacacacacacacacacacacaqacacacacaZacaiacazazazaz
+aZacacacacacacacacacacacacaRacacacacacaccracacacacazazaAazazazazazacaccnacaccoacacacacacacacaBacacacacacaccpacacacacacacaZacaZakavavaVazazaz
+aZacacacacacacacacacacacacacacacacacacacacacacaiacaMazazazaVaAazazaDaDacacacacacacacacaDacaBaBaBacacacacacacacacacacacacacacaZakakazazazazac
+aZacacacacacacacacacacacacacacacacacacaccoacacacaqacaiacaiacaqacacacacacacaccoacacacacacaDacaBajacacacacacacacacacacacacacacaZaDakaMazazazac
+csctctctctctctctctctctctctctctctctctctctacacacaDaFacaqacacaqacacacacacacacacacacctctctctcucuctcvctctctctctctctctctctctctctcwcxctcycycycyczct
+aZacacacacacacacacacacacacacacacacacacaccoacaccncAacacaFaDacacacaDcnacacacaccoacacacacaDaDacacaBacacacacacacacacacacacacacacaZacaMazazazaiac
+aZacacacacacacacaZacacacacacacacacacacacacacacacacaDaccncBaccCaFacacacacacacacacacacacacacacaDacacacaFacacaccpacacacacacacacaZaiacazazazazac
+aZacacacacacacacacacacacacacacacacacacaccobFbGbGbGbGbGbGbGbGbGbGbGbGbGbGbJaccoacaccDacacacacacacacacacacacacacacacacacacacacaZaqacaVazazazaz
+aZacacacacacakacacacacacacacacacacacacacacbNacacacbOacacacacacacacacbOacacacacacacaqacacakacakacacacacacacacacacacacacacacacaZacaiacaMazazaz
+aZacacacacacacacakacacacacacacacacacacaccobNacacacacacacacaccEacacacacacacaccoacacacacacacakakacaRacacacacacaZacacacacaFacacaZazazazazaiacac
+aZacacacacacacacakcDacacacacacacaqacacacacbNacaccFacacacacacacacacacacacacacacacacacacacacacakacacacacacacacacaccpacacacacacaZaVazazazaiacac
+cGcGcGcGcGcGcGcHakacacacacacacacacacacaccobNacacacacacaccIacacacacacacacacaccoacacacacacacacacacacacacacacacacacacacacacacacaZakazazazazacac
+cJcJcJcJcJcJcJcKacacacacacacacacacacacacacbNacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacaccpaccLacacacacacacaZaDaMazazazaiac
+cJcJcJcJcJcJcJcKajacacacacacacacacacacacajceacacacacacacacacacacacacacacacacacacajacacaZaZacacacacacacacacacacacacacacacacacacacacakakavavac
+cMcJcMcJcMcJcMcKcNaccOaccOaccOaccNaccNcPcOacacciacciacciacciacciacciacciaccicOajcQcRcScTcScTcQcRcQcRcQcRcQcRcQcRcQcRcQcRcQcRcQcRcQcUcVcWcXcR
+aaaaaabzbpbpbpbBcYcZdacZcZcZcZcZdbaIaedcaeacacacacacacacacacafacacacacacacacacacddaeaeaeaeaeaeaeaeaeaeaeaeaebTaebUbUaeaeaeaeaeaeaeaeaeaeaeae
+aaaaaaabbrbrbrbEdeacacacaFacacdfadbUbUdcaUacacacacacacacacacafacacacacacacacbfacddaedgdhdiaeaeaebTaebUbUaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeae
+aaaaaaabbtbrbrbEdjacbcacacacacacaccZcZdkaeacacacacaBacacavacafavacacacacacacacacdddgdldldmaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaebTaebUbUaeae
+aaaaaaabbrbrbrbEdjacacbcacbcacacacacaRdndoacacaBaBacacacacacafacacacacacacacbfacdddpdqdmaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeae
+aaaaaaabbrbrbrbEdjaDacacacacacacacacacdnaxajacaBacacacacacacafavacacakakacacacacddaeaeaedraeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaedg
+aaaaaaabdsdsdsdtdeacacacacacacacacbcacdndoajacacaBacacaBavacafacacacacduacacbfacddaedvaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaedgdhdl
+aaaaaaabdwdxdxcZaDacacacacacacacacacacdnaxacacacacacaBaBaFacafacacacacacacacacacddaeaedgdiaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaedydldl
+aaaaaaabdzaBaDacacbcacacacacacacacacacdnaUacacacacacacacacacafacavacacacacacbfacddaedgdldAaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaedpdldA
+aaaaaaabdzacacaBacacacacacacacacacacbcadaeacacacacacdBdCacacafacacacacaccDacacacddbCdpdldAaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaedpdm
+aaaaaaabdzaBacacacacacacacacacacacacacadaUacacacacbSaeaedjacafacacavacacacacbfacddaeaedydAaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeae
+aaaaaaabdeacacacacacacdDaccFacacacaFacadaeacacacadaeaeaedjacafacdBdBacacacacacacdddgdhdldmaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeae
+aaaaaaabdjaDacacaFacacacacacacacacacacadaUacacacadaeaedEacacafadaeaedFavacacbfacdddpdqdmaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeae
+bpbpbpbBdzacacacacacdGdGacacacbcacacacdnaeacacacaccZcZajdHdBafdIaxaeaedjacacacacddaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeae
+brbrbrbEdjacdBdBacadaeaedjdBdJacacaqacdnaUacacacacacajadaeaedKadaeaxaedjacacbfacdddgdiaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeae
+btbrbrbEdjadbVaedeadbwaedLaeaedjaqacacdnaeaDacacacacajbSaSaSdMacdbaeaxdjavacacacdddpdmaebWaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaebWaebWae
+brbrbrbEdjadaeaedjaccZdNbSaeaedjacacaqdnaUacapacacacadaxdOdPdQacadaxaedjacacbfacdddRaeaeaeaeaeaeaeaedraeaeaeaedgdiaeaeaeaebTaebUbUaeaedraeae
+btbrbrbEdzdBdScZacacadaeaeaedEacaDbcbcdTaeacacacacacadaedUdmaedjaccZcZacacacacacddaeaeaeaeaedgdhdiaeaeaeaeaeaedldAaeaeaeaedvaeaeaeaeaeaeaeae
+dtdtdtdtdVaeaedFdWdBdXaedYaedZdBdWdBeaebecbcbcacaccpacdbaeaeaedjacacacavacacbfacddbTaebUbUaedpdqdmaedvaeaeaedgdldAaeaeaeaeaeaeaedvaeaeaeaeae
+edeebUbUaeaeaeaeaeaeaeaeaebVefbVbUbUbUegazazacaDbcacacaccZcZehacacacacacacacacacddaeaedgdhdiaeaeaeaeaeaedgdhdldldAaeaeaeaeaeaeaeaeaeaeaeaeae
+eiejekaeaeaedgdhdiaebTaebUbUaeaeaeelembUenazbcbcaDacacacacacafacacacacacacacbfacddaeaedpdqdmdvaeaeaeaedgdldldqeodldhdhdiaeaeaeaeaeaeaeaeaeae
+eiepeqbVdgdhdldldmaeaeaebVaedgdiaebdaeaeacacacacbcacacacaDacafacavacaFacacacacacddaeaeaeaeaeaeaeaeaeaedpdqdmaeaedydldldAaeaedvaeaeaedvaeaeae
+eieieraedydldldAaeaeaeaeaedgdldAbdaeelbVbfacacacbabacpaZaZaZbbaZaZaZaZaZaZaZesaZddaeaeaeaeaeaeaeaeaebTaebUbUaeaedydldldmaeaeaeaeaeaeaeaeaeae
+"}
