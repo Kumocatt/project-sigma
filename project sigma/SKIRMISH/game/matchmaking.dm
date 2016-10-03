@@ -9,14 +9,15 @@ proc
 		if(h)
 			var/obj/_loc 		= pick(active_game.enemy_spawns)
 			var/mob/player/p	= pick(active_game.participants)
-			for(var/obj/markers/enemy_spawn/espawn in oview(p, 45))
-				_loc = espawn
-				break
+			for(var/obj/markers/enemy_spawn/espawn in oview(p, 55))
+				if(get_dist(p,espawn) > 15)
+					_loc = espawn
+					break
 			active_game.enemy_spawns -= _loc
 			h.loc 		= _loc.loc
 			h.health	= h.base_health
 			ai_list += h
-			sleep 10
+			sleep 5 // 10
 			active_game.enemy_spawns += _loc
 
 
@@ -204,7 +205,7 @@ game
 		//			bloody_trigger		= 1
 */
 			if(!boss_mode)
-				enemies_total	= (beholder_only?round(1.5*current_round):round(5*current_round+3*participants.len))
+				enemies_total	= (beholder_only?round(1.5*current_round):round(10*current_round+3*participants.len))
 				enemies_left	= enemies_total
 				world << SOUND_WAVE_BEGIN
 				sleep world.tick_lag

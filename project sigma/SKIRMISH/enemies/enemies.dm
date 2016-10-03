@@ -106,7 +106,7 @@ mob/npc
 
 			ai_check()
 				set waitfor = 0
-				if(health && !resting && !kb_init)
+				if((health > 0) && !resting && !kb_init)
 					resting = 1
 					if(prob(5)) k_sound(src, pick(SOUND_GROWL1, SOUND_GROWL2))
 					if(target)
@@ -155,7 +155,7 @@ mob/npc
 
 			ai_check()
 				set waitfor = 0
-				if(health && !resting && !kb_init)
+				if((health > 0) && !resting && !kb_init)
 					resting = 1
 				//	if(prob(5)) k_sound(src, pick(SOUND_GROWL1, SOUND_GROWL2))
 					if(prob(1))
@@ -217,7 +217,7 @@ mob/npc
 
 			ai_check()
 				set waitfor = 0
-				if(health && !resting && !kb_init)
+				if((health > 0) && !resting && !kb_init)
 					resting = 1
 					if(prob(5)) k_sound(src, pick(SOUND_GROWL1, SOUND_GROWL2))
 					if(target)
@@ -273,7 +273,7 @@ mob/npc
 
 			ai_check()
 				set waitfor = 0
-				if(health && !resting)
+				if((health > 0) && !resting)
 					resting = 1
 				//	if(prob(5)) k_sound(src, pick(SOUND_GROWL1, SOUND_GROWL2))
 					if(target)

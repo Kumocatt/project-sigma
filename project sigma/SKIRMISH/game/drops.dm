@@ -67,35 +67,42 @@ obj
 				gun_type	= /obj/weapon/gun/pistol
 				step		= 4
 				effect(mob/player/p)
-					p.float_text("E- Pistol", 1)
+					p.float_text("\[E] - Pistol", 1)
 			kobra
 				icon_state	= "kobra"
 				state		= "kobra"
 				gun_type	= /obj/weapon/gun/kobra
 				step		= 4
 				effect(mob/player/p)
-					p.float_text("E- Kobra", 1)
+					p.float_text("\[E] - Kobra", 1)
 			edge_lord
 				icon_state	= "3dg3-10rd"
 				state		= "3dg3-10rd"
 				gun_type	= /obj/weapon/gun/edge_lord
 				step		= 4
 				effect(mob/player/p)
-					p.float_text("E- 3DG3-10RD", 1)
+					p.float_text("\[E] - 3DG3-10RD", 1)
 			pink_dream
 				icon_state	= "pinkdream"
 				state		= "pinkdream"
 				gun_type	= /obj/weapon/gun/pink_dream
 				step		= 4
 				effect(mob/player/p)
-					p.float_text("E- Pink Dream", 1)
+					p.float_text("\[E] - Pink Dream", 1)
 			ak66
 				icon_state	= "ak66"
 				state		= "ak66"
 				gun_type	= /obj/weapon/gun/ak66
 				step		= 3
 				effect(mob/player/p)
-					p.float_text("E- AK66", 1)
+					p.float_text("\[E] - AK66", 1)
+			krossbow
+				icon_state	= "krossbow"
+				state		= "krossbow"
+				gun_type	= /obj/weapon/gun/krossbow
+				step		= 3
+				effect(mob/player/p)
+					p.float_text("\[E] - Krossbow", 1)
 		melee
 			var/tmp
 				state		= null // the icon_state tag for the weapon.
@@ -109,6 +116,12 @@ obj
 			grenade
 				icon_state	= "grenade"
 				state		= "grenade"
-		//		gun_type	= /obj/weapon/special/grenade
+				gun_type	= /obj/weapon/special/grenade
 				effect(mob/player/p)
-					p.float_text("E- Grenades", 1)
+					p.float_text("\[E] - Grenades", 1)
+			molotov
+				icon_state	= "molotov"
+				state		= "molotov"
+				gun_type	= /obj/weapon/special/molotov
+				effect(mob/player/p)
+					p.float_text("\[E] - Molotovs", 1)

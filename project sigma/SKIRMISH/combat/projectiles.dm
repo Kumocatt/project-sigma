@@ -164,6 +164,59 @@ obj
 						end_step = 1
 
 
+			molotov
+				icon_state	= "molotov"
+				bound_x		= 2
+				bound_y		= 2
+				bound_width	= 4
+				bound_height= 4
+				is_explosive= 0
+
+				hp_modifier	= -5
+				penetration	= 0
+				px_range	= 75
+				accuracy	= 15	// every [accuracy] pixels, the projectile will stray 1px off from true center.
+				kb_dist		= 0
+				velocity	= 0.5
+
+				GC()
+					end_step = 0
+					..()
+
+				take_step()
+					/*
+						called to handle the projectile's step behavior.
+					*/
+					set waitfor = 0
+					if(step_size*total_steps >= px_range) // if the projectile has taken its maximum amount of steps..
+						drop_fire(6, owner)
+						GC()
+					else
+						if(loc)
+							total_steps ++
+							if(round((step_size*total_steps)/accuracy) > accur_assist) // accur_Assist is always the sum of the total pixels traveled divided by accuracy.
+								accur_assist = round((step_size*total_steps)/accuracy)
+								if(dir == EAST || dir == WEST) step_y += sway
+								else step_x += sway
+							if(dir == EAST || dir == WEST)
+								if((step_size*total_steps) < (px_range/2)) pixel_y += 1
+								else pixel_y -= 1
+							step(src, dir)
+							sleep world.tick_lag
+				Bump(atom/a)
+					if(istype(a, /obj/projectile))
+						loc = get_step(src, dir)
+						return
+					if(a.d_ignore)
+						loc = get_step(src, dir)
+						return
+					if(a.density)
+						end_step = 1
+					drop_fire(6, owner)
+					GC()
+
+
+
 /*
 		shuriken
 			icon		= '_Bullets.dmi'
@@ -231,7 +284,7 @@ obj
 						m.burn(owner)
 				GC()
 
-*/
+
 		molotov
 			icon		= '_Bullets.dmi'
 			icon_state	= "molotov"
@@ -239,7 +292,7 @@ obj
 			step_size	= 2
 			bound_width	= 8
 			bound_height= 8
-/*
+
 			init_step()
 				set waitfor = 0
 				active_projectiles -= src

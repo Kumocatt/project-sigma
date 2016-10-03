@@ -38,7 +38,8 @@ obj
 			icon_state	= "tree t1"
 			layer		= MOB_LAYER+10
 			New()
-				..(); if(prob(15)) icon_state = "tree t[pick(1,2)]"
+				..()
+				if(prob(15)) icon_state = "tree t[pick(1,2)]"
 		hedge_tl
 			icon		= '_new x16.dmi'
 			icon_state	= "hedge tl"

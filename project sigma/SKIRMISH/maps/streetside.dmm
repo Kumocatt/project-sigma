@@ -99,49 +99,53 @@
 "bU" = (/obj/item/revive_pack,/turf/road,/area)
 "bV" = (/obj/markers/player_spawn,/turf/road,/area)
 "bW" = (/obj/item/gun/kobra,/turf/road,/area)
-"bX" = (/turf/terrain/grass_edges/e4,/turf/terrain/details/grass_sprouts,/turf/road,/area)
-"bY" = (/turf/terrain/sidewalk/s6,/obj/barricade/barrel,/turf/grass,/area)
-"bZ" = (/turf/terrain/grass_edges/e3,/turf/terrain/details/grass_sprouts,/turf/road,/area)
-"ca" = (/obj/item/gun/ak66,/turf/road,/area)
-"cb" = (/obj/item/health_pack,/turf/road,/area)
-"cc" = (/turf/terrain/grass_edges/e3,/obj/item/strong_shield,/turf/road,/area)
-"cd" = (/turf/terrain/grass_edges/e2,/obj/markers/enemy_spawn,/turf/road,/area)
-"ce" = (/turf/terrain/grass_edges/e2,/turf/terrain/pentagram,/turf/road,/area)
-"cf" = (/turf/terrain/grass_edges/e2,/turf/terrain/details/grass_sprouts,/turf/road,/area)
-"cg" = (/turf/terrain/pentagram,/turf/road,/area)
-"ch" = (/turf/terrain/chainlink/cl_right,/obj/hazard/spikes,/turf/grass,/area)
-"ci" = (/turf/terrain/grass_edges/e3,/obj/hazard/spikes,/turf/road,/area)
-"cj" = (/turf/terrain/chainlink/cl_left,/obj/hazard/spikes,/turf/road,/area)
-"ck" = (/turf/terrain/chainlink,/turf/terrain/grass_edges/e3,/turf/road,/area)
-"cl" = (/turf/terrain/hedge_l,/turf/dirt,/area)
-"cm" = (/turf/terrain/hedge,/turf/dirt,/area)
-"cn" = (/turf/terrain/hedge_r,/turf/dirt,/area)
-"co" = (/turf/terrain/effects/firefly,/turf/grass,/area)
-"cp" = (/turf/terrain/chainlink/cl_left,/turf/grass,/area)
-"cq" = (/obj/barricade/cone,/turf/grass,/area)
-"cr" = (/turf/terrain/sidewalk/s3,/obj/hazard/fire,/turf/grass,/area)
-"cs" = (/turf/terrain/sidewalk/s3,/obj/barricade/crate,/turf/grass,/area)
-"ct" = (/turf/terrain/sidewalk/s3,/turf/grass,/area)
-"cu" = (/turf/terrain/crosswalk/c2,/turf/road,/area)
-"cv" = (/turf/terrain/sidewalk/s4,/turf/road,/area)
-"cw" = (/obj/hazard/fire,/turf/road,/area)
-"cx" = (/turf/terrain/crosswalk,/turf/road,/area)
-"cy" = (/turf/terrain/crashed_car,/turf/road,/area)
-"cz" = (/obj/gore/blood,/turf/road,/area)
-"cA" = (/turf/terrain/car,/turf/road,/area)
-"cB" = (/turf/terrain/car,/obj/markers/dense,/turf/road,/area)
-"cC" = (/obj/hazard/portal,/turf/grass,/area)
-"cD" = (/obj/barricade/cone,/turf/road,/area)
-"cE" = (/obj/markers/enemy_spawn,/obj/markers/enemy_spawn,/turf/road,/area)
-"cF" = (/turf/terrain/roadline,/turf/road,/area)
-"cG" = (/turf/terrain/roadline,/obj/markers/enemy_spawn,/turf/road,/area)
-"cH" = (/turf/terrain/car,/obj/hazard/fire,/turf/road,/area)
-"cI" = (/turf/terrain/crashed_car,/obj/markers/dense,/turf/road,/area)
-"cJ" = (/turf/terrain/car,/obj/hazard/fire,/turf/grass,/area)
-"cK" = (/turf/terrain/sidewalk/s8,/obj/hazard/fire,/turf/grass,/area)
-"cL" = (/turf/terrain/sidewalk/s8,/obj/barricade/cone,/turf/grass,/area)
-"cM" = (/turf/terrain/sidewalk/s8,/turf/grass,/area)
-"cN" = (/turf/terrain/sidewalk/s8,/turf/road,/area)
+"bX" = (/obj/item/special/molotov,/turf/road,/area)
+"bY" = (/turf/terrain/grass_edges/e4,/turf/terrain/details/grass_sprouts,/turf/road,/area)
+"bZ" = (/turf/terrain/sidewalk/s6,/obj/barricade/barrel,/turf/grass,/area)
+"ca" = (/turf/terrain/grass_edges/e3,/turf/terrain/details/grass_sprouts,/turf/road,/area)
+"cb" = (/obj/item/gun/ak66,/turf/road,/area)
+"cc" = (/obj/item/health_pack,/turf/road,/area)
+"cd" = (/obj/item/gun/krossbow,/turf/road,/area)
+"ce" = (/turf/terrain/grass_edges/e3,/obj/item/strong_shield,/turf/road,/area)
+"cf" = (/turf/terrain/grass_edges/e2,/obj/markers/enemy_spawn,/turf/road,/area)
+"cg" = (/turf/terrain/grass_edges/e2,/turf/terrain/pentagram,/turf/road,/area)
+"ch" = (/turf/terrain/grass_edges/e2,/turf/terrain/details/grass_sprouts,/turf/road,/area)
+"ci" = (/turf/terrain/pentagram,/turf/road,/area)
+"cj" = (/turf/terrain/chainlink/cl_right,/obj/hazard/spikes,/turf/grass,/area)
+"ck" = (/turf/terrain/grass_edges/e3,/obj/hazard/spikes,/turf/road,/area)
+"cl" = (/turf/terrain/chainlink/cl_left,/obj/hazard/spikes,/turf/road,/area)
+"cm" = (/turf/terrain/chainlink,/turf/terrain/grass_edges/e3,/turf/road,/area)
+"cn" = (/turf/terrain/hedge_l,/turf/dirt,/area)
+"co" = (/turf/terrain/hedge,/turf/dirt,/area)
+"cp" = (/turf/terrain/hedge_r,/turf/dirt,/area)
+"cq" = (/turf/terrain/effects/firefly,/turf/grass,/area)
+"cr" = (/turf/terrain/chainlink/cl_left,/turf/grass,/area)
+"cs" = (/obj/barricade/cone,/turf/grass,/area)
+"ct" = (/turf/terrain/sidewalk/s3,/obj/hazard/fire,/turf/grass,/area)
+"cu" = (/turf/terrain/sidewalk/s3,/obj/barricade/crate,/turf/grass,/area)
+"cv" = (/turf/terrain/sidewalk/s3,/turf/grass,/area)
+"cw" = (/turf/terrain/crosswalk/c2,/turf/road,/area)
+"cx" = (/turf/terrain/sidewalk/s4,/turf/road,/area)
+"cy" = (/obj/hazard/fire,/turf/road,/area)
+"cz" = (/turf/terrain/crosswalk,/turf/road,/area)
+"cA" = (/turf/terrain/crashed_car,/turf/road,/area)
+"cB" = (/obj/gore/blood,/turf/road,/area)
+"cC" = (/turf/terrain/car,/turf/road,/area)
+"cD" = (/turf/terrain/car,/obj/markers/dense,/turf/road,/area)
+"cE" = (/obj/hazard/portal,/turf/grass,/area)
+"cF" = (/obj/barricade/cone,/turf/road,/area)
+"cG" = (/obj/markers/enemy_spawn,/obj/markers/enemy_spawn,/turf/road,/area)
+"cH" = (/turf/terrain/roadline,/turf/road,/area)
+"cI" = (/turf/terrain/roadline,/obj/markers/enemy_spawn,/turf/road,/area)
+"cJ" = (/turf/terrain/car,/obj/hazard/fire,/turf/road,/area)
+"cK" = (/turf/terrain/crashed_car,/obj/markers/dense,/turf/road,/area)
+"cL" = (/turf/terrain/car,/obj/hazard/fire,/turf/grass,/area)
+"cM" = (/turf/terrain/sidewalk/s8,/obj/hazard/fire,/turf/grass,/area)
+"cN" = (/turf/terrain/sidewalk/s8,/obj/barricade/cone,/turf/grass,/area)
+"cO" = (/turf/terrain/sidewalk/s8,/turf/grass,/area)
+"cP" = (/obj/markers/enemy_spawn,/turf/grass,/area)
+"cQ" = (/turf/terrain/sidewalk/s8,/obj/markers/enemy_spawn,/turf/grass,/area)
+"cR" = (/turf/terrain/sidewalk/s8,/obj/markers/enemy_spawn,/turf/road,/area)
 
 (1,1,1) = {"
 aaaaabacadaeaeaeaeaeaeaeafagagagagagahaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiajaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaakalaeaeaeaeaeaeaeaeaeaeaeafajaaaaaaaaaaaaaaaaaa
@@ -156,9 +160,9 @@ aaaaakbkagaLauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauaublau
 aaaaakaPbkaLaMauauaubpauauauauauauauaubqbqbqbqauaubpauauauauauauaubqbqbqbqauauaublauauauauauauaubqbqbqbqauauauauauaublaDaEauaubraEauauaDauauauauauauauauauauauauaSauauauauauauauauaYahajaaaaaaaaaaaaaaaa
 aaaaakagagaLauauauauauauauauauauauaubsbqbqbqbqauauauauauauauauaubsbqbqbqbqauauauauauauauauauaubsbqbqbqbqaubtauauauauaublauauaDaDauauaDauauauauauauauaubpauauauauauauauaSaSauauaSauaYahajaaaaaaaaaaaaaaaa
 aaaaakagagaLauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauaubpauauaublauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauaSauauauauauaYahajaaaaaaaaaaaaaaaa
-aaaabubvbvbvbwaubtauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauaSauaYahajaaaaaaaaaaaaaaaa
+aaaabubvbvbvbwaubtauauauauauauauauauauauauauauauauauauaSaSaSauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauaSauaYahajaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaakauauaubxauauauauaubybvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbwbybvbvbvbvbvbvbvbvbvbwauauauauauauauauauauauauauauauauauauauauaubzauauauauauauauaYaJajaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaakauauauauauauauauauajaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaakajaaaaaaaaaaaaaaaaaaakauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauaTajaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaakauauauauauauauauauajaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaakajaaaaaaaaaaaaaaaaaaakauauauauaSauauauauauauauauauauauauauauauauauauauauauauauauauaTajaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaakbAauauauauaubybvbvbBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaakajaaaaaaaaaaaaaaaaaaakaubCbCauauauauauauauauauauauauauauauauauauauauauauauauauauaubybBaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaakaLbAauauauauajaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaakajaaaaaaaaaaaaaaaaaaakaYagagbDbybvbvbvbvbvbvbvbvbvbvbvbvbwauauauaubtauauauauauauauajaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaakaLauauauauauajaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabEaaaabFaaaaaaaaaaaaaaaaaaaaaaaaakajaaaaaaaaaaaaaaaaaaakbGagagagajaaaaaaaaaaaaaaaaaaaaaaaaakauauauauauauauauauauauauajaaaaaaaaaaaaaaaaaa
@@ -168,24 +172,24 @@ aaaaaaakaeaeafaLauauauauaYahaiaiajaaaaaaaaaaaaaaaaaaaaaaaaakaiaiaiaiaiaiaiaiaiai
 aaaaaaakaeaeafbJbAauauauaYahaiaiajaaaaaaaaaaaaaaaaaaaaaaaaakaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiazalaeaeaeaeaeaeaeaeaeafbHbHbHaPalaeaeaeaeaeaeaeajaaaaaaaaakagauaYagagaLauauauauauaYajaaaaaaaaaaaaaaaaaa
 aaaaaaakaeaeafbJbAbKaSbAbLahaiaiajaaaaaaaaaaaaaaaaaaaaaaaaakaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKbiamanananananananananaobMbHbHbMamanananananananajaaaaaaaaakbNauaYagagaLauauauauauaYapaZaaaaaaaaaaaaaaaa
 aaaaaaakananaoaLbKbKaubAbLaJaKaKajaaaaaaaaaaaaaaaaaaaaaaaaakbObPbPbQasasasasasbQbQbQbQasasasasasasasasasasasbQasbRasasatasasasasbSasasbQasasbQaTajaaaaaaaaakaPaubGagagaLauauauauauaYahajaaaaaaaaaaaaaaaa
-aaaaaaakbObPaHaubKauauauauasasbTajaabEaaaaaaaaaaaaaaaaaaaaakaLblblaubUauauaubVauaubKauauaubWauauauauauauauauauauauauauauauauauauauauauauaMaubKbXajaaaaaaaaakbYagagagagaLauauauauauaYahajaaaaaaaaaaaaaaaa
-acacacadaAauauauauaSaSauauaSauaYajaaaaaaaaaaaaaaaaaaaaaaaaakbZauauauauauauauauauauauauauauauauaubVauauauaucaauauauaubKbKaucbauauauauauauauauauaYajaaaaaaaaakagagagagagaLauauauauauaYahajaaaaaaaaaaaaaaaa
-aeaeaeafaLauauauauaSaSaubKbKbKaYapacacacacacacacacacacacacadaLbKauauaubqbqbqbqauauaubVauauauauauauauauauauauauaubKbKbKaubKaubKauauauauauauauauaYapacacacacadbNagagaRasauauauauauauaYahajaaaaaaaaaaaaaaaa
-aeaeaeafccauaubKbKbKauauaubKauaYahaiaiaiaiaiaiaiaiaiaiaiaiazbZbKauaubsbqbqbqbqauauauauauauauauauauauauauauaubVauaubKbtauaubKauauauauauauauauauaYalaeaeaeaeafagagasauauauauauauauauaYahajaaaaaaaaaaaaaaaa
-aeaeaeafbDbCcdcecfbCbCbCaSaubKaYahaiaiaiaiaiaiaiaiaiaiaiaiazaLbKauauauauauaubKaubpauauauauauaucgauauauauauauauauauauauaubKbKauaubKauauauauauauaYamananananaobNagauauauauauauauauauaYahajaaaaaaaaaaaaaaaa
-aeaeaeafaOagaQaQagagagagaLauauaYahaiaiaiaiaiaiaiaiaiaiaiaiazaLaucbauauauaubKbKaubKauauauauauauauauauauauauauauaubpaubKbKbKauauauauauauauauauauaYaPawaxaxayaPagagauauauauauauaubCbCbGahajaaaaaaaaaaaaaaaa
-anananaobMbMbMbMbMbMbMchcicjbfbjaJaKaKaKaKaKaKaKaKaKaKaKaKbickbgauauaubebfbfclcmcmcmcmcnbfbfclcmcmcmcmcmcmcmcmcmcmcnbfbfbfbfbfbfbfbfbgauauauauaYagcoaOagaQaQbNauauauauauauauaYcpbMbMaJajaaaaaaaaaaaaaaaa
-agcqcqbHbHagagagagagagagauauauauagagagagagaPaPaPagagagagagagauauauauauauagagagagagagagagagagagaPaPagcoagagagagbHagagagagagagagagagagauauauauauauagagagagagauauauauauauauauaubGagawaxayajaaaaaaaaaaaaaaaa
-crcqcscqcsbHctagctagctagauauauauctagctagctagctagctagctagctagcucucucucucuctagctagctagctagctagctagctagctagctagctagctagctagctagctagctagcucucucucucuctagctagctaucvauauauauauauaYagaOagaQaQajaaaaaaaaaaaaaaaa
-auauaucwbAaSaubpauauauauauauauauauauauauauauauauauauauaubKauauauauauauauauauauauauauauauauauauauauauauaubKbKauaubAbAbAauauauauauauauaubtauauauaucxauauauauauauaSauauauauauaYagagagagaPajaaaaaaaaaaaaaaaa
-cyauauauauaSczauauauauauauauauauauauauauauaubpauaubqbqbqbqauauauauauauauauauauauauauauauaubtauauauauaubKauauauauauauauauauauauauaubAauauauauauaucxauauauauauauauauauauauauaYagagagagaPajaaaaaaaaaaaaaaaa
-bAcAauauauaSauczauauauauauauauauauauauauauauauaubKcBbqbqbqauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauaubAbAbAauauauauaucxauauauaSauauauauauauaSauaYagagcCagagajaaaaaaaaaaaaaaaa
-cwaucDcDcDcEaSauczauauauauauauauauauauauauauauaubKbKbKauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauaubAauauauauauaucxauauauaSauauauaSauauauauauavagagagagajaaaaaaaaaaaaaaaa
-cwaucFcFcFcFcGcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFcFauauaucxauauauauauauaSauauauauauauaYagagagagajaaaaaaaaaaaaaaaa
-aucyauauauaSaSauauauauauauauauauauauauauauauauauauauauauauaubAbAauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauaucxauauauauauauauauauauauauaubGagagagbybBaaaaaaaaaaaaaaaa
-cHcwauauauaSaSauauauauauauauauauauauauauauauauauauauauauauaubAauauauauauauauauauauauauauauauauauauauauauaubpauauauauaubKauauauaubKauauauauauauaucxauauauaucgaubpauauauauauaYagagagagajaaaaaaaaaaaaaaaaaa
-auauauauauaSauauauaubpauauauauauauauauauauauauauauauauauauauauauauauauauaubtauauauauauauauauauauauauauauauauauauauaubKbqbqbqbqaubKauauauauauauaucxauauauauaSauauauauauaSaubGagagagagajaaaaaaaaaaaaaaaaaa
-cyauauauauaSauauauauauauauaubtauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauaubAbAaucIbqbqbqbKauauauauauauauaucxauauauauauauauauauauaubGaOagaQaQagajaaaaaaaaaaaaaaaaaa
-bHbHcJagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagbHbHagagagagagagagagagagagagagagagauauauauauauauauauauauauagagagagagajaaaaaaaaaaaaaaaaaa
-cKcqcLcqcLbHcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMagcMaucNaucNaucNaucNaucNaucNagcMagcMagajaaaaaaaaaaaaaaaaaa
+aaaaaaakbObPaHaubKauauauauasasbTajaabEaaaaaaaaaaaaaaaaaaaaakaLblblaubUauauaubVauaubKauauaubWauauauauaubXauauauauauauauauauauauauauauauauaMaubKbYajaaaaaaaaakbZagagagagaLauauauauauaYahajaaaaaaaaaaaaaaaa
+acacacadaAauauauauaSaSauauaSauaYajaaaaaaaaaaaaaaaaaaaaaaaaakcaauauauauauauauauauauauauauauauauaubVauauauaucbauauauaubKbKauccauauauauauauauauauaYajaaaaaaaaakagagagagagaLauauauauauaYahajaaaaaaaaaaaaaaaa
+aeaeaeafaLauauauauaSaSaubKbKbKaYapacacacacacacacacacacacacadaLbKauauaubqbqbqbqauauaubVauauauauauauauauauauauauaubKbKbKcdbKaubKauauauauauauauauaYapacacacacadbNagagaRasauauauauauauaYahajaaaaaaaaaaaaaaaa
+aeaeaeafceauaubKbKbKauauaubKauaYahaiaiaiaiaiaiaiaiaiaiaiaiazcabKauaubsbqbqbqbqauauauauauauauauauauauauauauaubVauaubKbtauaubKauauauauauauauauauaYalaeaeaeaeafagagasauauauauauauauauaYahajaaaaaaaaaaaaaaaa
+aeaeaeafbDbCcfcgchbCbCbCaSaubKaYahaiaiaiaiaiaiaiaiaiaiaiaiazaLbKauauauauauaubKaubpauauauauauauciauauauauauauauauauauauaubKbKauaubKauauauauauauaYamananananaobNagauauauauauauauauauaYahajaaaaaaaaaaaaaaaa
+aeaeaeafaOagaQaQagagagagaLauauaYahaiaiaiaiaiaiaiaiaiaiaiaiazaLauccauauauaubKbKaubKauauauauauauauauauauauauauauaubpaubKbKbKauauauauauauauauauauaYaPawaxaxayaPagagauauauauauauaubCbCbGahajaaaaaaaaaaaaaaaa
+anananaobMbMbMbMbMbMbMcjckclbfbjaJaKaKaKaKaKaKaKaKaKaKaKaKbicmbgauauaubebfbfcncococococpbfbfcncococococococococococpbfbfbfbfbfbfbfbfbgauauauauaYagcqaOagaQaQbNauauauauauauauaYcrbMbMaJajaaaaaaaaaaaaaaaa
+agcscsbHbHagagagagagagagauauauauagagagagagaPaPaPagagagagagagauauauauauauagagagagagagagagagagagaPaPagcqagagagagbHagagagagagagagagagagauauauauauauagagagagagauauauauauauauauaubGagawaxayajaaaaaaaaaaaaaaaa
+ctcscucscubHcvagcvagcvagauauauaucvagcvagcvagcvagcvagcvagcvagcwcwcwcwcwcwcvagcvagcvagcvagcvagcvagcvagcvagcvagcvagcvagcvagcvagcvagcvagcwcwcwcwcwcwcvagcvagcvaucxauauauauauauaYagaOagaQaQajaaaaaaaaaaaaaaaa
+auauaucybAaSaubpauauauauauauauauauauauauauauauauauauauaubKauauauauauauauauauauauauauauauauauauauauauauaubKbKauaubAbAbAauauauauauauauaubtauauauauczauauauauauauaSauauauauauaYagagagagaPajaaaaaaaaaaaaaaaa
+cAauauauauaScBauauauauauauauauauauauauauauaubpauaubqbqbqbqauauauauauauauauauauauauauauauaubtauauauauaubKauauauauauauauauauauauauaubAauauauauauauczauauauauauauauauauauauauaYagagagagaPajaaaaaaaaaaaaaaaa
+bAcCauauauaSaucBauauauauauauauauauauauauauauauaubKcDbqbqbqauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauaubAbAbAauauauauauczauauauaSauauauauauauaSauaYagagcEagagajaaaaaaaaaaaaaaaa
+cyaucFcFcFcGaSaucBauauauauauauauauauauauauauauaubKbKbKauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauaubAauauauauauauczauauauaSauauauaSauauauauauavagagagagajaaaaaaaaaaaaaaaa
+cyaucHcHcHcHcIcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHcHauauauczauauauauauauaSauauauauauauaYagagagagajaaaaaaaaaaaaaaaa
+aucAauauauaSaSauauauauauauauauauauauauauauauauauauauauauauaubAbAauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauczauauauauauauauauauauauauaubGagagagbybBaaaaaaaaaaaaaaaa
+cJcyauauauaSaSauauauauauauauauauauauauauauauauauauauauauauaubAauauauauauauauauauauauauauauauauauauauauauaubpauauauauaubKauauauaubKauauauauauauauczauauauauciaubpauauauauauaYagagagagajaaaaaaaaaaaaaaaaaa
+auauauauauaSauauauaubpauauauauauauauauauauauauauauauauauauauauauauauauauaubtauauauauauauauauauauauauauauauauauauauaubKbqbqbqbqaubKauauauauauauauczauauauauaSauauauauauaSaubGagagagagajaaaaaaaaaaaaaaaaaa
+cAauauauauaSauauauauauauauaubtauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauaubAbAaucKbqbqbqbKauauauauauauauauczauauauauauauauauauauaubGaOagaQaQagajaaaaaaaaaaaaaaaaaa
+bHbHcLagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagbHbHagagagagagagagagagagagagagagagauauauauauauauauauauauauagagagagagajaaaaaaaaaaaaaaaaaa
+cMcscNcscNbHcOcPcQcPcQcPcQcPcQcPcQcPcQcPcQcPcQcPcQcPcQcPcQcPcQcPcQcPcQcPcQcPcQcPcQcPcQcPcQcPcQcPcQcPcQcPcQagcOagcOagcOagcOagcOagcOagcOcPcQcPcQcPcQaScRaScRaScRaScRaScRaScRcPcQagcOagajaaaaaaaaaaaaaaaaaa
 "}

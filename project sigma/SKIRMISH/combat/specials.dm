@@ -42,6 +42,36 @@ obj
 					can_use = 1
 
 
+			molotov
+				recharge	= 40
+				drop_type	= /obj/item/special/molotov
+
+				use(mob/m)
+					can_use = 0
+					if(m.client)
+						if(m.dir != m:trigger_dir)
+							sleep world.tick_lag*2
+							m.dir 				= m:trigger_dir
+					var/obj/projectile/p 		= throw_special(/obj/projectile/thrown/molotov, m.dir)
+					if(m.client) m:flick_arms("base-molotov")
+					p.loc = m.loc
+					switch(m.dir)
+						if(NORTH)
+							p.step_x	= m.step_x
+							p.step_y	= m.step_y+16
+						if(SOUTH)
+							p.step_x	= m.step_x+6
+							p.step_y	= m.step_y-6
+						if(EAST)
+							p.step_x	= m.step_x+16
+							p.step_y	= m.step_y+6
+						if(WEST)
+							p.step_x	= m.step_x//-8
+							p.step_y	= m.step_y+6
+					p.owner	= m
+					active_projectiles += p
+					sleep recharge
+					can_use = 1
 
 /*
 			shuriken

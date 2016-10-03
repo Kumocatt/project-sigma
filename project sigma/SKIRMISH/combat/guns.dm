@@ -317,7 +317,7 @@ obj
 				accuracy			= 10
 				recoil				= -2
 				reload_speed		= 12
-				fire_rate			= 60
+				fire_rate			= 600
 				mag					= 15
 				mag_size			= 15
 				piercing			= 35
@@ -370,7 +370,59 @@ obj
 						if(m.move_disabled) sleep;m.move_disabled = 0
 					can_use = 1
 
+			krossbow
+				damage				= -30
+				max_range			= 128
+				accuracy			= 5
+				recoil				= -1
+				reload_speed		= 10
+				mag					= 1
+				mag_size			= 1
+				piercing			= 95
+				weight				= 1.2
+				crit_chance			= 45
+				velocity			= 0.5
+				drop_type			= /obj/item/gun/krossbow
 
+				New()
+					..()
+					sound_effect	= SOUND_CROSSBOW1
+
+				use(mob/m)
+					can_use = 0
+					if(!mag)
+						reload(m)
+					else
+						if(m.client)
+							if(m.dir != m:trigger_dir)
+								sleep world.tick_lag*2
+								m.dir 				= m:trigger_dir
+								m.move_disabled		= 1
+						mag --
+						var/obj/projectile/p 		= get_projectile("bolt", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+10), kb_dist, sway)
+						if(m.client) m:flick_arms("base-krossbow-attack")
+						k_sound(m, sound_effect)
+						p.loc = m.loc
+						switch(m.dir)
+							if(NORTH)
+								p.step_x	= m.step_x
+								p.step_y	= m.step_y+16
+							if(SOUTH)
+								p.step_x	= m.step_x+6
+								p.step_y	= m.step_y-6
+							if(EAST)
+								p.step_x	= m.step_x+16
+								p.step_y	= m.step_y+6
+							if(WEST)
+								p.step_x	= m.step_x-8
+								p.step_y	= m.step_y+6
+						p.owner	= m
+						if(prob(m.crit_rate+crit_chance))	// add the player and the weapon's crit chances.
+							p.is_crit = 1
+						active_projectiles += p
+						sleep
+						if(m.move_disabled) m.move_disabled = 0
+					can_use = 1
 
 
 
