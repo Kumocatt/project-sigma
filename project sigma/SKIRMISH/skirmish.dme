@@ -55,6 +55,7 @@
 #include "interface\screen objects.dm"
 #include "interface\skin.dmf"
 #include "maps\maps.dm"
+#include "maps\backroad.dmm"
 #include "maps\map000.dmm"
 #include "misc\spawndel.dm"
 #include "player\_main.dm"

@@ -135,6 +135,14 @@ turf
 			r11/icon_state	= "roof11"
 			r12/icon_state	= "roof12"
 			r13/icon_state	= "roof13"
+		details
+			long_window
+				icon		= 'environment/new64x64.dmi'
+				icon_state	= "window1"
+				layer		= TURF_LAYER+0.25
+				New()
+					..()
+					if(prob(10)) icon_state	= "window2"
 
 	terrain
 		parent_type		= /obj

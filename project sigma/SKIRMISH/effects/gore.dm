@@ -1,4 +1,15 @@
 
+mob
+	var/tmp
+		bloodyfeet	= 0	// 1 if the mob should leave a trail of bloody footprints.
+
+
+
+
+
+
+
+
 
 atom/movable
 	proc
@@ -60,6 +71,10 @@ obj/gore
 	is_garbage	= 1
 
 	blood
+//		Crossed(atom/movable/m)
+//			if(ismob(m))
+//				var/mob/b = m
+//				if(!b.bloodyfeet) b.bloodyfeet	= 1
 	boom
 		layer	= TURF_LAYER+0.17
 

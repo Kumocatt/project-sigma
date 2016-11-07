@@ -219,7 +219,7 @@ game
 					while(ai_list.len >= map_spawnlimit) sleep 5
 					if(started == 1) break
 					var/mob/npc/hostile/h = garbage.Grab(/mob/npc/hostile/feeder)
-					h.icon_state = pick("grey","green","orange","white","purple","split")
+					h.icon_state = pick("grey","pink","white")
 
 					if(prob(10))
 						h = garbage.Grab(/mob/npc/hostile/brute)
@@ -244,7 +244,7 @@ game
 
 					if(h.can_phantom && (phantom_enemies || prob(10)))
 						animate(h, alpha = 100, time = 20, loop = -1, easing = ELASTIC_EASING)
-						animate(alpha = 50, time = 20, loop = -1, easing = ELASTIC_EASING)
+						animate(alpha = 75, time = 20, loop = -1, easing = ELASTIC_EASING)
 
 					if(explosive_enemies || prob(10))
 						h.is_explosive = 1

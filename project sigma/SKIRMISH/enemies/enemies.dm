@@ -69,7 +69,7 @@ mob/npc
 
 		New()
 			..()
-			if(has_spotlight) draw_spotlight(x_os = -30, y_os = -38, hex = "#FF3333")
+			if(has_spotlight) draw_spotlight(x_os = -30, y_os = -38, hex = "#FFFFFF")//"#FF3333")
 		GC()
 			..()
 			if(censored) censor(1)
@@ -128,7 +128,7 @@ mob/npc
 								step(src, step_dir)
 								if(last_loc == loc)
 									same_loc_steps ++
-									if(same_loc_steps > 10)
+									if(same_loc_steps > 60)
 										. = 1
 										for(var/mob/player/p in active_game.participants)
 											if(get_dist(p, src) < 25) . = 0; break
@@ -190,7 +190,7 @@ mob/npc
 								step(src, step_dir)
 								if(last_loc == loc)
 									same_loc_steps ++
-									if(same_loc_steps > 10)
+									if(same_loc_steps > 60)
 										. = 1
 										for(var/mob/player/p in active_game.participants)
 											if(get_dist(p, src) < 25) . = 0; break
@@ -245,7 +245,7 @@ mob/npc
 									step(src, step_dir)
 									if(last_loc == loc)
 										same_loc_steps ++
-										if(same_loc_steps > 10)
+										if(same_loc_steps > 60)
 											. = 1
 											for(var/mob/player/p in active_game.participants)
 												if(get_dist(p, src) < 25) . = 0; break
@@ -295,7 +295,7 @@ mob/npc
 								step(src, step_dir)
 								if(last_loc == loc)
 									same_loc_steps ++
-									if(same_loc_steps > 10)
+									if(same_loc_steps > 60)
 										. = 1
 										for(var/mob/player/p in active_game.participants)
 											if(get_dist(p, src) < 25) . = 0; break
@@ -356,7 +356,7 @@ mob/npc
 								step(src, step_dir)
 								if(last_loc == loc)
 									same_loc_steps ++
-									if(same_loc_steps > 10)
+									if(same_loc_steps > 60)
 										. = 1
 										for(var/mob/player/p in active_game.participants)
 											if(get_dist(p, src) < 25) . = 0; break
@@ -417,7 +417,7 @@ mob/npc
 								step(src, step_dir)
 								if(last_loc == loc)
 									same_loc_steps ++
-									if(same_loc_steps > 10)
+									if(same_loc_steps > 60)
 										. = 1
 										for(var/mob/player/p in active_game.participants)
 											if(get_dist(p, src) < 25) . = 0; break
@@ -481,7 +481,7 @@ mob/npc
 								step(src, step_dir)
 								if(last_loc == loc)
 									same_loc_steps ++
-									if(same_loc_steps > 10)
+									if(same_loc_steps > 60)
 										. = 1
 										for(var/mob/player/p in active_game.participants)
 											if(get_dist(p, src) < 25) . = 0; break

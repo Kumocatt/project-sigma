@@ -54,13 +54,10 @@ obj
 			..()
 
 		Bump(atom/a)
-			if(istype(a, /obj/projectile) || a.d_ignore)
+			if(istype(a, /obj/projectile) || a.d_ignore || owner == a)
 				loc = get_step(src, dir)
 				return
 			if(ismob(a))
-				if(a == owner)
-					loc = get_step(src, dir)
-					return
 				loc			= null
 				var/mob/m 	= a
 				if(m.can_hit)
@@ -154,10 +151,7 @@ obj
 							step(src, dir)
 							sleep world.tick_lag
 				Bump(atom/a)
-					if(istype(a, /obj/projectile))
-						loc = get_step(src, dir)
-						return
-					if(a.d_ignore)
+					if(istype(a, /obj/projectile) || a.d_ignore || owner == a)
 						loc = get_step(src, dir)
 						return
 					if(a.density)
@@ -204,10 +198,7 @@ obj
 							step(src, dir)
 							sleep world.tick_lag
 				Bump(atom/a)
-					if(istype(a, /obj/projectile))
-						loc = get_step(src, dir)
-						return
-					if(a.d_ignore)
+					if(istype(a, /obj/projectile) || a.d_ignore || owner == a)
 						loc = get_step(src, dir)
 						return
 					if(a.density)
