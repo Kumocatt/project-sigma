@@ -46,6 +46,7 @@ atom
 					density		= 0
 					for(var/mob/m in obounds(src, blastbounds))
 						m.knockback(7,get_dir(src, m))
+						if(m.client) m:screenshake()
 						if(!m.explosion_proof && (istype(m, /mob/npc) || (istype(m, /mob/player) && (pk || active_game.deathmatch || owner && !owner.client))) && m != src)
 							spawn m.edit_health(damage, owner, 1)
 					for(var/obj/o in obounds(src, blastbounds))

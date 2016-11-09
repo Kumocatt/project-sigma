@@ -17,7 +17,7 @@ mob/player
 			push_group += b
 			. = b
 			top
-			for(var/obj/barricade/c in bounds(., 1))
+			if(push_group.len < 3) for(var/obj/barricade/c in bounds(., 1))
 				if(get_dir(.,c) == dir)
 					c.last_pusher = src
 					push_group += c
@@ -43,11 +43,6 @@ obj
 		var/tmp
 			mob/last_pusher
 			broken = 0
-//	Bump(atom/a)
-//			..()
-//			if(last_pusher && istype(last_pusher, /mob/player) && istype(a, /obj/barricade))
-//				var/obj/barricade/b = a
-//				if(step(b, dir)) spawn b.dust()
 		cone
 			icon_state	= "cone1"
 		crate

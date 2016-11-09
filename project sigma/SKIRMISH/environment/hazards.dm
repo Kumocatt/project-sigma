@@ -251,7 +251,7 @@ atom/movable
 	proc
 		portal(mob/_owner)	// make so if there is an owner, it looks for a portal with the same owner.
 			set waitfor = 0
-			if(can_teleport && active_game.portals.len)
+			if(can_teleport && (active_game.portals.len > 1))
 				can_teleport = 0
 				animate(src, alpha = 0, transform = turn(matrix(),360), color = "green", time = 5)
 				sleep 5

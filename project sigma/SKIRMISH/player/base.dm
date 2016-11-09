@@ -23,8 +23,9 @@ mob/player
 			equipped_weapon = new /obj/weapon/gun/kobra
 		//	equipped_special= new /obj/weapon/special/grenade
 			arms.icon_state	= "base-kobra"
-			shirt.icon_state	= "shirt[rand(1,5)]"
-			hair.icon_state		= "style[rand(1,7)]"
+			shirt.icon_state	= "shirt[rand(1,6)]"
+			hair.icon_state		= "style[rand(1,11)]"
+			if(hair.icon_state == "style11") hair.pixel_x = -5
 	/*		if(key == "Amelia Pond")
 				shirt.icon_state 	= "amelia-shirt"
 				pants.icon_state 	= "amelia-pants"

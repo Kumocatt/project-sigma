@@ -1,18 +1,18 @@
 // BEGIN_INTERNALS
 /*
-LAST_COMPILE_TIME: 1478489571
+LAST_COMPILE_TIME: 1478729395
 PACKAGE_RSC_NAME: C:\Users\Kumorii\Dropbox\SKIRMISH\skirmish_rsc.zip
-DIR: combat effects environment game maps references\#libraries 
+DIR: environment game maps player references\#libraries 
 AUTO_FILE_DIR: ON
 PACKAGE_DMB_INFO: 
 MAP_ICON_TYPE: 0
 PACKAGE_DME_NAME: C:\Users\Kumorii\Dropbox\SKIRMISH\skirmish_src.zip
-LAST_COMPILE_VERSION: 511.1358
+LAST_COMPILE_VERSION: 511.1362
 PACKAGE_TYPE: 0
 PACKAGE_DME_START: 
-WINDOW: maps\streetside.dmm;enemies\_Zombie.dmi;environment\64x64.dmi;environment\16x16.dmi;environment\new64x64.dmi;environment\turf.dm;enemies\enemies.dm;game\matchmaking.dm;combat\projectiles.dm;effects\gore.dm;effects\gore.dmi
+WINDOW: player\base.dm;environment\hazards.dm;game\drops.dm;game\matchmaking.dm
 PACKAGE_DME_INFO: 
-FILE: effects\gore.dm
+FILE: environment\hazards.dm
 PACKAGE_DMB_NAME: C:\Users\Kumorii\Dropbox\SKIRMISH\skirmish.zip
 PACKAGE_DME_DEMO: 
 */

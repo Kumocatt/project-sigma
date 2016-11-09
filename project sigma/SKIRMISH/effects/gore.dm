@@ -20,7 +20,7 @@ atom/movable
 			*/
 			var/obj/gore/boom/b		= garbage.Grab(/obj/gore/boom)
 			b.icon					= 'gore.dmi'
-			b.icon_state			= "boom1"
+			b.icon_state			= "boom[pick(1,2)]"
 			b.SetCenter(Cx(),Cy(),z)
 			animate(b, pixel_y = -8, time = 3)
 			b.spawndel(300)
@@ -50,14 +50,14 @@ atom/movable
 			else
 				var/obj/gore/blood/b	= garbage.Grab(/obj/gore/blood)
 				b.icon					= 'gore.dmi'
-				b.icon_state			= "splat[pick(1,2)]"
+				b.icon_state			= "splat[rand(1,3)]"
 				b.SetCenter(Cx(),Cy(),z)
 				animate(b, pixel_y = -8, time = 3)
 				b.spawndel(300)
 				for(var/v = 0 to i)
 					var/obj/gore/blood/g	= garbage.Grab(/obj/gore/blood)
 					g.icon					= 'gore.dmi'
-					g.icon_state			= "gut[rand(1,3)]"
+					g.icon_state			= "gut[rand(1,4)]"
 					g.layer					= TURF_LAYER+0.16
 					g.SetCenter(Cx(),Cy(),z)
 					animate(g, pixel_y = 32, pixel_x = rand(-16,16), time = 3)

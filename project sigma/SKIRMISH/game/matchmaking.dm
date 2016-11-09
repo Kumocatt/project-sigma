@@ -9,15 +9,15 @@ proc
 		if(h)
 			var/obj/_loc 		= pick(active_game.enemy_spawns)
 			var/mob/player/p	= pick(active_game.participants)
-			for(var/obj/markers/enemy_spawn/espawn in oview(p, 55))
-				if(get_dist(p,espawn) > 15)
+			for(var/obj/markers/enemy_spawn/espawn in oview(p, 70))
+				if(get_dist(p,espawn) > 25)
 					_loc = espawn
 					break
 			active_game.enemy_spawns -= _loc
 			h.loc 		= _loc.loc
 			h.health	= h.base_health
 			ai_list += h
-			sleep 5 // 10
+			sleep 2 // 5
 			active_game.enemy_spawns += _loc
 
 
@@ -47,7 +47,7 @@ game
 		exp_multiplier	= 1		// multiply exp gain by this.
 		enemies_left	= 1		// how many enemies are currently alive.
 		enemies_total	= 1		// how many enemies to be spawned total.
-		map_spawnlimit	= 5
+		map_spawnlimit	= 30
 		toggle_regen	= 1		// use to toggle health regeneration on/off.
 		toggle_revive	= 1		// use to toggle revives on/off.
 		votes_to_skip	= 0
@@ -219,7 +219,7 @@ game
 					while(ai_list.len >= map_spawnlimit) sleep 5
 					if(started == 1) break
 					var/mob/npc/hostile/h = garbage.Grab(/mob/npc/hostile/feeder)
-					h.icon_state = pick("grey","pink","white")
+					h.icon_state = pick("grey","pink","white","purple","green","orange")
 
 					if(prob(10))
 						h = garbage.Grab(/mob/npc/hostile/brute)

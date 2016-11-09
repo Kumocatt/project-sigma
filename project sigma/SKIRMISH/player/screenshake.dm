@@ -3,7 +3,7 @@
 
 mob/player
 	var/tmp
-		init_shake	= 1
+		init_shake	= 0
 
 	proc
 		screenshake()
