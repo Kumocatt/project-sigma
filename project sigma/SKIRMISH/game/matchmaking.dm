@@ -4,33 +4,14 @@ var
 	game/active_game 	= new /game	// the datum of the current active game.
 	speed_fluxer		= 0
 
-proc
-	spawn_en(mob/npc/hostile/h)
-		if(h)
-			var/obj/_loc 		= pick(active_game.enemy_spawns)
-			var/mob/player/p	= pick(active_game.participants)
-			for(var/obj/markers/enemy_spawn/espawn in oview(p, 70))
-				if(get_dist(p,espawn) > 25)
-					_loc = espawn
-					break
-			active_game.enemy_spawns -= _loc
-			h.loc 		= _loc.loc
-			h.health	= h.base_health
-			ai_list += h
-			sleep 2 // 5
-			active_game.enemy_spawns += _loc
-
-
-
 mob/player
 	verb
 		vote_to_skip()
 			set hidden = 1
-			if(winget(src, "pane-lobby.to-skip", "is-checked") == "true")
-				active_game.votes_to_skip --
-			else
-				active_game.votes_to_skip ++
-
+		//	if(winget(src, "pane-lobby.to-skip", "is-checked") == "true")
+		//		active_game.votes_to_skip --
+		//	else
+		//		active_game.votes_to_skip ++
 
 
 game
@@ -161,12 +142,12 @@ game
 			world << "<b>Wave [current_round] will begin in 15 seconds."
 			sleep 150
 			intermission = 0
-			if(current_round == 8 && participants.len > 1)
-				boss_mode = 1
-				boss_deathmatch()
-		//	if(current_round == 5)
+		//	if(current_round == 8 && participants.len > 1)
 		//		boss_mode = 1
-		//		boss_doppleganger()
+		//		boss_deathmatch()
+			if(current_round == 2)
+				boss_mode = 1
+				boss_doppleganger()
 		/*	if(!boss_mode && prob(1))	// stackable wave types
 				if(prob(25))
 					// only phantom enemies will spawn.
@@ -211,16 +192,15 @@ game
 				sleep world.tick_lag
 				world << pick( MUSIC_FAST_ACE, MUSIC_RETRO140, MUSIC_ROCKER, MUSIC_HORROR1, MUSIC_DnB1)
 				sleep world.tick_lag
+
 				if(censorship) for(var/mob/player/p in participants)
 					p.censor()
-	//			if(blackout) for(var/mob/player/p in participants)
-	//				p.overlays -= p.spotlight
-				for(var/i = 1 to enemies_total)										// enemy spawning.
+
+				for(var/i = 1 to enemies_total)								// enemy spawning.
 					while(ai_list.len >= map_spawnlimit) sleep 5
 					if(started == 1) break
-					var/mob/npc/hostile/h = garbage.Grab(/mob/npc/hostile/feeder)
-					h.icon_state = pick("grey","pink","white","purple","green","orange")
-
+					var/mob/npc/hostile/h 	= garbage.Grab(/mob/npc/hostile/feeder)
+					h.icon_state 			= pick("grey","pink","white","purple","green","orange")
 					if(prob(10))
 						h = garbage.Grab(/mob/npc/hostile/brute)
 
@@ -244,13 +224,14 @@ game
 
 					if(h.can_phantom && (phantom_enemies || prob(10)))
 						animate(h, alpha = 100, time = 20, loop = -1, easing = ELASTIC_EASING)
-						animate(alpha = 75, time = 20, loop = -1, easing = ELASTIC_EASING)
+						animate(alpha = 85, time = 20, loop = -1, easing = ELASTIC_EASING)
 
 					if(explosive_enemies || prob(10))
 						h.is_explosive = 1
 
 					if(istype(h, /mob/npc/hostile/feeder))
 						if(prob(5)) h.shield()
+					sleep world.tick_lag
 
 				if(phantom_enemies) 	phantom_enemies 	= 0
 				if(crawler_only)		crawler_only		= 0
@@ -450,7 +431,7 @@ game
 			var/mob/npc/hostile/doppleganger/boss1 = new
 			boss1.draw_nametag("Dopple") //,, -44)
 			boss1.draw_health(-5, 32)
-			boss1.arms.icon_state = "base-shotgun"
+			boss1.arms.icon_state = "base-pistol"
 			boss1.overlays += boss1.arms
 			boss1.overlays += boss1.shirt
 			boss1.overlays += boss1.pants

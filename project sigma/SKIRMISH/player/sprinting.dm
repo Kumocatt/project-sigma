@@ -40,8 +40,8 @@ atom/movable
 		o.SetCenter(Cx(),Cy(),z)
 		o.icon = 'game/misc_effects.dmi';o.icon_state = "smoke[rand(1,3)]";o.layer = EFFECTS_LAYER;o.alpha = 155
 		animate(o,transform = turn(matrix()*5,rand(180,360)), pixel_y = 16,alpha=100,time=15)
-		animate(transform = turn(matrix()*5,rand(180,360)), alpha = 0, time = 15)
-		o.spawndel(30)
+		animate(transform = turn(matrix()*5,rand(180,360)), alpha = 0, time = 45)
+		o.spawndel(60)
 
 	proc/twinkle()
 		var/obj/o = new/obj

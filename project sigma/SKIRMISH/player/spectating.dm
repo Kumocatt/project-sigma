@@ -23,7 +23,7 @@ mob/player
 			for(var/mob/player/p in active_game.participants)
 				if(p == src) continue
 				if(p.health && !p.died_already) spec_list += p
-			if(spec_list.len-1) {client.eye 	= pick(spec_list);src << "spectating: [client.eye]"}
+			if(spec_list.len > 1) {client.eye 	= pick(spec_list);src << "spectating: [client.eye]"}
 			else				{client.eye 	= src;src << "nobody to spectate; watching self."}
 
 	verb

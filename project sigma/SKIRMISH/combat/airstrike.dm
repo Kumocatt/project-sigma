@@ -9,18 +9,17 @@ proc
 			var/list/t_list = new /list()
 			for(var/turf/t in view(1,_loc))
 				if(!t.density) t_list += t
-		//	if(t_list.len)
-	/*			for(var/turf/t in t_list)
-					var/obj/projectile/p 	= garbage.Grab(/obj/projectile/airstrike)
+			if(t_list.len)
+				for(var/turf/t in t_list)
+					var/obj/projectile/p 	= garbage.Grab(/obj/projectile/missile)
 					p.dir					= SOUTH
-					p.px_range				= 20
+					p.px_range				= 80
 					p.accuracy				= pick(4,7)
-					p.sway					= pick(2, -2)
-					p.alpha					= 150
-					p.transform				= p.transform*2
+					p.sway					= pick(1,-1)
+					p.alpha					= 0
+					p.transform				= p.transform*3
 					p.owner					= _caller
-					var/turf/targ 			= locate(t.x, t.y+8, t.z)
+					var/turf/targ 			= locate(t.x, t.y+5, t.z)
 					p.loc					= targ
 					active_projectiles += p
-					sleep pick(2,5)
-					*/
+					sleep pick(2,3)

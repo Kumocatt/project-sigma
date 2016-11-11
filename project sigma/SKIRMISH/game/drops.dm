@@ -3,11 +3,11 @@ proc
 	get_drop()
 		var/obj/drop_this = /obj/item/health_pack	// defaults to health packs because they're the most practical.
 		if(prob(55))
-			drop_this	= pick(0,0)
+			drop_this	= pick(/obj/item/gun/uzi, /obj/item/gun/kobra, /obj/item/gun/red_baron, /obj/item/special/molotov)
 		if(prob(44))
-			drop_this	= pick(0,0)
+			drop_this	= pick(/obj/item/shield, /obj/item/strong_shield, /obj/item/revive_pack)
 		if(prob(22))
-			drop_this 	= pick(0,0)
+			drop_this 	= pick(/obj/item/special/airstrike, /obj/item/strong_shield)
 		return drop_this
 
 obj
@@ -103,6 +103,20 @@ obj
 				step		= 3
 				effect(mob/player/p)
 					p.float_text("\[E] - Krossbow", 1)
+			uzi
+				icon_state	= "uzi"
+				state		= "uzi"
+				gun_type	= /obj/weapon/gun/uzi
+				step		= 4
+				effect(mob/player/p)
+					p.float_text("\[E] - Uzi", 1)
+			red_baron
+				icon_state	= "redbaron"
+				state		= "redbaron"
+				gun_type	= /obj/weapon/gun/red_baron
+				step		= 3
+				effect(mob/player/p)
+					p.float_text("\[E] - Red Baron", 1)
 		melee
 			var/tmp
 				state		= null // the icon_state tag for the weapon.
@@ -125,3 +139,9 @@ obj
 				gun_type	= /obj/weapon/special/molotov
 				effect(mob/player/p)
 					p.float_text("\[E] - Molotovs", 1)
+			airstrike
+				icon_state	= "airstrike"
+				state		= "airstrike"
+				gun_type	= /obj/weapon/special/airstrike
+				effect(mob/player/p)
+					p.float_text("\[E] - Airstrikes", 1)

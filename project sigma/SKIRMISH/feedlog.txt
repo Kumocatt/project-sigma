@@ -1,0 +1,10 @@
+runtime error: pick() from empty list
+proc name: spawn en (/proc/spawn_en)
+  source file: enemy spawning.dm,10
+  usr: (src)
+  src: null
+  call stack:
+spawn en(the crawler (/mob/npc/hostile/crawler))
+/game (/game): init wave()
+/game (/game): init game()
+/game (/game): wait loop()

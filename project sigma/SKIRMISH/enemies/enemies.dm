@@ -35,13 +35,6 @@ mob/npc
 				_drop.loc 		= loc
 				_drop.spawndel(600)
 
-		respawn()
-			var/obj/_loc 		= pick(active_game.enemy_spawns)
-			var/mob/player/p	= pick(active_game.participants)
-			for(var/obj/markers/enemy_spawn/espawn in oview(p, 45))
-				_loc = espawn
-				break
-			loc = _loc.loc
 
 
 
@@ -103,6 +96,13 @@ mob/npc
 			density			= 1
 			step_size		= 4
 			base_health		= 10
+			var/obj/shirt	= new/obj
+			New()
+				..()
+				shirt.icon			= 'enemies/_Zombie.dmi'
+				shirt.icon_state	= "shirt[rand(1,3)]"
+				shirt.layer			= MOB_LAYER
+				overlays += shirt
 
 			ai_check()
 				set waitfor = 0
@@ -121,6 +121,7 @@ mob/npc
 										target = p
 							if(bounds_dist(src, target) <= 2)
 								flick("[icon_state]-attack", src)
+								flick("[shirt.icon_state]-attack", shirt)
 								target.knockback(6, step_dir)
 								target.edit_health(-20)
 								sleep 10
@@ -507,7 +508,7 @@ mob/npc
 			icon			= 'enemies/doppleganger.dmi'
 			icon_state		= "dopple1-"
 			density			= 1
-			step_size		= 2
+			step_size		= 4
 			base_health		= 250
 			can_censor		= 0
 			appearance_flags= KEEP_TOGETHER
@@ -516,8 +517,8 @@ mob/npc
 			explosion_proof	= 1
 			has_spotlight	= 0
 			var/obj/weapon/gun/skill1 		= new /obj/weapon/gun/pistol
-			var/obj/weapon/special/skill2 //	= new /obj/weapon/special/molotov
-			var/obj/weapon/special/skill3//	= new /obj/weapon/special/dopple
+			var/obj/weapon/special/skill2 	= new /obj/weapon/special/molotov
+			var/obj/weapon/special/skill3	= new /obj/weapon/special/dopple
 			var/tmp
 				obj/arms 	= new /obj/player/arms
 				obj/shirt	= new /obj/player/shirt
@@ -543,7 +544,7 @@ mob/npc
 					resting = 1
 					if(target)
 						if(!target.health || !target.loc)	// if the target is dead, off map, or shaking a cowbell..
-							target = null									// .. stop targeting them.
+							target = null		// .. stop targeting them.
 						else
 							var/step_dir = get_dir(src, target)				// just log this because.
 							if(prob(get_dist(src, target)*2))						// here we'll see if any other potential targets are closer.
@@ -552,21 +553,21 @@ mob/npc
 									if(get_dist(src, p) < get_dist(src, target))
 										target = p
 										skill3.use(src)
-
-							if(bounds_dist(src, target) <= 2)
+							if(bounds_dist(src, target) <= 2)	// if super close, melee attack.
 								target.knockback(8, step_dir)
-								target.edit_health(-5)
+								target.edit_health(-10)
 								sleep 10
-							else if(get_dist(src, target) < 9 && skill1.can_use && shot_lineup())
+
+							else if(get_dist(src, target) < 6 && skill1.can_use && shot_lineup())
 								dir = get_dir(src, target)
-						//		flick("dopple-attack", src)
-								skill1.use(src)
-								sleep 5
+								spawn skill1.use(src)
+			//					sleep 5
 							else if(get_dist(src, target) < 4 && skill2.can_use && shot_lineup() && prob(45))
 								dir = get_dir(src, target)
-								skill2.use(src)
+								spawn skill2.use(src)
 							else if(!kb_init)
 								step(src, step_dir)
+
 					if(!target)
 						if(prob(45)) step(src, pick(dir, turn(dir, pick(-45, 45))))
 						for(var/mob/player/p in active_game.participants)
@@ -577,7 +578,7 @@ mob/npc
 							else if(get_dist(src, p) < get_dist(src, target))
 								target = p
 								skill3.use(src)
-					sleep world.tick_lag*2.5
+					sleep world.tick_lag*1.5
 					resting = 0
 			proc
 				flick_arms(fstate = "base-")
@@ -600,8 +601,8 @@ mob/npc
 			fireproof		= 1
 			explosion_proof	= 1
 			can_censor		= 0
-			bound_x			= 8
-			bound_y			= 8
+			bound_x			= 20
+			bound_y			= 20
 			has_spotlight	= 0
 			can_phantom		= 0
 			var/tmp/flying	= 0
@@ -637,6 +638,8 @@ mob/npc
 								if(target in obounds(src, 4))
 									target.knockback(6, step_dir)
 									target.edit_health(-10)
+								dust()
+								dust()
 								icon_state	= "hellbat"
 								sleep 20
 							else if(!kb_init)

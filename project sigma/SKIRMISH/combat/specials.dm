@@ -73,6 +73,66 @@ obj
 					sleep recharge
 					can_use = 1
 
+
+			dopple
+				recharge	= 50
+			//	drop_type	= /obj/item/special/molotov there is no drop object for the dopple ability ; will consider.
+
+				use(mob/m)
+				//	can_use = 0
+					if(istype(m, /mob/npc/hostile/doppleganger) && m:target)
+						var/mob/npc/hostile/doppleganger/d = m
+						animate(d, alpha = 0, transform = matrix()*2, time = 5)
+						d.skill1 = new d.target:equipped_weapon.type
+						d.skill2 = new d.target:equipped_special.type
+						d.overlays.Remove(d.hair)
+						d.hair.icon_state = d.target:hair.icon_state
+						d.overlays.Add(d.hair)
+						d.overlays.Remove(d.shirt)
+						d.shirt.icon_state = d.target:shirt.icon_state
+						d.overlays.Add(d.shirt)
+						d.overlays.Remove(d.arms)
+						d.arms.icon_state = "[d.target:arms.icon_state]"
+						d.overlays.Add(d.arms)
+						d.overlays.Remove(d.nametag)
+						d.nametag.change_text("[d.target]")
+						d.overlays.Add(d.nametag)
+						animate(d, alpha = 255, transform = matrix(), time = 5)
+						sleep 15
+
+			airstrike
+				recharge	= 100
+				drop_type	= /obj/item/special/airstrike
+
+				use(mob/m)
+					can_use = 0
+					if(m.client)
+						if(m.dir != m:trigger_dir)
+							sleep world.tick_lag*2
+							m.dir 				= m:trigger_dir
+					var/obj/projectile/p 		= throw_special(/obj/projectile/thrown/airstrike, m.dir)
+					if(m.client) m:flick_arms("base-airstrike")
+					p.loc = m.loc
+					switch(m.dir)
+						if(NORTH)
+							p.step_x	= m.step_x
+							p.step_y	= m.step_y+16
+						if(SOUTH)
+							p.step_x	= m.step_x+6
+							p.step_y	= m.step_y-6
+						if(EAST)
+							p.step_x	= m.step_x+16
+							p.step_y	= m.step_y+6
+						if(WEST)
+							p.step_x	= m.step_x//-8
+							p.step_y	= m.step_y+6
+					p.owner	= m
+					active_projectiles += p
+					sleep recharge
+					can_use = 1
+
+
+
 /*
 			shuriken
 				damage		= -20
@@ -128,40 +188,7 @@ obj
 					sleep recharge
 					can_use					= 1
 
-			molotov
-				damage		= -25
-				max_range	= 128
-				accuracy	= 7
-				recoil		= -6	// how many points each consecutive shot will take away from the player's accuracy offset.
-				recharge	= 7
-				drop_type	= /obj/item/special/molotov
 
-				use(mob/m)
-					can_use = 0
-					if(m.client)
-						if(m.dir != m:trigger_dir)
-							sleep world.tick_lag*2
-							m.dir 				= m:trigger_dir
-					var/obj/projectile/p 		= get_projectile(/obj/projectile/molotov, m.dir, damage, round(max_range/6), accuracy, kb_dist, sway)
-					if(m.client) m:flick_arms("base-molotov-attack")
-					p.loc = m.loc
-					switch(m.dir)
-						if(NORTH)
-							p.step_x	= m.step_x
-							p.step_y	= m.step_y+16
-						if(SOUTH)
-							p.step_x	= m.step_x+6
-							p.step_y	= m.step_y-6
-						if(EAST)
-							p.step_x	= m.step_x+16
-							p.step_y	= m.step_y+6
-						if(WEST)
-							p.step_x	= m.step_x//-8
-							p.step_y	= m.step_y+6
-					p.owner	= m
-					active_projectiles += p
-					sleep recharge
-					can_use = 1
 
 			fireball
 				damage		= -5
@@ -430,59 +457,5 @@ obj
 					sleep recharge/2
 					can_use					= 1
 
-			dopple	// this is only meant to be used by the doppleganger but I presume it could be used for players?
-				use(mob/m)
-					if(istype(m, /mob/npc/hostile/doppleganger) && m:target)
-						animate(m, alpha = 0, transform = matrix()*2, time = 5)
-						m:skill1 = new m:target:equipped_weapon.type
-						m:skill2 = new m:target:equipped_special.type
-						m.overlays.Remove(m:hair)
-						m:hair.icon_state = m:target:hair.icon_state
-						m.overlays.Add(m:hair)
-						m.overlays.Remove(m:shirt)
-						m:hair.icon_state = m:target:shirt.icon_state
-						m.overlays.Add(m:shirt)
-						m.overlays.Remove(m:arms)
-						m:arms.icon_state = "[m:target.icon_state]"
-						m.overlays.Add(m:arms)
-						m.overlays.Remove(m:nametag)
-						m:nametag.change_text("[m:target]")
-						m.overlays.Add(m:nametag)
-						animate(m, alpha = 255, transform = matrix(), time = 5)
-						sleep 15
-
-			airsupport
-				damage		= 0
-				max_range	= 64
-				accuracy	= 8
-				recoil		= 4
-				recharge	= 3
-				drop_type	= /obj/item/special/airsupport
-
-				use(mob/m)
-					can_use = 0
-					if(m.client)
-						if(m.dir != m:trigger_dir)
-							sleep world.tick_lag*2
-							m.dir 				= m:trigger_dir
-					var/obj/projectile/p 		= get_projectile(/obj/projectile/airsupport, m.dir, damage, round(max_range/6), accuracy, kb_dist, sway)
-					p.loc = m.loc
-					switch(m.dir)
-						if(NORTH)
-							p.step_x	= m.step_x
-							p.step_y	= m.step_y+16
-						if(SOUTH)
-							p.step_x	= m.step_x+6
-							p.step_y	= m.step_y-6
-						if(EAST)
-							p.step_x	= m.step_x+16
-							p.step_y	= m.step_y+6
-						if(WEST)
-							p.step_x	= m.step_x//-8
-							p.step_y	= m.step_y+6
-					p.owner	= m
-					active_projectiles += p
-					sleep recharge
-					can_use = 1
 
 					*/

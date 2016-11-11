@@ -20,10 +20,10 @@ mob/player
 			draw_planes()
 			draw_nametag("[name]") //,, -44)
 			refresh_hud()
-			equipped_weapon = new /obj/weapon/gun/kobra
-		//	equipped_special= new /obj/weapon/special/grenade
-			arms.icon_state	= "base-kobra"
-			shirt.icon_state	= "shirt[rand(1,6)]"
+			equipped_weapon = new /obj/weapon/gun/pistol
+			equipped_special= new /obj/weapon/special/grenade
+			arms.icon_state	= "base-pistol"
+			shirt.icon_state	= "shirt[rand(1,8)]"
 			hair.icon_state		= "style[rand(1,11)]"
 			if(hair.icon_state == "style11") hair.pixel_x = -5
 	/*		if(key == "Amelia Pond")

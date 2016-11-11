@@ -10,7 +10,7 @@ proc
 		set waitfor = 0
 		for()
 			if(active_projectiles.len) for(var/obj/projectile/p in active_projectiles)
-				p.take_step()
+				if(!p.timeout) p.take_step()
 			sleep world.tick_lag
 
 atom
@@ -42,6 +42,7 @@ obj
 			mob/owner
 			accur_assist	= 0	// used to assist with tracking accuracy offsets.
 			is_crit			= 0	// used to keep track of critical shots.
+			timeout			= 0
 
 		GC()
 			hp_modifier		= -1	// important to reset to 0 so that it gets recognized as a new projectile when reused.
@@ -75,6 +76,7 @@ obj
 					called to handle the projectile's step behavior.
 				*/
 				set waitfor = 0
+				timeout = 1
 				if(step_size*total_steps >= px_range) // if the projectile has taken its maximum amount of steps..
 					GC()
 				else
@@ -87,6 +89,7 @@ obj
 						trail(is_crit)
 						step(src, dir)
 						sleep world.tick_lag*velocity
+				timeout = 0
 
 
 			trail(crit = 0)
@@ -96,6 +99,55 @@ obj
 				if(crit) 	animate(o, alpha=0, transform = turn(transform, 360), color = "red",time=5)
 				else		animate(o, alpha=0, transform = turn(transform, 360), time=5)
 				o.spawndel(5)
+
+
+
+		missile
+			icon_state	= "rocket1"
+			density		= 0
+			step_size	= 6
+			bound_x		= 7
+			bound_y		= 4
+			bound_width	= 3
+			bound_height= 3
+
+			hp_modifier	= -5
+			penetration	= 0
+			accuracy	= 8	// every [accuracy] pixels, the projectile will stray 1px off from true center.
+			kb_dist		= 0
+			velocity	= 0.5
+			px_range	= 60
+			plane		= 2
+
+			GC()
+				icon_state		= "rocket1"
+				is_explosive	= 0
+				..()
+
+			take_step()
+				/*
+					called to handle the projectile's step behavior.
+				*/
+				set waitfor = 0
+				timeout = 1
+				if(step_size*total_steps >= px_range) // if the projectile has taken its maximum amount of steps..
+					is_explosive = 1
+					Explode(32, -100, owner)
+				else
+					if(loc)
+						if(total_steps == 1)
+							animate(src, alpha = 150, time = 1, loop = 1)
+						if(total_steps == 4)
+							animate(src, alpha = 255, transform = matrix(), time = 2, loop = 1)
+						total_steps ++
+						if(round((step_size*total_steps)/accuracy) > accur_assist) // accur_Assist is always the sum of the total pixels traveled divided by accuracy.
+							accur_assist = round((step_size*total_steps)/accuracy)
+							if(dir == EAST || dir == WEST) step_y += sway
+							else step_x += sway
+						step(src, SOUTH)
+						rocketcloud()
+						sleep world.tick_lag*1.5
+				timeout = 0
 
 
 		thrown
@@ -135,6 +187,7 @@ obj
 						called to handle the projectile's step behavior.
 					*/
 					set waitfor = 0
+					timeout = 1
 					if(step_size*total_steps >= px_range) // if the projectile has taken its maximum amount of steps..
 						sleep 15
 						Explode(32, -50, owner)
@@ -150,6 +203,7 @@ obj
 								else pixel_y -= 1
 							step(src, dir)
 							sleep world.tick_lag
+					timeout = 0
 				Bump(atom/a)
 					if(istype(a, /obj/projectile) || a.d_ignore || owner == a)
 						loc = get_step(src, dir)
@@ -182,6 +236,7 @@ obj
 						called to handle the projectile's step behavior.
 					*/
 					set waitfor = 0
+					timeout = 1
 					if(step_size*total_steps >= px_range) // if the projectile has taken its maximum amount of steps..
 						drop_fire(6, owner)
 						GC()
@@ -197,6 +252,7 @@ obj
 								else pixel_y -= 1
 							step(src, dir)
 							sleep world.tick_lag
+					timeout = 0
 				Bump(atom/a)
 					if(istype(a, /obj/projectile) || a.d_ignore || owner == a)
 						loc = get_step(src, dir)
@@ -205,6 +261,65 @@ obj
 						end_step = 1
 					drop_fire(6, owner)
 					GC()
+
+
+			airstrike
+				icon_state	= "airstrike"
+				bound_x		= 2
+				bound_y		= 2
+				bound_width	= 4
+				bound_height= 4
+
+				hp_modifier	= -5
+				penetration	= 0
+				px_range	= 64
+				accuracy	= 8	// every [accuracy] pixels, the projectile will stray 1px off from true center.
+				kb_dist		= 0
+				velocity	= 0.5
+				New()
+					..()
+					draw_spotlight(x_os = -38, y_os = -38, hex = "#FFCC00")
+				GC()
+					end_step = 0
+					..()
+
+				take_step()
+					/*
+						called to handle the projectile's step behavior.
+					*/
+					set waitfor = 0
+					timeout = 1
+					if(step_size*total_steps >= px_range) // if the projectile has taken its maximum amount of steps..
+						sleep 50
+						airstrike(loc, owner)
+						spawndel(5)
+					else
+						if(loc)
+							total_steps ++
+							if(round((step_size*total_steps)/accuracy) > accur_assist) // accur_Assist is always the sum of the total pixels traveled divided by accuracy.
+								accur_assist = round((step_size*total_steps)/accuracy)
+								if(dir == EAST || dir == WEST) step_y += sway
+								else step_x += sway
+							if(dir == EAST || dir == WEST)
+								if((step_size*total_steps) < (px_range/2)) pixel_y += 1
+								else pixel_y -= 1
+							step(src, dir)
+							sleep world.tick_lag
+					timeout = 0
+				Bump(atom/a)
+					if(istype(a, /obj/projectile) || a.d_ignore || owner == a)
+						loc = get_step(src, dir)
+						return
+					if(a.density)
+						end_step = 1
+
+
+
+
+
+
+
+
 
 
 

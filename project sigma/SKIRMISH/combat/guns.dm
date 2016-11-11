@@ -89,7 +89,7 @@ obj
 							if(mag >= mag_size) break
 							mag ++
 							sleep reload_speed/mag_size
-						reloader << SOUND_RELOAD
+						if(reloader.client) reloader << SOUND_RELOAD
 						if(reloader) reloader.overlays.Remove(RELOAD_OVERLAY)
 						if(reloader.client) reloader:reloading = 0
 
@@ -122,7 +122,7 @@ obj
 								m.dir 				= m:trigger_dir
 								m.move_disabled		= 1
 						mag --
-						var/obj/projectile/p 		= get_projectile("bullet", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+10), kb_dist, sway)
+						var/obj/projectile/p 		= get_projectile("bullet", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+4), kb_dist, sway)
 						if(m.client) m:flick_arms("base-pistol-attack")
 						m.drop_shell()
 						k_sound(m, sound_effect)
@@ -177,7 +177,7 @@ obj
 								m.dir 				= m:trigger_dir
 								m.move_disabled		= 1
 						mag --
-						var/obj/projectile/p 		= get_projectile("bullet", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+10), kb_dist, sway)
+						var/obj/projectile/p 		= get_projectile("bullet", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+4), kb_dist, sway)
 						if(m.client) m:flick_arms("base-kobra-attack")
 						m.drop_shell()
 						k_sound(m, sound_effect)
@@ -232,7 +232,7 @@ obj
 								m.dir 				= m:trigger_dir
 								m.move_disabled		= 1
 						mag --
-						var/obj/projectile/p 		= get_projectile("laser-red", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+10), kb_dist, sway)
+						var/obj/projectile/p 		= get_projectile("laser-red", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+4), kb_dist, sway)
 						if(m.client) m:flick_arms("base-3dg3-10rd-attack")
 						k_sound(m, sound_effect)
 						p.loc = m.loc
@@ -260,7 +260,7 @@ obj
 			pink_dream
 				damage				= -20
 				max_range			= 300
-				accuracy			= 5
+				accuracy			= 25
 				recoil				= -2
 				reload_speed		= 6
 				mag					= 10
@@ -314,16 +314,17 @@ obj
 			ak66
 				damage				= -5
 				max_range			= 145
-				accuracy			= 10
+				accuracy			= 30
 				recoil				= -2
 				reload_speed		= 12
-				fire_rate			= 600
+				fire_rate			= 60
 				mag					= 15
 				mag_size			= 15
 				piercing			= 35
 				weight				= 1.5
 				crit_chance			= 15
 				velocity			= 1.2
+				can_strafe			= 1
 				drop_type			= /obj/item/gun/ak66
 
 				New()
@@ -339,12 +340,14 @@ obj
 							if(m.dir != m:trigger_dir)
 								sleep world.tick_lag*2
 								m.dir 				= m:trigger_dir
-								m.move_disabled		= 1
+							//	m.move_disabled		= 1
+						else . = m.dir
 						for(var/i = 1 to 3)
-							if(!mag) break
+							if(!mag || (m.client && !m:trigger_down)) break
 							mag --
-							m.dir = m:trigger_dir
-							var/obj/projectile/p 	= get_projectile("bullet", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+10), kb_dist, sway)
+							if(m.client) m.dir = m:trigger_dir
+							else m.dir = .
+							var/obj/projectile/p 	= get_projectile("bullet", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+4), kb_dist, sway)
 							if(m.client) m:flick_arms("base-ak66-attack")
 							m.drop_shell()
 							k_sound(m, sound_effect)
@@ -424,9 +427,130 @@ obj
 						if(m.move_disabled) m.move_disabled = 0
 					can_use = 1
 
+			uzi
+				damage				= -3
+				max_range			= 244
+				accuracy			= 10
+				recoil				= -2
+				reload_speed		= 24
+				fire_rate			= 80
+				mag					= 24
+				mag_size			= 24
+				piercing			= 22
+				weight				= 1.5
+				crit_chance			= 5
+				velocity			= 0.02
+				can_strafe			= 1
+				drop_type			= /obj/item/gun/uzi
+
+				New()
+					..()
+					sound_effect	= SOUND_GUNFIRE2
+
+				use(mob/m)
+					can_use = 0
+					if(!mag)
+						reload(m)
+					else
+						if(m.client)
+							if(m.dir != m:trigger_dir)
+								sleep world.tick_lag*2
+								m.dir 				= m:trigger_dir
+							//	m.move_disabled		= 1
+						else . = m.dir
+						while((m.client ? m:trigger_down : prob(60)))
+							if(!mag) break
+							mag --
+							if(m.client) m.dir = m:trigger_dir
+							else m.dir = .
+							var/obj/projectile/p 	= get_projectile("bullet", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+10), kb_dist, sway)
+							if(m.client) m:flick_arms("base-uzi-attack")
+							m.drop_shell()
+							k_sound(m, sound_effect)
+							p.loc = m.loc
+							switch(m.dir)
+								if(NORTH)
+									p.step_x	= m.step_x
+									p.step_y	= m.step_y+16
+								if(SOUTH)
+									p.step_x	= m.step_x+6
+									p.step_y	= m.step_y-6
+								if(EAST)
+									p.step_x	= m.step_x+16
+									p.step_y	= m.step_y+6
+								if(WEST)
+									p.step_x	= m.step_x-8
+									p.step_y	= m.step_y+6
+							p.owner	= m
+							if(prob(m.crit_rate+crit_chance))
+								p.is_crit = 1
+							active_projectiles += p
+							sleep 10/fire_rate
+						if(m.move_disabled) sleep;m.move_disabled = 0
+					can_use = 1
 
 
+			red_baron
+				damage				= -15
+				max_range			= 266
+				accuracy			= 30
+				recoil				= -2
+				reload_speed		= 25
+				fire_rate			= 60
+				mag					= 45
+				mag_size			= 45
+				piercing			= 44
+				weight				= 1.5
+				crit_chance			= 55
+				velocity			= 0.2
+				can_strafe			= 1
+				drop_type			= /obj/item/gun/red_baron
 
+				New()
+					..()
+					sound_effect	= SOUND_GUNFIRE1
+
+				use(mob/m)
+					can_use = 0
+					if(!mag)
+						reload(m)
+					else
+						if(m.client)
+							if(m.dir != m:trigger_dir)
+								sleep world.tick_lag*2
+								m.dir 				= m:trigger_dir
+							//	m.move_disabled		= 1
+						else . = m.dir
+						while((m.client ? m:trigger_down : prob(60)))
+							if(!mag) break
+							mag --
+							if(m.client) m.dir = m:trigger_dir
+							else m.dir = .
+							var/obj/projectile/p 	= get_projectile("bullet", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+2), kb_dist, sway)
+							if(m.client) m:flick_arms("base-redbaron-attack")
+							m.drop_shell()
+							k_sound(m, sound_effect)
+							p.loc = m.loc
+							switch(m.dir)
+								if(NORTH)
+									p.step_x	= m.step_x
+									p.step_y	= m.step_y+16
+								if(SOUTH)
+									p.step_x	= m.step_x+6
+									p.step_y	= m.step_y-6
+								if(EAST)
+									p.step_x	= m.step_x+16
+									p.step_y	= m.step_y+6
+								if(WEST)
+									p.step_x	= m.step_x-8
+									p.step_y	= m.step_y+6
+							p.owner	= m
+							if(prob(m.crit_rate+crit_chance))
+								p.is_crit = 1
+							active_projectiles += p
+							sleep 10/fire_rate
+						if(m.move_disabled) sleep;m.move_disabled = 0
+					can_use = 1
 
 
 
