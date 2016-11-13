@@ -34,7 +34,7 @@ mob
 						drop_blood(3,1)
 						drop_blood(10)
 					else
-						drop_blood(5)
+						drop_blood(3)
 				if(health <= 0)
 					health = 0
 					if(can_die)
@@ -45,7 +45,7 @@ mob
 							can_hit 	= 1
 						else
 							death()
-				spawn(!client?2:10) if(health) can_hit = 1
+				spawn(!client?3:10) if(health) can_hit = 1
 
 
 		death()

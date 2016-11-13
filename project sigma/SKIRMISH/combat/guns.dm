@@ -959,67 +959,6 @@ obj
 					can_use = 1
 
 
-			uzi
-				damage				= -5
-				max_range			= 244
-				accuracy			= 6
-				recoil				= -2
-				reload_speed		= 24
-				mag					= 24
-				mag_size			= 24
-				fire_rate			= 20
-				piercing			= 22
-				weight				= 4
-				crit_chance			= 30
-				can_strafe			= 1
-				sight_range			= 25
-				drop_type			= /obj/item/gun/uzi
-
-				New()
-					..()
-					sound_effect	= SOUND_GUNFIRE2
-
-				use(mob/m)
-					can_use = 0
-					if(!mag)
-						// add the reloading overlay.
-						reload(m)
-					else
-						if(m.client)
-							if(m.dir != m:trigger_dir)
-								sleep world.tick_lag*2
-								m.dir 				= m:trigger_dir
-							//	m.move_disabled		= 1
-							m:camera_pos()
-						while((m.client ? m:trigger_down : prob(60)))
-							if(!mag) break
-							mag --
-							var/obj/projectile/p 	= get_projectile(/obj/projectile/bullet, m.dir, damage, round(max_range/6), rand(accuracy, accuracy+5), kb_dist, sway)
-							if(m.client) m:flick_arms("base-uzi-attack")
-							m.drop_shell()
-							k_sound(m, sound_effect)
-							p.loc = m.loc
-							switch(m.dir)
-								if(NORTH)
-									p.step_x	= m.step_x
-									p.step_y	= m.step_y+16
-								if(SOUTH)
-									p.step_x	= m.step_x+6
-									p.step_y	= m.step_y-6
-								if(EAST)
-									p.step_x	= m.step_x+16
-									p.step_y	= m.step_y+6
-								if(WEST)
-									p.step_x	= m.step_x-8
-									p.step_y	= m.step_y+6
-							p.owner	= m
-							if(prob(m.crit_rate+crit_chance))	// add the player and the weapon's crit chances.
-								p.is_crit = 1
-							active_projectiles += p
-							sleep 10/fire_rate
-				//	if(m.move_disabled) m.move_disabled = 0
-					can_use = 1
-
 			LB01
 				damage				= -10
 				max_range			= 306

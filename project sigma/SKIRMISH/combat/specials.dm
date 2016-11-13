@@ -87,6 +87,8 @@ obj
 						d.skill2 = new d.target:equipped_special.type
 						d.overlays.Remove(d.hair)
 						d.hair.icon_state = d.target:hair.icon_state
+						if(d.hair.icon_state == "style11" || d.hair.icon_state == "style13") d.hair.pixel_x = -5
+						else d.hair.pixel_x = 0
 						d.overlays.Add(d.hair)
 						d.overlays.Remove(d.shirt)
 						d.shirt.icon_state = d.target:shirt.icon_state
@@ -131,6 +133,109 @@ obj
 					sleep recharge
 					can_use = 1
 
+
+			quadbeam
+				recharge	= 10
+			//	drop_type	= /obj/item/special/airstrike
+
+				use(mob/m)
+					can_use 				= 0
+					m.move_disabled			= 1
+					var/obj/projectile/p1 = get_projectile("laser2", NORTH, -15, 1.5, 120, 1, 4, 1)
+					p1.loc		= m.loc
+					p1.step_x	= m.step_x
+					p1.step_y	= m.step_y+7
+					p1.owner	= m
+					var/obj/projectile/p2 = get_projectile("laser2", SOUTH, -15, 1.5, 120, 1, 4, 1)
+					p2.loc		= m.loc
+					p2.step_x	= m.step_x
+					p2.step_y	= m.step_y+7
+					p2.owner	= m
+					var/obj/projectile/p3 = get_projectile("laser2", EAST, -15, 1.5, 120, 1, 4, 1)
+					p3.loc		= m.loc
+					p3.step_x	= m.step_x
+					p3.step_y	= m.step_y+7
+					p3.owner	= m
+					var/obj/projectile/p4 = get_projectile("laser2", WEST, -15, 1.5, 120, 1, 4, 1)
+					p4.loc		= m.loc
+					p4.step_x	= m.step_x
+					p4.step_y	= m.step_y+7
+					p4.owner	= m
+					active_projectiles += p1
+					active_projectiles += p2
+					active_projectiles += p3
+					active_projectiles += p4
+					sleep recharge/2
+					m.move_disabled			= 0
+					sleep recharge/2
+					can_use					= 1
+
+			xbeam
+				recharge	= 10
+			//	drop_type	= /obj/item/special/airstrike
+
+				use(mob/m)
+					can_use 				= 0
+					m.move_disabled			= 1
+					var/obj/projectile/p1 	= get_projectile("laser2", NORTHEAST, -15, 1.5, 120, 1, 4, 1)
+					p1.loc					= m.loc
+					p1.step_x				= m.step_x
+					p1.step_y				= m.step_y+7
+					p1.owner				= m
+					var/obj/projectile/p2 	= get_projectile("laser2", SOUTHWEST, -15, 1.5, 120, 1, 4, 1)
+					p2.loc					= m.loc
+					p2.step_x				= m.step_x
+					p2.step_y				= m.step_y+7
+					p2.owner				= m
+					var/obj/projectile/p3 	= get_projectile("laser2", SOUTHEAST, -15, 1.5, 120, 1, 4, 1)
+					p3.loc					= m.loc
+					p3.step_x				= m.step_x
+					p3.step_y				= m.step_y+7
+					p3.owner				= m
+					var/obj/projectile/p4 	= get_projectile("laser2", NORTHWEST, -15, 1.5, 120, 1, 4, 1)
+					p4.loc					= m.loc
+					p4.step_x				= m.step_x
+					p4.step_y				= m.step_y+7
+					p4.owner				= m
+					active_projectiles += p1
+					active_projectiles += p2
+					active_projectiles += p3
+					active_projectiles += p4
+					sleep recharge/2
+					m.move_disabled			= 0
+					sleep recharge/2
+					can_use					= 1
+
+			fireball
+				recharge	= 3
+				drop_type	= /obj/item/special/fireball
+
+				use(mob/m)
+					can_use = 0
+					if(m.client)
+						if(m.dir != m:trigger_dir)
+							sleep world.tick_lag*2
+							m.dir 				= m:trigger_dir
+					var/obj/projectile/p 		= throw_special(/obj/projectile/thrown/fireball, m.dir)
+					if(m.client) m:flick_arms("base-fireball")
+					p.loc = m.loc
+					switch(m.dir)
+						if(NORTH)
+							p.step_x	= m.step_x
+							p.step_y	= m.step_y+16
+						if(SOUTH)
+							p.step_x	= m.step_x+6
+							p.step_y	= m.step_y-6
+						if(EAST)
+							p.step_x	= m.step_x+16
+							p.step_y	= m.step_y+6
+						if(WEST)
+							p.step_x	= m.step_x//-8
+							p.step_y	= m.step_y+6
+					p.owner	= m
+					active_projectiles += p
+					sleep recharge
+					can_use = 1
 
 
 /*
@@ -190,39 +295,7 @@ obj
 
 
 
-			fireball
-				damage		= -5
-				max_range	= 64
-				accuracy	= 15
-				recoil		= -4	// how many points each consecutive shot will take away from the player's accuracy offset.
-				recharge	= 5
-				drop_type	= /obj/item/special/fireball
 
-				use(mob/m)
-					can_use = 0
-					if(m.client)
-						if(m.dir != m:trigger_dir)
-							sleep world.tick_lag*2
-							m.dir 				= m:trigger_dir
-					var/obj/projectile/p 		= get_projectile(/obj/projectile/fireball, m.dir, damage, round(max_range/6), accuracy, kb_dist, sway)
-					p.loc = m.loc
-					switch(m.dir)
-						if(NORTH)
-							p.step_x	= m.step_x
-							p.step_y	= m.step_y+16
-						if(SOUTH)
-							p.step_x	= m.step_x+6
-							p.step_y	= m.step_y-6
-						if(EAST)
-							p.step_x	= m.step_x+16
-							p.step_y	= m.step_y+6
-						if(WEST)
-							p.step_x	= m.step_x//-8
-							p.step_y	= m.step_y+6
-					p.owner	= m
-					active_projectiles += p
-					sleep recharge
-					can_use = 1
 
 			firewall
 				damage		= -25
@@ -377,45 +450,7 @@ obj
 					m.cowbell()
 					sleep recharge
 					can_use			= 1
-			quadbeam
-				damage		= -15
-				max_range	= 25
-				accuracy	= 0
-				recoil		= -4	// how many points each consecutive shot will take away from the player's accuracy offset.
-				recharge	= 10
-		//		drop_type	= /obj/item/special/quadbeam
 
-				use(mob/m)
-					can_use 				= 0
-					m.move_disabled			= 1
-					var/obj/projectile/p1 = get_projectile(/obj/projectile/laser2, NORTH, damage, max_range, rand(accuracy, accuracy-recoil), kb_dist, sway)
-					p1.loc		= m.loc
-					p1.step_x	= m.step_x
-					p1.step_y	= m.step_y+7
-					p1.owner	= m
-					var/obj/projectile/p2 = get_projectile(/obj/projectile/laser2, SOUTH, damage, max_range, rand(accuracy, accuracy-recoil), kb_dist, sway)
-					p2.loc		= m.loc
-					p2.step_x	= m.step_x
-					p2.step_y	= m.step_y+7
-					p2.owner	= m
-					var/obj/projectile/p3 = get_projectile(/obj/projectile/laser2, EAST, damage, max_range, rand(accuracy, accuracy-recoil), kb_dist, sway)
-					p3.loc		= m.loc
-					p3.step_x	= m.step_x
-					p3.step_y	= m.step_y+7
-					p3.owner	= m
-					var/obj/projectile/p4 = get_projectile(/obj/projectile/laser2, WEST, damage, max_range, rand(accuracy, accuracy-recoil), kb_dist, sway)
-					p4.loc		= m.loc
-					p4.step_x	= m.step_x
-					p4.step_y	= m.step_y+7
-					p4.owner	= m
-					active_projectiles += p1
-					active_projectiles += p2
-					active_projectiles += p3
-					active_projectiles += p4
-					sleep recharge/2
-					m.move_disabled			= 0
-					sleep recharge/2
-					can_use					= 1
 
 			xbeam
 				damage		= -15

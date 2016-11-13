@@ -142,13 +142,13 @@ game
 			world << "<b>Wave [current_round] will begin in 15 seconds."
 			sleep 150
 			intermission = 0
-		//	if(current_round == 8 && participants.len > 1)
-		//		boss_mode = 1
-		//		boss_deathmatch()
-			if(current_round == 2)
+			if(current_round == 8 && participants.len > 1)
+				boss_mode = 1
+				boss_deathmatch()
+			if(current_round == 4)
 				boss_mode = 1
 				boss_doppleganger()
-		/*	if(!boss_mode && prob(1))	// stackable wave types
+			if(!boss_mode && prob(1))	// stackable wave types
 				if(prob(25))
 					// only phantom enemies will spawn.
 					phantom_enemies 	= 1
@@ -161,7 +161,7 @@ game
 				if(!beholder_only && prob(10))
 					// only beholders will spawn.
 					beholder_only		= 1
-				if(prob(15))
+	/*			if(prob(15))
 					// explosive enemies.
 					explosive_enemies 	= 1
 				if(prob(15))
@@ -201,38 +201,23 @@ game
 					if(started == 1) break
 					var/mob/npc/hostile/h 	= garbage.Grab(/mob/npc/hostile/feeder)
 					h.icon_state 			= pick("grey","pink","white","purple","green","orange")
-					if(prob(10))
-						h = garbage.Grab(/mob/npc/hostile/brute)
-
-					if(current_round >= 3 && prob(20))
-						h = garbage.Grab(/mob/npc/hostile/hellbat)
-
-					if(prob(15))
-						h = garbage.Grab(/mob/npc/hostile/puker)
-
-					if(current_round >= 100 && prob(15))
-						h = garbage.Grab(pick(/mob/npc/hostile/abstract, /mob/npc/hostile/abstract2))
-
+					if(current_round >= 3 && prob(10))
+						h = garbage.Grab(pick(/mob/npc/hostile/brute, /mob/npc/hostile/puker))
+					if(current_round >= 5 && prob(15)) //5, 15
+						h = garbage.Grab(pick(/mob/npc/hostile/hellbat, /mob/npc/hostile/abstract, /mob/npc/hostile/abstract2, /mob/npc/hostile/beholder))
 					if(crawler_only || prob(35))
 						h = garbage.Grab(/mob/npc/hostile/crawler)
 						h.icon_state	= pick("grey","white")
-
-					if(beholder_only || !crawler_only && current_round >= 100 && prob(15))
-						h = garbage.Grab(/mob/npc/hostile/beholder)
-
 					spawn_en(h)
 
 					if(h.can_phantom && (phantom_enemies || prob(10)))
-						animate(h, alpha = 100, time = 20, loop = -1, easing = ELASTIC_EASING)
+						animate(h, alpha = 110, time = 20, loop = -1, easing = ELASTIC_EASING)
 						animate(alpha = 85, time = 20, loop = -1, easing = ELASTIC_EASING)
-
 					if(explosive_enemies || prob(10))
 						h.is_explosive = 1
-
 					if(istype(h, /mob/npc/hostile/feeder))
 						if(prob(5)) h.shield()
 					sleep world.tick_lag
-
 				if(phantom_enemies) 	phantom_enemies 	= 0
 				if(crawler_only)		crawler_only		= 0
 				if(censorship)			censorship			= 0
@@ -398,7 +383,7 @@ game
 					world << "Wave complete!"
 					break
 				sleep world.tick_lag*2
-
+			sleep 25 // this is here to give time for the last player that died to get processed.
 			if(!intermission)
 				intermission = 1
 				world << SOUND_WAVE_END
@@ -429,18 +414,18 @@ game
 			world << MUSIC_BOSS_DOPPLE_THEME
 			sleep 10
 			var/mob/npc/hostile/doppleganger/boss1 = new
-			boss1.draw_nametag("Dopple") //,, -44)
+			boss1.draw_nametag("<font color=red>_-DOPPLE-_") //,, -44)
 			boss1.draw_health(-5, 32)
 			boss1.arms.icon_state = "base-pistol"
 			boss1.overlays += boss1.arms
 			boss1.overlays += boss1.shirt
 			boss1.overlays += boss1.pants
 			boss1.overlays += boss1.hair
-			boss1.step_size		= 3
+			boss1.step_size		= 4
 			boss1.health		= boss1.base_health
 			boss1.loc			= pick(player_spawns)
 			ai_list += boss1
-		//	world << SOUND_WAVE_BEGIN
+			world << SOUND_WAVE_BEGIN
 			sleep world.tick_lag*2
 			while(started == 2)
 				if(!boss1.health || !boss1.loc)

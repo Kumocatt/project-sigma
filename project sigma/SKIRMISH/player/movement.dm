@@ -116,8 +116,12 @@ mob
 			//	of key presses in order to determine which directions are prioritized.
 			keySet(dir)
 				if(key1)
+					if(key1 == dir) return
 					if(key2)
-						if(key3)key4=dir
+						if(key2 == dir) return
+						if(key3)
+							if(key3 == dir) return
+							key4=dir
 						else key3=dir
 					else key2=dir
 				else key1=dir

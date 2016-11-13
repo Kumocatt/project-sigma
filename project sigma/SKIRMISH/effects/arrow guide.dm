@@ -28,6 +28,7 @@ mob
 		proc
 			remove_target(mob/m)
 			//	m.targeted = 0
+				if(!(m in target_arrows)) return
 				client.screen -= target_arrows[m]
 				target_arrows -= m
 				if(!target_arrows.len)

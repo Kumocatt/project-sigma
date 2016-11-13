@@ -7,7 +7,7 @@ proc
 		if(prob(44))
 			drop_this	= pick(/obj/item/shield, /obj/item/strong_shield, /obj/item/revive_pack)
 		if(prob(22))
-			drop_this 	= pick(/obj/item/special/airstrike, /obj/item/strong_shield)
+			drop_this 	= pick(/obj/item/special/airstrike, /obj/item/strong_shield, /obj/item/special/fireball)
 		return drop_this
 
 obj
@@ -145,3 +145,9 @@ obj
 				gun_type	= /obj/weapon/special/airstrike
 				effect(mob/player/p)
 					p.float_text("\[E] - Airstrikes", 1)
+			fireball
+				icon_state	= "fireball"
+				state		= "fireball"
+				gun_type	= /obj/weapon/special/fireball
+				effect(mob/player/p)
+					p.float_text("\[E] - Fireball", 1)

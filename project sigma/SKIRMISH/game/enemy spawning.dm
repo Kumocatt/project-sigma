@@ -17,6 +17,7 @@ proc
 				active_game.enemy_spawns -= _loc
 				h.loc 		= _loc.loc
 				h.health	= h.base_health
+				h.can_hit	= 1
 				ai_list += h
 				sleep 5
 				active_game.enemy_spawns += _loc
@@ -35,7 +36,7 @@ mob/npc
 						if(get_dist(espawn, p) > 15 && (espawn in active_game.enemy_spawns))
 							_loc = espawn
 				sleep
-			if(_loc) loc = _loc.loc
+			if(_loc) loc = _loc.loc;can_hit = 1
 
 //
 	//	respawn()

@@ -86,16 +86,16 @@ obj
 							accur_assist = round((step_size*total_steps)/accuracy)
 							if(dir == EAST || dir == WEST)	step_y += sway
 							else 							step_x += sway
-						trail(is_crit)
+						trail(is_crit, dir)
 						step(src, dir)
 						sleep world.tick_lag*velocity
 				timeout = 0
 
 
-			trail(crit = 0)
+			trail(crit = 0, _dir = null)
 				var/obj/o = new/obj
 				o.SetCenter(Cx(),Cy(),z)
-				o.icon = 'projectiles.dmi';o.icon_state = "[icon_state]-trail";o.plane = 2
+				o.icon = 'projectiles.dmi';o.icon_state = "[icon_state]-trail";o.plane = 2;o.dir = _dir
 				if(crit) 	animate(o, alpha=0, transform = turn(transform, 360), color = "red",time=5)
 				else		animate(o, alpha=0, transform = turn(transform, 360), time=5)
 				o.spawndel(5)
@@ -313,6 +313,61 @@ obj
 					if(a.density)
 						end_step = 1
 
+			fireball
+				icon_state			= "fireball"
+				density				= 1
+				step_size			= 3
+				bound_x				= 8
+				bound_y				= 8
+				is_explosive		= 0
+				plane				= 2
+				appearance_flags 	= NO_CLIENT_COLOR
+				blend_mode			= BLEND_ADD
+
+				hp_modifier			= -10
+				penetration			= 0
+				px_range			= 64
+				accuracy			= 15	// every [accuracy] pixels, the projectile will stray 1px off from true center.
+				kb_dist				= 0
+				velocity			= 0.5
+
+				GC()
+					end_step = 0
+					..()
+
+				take_step()
+					/*
+						called to handle the projectile's step behavior.
+					*/
+					set waitfor = 0
+					timeout = 1
+					if(step_size*total_steps >= px_range) // if the projectile has taken its maximum amount of steps..
+						GC()
+					else
+						if(loc)
+							total_steps ++
+							if(round((step_size*total_steps)/accuracy) > accur_assist) // accur_Assist is always the sum of the total pixels traveled divided by accuracy.
+								accur_assist = round((step_size*total_steps)/accuracy)
+								if(dir == EAST || dir == WEST) step_y += sway
+								else step_x += sway
+							step(src, dir)
+							sleep world.tick_lag
+					timeout = 0
+
+				Bump(atom/a)
+					if(istype(a, /obj/projectile) || a.d_ignore || owner == a)
+						loc = get_step(src, dir)
+						return
+					if(a.density)
+						end_step = 1
+					if(ismob(a))
+						loc	= null
+						var/mob/m = a
+						if(m.can_hit)
+							m.knockback(3,dir)
+							m.edit_health((is_crit ? hp_modifier : hp_modifier+hp_modifier), owner)
+							m.burn(owner)
+
 
 
 
@@ -496,82 +551,6 @@ obj
 								f.spawndel(150)
 */
 
-		glowstick_g
-			icon		= 'projectiles.dmi'
-			icon_state	= "glowstick-g"
-			density		= 1
-			step_size	= 4
-			var/end_move= 0
-			New()
-				..()
-				draw_spotlight(x_os = -38, y_os = -38, hex = "#66FF33")
-			GC()
-				end_move = 0
-				..()
-	/*		init_step()
-				set waitfor = 0
-				active_projectiles -= src
-				if(last_step < max_step && !end_move)
-					if(!loc)
-						return
-					last_step ++
-					if((last_step && accuracy) && round(last_step/accuracy) > accuracy_helper)
-						accuracy_helper = round(last_step/accuracy)
-						if(dir == EAST || dir == WEST)	step_y += sway
-						else 							step_x += sway
-					if(!end_move)
-						step(src, dir)
-					sleep world.tick_lag*1.5
-					active_projectiles += src
-				else
-					density	= 0
-					spawndel(300)
-			Bump(atom/a)
-				if(istype(a, /obj/projectile))
-					loc = get_step(src, dir)
-					return
-				if(a.d_ignore)
-					loc = get_step(src, dir)
-					return
-				end_move = 1*/
-		glowstick_r
-			icon		= 'projectiles.dmi'
-			icon_state	= "glowstick-r"
-			density		= 1
-			step_size	= 4
-			var/end_move= 0
-			New()
-				..()
-				draw_spotlight(x_os = -38, y_os = -38, hex = "#FF3333")
-			GC()
-				end_move = 0
-				..()
-	/*		init_step()
-				set waitfor = 0
-				active_projectiles -= src
-				if(last_step < max_step && !end_move)
-					if(!loc)
-						return
-					last_step ++
-					if((last_step && accuracy) && round(last_step/accuracy) > accuracy_helper)
-						accuracy_helper = round(last_step/accuracy)
-						if(dir == EAST || dir == WEST)	step_y += sway
-						else 							step_x += sway
-					if(!end_move)
-						step(src, dir)
-					sleep world.tick_lag*1.5
-					active_projectiles += src
-				else
-					density	= 0
-					spawndel(300)
-			Bump(atom/a)
-				if(istype(a, /obj/projectile))
-					loc = get_step(src, dir)
-					return
-				if(a.d_ignore)
-					loc = get_step(src, dir)
-					return
-				end_move = 1*/
 		glowstick_b
 			icon		= 'projectiles.dmi'
 			icon_state	= "glowstick-b"
@@ -584,7 +563,7 @@ obj
 			GC()
 				end_move = 0
 				..()
-	/*		init_step()
+			init_step()
 				set waitfor = 0
 				active_projectiles -= src
 				if(last_step < max_step && !end_move)
@@ -609,87 +588,4 @@ obj
 				if(a.d_ignore)
 					loc = get_step(src, dir)
 					return
-				end_move = 1
-*/
-		airsupport
-			icon		= 'projectiles.dmi'
-			icon_state	= "airsupport"
-			density		= 1
-			step_size	= 4
-			var/end_move= 0
-			New()
-				..()
-				draw_spotlight(x_os = -38, y_os = -38, hex = "#FFCC00")
-			GC()
-				end_move = 0
-				..()
-	/*		init_step()
-				set waitfor = 0
-				active_projectiles -= src
-				if(last_step < max_step && !end_move)
-					if(!loc)
-						return
-					last_step ++
-					if((last_step && accuracy) && round(last_step/accuracy) > accuracy_helper)
-						accuracy_helper = round(last_step/accuracy)
-						if(dir == EAST || dir == WEST)	step_y += sway
-						else 							step_x += sway
-					if(!end_move)
-						step(src, dir)
-					sleep world.tick_lag*1.5
-					active_projectiles += src
-				else
-					sleep 50
-					airstrike(loc, owner)
-					spawndel(5)
-			Bump(atom/a)
-				if(istype(a, /obj/projectile))
-					loc = get_step(src, dir)
-					return
-				if(a.d_ignore)
-					loc = get_step(src, dir)
-					return
-				end_move = 1
-*/
-		airstrike
-			icon		= 'projectiles.dmi'
-			icon_state	= "rocket1"
-			density		= 0
-			step_size	= 6
-			bound_x		= 7
-			bound_y		= 4
-			bound_width	= 3
-			bound_height= 3
-			is_explosive= 0
-			px_range	= 20// needs to be four tiles over detonation point.
-			plane		= 2
-			var/end_move= 0
-			GC()
-				icon_state		= "rocket1"
-				end_move 		= 0
-				is_explosive	= 0
-				..()
-/*			init_step()
-				set waitfor = 0
-				active_projectiles -= src
-				if(last_step < max_step)
-					if(!loc)
-						return
-					if(last_step == 8)
-						animate(src, alpha = 255, transform = matrix(), time = 10, loop = 1)
-					last_step ++
-					if((last_step && accuracy) && round(last_step/accuracy) > accuracy_helper)
-						accuracy_helper = round(last_step/accuracy)
-						step_x += sway
-					if(!end_move)
-						step(src, SOUTH)
-						rocketcloud()
-					sleep world.tick_lag*1.5
-					active_projectiles += src
-				else
-					is_explosive = 1
-					Explode(32, -100, owner)
-			//		GC()
-			*/
-
-			*/
+				end_move = 1   */

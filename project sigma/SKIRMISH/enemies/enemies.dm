@@ -9,7 +9,12 @@ proc
 		set waitfor = 0
 		for()
 			if(ai_list.len) for(var/mob/npc/m in ai_list)
-				m.ai_check()
+				if(active_game.intermission)
+					world << "enemies leftover during intermission ; culling."
+					m.health = 0
+					m.GC()
+					ai_list -= m
+				else m.ai_check()
 			sleep world.tick_lag
 
 
@@ -55,6 +60,12 @@ mob/npc
 			step_to(src, target)
 			ig_bump = 0
 	hostile
+		Click()
+			..()
+			world << "[src] quickinfo:"
+			world << "hp: [health] / [base_health]"
+			world << "can_hit: [can_hit]"
+			world << "target: [target]"
 		var/tmp
 			mob/player/last_attacker
 			turf/last_loc
@@ -329,7 +340,7 @@ mob/npc
 			base_health		= 20
 			fireproof		= 1
 			can_censor		= 0
-			var/obj/weapon/special/skill1 //= new /obj/weapon/special/fireball
+			var/obj/weapon/special/skill1 = new /obj/weapon/special/fireball
 
 			ai_check()
 				set waitfor = 0
@@ -346,13 +357,18 @@ mob/npc
 									if(get_dist(src, p) < get_dist(src, target))
 										target = p
 							if(bounds_dist(src, target) <= 2)
+								flick("beholder-attack", src)
+								sleep 3
 								target.knockback(6, step_dir)
-								target.edit_health(-2)
+								target.edit_health(-20)
+								target.burn(src)
 								sleep 10
-							else if(get_dist(src, target) < 7 && skill1.can_use && shot_lineup())
+							else if(get_dist(src, target) < 4 && skill1.can_use && shot_lineup())
 								dir = get_dir(src, target)
+								flick("beholder-attack", src)
+								sleep 3
 								skill1.use(src)
-								sleep 10
+								sleep 3
 							else if(!kb_init)
 								step(src, step_dir)
 								if(last_loc == loc)
@@ -372,7 +388,7 @@ mob/npc
 							if(!target) target = p
 							else if(get_dist(src, p) < get_dist(src, target))
 								target = p
-					sleep world.tick_lag*(active_game.speed_flux ? 2+speed_fluxer : 2)
+					sleep world.tick_lag
 					resting = 0
 
 
@@ -384,12 +400,9 @@ mob/npc
 			base_health		= 5
 			fireproof		= 1
 			can_censor		= 0
-			has_spotlight	= 0
-			var/obj/weapon/special/skill1 //= new /obj/weapon/special/quadbeam
+			has_spotlight	= 1
+			var/obj/weapon/special/skill1 = new /obj/weapon/special/quadbeam
 
-			New()
-				..()
-				draw_spotlight(x_os = -38, y_os = -38, hex = "#FF3333")
 			ai_check()
 				set waitfor = 0
 				if(health && !resting && !kb_init)
@@ -411,9 +424,9 @@ mob/npc
 							else if(get_dist(src, target) < 7 && skill1.can_use && shot_lineup())
 								dir = get_dir(src, target)
 								flick("abstract1-attack", src)
-								sleep 8
+								sleep 3
 								skill1.use(src)
-								sleep 10
+								sleep 5
 							else if(!kb_init)
 								step(src, step_dir)
 								if(last_loc == loc)
@@ -447,12 +460,8 @@ mob/npc
 			base_health		= 5
 			fireproof		= 1
 			can_censor		= 0
-			has_spotlight	= 0
-			var/obj/weapon/special/skill1 //= //new /obj/weapon/special/xbeam
-
-			New()
-				..()
-				draw_spotlight(x_os = -38, y_os = -38, hex = "#FF3333")
+			has_spotlight	= 1
+			var/obj/weapon/special/skill1 = new /obj/weapon/special/xbeam
 
 			ai_check()
 				set waitfor = 0
@@ -477,7 +486,7 @@ mob/npc
 								flick("abstract2-attack", src)
 								sleep 8
 								skill1.use(src)
-								sleep 10
+								sleep 5
 							else if(!kb_init)
 								step(src, step_dir)
 								if(last_loc == loc)
@@ -504,12 +513,14 @@ mob/npc
 				..()
 
 
+
+
 		doppleganger
 			icon			= 'enemies/doppleganger.dmi'
 			icon_state		= "dopple1-"
 			density			= 1
 			step_size		= 4
-			base_health		= 250
+			base_health		= 450
 			can_censor		= 0
 			appearance_flags= KEEP_TOGETHER
 			is_garbage		= 0
@@ -561,12 +572,19 @@ mob/npc
 							else if(get_dist(src, target) < 6 && skill1.can_use && shot_lineup())
 								dir = get_dir(src, target)
 								spawn skill1.use(src)
-			//					sleep 5
+								sleep 2
 							else if(get_dist(src, target) < 4 && skill2.can_use && shot_lineup() && prob(45))
 								dir = get_dir(src, target)
 								spawn skill2.use(src)
 							else if(!kb_init)
 								step(src, step_dir)
+							if(health <= (base_health/2) && prob(5))
+								smoke()
+								smoke()
+								smoke()
+								animate(src, alpha = 0, time = 3, loop = 1)
+								loc = pick(active_game.enemy_spawns)
+								animate(src, alpha = 255, time = 3, loop = 1)
 
 					if(!target)
 						if(prob(45)) step(src, pick(dir, turn(dir, pick(-45, 45))))

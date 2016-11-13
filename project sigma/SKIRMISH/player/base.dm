@@ -20,20 +20,24 @@ mob/player
 			draw_planes()
 			draw_nametag("[name]") //,, -44)
 			refresh_hud()
-			equipped_weapon = new /obj/weapon/gun/pistol
-			equipped_special= new /obj/weapon/special/grenade
-			arms.icon_state	= "base-pistol"
+			equipped_weapon 	= new /obj/weapon/gun/pistol
+			equipped_special	= new /obj/weapon/special/grenade
+			arms.icon_state		= "base-pistol"
+			pants.icon_state	= "pants[pick(1,2)]"
 			shirt.icon_state	= "shirt[rand(1,8)]"
-			hair.icon_state		= "style[rand(1,11)]"
-			if(hair.icon_state == "style11") hair.pixel_x = -5
-	/*		if(key == "Amelia Pond")
+			hair.icon_state		= "style[rand(1,13)]"
+			if(hair.icon_state == "style11" || hair.icon_state == "style13") hair.pixel_x = -5
+			if(key == "Amelia Pond")
 				shirt.icon_state 	= "amelia-shirt"
 				pants.icon_state 	= "amelia-pants"
 				hair.icon_state		= "amelia1"
+			if(key == "Ghost of ET")
+				hair.icon_state		= "style8"
 			if(key == "Kumorii")
-				shirt.icon_state 	= "kumo-shirt"
-				pants.icon_state 	= "kumo-pants"
-				hair.icon_state		= "kumo1"  */
+				hair.icon_state		= "style13"
+				hair.pixel_x		= -5
+				shirt.icon_state	= "kumo-shirt"
+				pants.icon_state	= "pants1"
 			overlays += arms
 			overlays += shirt
 			overlays += pants
