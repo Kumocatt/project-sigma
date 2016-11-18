@@ -22,9 +22,12 @@ mob
 
 
 
-			delete_ID()
 
-				var/IDs	= world.GetScores(50, "ID")
+/*
+
+		verb
+			delete_scoreboard()
+				var/IDs	= world.GetScores(50, "Wave")
 				if(IDs)
 					world << "debug: got IDs"
 					var/list/params = params2list(IDs)
@@ -32,10 +35,7 @@ mob
 					for(var/i=1, i<params.len, ++i)
 						var/ID = params[i]
 						world<<"[i]. [ID]"
-						if(text2num(ID) == text2num(client.computer_id))
-							world << "debug: matched!"
-							var/scores 			= world.GetScores(i, "Name")
-							var/list/params2 	= params2list(scores)
-							world << "clearing [params2[1]].."
-							world.SetScores(params2[params2.len])
-							break
+						world.SetScores(ID, "")
+				world << "Done"
+
+				*/

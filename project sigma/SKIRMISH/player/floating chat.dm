@@ -22,11 +22,11 @@ mob
 			*/
 			if(txt)
 				if(float_box.maptext)
-					if(float_box.maptext == "<center><b>[html_encode(txt)]") return
+					if(float_box.maptext == "<center>[html_encode(txt)]") return
 					overlays -= float_box
-				float_box.maptext	= "<center><b>[html_encode(txt)]"
+				float_box.maptext	= "<center>[html_encode(txt)]"
 				overlays += float_box
 				sleep 10*floattime
-				if(float_box.maptext == "<center><b>[html_encode(txt)]")
+				if(float_box.maptext == "<center>[html_encode(txt)]")
 					overlays -= float_box
 					float_box.maptext = null

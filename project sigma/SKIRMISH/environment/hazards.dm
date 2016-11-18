@@ -90,7 +90,7 @@ obj/hazard
 		bound_height		= 8
 		New()
 			..()
-			if(prob(10))
+			if(prob(5))
 				if(prob(50))
 					icon_state = "hellfire"
 					draw_spotlight(x_os = -30, y_os = -38, hex = "#FF3333")
@@ -110,6 +110,8 @@ obj/hazard
 					if(icon_state == "hellfire")
 						a:burn(,1)
 					else a:burn()
+			else if(istype(a, /obj/projectile) && a.icon_state == "bullet")
+				a.icon_state = "firebullet"
 			else if(istype(a, /obj/barricade))
 				GC()
 

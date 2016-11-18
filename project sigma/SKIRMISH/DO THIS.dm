@@ -1,29 +1,15 @@
 
 
-
-
-- make laser/nyan madness waves not effect specials -- should be done through a simple type check
-- Fix hellbat hitboxes!
-- damage sound effect
-- hit markers
-- finish portal guns
-- get projectiles to cross dense objects with d_ignore properly.
-- make melee weapons not suck
-- get the world lighting to reflect the wave progress.
-- look into adding random events that can occur mid-game such as support NPCs working their way across the map or random airstrikes hitting large hordes
-- airstrikes need a warning before they fall.
-- look into using planes to make fog/fog hazards(with items to clear fog)
-- piercing damage
-- BRING BACK THE AUTO TURRETS.
-- flashbangs -- blind nearby players and makes all nearby enemies unable to target for 10 seconds(give thema little "dazed" overlay on their head)
+do this patch:
+- hp drops should spawn less.
+- revives too.
+- fix issue where enemies can die more than once!
+- balance out fire spread a bit,
+- investigate molotovs and why they like to get stuck icon states
+- Cart was immortal briefly. somehow got out of the participants list.
 
 
 
-::: Ters Ideas :::
-
-- HUD clip indicator
-- Reload audio indicator would be great too. a simple clicking noise when out of ammo, and a reload sound when reloading is complete.
-- Another nicety would be the "Press E to pick up" would just be a little graphic that pops up next to your character that shows the "E" key followed by the name of the item.
 - Callouts: And it'd fit the small/cutesy restrictions.
 ------ And would allow you to keep the control scheme controller-compatible.
 ------- Tab->direction = point in direction.

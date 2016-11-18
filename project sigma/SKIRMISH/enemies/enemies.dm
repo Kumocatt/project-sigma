@@ -540,7 +540,7 @@ mob/npc
 				overlays += /image/spotlight
 			death()
 				ai_list -= src
-				for(var/mob/player/c in active_game.participants)
+				if(ai_list.len == 0) for(var/mob/player/c in active_game.participants)
 					c.client.eye = src
 					spawn(30)
 						c.client.eye = c
@@ -548,6 +548,8 @@ mob/npc
 					step(src, dir)
 					if(prob(25)) {spontaneous_explosion(loc, 0); dir = turn(dir,pick(-45,45))}
 					sleep world.tick_lag*1.5
+				spawn(25)
+					del src
 
 			ai_check()
 				set waitfor = 0
@@ -578,7 +580,7 @@ mob/npc
 								spawn skill2.use(src)
 							else if(!kb_init)
 								step(src, step_dir)
-							if(health <= (base_health/2) && prob(5))
+							if(health <= (base_health/2) && prob(1))
 								smoke()
 								smoke()
 								smoke()

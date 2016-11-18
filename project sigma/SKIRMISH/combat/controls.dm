@@ -27,7 +27,7 @@ mob/player
 
 		toggle_secondary_down()
 			set hidden = 1
-			src.specNew()
+			usr:specNew()
 			if(equipped_special && !secondary_toggle)
 				secondary_toggle = 1
 		toggle_secondary_up()

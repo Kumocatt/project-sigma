@@ -3,7 +3,7 @@ proc
 	get_drop()
 		var/obj/drop_this = /obj/item/health_pack	// defaults to health packs because they're the most practical.
 		if(prob(55))
-			drop_this	= pick(/obj/item/gun/uzi, /obj/item/gun/kobra, /obj/item/gun/red_baron, /obj/item/special/molotov)
+			drop_this	= pick(/obj/item/gun/uzi, /obj/item/gun/kobra, /obj/item/gun/red_baron, /obj/item/special/molotov, /obj/item/gun/shotgun)
 		if(prob(44))
 			drop_this	= pick(/obj/item/shield, /obj/item/strong_shield, /obj/item/revive_pack)
 		if(prob(22))
@@ -93,7 +93,7 @@ obj
 				icon_state	= "ak66"
 				state		= "ak66"
 				gun_type	= /obj/weapon/gun/ak66
-				step		= 3
+				step		= 4
 				effect(mob/player/p)
 					p.float_text("\[E] - AK66", 1)
 			krossbow
@@ -114,9 +114,24 @@ obj
 				icon_state	= "redbaron"
 				state		= "redbaron"
 				gun_type	= /obj/weapon/gun/red_baron
-				step		= 3
+				step		= 4
 				effect(mob/player/p)
 					p.float_text("\[E] - Red Baron", 1)
+			shotgun
+				icon_state	= "shotgun"
+				state		= "shotgun"
+				gun_type	= /obj/weapon/gun/shotgun
+				step		= 4
+				effect(mob/player/p)
+					p.float_text("\[E] - Shotgun", 1)
+			flamethrower
+				icon_state	= "flamethrower"
+				state		= "flamethrower"
+				gun_type	= /obj/weapon/gun/flamethrower
+				step		= 4
+				effect(mob/player/p)
+					p.float_text("\[E] - Flamethrower", 1)
+
 		melee
 			var/tmp
 				state		= null // the icon_state tag for the weapon.

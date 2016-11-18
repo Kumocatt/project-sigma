@@ -7,7 +7,8 @@ mob/player
 			/* called to make all players that are spectating src spectate someone else -- if nobody is available returns their eye to their mob.
 			*/
 			for(var/mob/player/p in (active_game.participants+active_game.spectators))
-				if(p && p.client.eye == src && p != src)	// if a client is watching src..
+				if(p == src) continue
+				if(p.client.eye == src)	// if a client is watching src..
 					p.spectate_rand()
 		spectate_rand()
 			/* called to make src spectate a random player -- if nobody is available returns their eye to their mob.

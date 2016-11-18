@@ -64,8 +64,9 @@ obj
 				if(m.can_hit)
 					m.knockback(6, dir)
 					m.edit_health((is_crit ? hp_modifier : hp_modifier+hp_modifier), owner)
+					if((icon_state == "firebullet" || (icon_state == "fireball" && prob(5))) && m.health) m.burn()
 			if(istype(a, /atom/movable) && a:is_explosive && !ismob(a))
-				a:Explode(32, -100, owner)
+				a:Explode(42, -100, owner)
 			GC()
 
 
@@ -132,7 +133,7 @@ obj
 				timeout = 1
 				if(step_size*total_steps >= px_range) // if the projectile has taken its maximum amount of steps..
 					is_explosive = 1
-					Explode(32, -100, owner)
+					Explode(42, -100, owner)
 				else
 					if(loc)
 						if(total_steps == 1)
@@ -190,7 +191,7 @@ obj
 					timeout = 1
 					if(step_size*total_steps >= px_range) // if the projectile has taken its maximum amount of steps..
 						sleep 15
-						Explode(32, -50, owner)
+						Explode(42, -50, owner)
 					else
 						if(loc)
 							total_steps ++
@@ -290,7 +291,7 @@ obj
 					set waitfor = 0
 					timeout = 1
 					if(step_size*total_steps >= px_range) // if the projectile has taken its maximum amount of steps..
-						sleep 50
+						sleep 15
 						airstrike(loc, owner)
 						spawndel(5)
 					else
@@ -313,60 +314,6 @@ obj
 					if(a.density)
 						end_step = 1
 
-			fireball
-				icon_state			= "fireball"
-				density				= 1
-				step_size			= 3
-				bound_x				= 8
-				bound_y				= 8
-				is_explosive		= 0
-				plane				= 2
-				appearance_flags 	= NO_CLIENT_COLOR
-				blend_mode			= BLEND_ADD
-
-				hp_modifier			= -10
-				penetration			= 0
-				px_range			= 64
-				accuracy			= 15	// every [accuracy] pixels, the projectile will stray 1px off from true center.
-				kb_dist				= 0
-				velocity			= 0.5
-
-				GC()
-					end_step = 0
-					..()
-
-				take_step()
-					/*
-						called to handle the projectile's step behavior.
-					*/
-					set waitfor = 0
-					timeout = 1
-					if(step_size*total_steps >= px_range) // if the projectile has taken its maximum amount of steps..
-						GC()
-					else
-						if(loc)
-							total_steps ++
-							if(round((step_size*total_steps)/accuracy) > accur_assist) // accur_Assist is always the sum of the total pixels traveled divided by accuracy.
-								accur_assist = round((step_size*total_steps)/accuracy)
-								if(dir == EAST || dir == WEST) step_y += sway
-								else step_x += sway
-							step(src, dir)
-							sleep world.tick_lag
-					timeout = 0
-
-				Bump(atom/a)
-					if(istype(a, /obj/projectile) || a.d_ignore || owner == a)
-						loc = get_step(src, dir)
-						return
-					if(a.density)
-						end_step = 1
-					if(ismob(a))
-						loc	= null
-						var/mob/m = a
-						if(m.can_hit)
-							m.knockback(3,dir)
-							m.edit_health((is_crit ? hp_modifier : hp_modifier+hp_modifier), owner)
-							m.burn(owner)
 
 
 

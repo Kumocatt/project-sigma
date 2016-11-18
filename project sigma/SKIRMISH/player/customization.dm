@@ -17,7 +17,6 @@ mob/player
 			nametag.change_text("[src]")
 			overlays += nametag
 			active_game.update_grid()
-			delete_ID()
 
 		new_color(hex as color)
 			set hidden = 1

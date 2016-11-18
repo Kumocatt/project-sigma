@@ -17,7 +17,7 @@ mob
 			..()
 			winset(src,null,"hwmode=true;")
 			if(winget(src,null,"hwmode")=="false") del src
-			src << MUSIC_INTRO
+			src << MUSIC_KNIVES
 			loc = locate(1,1,1)
 			MovementLoop()
 			draw_base()
@@ -46,7 +46,7 @@ mob
 
 
 		Logout()
-		//	remove_spectators()
+			remove_spectators()
 			..()
 			world << "<b>-- <font color = [namecolor]>[src]</font> disconnected."
 			active_game.participants << output("<b>-- <font color = [namecolor]>[src]</font> disconnected.","lobbychat")

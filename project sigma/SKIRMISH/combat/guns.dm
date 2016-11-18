@@ -428,12 +428,12 @@ obj
 					can_use = 1
 
 			uzi
-				damage				= -3
+				damage				= -10
 				max_range			= 244
 				accuracy			= 10
 				recoil				= -2
 				reload_speed		= 24
-				fire_rate			= 80
+				fire_rate			= 90
 				mag					= 24
 				mag_size			= 24
 				piercing			= 22
@@ -552,189 +552,134 @@ obj
 						if(m.move_disabled) sleep;m.move_disabled = 0
 					can_use = 1
 
+			shotgun
+				damage				= -45
+				max_range			= 82
+				accuracy			= 1
+				recoil				= -5
+				reload_speed		= 8
+				mag					= 2
+				mag_size			= 2
+				piercing			= 0
+				weight				= 1
+				crit_chance			= 10
+				velocity			= 0.5
+				drop_type			= /obj/item/gun/shotgun
+
+				New()
+					..()
+					sound_effect	= SOUND_GUNFIRE1
+
+				use(mob/m)
+					can_use = 0
+					if(!mag)
+						reload(m)
+					else
+						if(m.client)
+							if(m.dir != m:trigger_dir)
+								sleep world.tick_lag*2
+								m.dir 				= m:trigger_dir
+								m.move_disabled		= 1
+						mag --
+						if(m.client) m:flick_arms("base-shotgun-attack")
+						m.drop_shell(1)
+						k_sound(m, sound_effect)
+						for(var/i = 1 to 6)
+							var/obj/projectile/p 	= get_projectile("bullet", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+25), kb_dist, sway)
+							p.loc 					= m.loc
+							switch(m.dir)
+								if(NORTH)
+									p.step_x	= m.step_x
+									p.step_y	= m.step_y+16
+								if(SOUTH)
+									p.step_x	= m.step_x+6
+									p.step_y	= m.step_y-6
+								if(EAST)
+									p.step_x	= m.step_x+16
+									p.step_y	= m.step_y+6
+								if(WEST)
+									p.step_x	= m.step_x-8
+									p.step_y	= m.step_y+6
+							p.owner	= m
+							if(prob(m.crit_rate+crit_chance))	// add the player and the weapon's crit chances.
+								p.is_crit = 1
+							active_projectiles += p
+							sleep world.tick_lag
+						if(m.move_disabled) m.move_disabled = 0
+					can_use = 1
+
+			flamethrower
+				damage				= -8
+				max_range			= 128
+				accuracy			= 4
+				recoil				= -1
+				reload_speed		= 15
+				fire_rate			= 60
+				mag					= 66
+				mag_size			= 66
+				piercing			= 0
+				weight				= 1.5
+				crit_chance			= 44
+				velocity			= 0.2
+				can_strafe			= 1
+				drop_type			= /obj/item/gun/flamethrower
+
+				New()
+					..()
+					sound_effect	= SOUND_GUNFIRE1
+
+				use(mob/m)
+					can_use = 0
+					if(!mag)
+						reload(m)
+					else
+						if(m.client)
+							if(m.dir != m:trigger_dir)
+								sleep world.tick_lag*2
+								m.dir 				= m:trigger_dir
+							//	m.move_disabled		= 1
+						else . = m.dir
+						var/acc = 0
+						while((m.client ? m:trigger_down : prob(60)))
+							if(!mag) break
+							mag --
+							if(m.client) m.dir = m:trigger_dir
+							else m.dir = .
+							var/obj/projectile/p 	= get_projectile("fireball", m.dir, damage, velocity, max_range, accuracy, 0, (acc>3 ? -1 : 1))
+							if(m.client) m:flick_arms("base-flamethrower-attack")
+							p.loc = m.loc
+							switch(m.dir)
+								if(NORTH)
+									p.step_x	= m.step_x
+									p.step_y	= m.step_y+16
+								if(SOUTH)
+									p.step_x	= m.step_x+6
+									p.step_y	= m.step_y-6
+								if(EAST)
+									p.step_x	= m.step_x+16
+									p.step_y	= m.step_y+6
+								if(WEST)
+									p.step_x	= m.step_x-8
+									p.step_y	= m.step_y+6
+							p.owner	= m
+							if(prob(m.crit_rate+crit_chance))
+								p.is_crit = 1
+							active_projectiles += p
+							if(acc >= 6) acc --
+							if(acc <= 1) acc ++
+							sleep 10/fire_rate
+						if(m.move_disabled) sleep;m.move_disabled = 0
+					can_use = 1
+
+
+
+
+
 
 
 
 /*
-			burst_rifle
-				damage				= -5
-				max_range			= 128
-				accuracy			= 5
-				recoil				= -2
-				reload_speed		= 10
-				mag					= 9
-				mag_size			= 9
-				fire_rate			= 20
-				piercing			= 10
-				weight				= 5
-				crit_chance			= 40
-				sight_range			= 15
-				drop_type			= /obj/item/gun/burst_rifle
 
-				New()
-					..()
-					sound_effect	= SOUND_GUNFIRE1
-
-				use(mob/m)
-					can_use = 0
-					if(!mag)
-						// add the reloading overlay.
-						reload(m)
-					else
-						if(m.client)
-							if(m.dir != m:trigger_dir)
-								sleep world.tick_lag*2
-								m.dir 				= m:trigger_dir
-								m.move_disabled		= 1
-	//						m:camera_pos()
-						for(var/i = 1 to 3)
-							if(!mag) reload(m);break
-							mag --
-							var/obj/projectile/p 	= get_projectile(/obj/projectile/bullet, m.dir, damage, round(max_range/6), accuracy, kb_dist, sway)
-							if(m.client) m:flick_arms("base-burstrifle-attack")
-							m.drop_shell()
-							k_sound(m, sound_effect)
-							p.loc = m.loc
-							switch(m.dir)
-								if(NORTH)
-									p.step_x	= m.step_x
-									p.step_y	= m.step_y+16
-								if(SOUTH)
-									p.step_x	= m.step_x+6
-									p.step_y	= m.step_y-6
-								if(EAST)
-									p.step_x	= m.step_x+16
-									p.step_y	= m.step_y+6
-								if(WEST)
-									p.step_x	= m.step_x-8
-									p.step_y	= m.step_y+6
-							p.owner	= m
-							if(prob(m.crit_rate+crit_chance))	// add the player and the weapon's crit chances.
-								p.is_crit = 1
-							active_projectiles += p
-							sleep 10/fire_rate
-					if(m.move_disabled) m.move_disabled = 0
-					can_use = 1
-
-
-			auto_rifle
-				damage				= -1
-				max_range			= 256
-				accuracy			= 3
-				recoil				= -2
-				reload_speed		= 20
-				mag					= 32
-				mag_size			= 32
-				fire_rate			= 15
-				piercing			= 5
-				weight				= 7
-				crit_chance			= 25
-				can_strafe			= 1
-				sight_range			= 25
-				drop_type			= /obj/item/gun/auto_rifle
-
-				New()
-					..()
-					sound_effect	= SOUND_GUNFIRE1
-
-				use(mob/m)
-					can_use = 0
-					if(!mag)
-						// add the reloading overlay.
-						reload(m)
-					else
-						if(m.client)
-							if(m.dir != m:trigger_dir)
-								sleep world.tick_lag*2
-								m.dir 				= m:trigger_dir
-							m:camera_pos()
-						//		m.move_disabled		= 1
-						while((m.client ? m:trigger_down : prob(60)))
-							if(!mag) break
-							mag --
-							var/obj/projectile/p 	= get_projectile(/obj/projectile/bullet, m.dir, damage, round(max_range/6), accuracy, kb_dist, sway)
-							if(m.client) m:flick_arms("base-rifle-attack")
-							m.drop_shell()
-							k_sound(m, sound_effect)
-							p.loc = m.loc
-							switch(m.dir)
-								if(NORTH)
-									p.step_x	= m.step_x
-									p.step_y	= m.step_y+16
-								if(SOUTH)
-									p.step_x	= m.step_x+6
-									p.step_y	= m.step_y-6
-								if(EAST)
-									p.step_x	= m.step_x+16
-									p.step_y	= m.step_y+6
-								if(WEST)
-									p.step_x	= m.step_x-8
-									p.step_y	= m.step_y+6
-							p.owner	= m
-							if(prob(m.crit_rate+crit_chance))	// add the player and the weapon's crit chances.
-								p.is_crit = 1
-							active_projectiles += p
-							sleep 10/fire_rate
-				//	if(m.move_disabled) m.move_disabled = 0
-					can_use = 1
-
-
-			crossbow
-				damage				= -15
-				max_range			= 128
-				accuracy			= 9
-				recoil				= -1
-				reload_speed		= 40
-				mag					= 1
-				mag_size			= 1
-				piercing			= 55
-				weight				= 2
-				crit_chance			= 45
-				sight_range			= 15
-				drop_type			= /obj/item/gun/crossbow
-
-				New()
-					..()
-					sound_effect	= SOUND_CROSSBOW1
-
-				use(mob/m)
-					can_use = 0
-					if(!mag)
-						// add the reloading overlay.
-						reload(m)
-					else
-						if(m.client)
-							if(m.dir != m:trigger_dir)
-								sleep world.tick_lag*2
-								m.dir 				= m:trigger_dir
-								m.move_disabled		= 1
-							m:camera_pos()
-						mag --
-						var/obj/projectile/p 		= get_projectile(/obj/projectile/bolt, m.dir, damage, round(max_range/6), accuracy, kb_dist, sway)
-						if(m.client) m:flick_arms("base-crossbow-attack")
-				//		m.drop_shell()
-						k_sound(m, sound_effect)
-						p.loc = m.loc
-						switch(m.dir)
-							if(NORTH)
-								p.step_x	= m.step_x
-								p.step_y	= m.step_y+16
-							if(SOUTH)
-								p.step_x	= m.step_x+6
-								p.step_y	= m.step_y-6
-							if(EAST)
-								p.step_x	= m.step_x+16
-								p.step_y	= m.step_y+6
-							if(WEST)
-								p.step_x	= m.step_x-8
-								p.step_y	= m.step_y+6
-						p.owner	= m
-						if(prob(m.crit_rate+crit_chance))	// add the player and the weapon's crit chances.
-							p.is_crit = 1
-						active_projectiles += p
-						sleep
-						if(m.move_disabled) m.move_disabled = 0
-					can_use = 1
 
 			force_palm
 				damage				= -25
@@ -899,64 +844,7 @@ obj
 					can_use = 1
 
 
-			shotgun
-				damage				= -10
-				max_range			= 82
-				accuracy			= 1
-				recoil				= -5
-				reload_speed		= 10
-				mag					= 2
-				mag_size			= 2
-				fire_rate			= 0
-				piercing			= 44
-				weight				= 4
-				crit_chance			= 5
-				sight_range			= 5
-				drop_type			= /obj/item/gun/shotgun
 
-				New()
-					..()
-					sound_effect	= SOUND_GUNFIRE1
-
-				use(mob/m)
-					can_use = 0
-					if(!mag)
-						// add the reloading overlay.
-						reload(m)
-					else
-						if(m.client)
-							if(m.dir != m:trigger_dir)
-								sleep world.tick_lag*2
-								m.dir 				= m:trigger_dir
-								m.move_disabled		= 1
-							m:camera_pos()
-						mag --
-						if(m.client) m:flick_arms("base-shotgun-attack")
-						m.drop_shell(1)
-						k_sound(m, sound_effect)
-						for(var/i = 1 to 6)
-							var/obj/projectile/p 	= get_projectile(/obj/projectile/bullet, m.dir, damage, round(max_range/6), rand(accuracy, accuracy+5), kb_dist, sway)
-							p.loc = m.loc
-							switch(m.dir)
-								if(NORTH)
-									p.step_x	= m.step_x
-									p.step_y	= m.step_y+16
-								if(SOUTH)
-									p.step_x	= m.step_x+6
-									p.step_y	= m.step_y-6
-								if(EAST)
-									p.step_x	= m.step_x+16
-									p.step_y	= m.step_y+6
-								if(WEST)
-									p.step_x	= m.step_x-8
-									p.step_y	= m.step_y+6
-							p.owner	= m
-							if(prob(m.crit_rate+crit_chance))	// add the player and the weapon's crit chances.
-								p.is_crit = 1
-							active_projectiles += p
-							sleep world.tick_lag //10/fire_rate
-					if(m.move_disabled) m.move_disabled = 0
-					can_use = 1
 
 
 			LB01
@@ -1154,68 +1042,6 @@ obj
 							active_projectiles += p
 							if(acc >= 6) acc --
 							if(acc <= 1) acc ++
-							sleep 10/fire_rate
-				//	if(m.move_disabled) m.move_disabled = 0
-					can_use = 1
-
-
-			red_baron
-				damage				= -15
-				max_range			= 244
-				accuracy			= 2
-				recoil				= -2
-				reload_speed		= 25
-				mag					= 45
-				mag_size			= 45
-				fire_rate			= 25
-				piercing			= 44
-				weight				= 5
-				crit_chance			= 55
-				can_strafe			= 1
-				sight_range			= 15
-				drop_type			= /obj/item/gun/red_baron
-
-				New()
-					..()
-					sound_effect	= SOUND_GUNFIRE1
-
-				use(mob/m)
-					can_use = 0
-					if(!mag)
-						// add the reloading overlay.
-						reload(m)
-					else
-						if(m.client)
-							if(m.dir != m:trigger_dir)
-								sleep world.tick_lag*2
-								m.dir 				= m:trigger_dir
-							//	m.move_disabled		= 1
-							m:camera_pos()
-						while((m.client ? m:trigger_down : prob(60)))
-							if(!mag) break
-							mag --
-							var/obj/projectile/p 	= get_projectile(/obj/projectile/bullet, m.dir, damage, round(max_range/6), rand(accuracy, accuracy+5), kb_dist, sway)
-							if(m.client) m:flick_arms("base-redbaron-attack")
-							m.drop_shell()
-							k_sound(m, sound_effect)
-							p.loc = m.loc
-							switch(m.dir)
-								if(NORTH)
-									p.step_x	= m.step_x
-									p.step_y	= m.step_y+16
-								if(SOUTH)
-									p.step_x	= m.step_x+6
-									p.step_y	= m.step_y-6
-								if(EAST)
-									p.step_x	= m.step_x+16
-									p.step_y	= m.step_y+6
-								if(WEST)
-									p.step_x	= m.step_x-8
-									p.step_y	= m.step_y+6
-							p.owner	= m
-							if(prob(m.crit_rate+crit_chance))	// add the player and the weapon's crit chances.
-								p.is_crit = 1
-							active_projectiles += p
 							sleep 10/fire_rate
 				//	if(m.move_disabled) m.move_disabled = 0
 					can_use = 1

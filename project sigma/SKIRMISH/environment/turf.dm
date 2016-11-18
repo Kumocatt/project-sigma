@@ -106,6 +106,20 @@ turf
 		New()
 			..()
 			if(prob(25)) icon_state = "dirt[rand(1,4)]"
+	tile
+		icon_state	= "tile1"
+		New()
+			..()
+			if(prob(25)) icon_state = "tile[rand(1,3)]"
+	big_tile
+		icon_state	= "big tile1"
+	facility_wall
+		icon_state	= "faciwall b"
+		density		= 1
+		layer		= TURF_LAYER+0.2
+		wall/icon_state = "faciwall"
+		line/icon_state	= "faciwall line"
+
 	buildings
 		icon_state		= "b1A"
 		density			= 1

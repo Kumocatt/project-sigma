@@ -52,8 +52,6 @@ game
 		speed_flux			= 0		// use to make random groups of enemies move at random speeds.
 		bloody_trigger		= 0		// use to make each hit on an enemy deal 2 damage to the player.
 		twisted_terror		= 0		// use to make screen rotate slowly
-
-
 		boss_mode			= 0
 		deathmatch			= 0
 
@@ -122,9 +120,9 @@ game
 				p.health		= p.base_health
 				p.kills			= 0
 				p.alpha			= 0
-				p.pixel_y		= 32
+				p.pixel_y		= 64
 				p.loc			= pick(player_spawns)
-				animate(p, pixel_y = 0, alpha = 255, easing = QUAD_EASING, time = 15)
+				animate(p, pixel_y = 0, alpha = 255, easing = QUAD_EASING, time = 20)
 				p.move_disabled	= 0
 				p.can_hit		= 1
 	//			p.shield()
@@ -189,6 +187,15 @@ game
 				enemies_total	= (beholder_only?round(1.5*current_round):round(10*current_round+3*participants.len))
 				enemies_left	= enemies_total
 				world << SOUND_WAVE_BEGIN
+				for(var/mob/player/p in active_game.participants)
+					p.waveStart.alpha = 0
+					p.waveStart.transform = turn(p.transform,180)
+					p.client.screen += p.waveStart
+					animate(p.waveStart, alpha = 255, transform = matrix(), time = 10, easing = BOUNCE_EASING, loop = 1)
+					spawn(20)
+						animate(p.waveStart, alpha = 0, time = 5, loop = 1)
+						sleep 5
+						p.client.screen -= p.waveStart
 				sleep world.tick_lag
 				world << pick( MUSIC_FAST_ACE, MUSIC_RETRO140, MUSIC_ROCKER, MUSIC_HORROR1, MUSIC_DnB1)
 				sleep world.tick_lag
@@ -205,9 +212,9 @@ game
 						h = garbage.Grab(pick(/mob/npc/hostile/brute, /mob/npc/hostile/puker))
 					if(current_round >= 5 && prob(15)) //5, 15
 						h = garbage.Grab(pick(/mob/npc/hostile/hellbat, /mob/npc/hostile/abstract, /mob/npc/hostile/abstract2, /mob/npc/hostile/beholder))
-					if(crawler_only || prob(35))
+					if(crawler_only || current_round >= 2 && prob(35))
 						h = garbage.Grab(/mob/npc/hostile/crawler)
-						h.icon_state	= pick("grey","white")
+						h.icon_state = pick("grey","white")
 					spawn_en(h)
 
 					if(h.can_phantom && (phantom_enemies || prob(10)))
@@ -264,14 +271,17 @@ game
 					if(invincible_one) invincible_one	= 0
 					if(speed_flux)		speed_flux		= 0
 					if(bloody_trigger) bloody_trigger	= 0
-				//	p.waveComplete.pixel_y = 100
+					p.waveComplete.alpha = 0
+					p.waveComplete.transform = turn(p.transform,180)
 					p.client.screen += p.waveComplete
-				//	animate(p.waveComplete, pixel_y = 0, time = 10, easing = BOUNCE_EASING, loop = 1)
+					animate(p.waveComplete, alpha = 255, transform = matrix(), time = 10, easing = BOUNCE_EASING, loop = 1)
 					if(p.health)
 						if(p.health < p.base_health/2)
 							p.health = round(p.base_health/2)				/// players with less than half their hp get it restored to half.
-
-					spawn(25) p.client.screen -= p.waveComplete
+					spawn(20)
+						animate(p.waveComplete, alpha = 0, time = 5, loop = 1)
+						sleep 5
+						p.client.screen -= p.waveComplete
 					if(!p.health)
 						p.health		= p.base_health
 						p.client.eye	= p
@@ -314,14 +324,14 @@ game
 			active_projectiles	= new/list()
 			portals				= new/list()
 			for(var/mob/player/p in participants)
-		//		winset(p, "pane-lobby.game-countdown", "text=\"Submitting Scores.."")
+				winset(p, "pane-lobby.game-countdown", "text=\"Submitting Scores..\"")
 				winset(p,,"child1.left=\"pane-lobby\"")
 				p.loc 			= locate(1,1,1)
 				p.client.eye	= p
 				p.density		= 1
 				p.can_hit		= 0
 				p.died_already	= 0
-		//		p.submit_scores()													//			UNCOMMENT THIS
+				p.submit_scores()													//			UNCOMMENT THIS
 			for(var/mob/player/p in spectators)
 				p.client.eye	= p
 				winset(p,,"child1.left=\"pane-lobby\"")
@@ -373,6 +383,15 @@ game
 			deathmatch = 1
 			world << "Last Man Standing -- PvP Round!"
 			world << SOUND_WAVE_BEGIN
+			for(var/mob/player/p in active_game.participants)
+				p.deathmatch.alpha = 0
+				p.deathmatch.transform = turn(p.transform,180)
+				p.client.screen += p.deathmatch
+				animate(p.deathmatch, alpha = 255, transform = matrix(), time = 10, easing = BOUNCE_EASING, loop = 1)
+				spawn(20)
+					animate(p.deathmatch, alpha = 0, time = 5, loop = 1)
+					sleep 5
+					p.client.screen -= p.deathmatch
 			sleep world.tick_lag
 			world << MUSIC_ESCAPE_FROM_CITY
 			while(started == 2)
@@ -380,7 +399,6 @@ game
 				for(var/mob/player/p in participants)
 					if(p.health) living_players ++
 				if(living_players <= 1)
-					world << "Wave complete!"
 					break
 				sleep world.tick_lag*2
 			sleep 25 // this is here to give time for the last player that died to get processed.
@@ -394,7 +412,10 @@ game
 					if(p.health)
 						if(p.health < p.base_health/2)
 							p.health = round(p.base_health/2)
-					spawn(25) p.client.screen -= p.waveComplete
+					spawn(20)
+						animate(p.waveComplete, alpha = 0, time = 5, loop = 1)
+						sleep 5
+						p.client.screen -= p.waveComplete
 					if(!p.health)
 						p.health		= p.base_health
 						p.client.eye	= p
@@ -412,24 +433,36 @@ game
 		boss_doppleganger()
 			set waitfor = 0
 			world << MUSIC_BOSS_DOPPLE_THEME
+			for(var/mob/player/p in active_game.participants)
+				p.waveStart.alpha = 0
+				p.waveStart.transform = turn(p.transform,180)
+				p.client.screen += p.waveStart
+				animate(p.waveStart, alpha = 255, transform = matrix(), time = 10, easing = BOUNCE_EASING, loop = 1)
+				spawn(20)
+					animate(p.waveStart, alpha = 0, time = 5, loop = 1)
+					sleep 5
+					p.client.screen -= p.waveStart
 			sleep 10
-			var/mob/npc/hostile/doppleganger/boss1 = new
-			boss1.draw_nametag("<font color=red>_-DOPPLE-_") //,, -44)
-			boss1.draw_health(-5, 32)
-			boss1.arms.icon_state = "base-pistol"
-			boss1.overlays += boss1.arms
-			boss1.overlays += boss1.shirt
-			boss1.overlays += boss1.pants
-			boss1.overlays += boss1.hair
-			boss1.step_size		= 4
-			boss1.health		= boss1.base_health
-			boss1.loc			= pick(player_spawns)
-			ai_list += boss1
+			var/total = round((active_game.participants.len)/1.5)
+			if(total <= 0) total = 1
+			for(var/i = 0, i < total, i++)
+				var/mob/npc/hostile/doppleganger/boss1 = new
+				boss1.draw_nametag("<font color=red>_-DOPPLE-_") //,, -44)
+				boss1.draw_health(-5, 32)
+				boss1.arms.icon_state = "base-pistol"
+				boss1.overlays += boss1.arms
+				boss1.overlays += boss1.shirt
+				boss1.overlays += boss1.pants
+				boss1.overlays += boss1.hair
+				boss1.step_size		= 4
+				boss1.health		= boss1.base_health
+				boss1.loc			= pick(player_spawns)
+				ai_list += boss1
 			world << SOUND_WAVE_BEGIN
 			sleep world.tick_lag*2
 			while(started == 2)
-				if(!boss1.health || !boss1.loc)
-					world << "Boss killed!"
+				if(ai_list.len == 0)
+					world << "Bosses killed!"
 					break
 				sleep world.tick_lag*2
 			if(!intermission && started == 2)
@@ -443,7 +476,10 @@ game
 					if(p.health)
 						if(p.health < p.base_health/2)
 							p.health = round(p.base_health/2)
-					spawn(25) p.client.screen -= p.waveComplete
+					spawn(20)
+						animate(p.waveComplete, alpha = 0, time = 5, loop = 1)
+						sleep 5
+						p.client.screen -= p.waveComplete
 					if(!p.health)
 						p.health		= p.base_health
 						p.client.eye	= p
@@ -454,6 +490,5 @@ game
 						p.loc			= pick(player_spawns)
 						p.died_already	= 0
 				sleep 15
-				del boss1
 				boss_mode 	= 0
 				init_wave()

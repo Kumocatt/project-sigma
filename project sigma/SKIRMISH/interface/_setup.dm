@@ -1,11 +1,11 @@
 
 #define DEBUG 1
-//client/fps = 40
+var/fonto = 'UberBit7.ttf'
 world
 	name 			= "Feed -"
 	view			= "13x10" //"25x20"  ||  13x10           208x160
 	mob 			= /mob/player
-	status			= "<b>Testing</b>"
+	status			= "<b>Open Testing</b>"
 	turf			= /turf/grass
 	map_format		= TOPDOWN_MAP
 	loop_checks 	= 0

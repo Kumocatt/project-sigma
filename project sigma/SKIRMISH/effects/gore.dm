@@ -57,7 +57,7 @@ atom/movable
 				for(var/v = 0 to i)
 					var/obj/gore/blood/g	= garbage.Grab(/obj/gore/blood)
 					g.icon					= 'gore.dmi'
-					g.icon_state			= "gut[rand(1,4)]"
+					g.icon_state			= "gut[rand(1,5)]"
 					g.layer					= TURF_LAYER+0.16
 					g.SetCenter(Cx(),Cy(),z)
 					animate(g, pixel_y = 32, pixel_x = rand(-16,16), time = 3)

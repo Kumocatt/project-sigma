@@ -53,7 +53,7 @@ obj
 							sleep world.tick_lag*2
 							m.dir 				= m:trigger_dir
 					var/obj/projectile/p 		= throw_special(/obj/projectile/thrown/molotov, m.dir)
-					if(m.client) m:flick_arms("base-molotov")
+				//	if(m.client) m:flick_arms("base-molotov")
 					p.loc = m.loc
 					switch(m.dir)
 						if(NORTH)
@@ -96,6 +96,9 @@ obj
 						d.overlays.Remove(d.arms)
 						d.arms.icon_state = "[d.target:arms.icon_state]"
 						d.overlays.Add(d.arms)
+						d.overlays.Remove(d.pants)
+						d.pants.icon_state = d.target:pants.icon_state
+						d.overlays.Add(d.pants)
 						d.overlays.Remove(d.nametag)
 						d.nametag.change_text("[d.target]")
 						d.overlays.Add(d.nametag)
@@ -216,8 +219,8 @@ obj
 						if(m.dir != m:trigger_dir)
 							sleep world.tick_lag*2
 							m.dir 				= m:trigger_dir
-					var/obj/projectile/p 		= throw_special(/obj/projectile/thrown/fireball, m.dir)
-					if(m.client) m:flick_arms("base-fireball")
+					var/obj/projectile/p 		= get_projectile("fireball", m.dir, -8, 1.5, 123, 1, 4, 1)
+				//	if(m.client) m:flick_arms("base-fireball")
 					p.loc = m.loc
 					switch(m.dir)
 						if(NORTH)

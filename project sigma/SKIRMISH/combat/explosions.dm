@@ -21,7 +21,7 @@ proc
 		if(_loc)
 			var/obj/hazard/boom_marker/boom	= garbage.Grab(/obj/hazard/boom_marker)
 			boom.loc						= _loc
-			boom.Explode(32, dmg,,pk)
+			boom.Explode(42, dmg,,pk)
 
 
 
