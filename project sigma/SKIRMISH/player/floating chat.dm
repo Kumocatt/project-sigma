@@ -30,3 +30,4 @@ mob
 				if(float_box.maptext == "<center>[html_encode(txt)]")
 					overlays -= float_box
 					float_box.maptext = null
+

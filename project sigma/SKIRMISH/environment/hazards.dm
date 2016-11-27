@@ -12,7 +12,7 @@ atom/movable
 			called to spawn fire around a given object.
 		*/
 		var/list/turf_list = new /list()
-		for(var/turf/t in oview(1, src))
+		for(var/turf/t in bounds(8, src))
 			if(!t.density) turf_list += t
 		if(turf_list.len) for(var/i = 0 to flames)
 			var/turf/t = pick(turf_list)
@@ -25,14 +25,14 @@ atom/movable
 				//	f.overlays += a
 					f.step_x					= 0
 					f.step_y					= 0
-					f.spawndel(150)
+					f.spawndel(100)
 				if(1)
 					var/obj/hazard/fire/f 		= garbage.Grab(/obj/hazard/fire)
 					f.owner						= owner
 					f.loc						= t
 					f.step_x					= 0
 					f.step_y					= 8
-					f.spawndel(150)
+					f.spawndel(100)
 
 
 
@@ -81,9 +81,10 @@ obj/hazard
 			..()
 
 	fire
-		icon				= 'combat/_Bullets.dmi'
+		icon				= 'effects/fire.dmi'
 		icon_state			= "fire1"
 		appearance_flags	= NO_CLIENT_COLOR
+		blend_mode			= BLEND_ADD
 		plane				= 2
 		bound_x				= 8
 		bound_y				= 2
@@ -181,6 +182,17 @@ obj/hazard
 				active_game.portals.Add(src)
 				icon_state = "portal-open"
 
+	edge_spike
+		icon		= '_new x16.dmi'
+		icon_state	= "spikes"
+		layer		= TURF_LAYER+0.2
+		Crossed(atom/movable/a)
+			if(ismob(a))
+				a:edit_health(-25)
+				a:knockback(4, get_dir(src,a))
+
+		GC()
+			..()
 	boom_marker	// used to create explosions on the fly.
 		is_explosive 	= 1
 		exploded		= 0
@@ -195,12 +207,13 @@ var
 
 obj/overlays
 	fire
-		icon 			= '_Bullets.dmi'
+		icon 			= 'fire.dmi'
 		icon_state 		= "fire1"
 		plane			= 2
 		layer			= FLOAT_LAYER
 		pixel_x 		= -6
 		appearance_flags= NO_CLIENT_COLOR+KEEP_APART+RESET_COLOR
+		blend_mode		= BLEND_ADD
 
 	shield1
 		icon 			= 'game/misc_effects.dmi'
@@ -289,7 +302,7 @@ mob
 					if(!hellfire && i > pick(5,12))
 						break
 					edit_health(-2, owner)
-					drop_fire(pick(1,2), src)
+					if(prob(5)) drop_fire(1, src)
 					i ++
 					sleep 5
 				animate(src, color = null)

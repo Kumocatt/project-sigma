@@ -1,11 +1,11 @@
 
+done this patch:
+
 
 do this patch:
-- hp drops should spawn less.
-- revives too.
-- fix issue where enemies can die more than once!
-- balance out fire spread a bit,
-- investigate molotovs and why they like to get stuck icon states
+
+
+
 - Cart was immortal briefly. somehow got out of the participants list.
 
 

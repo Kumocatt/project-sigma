@@ -30,8 +30,9 @@ mob/player
 					push_group.Remove(d)
 			else if(step(b, dir)) spawn b.dust()
 			pushing = 0
-		if(istype(a, /mob/npc))
+		if(ismob(a))
 			a:knockback(4, get_dir(src, a))
+			if(on_fire) a:burn()
 
 obj
 	barricade

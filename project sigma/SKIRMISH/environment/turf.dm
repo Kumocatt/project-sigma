@@ -40,6 +40,10 @@ obj
 			New()
 				..()
 				if(prob(15)) icon_state = "tree t[pick(1,2)]"
+		tree2
+			icon		= '96x96.dmi'
+			icon_state	= "othertree t1"
+			layer		= MOB_LAYER+10
 		hedge_tl
 			icon		= '_new x16.dmi'
 			icon_state	= "hedge tl"
@@ -88,10 +92,17 @@ obj
 			icon		= 'mausoleum.dmi'
 			icon_state	= "top"
 			layer		= MOB_LAYER+5
+			pixel_y		= 192
 
 
 turf
 	icon = '_new x16.dmi'
+	otherworld
+		otherdirt
+			icon_state	= "otherdirt1"
+			New()
+				..()
+				icon_state	= "otherdirt[rand(1,4)]"
 	grass
 		icon_state = "grass1"
 		New()
@@ -119,6 +130,7 @@ turf
 		layer		= TURF_LAYER+0.2
 		wall/icon_state = "faciwall"
 		line/icon_state	= "faciwall line"
+		blackwall/icon_state	= "blackwall"
 
 	buildings
 		icon_state		= "b1A"
@@ -261,6 +273,13 @@ turf
 			New()
 				..()
 				overlays += new /obj/overlays/tree1
+		tree2
+			icon		= '96x96.dmi'
+			icon_state	= "othertree b"
+			layer		= TURF_LAYER+0.2
+			New()
+				..()
+				overlays += new /obj/overlays/tree2
 		sewer
 			icon			= 'new32x32.dmi'
 			icon_state		= "sewer1"

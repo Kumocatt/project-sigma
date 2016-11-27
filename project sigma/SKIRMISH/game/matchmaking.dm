@@ -91,6 +91,7 @@ game
 				winset(p,,"pane-lobby.map-info.text=\"[next_map.desc]\"")
 				winset(p, "pane-lobby.to-skip", "text=0/[needed_skips]")
 				winset(p, "pane-lobby.skip-button", "is-checked=\"false\"")
+				winset(p, "pane-lobby.specbutton", "is-disabled=\"false\"")
 				if(p in participants) winset(p, "pane-lobby.specbutton", "is-checked=\"false\"")
 				else winset(p, "pane-lobby.specbutton", "is-checked=\"true\"")
 				participants << output("<b>++ [p] joined the lobby.</b>","lobbychat")
@@ -108,6 +109,7 @@ game
 						winset(p, "pane-lobby.skip-button", "is-checked=\"false\"")
 					winset(p, "pane-lobby.to-skip", "text=[votes_to_skip]/[needed_skips]")
 					winset(p, "pane-lobby.game-countdown", "text=\"Game in [i]..\"")
+					if(i == 5) winset(p, "pane-lobby.specbutton", "is-disabled=\"true\"")
 				sleep 10
 				if(i == 1 && !participants.len)
 					world << "waiting for participants.."

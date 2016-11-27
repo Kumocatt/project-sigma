@@ -563,7 +563,7 @@ obj
 				piercing			= 0
 				weight				= 1
 				crit_chance			= 10
-				velocity			= 0.5
+				velocity			= 2.5
 				drop_type			= /obj/item/gun/shotgun
 
 				New()
@@ -584,7 +584,7 @@ obj
 						if(m.client) m:flick_arms("base-shotgun-attack")
 						m.drop_shell(1)
 						k_sound(m, sound_effect)
-						for(var/i = 1 to 6)
+						for(var/i = 1 to 5)
 							var/obj/projectile/p 	= get_projectile("bullet", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+25), kb_dist, sway)
 							p.loc 					= m.loc
 							switch(m.dir)
@@ -604,9 +604,67 @@ obj
 							if(prob(m.crit_rate+crit_chance))	// add the player and the weapon's crit chances.
 								p.is_crit = 1
 							active_projectiles += p
-							sleep world.tick_lag
+							sleep world.tick_lag/2
 						if(m.move_disabled) m.move_disabled = 0
 					can_use = 1
+
+			hellsredeemer
+				damage				= -55
+				max_range			= 60
+				accuracy			= 1
+				recoil				= -5
+				reload_speed		= 25
+				mag					= 3
+				mag_size			= 3
+				piercing			= 0
+				weight				= 1
+				crit_chance			= 10
+				velocity			= 1.5
+				drop_type			= /obj/item/gun/hellsredeemer
+
+				New()
+					..()
+					sound_effect	= SOUND_GUNFIRE1
+
+				use(mob/m)
+					can_use = 0
+					if(!mag)
+						reload(m)
+					else
+						if(m.client)
+							if(m.dir != m:trigger_dir)
+								sleep world.tick_lag*2
+								m.dir 				= m:trigger_dir
+								m.move_disabled		= 1
+						mag --
+						if(m.client) m:flick_arms("base-hellredeemer-attack")
+						m.drop_shell(1)
+						k_sound(m, sound_effect)
+						for(var/i = 1 to 5)
+							var/obj/projectile/p 	= get_projectile("firebullet", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+25), kb_dist, 2)
+							p.loc 					= m.loc
+							switch(m.dir)
+								if(NORTH)
+									p.step_x	= m.step_x
+									p.step_y	= m.step_y+16
+								if(SOUTH)
+									p.step_x	= m.step_x+6
+									p.step_y	= m.step_y-6
+								if(EAST)
+									p.step_x	= m.step_x+16
+									p.step_y	= m.step_y+6
+								if(WEST)
+									p.step_x	= m.step_x-8
+									p.step_y	= m.step_y+6
+							p.owner	= m
+							if(prob(m.crit_rate+crit_chance))	// add the player and the weapon's crit chances.
+								p.is_crit = 1
+							active_projectiles += p
+							sleep world.tick_lag/2
+						if(m.move_disabled) m.move_disabled = 0
+					can_use = 1
+
+
 
 			flamethrower
 				damage				= -8

@@ -1,4 +1,4 @@
-var/max_darkness = 190
+var/max_darkness = 225
 
 
 mob/player
@@ -29,8 +29,16 @@ obj/hud
 
 		refresh()
 
-			if(active_game.started == 2 && lastenemies != active_game.enemies_left && !active_game.boss_mode)
-				lastenemies = active_game.enemies_left
-				var/n_alpha = 65*sin((180*lastenemies)/active_game.enemies_total)+160//190
-				if(n_alpha > max_darkness) n_alpha = max_darkness
-				animate(src, alpha = n_alpha, time = 5)
+			if(active_game.started == 2)
+				if(active_game.boss_mode)
+					if(alpha != max_darkness)
+						animate(src, alpha = max_darkness, time = 5)
+					else if(prob(3))
+						animate(src, alpha = 100, time = 2, easing = ELASTIC_EASING)
+						animate(alpha = max_darkness, time = 1)
+				else if(lastenemies != active_game.enemies_left)
+					lastenemies = active_game.enemies_left
+					var/n_alpha = 65*sin((180*lastenemies)/active_game.enemies_total)+190
+					if(n_alpha > max_darkness) n_alpha = max_darkness
+					animate(src, alpha = n_alpha, time = 5)
+

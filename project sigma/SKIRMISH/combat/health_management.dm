@@ -19,6 +19,7 @@ mob
 					health = base_health
 
 			else if(!active_game.intermission && can_hit)	// or taking health
+				if(istype(src, /mob/npc/hostile) && !(src in ai_list)) return
 				can_hit = 0
 				if(dealer)
 					if(dealer.type == /mob/player && istype(src, /mob/npc/hostile))
@@ -45,7 +46,7 @@ mob
 							can_hit 	= 1
 						else
 							death()
-				spawn(!client?3:10) if(health) can_hit = 1
+				spawn(3) if(health) can_hit = 1  //!client?3:10
 
 
 		death()

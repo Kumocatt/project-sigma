@@ -7,7 +7,7 @@ derpy derpy doo
 
 mob/player
 	proc
-		draw_planes()
+		draw_planes()	 // must apply this first
 			client.screen += new/obj/lighting_plane
 			draw_spotlight(-38, -38, "#FFFFFF")
 
@@ -43,5 +43,4 @@ image/spotlight															// SyX add this to the player's overlays.
 	pixel_y 		= -38
 	layer			= 1+EFFECTS_LAYER
 	appearance_flags= RESET_COLOR
-
 

@@ -542,13 +542,23 @@ mob/npc
 				ai_list -= src
 				if(ai_list.len == 0) for(var/mob/player/c in active_game.participants)
 					c.client.eye = src
-					spawn(30)
+					spawn(35)
 						c.client.eye = c
 				for(var/i = 1 to 35)
 					step(src, dir)
-					if(prob(25)) {spontaneous_explosion(loc, 0); dir = turn(dir,pick(-45,45))}
+					if(prob(25))
+						spontaneous_explosion(loc, 0)
+						drop_loot()
+						dir = turn(dir,pick(-45,45))
 					sleep world.tick_lag*1.5
-				spawn(25)
+				animate(src, pixel_x = -2, time = 1, loop = 5, easing = ELASTIC_EASING)
+				animate(pixel_x = 2, time = 1, easing = ELASTIC_EASING)
+				sleep 10
+				spontaneous_explosion(loc, 0)
+				var/obj/item/gun/hellsredeemer/h = garbage.Grab(/obj/item/gun/hellsredeemer)
+				h.loc = loc
+				alpha = 0
+				spawn(45)
 					del src
 
 			ai_check()

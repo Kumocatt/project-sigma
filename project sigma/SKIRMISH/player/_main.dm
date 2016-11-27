@@ -12,6 +12,9 @@ mob
 			tmp
 				died_already= 0
 				kills		= 0
+		Stat()
+			stat("Wave:",active_game.current_round)
+			stat("Enemies:","[active_game.enemies_left]/[active_game.enemies_total]")
 
 		Login()
 			..()
@@ -70,9 +73,9 @@ mob
 			loc				= locate(1,1,1)
 			move_disabled 	= 1
 			alpha			= 0
-			world << "<b><font color = [namecolor]>[src]</font> died!"
-			active_game.participants << output("<b><font color = [namecolor]>[src]</font> died!","lobbychat")
-			active_game.spectators << output("<b><font color = [namecolor]>[src]</font> died!","lobbychat")
+			world << "<b><font color = [namecolor]>[src]</font> died! ([kills] kills)"
+			active_game.participants << output("<b><font color = [namecolor]>[src]</font> died! ([kills] kills)","lobbychat")
+			active_game.spectators << output("<b><font color = [namecolor]>[src]</font> died! ([kills] kills)","lobbychat")
 			active_game.progress_check()
 			spawn(10) if(active_game.started == 2)	// if the game is still active after the player dies..
 				spectate_rand()

@@ -34,12 +34,11 @@ atom
 
 		proc
 			Explode(blastbounds = 1, damage = -100, mob/owner, pk = 0)
-				if(is_explosive && !exploded)
+				if(is_explosive && (exploded == 0 || exploded == 2))		// exploded = 2 for qeued explosions.
 					exploded = 1
 					overlays.Add(EXPLOSION_OVERLAY)
-					smoke()
-					smoke()
-					smoke()
+					for(var/i = 1 to 3)
+						smoke()
 					k_sound(src, pick(SOUND_EXPLOSION1, SOUND_EXPLOSION2))
 					drop_boom()
 					icon_state 	= null
@@ -49,11 +48,17 @@ atom
 						if(m.client) m:screenshake()
 						if(!m.explosion_proof && (istype(m, /mob/npc) || (istype(m, /mob/player) && (pk || active_game.deathmatch || owner && !owner.client))) && m != src)
 							spawn m.edit_health(damage, owner, 1)
+
+					var/list/blowup_chain = new/list()
 					for(var/obj/o in obounds(src, blastbounds))
-						if(o.is_explosive && o.exploded == 0)
-							spawn o.Explode(blastbounds, damage, owner)
+						if(o.is_explosive && o.exploded == 0)		// don't re blow up qeued explosions.
+							o.exploded = 2
+							blowup_chain += o
 						else if(istype(o, /obj/barricade/crate))
 							spawn o:Break()
+					if(blowup_chain.len)
+						for(var/obj/b in blowup_chain)
+							spawn b.Explode(blastbounds, damage, owner)
 					spawn(5)
 						overlays.Cut()
 						if(istype(src, /obj/barricade/barrel) && !exploded)

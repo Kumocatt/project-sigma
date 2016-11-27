@@ -1,13 +1,11 @@
 
 proc
 	get_drop()
-		var/obj/drop_this = /obj/item/health_pack	// defaults to health packs because they're the most practical.
-		if(prob(55))
-			drop_this	= pick(/obj/item/gun/uzi, /obj/item/gun/kobra, /obj/item/gun/red_baron, /obj/item/special/molotov, /obj/item/gun/shotgun)
-		if(prob(44))
-			drop_this	= pick(/obj/item/shield, /obj/item/strong_shield, /obj/item/revive_pack)
-		if(prob(22))
-			drop_this 	= pick(/obj/item/special/airstrike, /obj/item/strong_shield, /obj/item/special/fireball)
+		var/obj/drop_this
+		if(prob(35))	drop_this = pick(/obj/item/health_pack, /obj/item/gun/kobra, /obj/item/special/molotov, /obj/item/shield, /obj/item/gun/krossbow)
+		if(prob(25))	drop_this = pick(/obj/item/gun/uzi, /obj/item/gun/shotgun, /obj/item/gun/edge_lord, /obj/item/strong_shield, \
+											/obj/item/special/fireball, /obj/item/gun/ak66)
+		if(prob(15))	drop_this = pick(/obj/item/gun/red_baron, /obj/item/revive_pack, /obj/item/special/airstrike, /obj/item/gun/pink_dream)
 		return drop_this
 
 obj
@@ -124,6 +122,13 @@ obj
 				step		= 4
 				effect(mob/player/p)
 					p.float_text("\[E] - Shotgun", 1)
+			hellsredeemer
+				icon_state	= "hellredeemer"
+				state		= "hellredeemer"
+				gun_type	= /obj/weapon/gun/hellsredeemer
+				step		= 4
+				effect(mob/player/p)
+					p.float_text("\[E] - Hell's Redeemer", 1)
 			flamethrower
 				icon_state	= "flamethrower"
 				state		= "flamethrower"
