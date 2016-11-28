@@ -38,6 +38,7 @@ mob
 				draw_health(-5, 32)
 				client.screen += scanlines
 				client.screen += new /obj/hud/clip_status
+				client.screen += new /obj/hud/kill_counter
 				var/i = 0
 				while(src)
 					i++
@@ -95,3 +96,21 @@ obj/hud
 				else if(last_mag != "--/--")
 					last_mag 	= "--/--"
 					maptext		= "--/--"
+
+
+	kill_counter
+		screen_loc		= "1:2,10"
+		maptext_width	= 128
+		maptext_height	= 32
+		maptext			= "0 kills"
+		plane			= 2
+		mouse_opacity 	= 0
+		appearance_flags	= NO_CLIENT_COLOR
+		var/tmp/last_kills
+
+		refresh(mob/player/p)
+
+			if(active_game.started == 2)
+				if(last_kills != p.kills)
+					last_kills = p.kills
+					maptext	= "[last_kills] kills"

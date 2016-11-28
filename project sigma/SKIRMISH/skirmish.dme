@@ -26,7 +26,6 @@
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
-#include "_new turf.dm"
 #include "combat\#new controls.dm"
 #include "combat\airstrike.dm"
 #include "combat\controls.dm"
@@ -42,6 +41,7 @@
 #include "effects\daynight.dm"
 #include "effects\gore.dm"
 #include "effects\lighting.dm"
+#include "effects\weather.dm"
 #include "enemies\enemies.dm"
 #include "environment\barricades.dm"
 #include "environment\hazards.dm"
@@ -57,8 +57,10 @@
 #include "interface\skin.dmf"
 #include "maps\maps.dm"
 #include "maps\map000.dmm"
+#include "misc\getgeneraldirection.dm"
 #include "misc\spawndel.dm"
 #include "player\_main.dm"
+#include "player\auto revive.dm"
 #include "player\base.dm"
 #include "player\customization.dm"
 #include "player\floating chat.dm"

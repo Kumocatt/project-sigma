@@ -8,6 +8,8 @@ atom/movable
 			*/
 			var/obj/details/shell/b		= garbage.Grab(/obj/details/shell)
 			b.icon						= 'game/items.dmi'
+			b.pixel_y					= 8
+			b.pixel_x					= 4
 			if(shotty) 	b.icon_state	= "emptyshell[rand(1,4)]"
 			else		b.icon_state	= "emptybullet[rand(1,4)]"
 			b.SetCenter(Cx(),Cy(),z)

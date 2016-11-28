@@ -12,9 +12,9 @@ mob
 			tmp
 				died_already= 0
 				kills		= 0
-		Stat()
-			stat("Wave:",active_game.current_round)
-			stat("Enemies:","[active_game.enemies_left]/[active_game.enemies_total]")
+	//	Stat()
+	//		stat("Wave:",active_game.current_round)
+	//		stat("Enemies:","[active_game.enemies_left]/[active_game.enemies_total]")
 
 		Login()
 			..()
@@ -79,3 +79,4 @@ mob
 			active_game.progress_check()
 			spawn(10) if(active_game.started == 2)	// if the game is still active after the player dies..
 				spectate_rand()
+				auto_revive(active_game.current_round)	// if the game is still on after the player dies, auto revive them a minute after dying(if the game is still on)

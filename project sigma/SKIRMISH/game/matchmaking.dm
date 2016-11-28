@@ -54,6 +54,7 @@ game
 		twisted_terror		= 0		// use to make screen rotate slowly
 		boss_mode			= 0
 		deathmatch			= 0
+		toggle_rain			= 1		// 1 if its raining
 
 		list/participants	= new/list()		// a list of every player that is playing.
 		list/spectators		= new/list()		// a list of every player that is spectating.
@@ -61,6 +62,7 @@ game
 		list/enemy_spawns	= new/list()
 		list/hazard_spawns	= new/list()		// a list of locs that map hazards can spawn on(i.e. lava).
 		list/portals		= new/list()		// a list of all the portals on the map.
+		list/rainy_turfs	= new/list()
 		map/next_map	// this is the map that's currently being chosen to be played.
 
 
@@ -80,7 +82,7 @@ game
 
 		init_game()
 			started = 1
-			if(!participants && !spectators) world.Reboot()
+			if(!participants.len && !spectators.len) world.Reboot()
 			next_map = pick(available_maps)
 			needed_skips	= 1
 			if(participants.len > 2) needed_skips = round(participants.len/2)
@@ -134,11 +136,12 @@ game
 				p.spectate_rand()
 			gameover= 0
 			started = 2
+			rain_loop()
 			init_wave()
 
 
 		init_wave()
-			if(!participants && !spectators) world.Reboot()
+			if(!participants.len && !spectators.len) world.Reboot()
 			world << "<b>Wave [current_round] will begin in 15 seconds."
 			sleep 150
 			intermission = 0
@@ -300,7 +303,7 @@ game
 
 
 		end_game()
-			if(!participants && !spectators) world.Reboot()
+			if(!participants.len && !spectators.len) world.Reboot()
 			if(started == 1) return
 			started 			= 1
 			sleep 40
@@ -325,6 +328,7 @@ game
 			ai_list				= new/list()
 			active_projectiles	= new/list()
 			portals				= new/list()
+			rainy_turfs			= new/list()
 			for(var/mob/player/p in participants)
 				winset(p, "pane-lobby.game-countdown", "text=\"Submitting Scores..\"")
 				winset(p,,"child1.left=\"pane-lobby\"")

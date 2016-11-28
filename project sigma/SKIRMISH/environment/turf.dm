@@ -14,12 +14,12 @@ obj/markers
 			..()
 			active_game.enemy_spawns += src
 			icon_state = null
-	hazard_spawn
+	rain_spawn
 		icon		= 'environment/x16.dmi'
 		icon_state	= "hspawn"
 		New()
 			..()
-			active_game.hazard_spawns += loc
+			active_game.rainy_turfs += loc
 			del src
 	dense
 		icon 		= 'environment/x16.dmi'

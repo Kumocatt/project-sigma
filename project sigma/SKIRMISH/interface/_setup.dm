@@ -23,7 +23,5 @@ world
 proc
 	setup_world()
 		pre_recycle()
-	//	daynight_tracker()
-	//	rain_loop()
 		ai_loop()
 		projectile_loop()

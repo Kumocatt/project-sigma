@@ -62,10 +62,10 @@ mob/npc
 	hostile
 		Click()
 			..()
-			world << "[src] quickinfo:"
-			world << "hp: [health] / [base_health]"
-			world << "can_hit: [can_hit]"
-			world << "target: [target]"
+			usr << "[src] quickinfo:"
+			usr << "hp: [health] / [base_health]"
+			usr << "can_hit: [can_hit]"
+			usr << "target: [target]"
 		var/tmp
 			mob/player/last_attacker
 			turf/last_loc
@@ -96,7 +96,7 @@ mob/npc
 			if(prob(15)) drop_loot()
 			if(is_explosive) // if is_explosive is toggled on for the mob, that means to blow it up when it dies!
 				is_explosive = 0
-				spontaneous_explosion(loc, 1, 45)
+				spontaneous_explosion(loc, 1, -45)
 			GC()
 			active_game.progress_check()
 
@@ -411,7 +411,7 @@ mob/npc
 						if(!target.health || target.cowbell || !target.loc)	// if the target is dead, off map, or shaking a cowbell..
 							target = null									// .. stop targeting them.
 						else
-							var/step_dir = get_dir(src, target)				// just log this because.
+							var/step_dir = get_general_dir(src, target)				// just log this because.
 							if(prob(get_dist(src, target)*2))						// here we'll see if any other potential targets are closer.
 								for(var/mob/player/p in active_game.participants)	// the further the target, the more likely to check for a new one.
 									if(p == target || !p.health || !p.loc || p.cowbell) continue
@@ -440,7 +440,7 @@ mob/npc
 									last_loc 		= loc
 									same_loc_steps	= 0
 					if(!target)
-						if(prob(45)) step(src, pick(dir, turn(dir, pick(-45, 45))))
+						if(prob(45)) step(src, pick(dir, turn(dir, pick(-90, 90))))
 						for(var/mob/player/p in active_game.participants)
 							if(!p.health || !p.loc || p.cowbell) continue
 							if(!target) target = p
@@ -544,11 +544,13 @@ mob/npc
 					c.client.eye = src
 					spawn(35)
 						c.client.eye = c
+				layer = EFFECTS_LAYER+2
+				var/totaloot = 0
 				for(var/i = 1 to 35)
 					step(src, dir)
 					if(prob(25))
 						spontaneous_explosion(loc, 0)
-						drop_loot()
+						if(totaloot < 3) totaloot++; drop_loot()
 						dir = turn(dir,pick(-45,45))
 					sleep world.tick_lag*1.5
 				animate(src, pixel_x = -2, time = 1, loop = 5, easing = ELASTIC_EASING)
@@ -582,11 +584,11 @@ mob/npc
 								sleep 10
 
 							else if(get_dist(src, target) < 6 && skill1.can_use && shot_lineup())
-								dir = get_dir(src, target)
+								dir = get_general_dir(src, target)
 								spawn skill1.use(src)
 								sleep 2
 							else if(get_dist(src, target) < 4 && skill2.can_use && shot_lineup() && prob(45))
-								dir = get_dir(src, target)
+								dir = get_general_dir(src, target)
 								spawn skill2.use(src)
 							else if(!kb_init)
 								step(src, step_dir)
@@ -693,13 +695,13 @@ mob/npc
 				switch(get_dir(src, target))
 					// if tiles are lined up, line up the pixel coordinates!
 					if(NORTH, SOUTH)
-						if(target.step_x > step_x)	// target is further right on the tile than src.
+						if(target.step_x > step_x)	// target is further right on their tile than src.
 							step(src, EAST, 8)
 						else
 							step(src, WEST, 8)
 						return 1
 					if(EAST, WEST)
-						if(target.step_y > step_y)	// target is further north on the tile than src.
+						if(target.step_y > step_y)	// target is further north on their tile than src.
 							step(src, NORTH, 8)
 						else
 							step(src, SOUTH, 8)

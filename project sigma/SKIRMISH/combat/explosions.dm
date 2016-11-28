@@ -3,7 +3,7 @@ var
 	obj/explosion_overlay/EXPLOSION_OVERLAY	= new
 
 obj/explosion_overlay
-	icon 			= '_Bullets.dmi'
+	icon 			= 'fire.dmi'
 	icon_state 		= "explosion"
 	plane			= 2
 	pixel_x 		= -8

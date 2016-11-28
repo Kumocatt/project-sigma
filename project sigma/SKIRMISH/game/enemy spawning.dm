@@ -7,12 +7,13 @@ proc
 			var/mob/player/p
 
 			while(!_loc && active_game.started == 2)
-				p = pick(active_game.participants)
-				if(p.loc)
-					for(var/obj/markers/enemy_spawn/espawn in oview(15,p))
-						if(get_dist(espawn, p) > 5 && (espawn in active_game.enemy_spawns))
-							_loc = espawn
-				sleep
+				if(active_game.participants)
+					p = pick(active_game.participants)
+					if(p.loc)
+						for(var/obj/markers/enemy_spawn/espawn in oview(15,p))
+							if(get_dist(espawn, p) > 5 && (espawn in active_game.enemy_spawns))
+								_loc = espawn
+				sleep 5
 			if(_loc)
 				active_game.enemy_spawns -= _loc
 				h.loc 		= _loc.loc
