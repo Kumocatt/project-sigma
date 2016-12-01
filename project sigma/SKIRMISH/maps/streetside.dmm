@@ -36,7 +36,7 @@
 "aJ" = (/turf/terrain/grass_edges/e3,/turf/terrain/trashbag,/turf/road,/area)
 "aK" = (/obj/item/gun/pink_dream,/obj/markers/rain_spawn,/turf/road,/area)
 "aL" = (/obj/markers/rain_spawn,/turf/road,/area)
-"aM" = (/obj/item/shield,/obj/markers/rain_spawn,/turf/road,/area)
+"aM" = (/obj/item/shield_tier1,/obj/markers/rain_spawn,/turf/road,/area)
 "aN" = (/turf/terrain/trashbag,/obj/markers/rain_spawn,/turf/road,/area)
 "aO" = (/turf/terrain/dumpster,/obj/markers/dense,/turf/road,/area)
 "aP" = (/turf/terrain/grass_edges/e4,/turf/terrain/grass_edges/e4,/turf/road,/area)
@@ -59,7 +59,7 @@
 "bg" = (/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
 "bh" = (/turf/terrain/grass_edges/e7,/obj/barricade/barrel,/obj/markers/rain_spawn,/turf/road,/area)
 "bi" = (/obj/hazard/spikes,/turf/terrain/grass_edges/e5,/obj/markers/rain_spawn,/turf/road,/area)
-"bj" = (/obj/hazard/spikes,/obj/item/shield,/turf/terrain/grass_edges/e5,/obj/markers/rain_spawn,/turf/road,/area)
+"bj" = (/obj/hazard/spikes,/obj/item/shield_tier1,/turf/terrain/grass_edges/e5,/obj/markers/rain_spawn,/turf/road,/area)
 "bk" = (/turf/terrain/grass_edges/e5,/turf/terrain/effects/firefly,/obj/markers/rain_spawn,/turf/road,/area)
 "bl" = (/turf/terrain/grass_edges/e7,/turf/terrain/trashbag,/obj/markers/rain_spawn,/turf/road,/area)
 "bm" = (/turf/terrain/grass_edges/e4,/obj/markers/rain_spawn,/turf/road,/area)
@@ -67,174 +67,183 @@
 "bo" = (/obj/item/gun/edge_lord,/obj/markers/rain_spawn,/turf/grass,/area)
 "bp" = (/turf/terrain/details/grass_sprouts,/obj/markers/rain_spawn,/turf/road,/area)
 "bq" = (/turf/terrain/details/grass_sprouts,/turf/terrain/details/grass_sprouts,/obj/markers/rain_spawn,/turf/road,/area)
-"br" = (/obj/hazard/portal,/obj/markers/rain_spawn,/turf/road,/area)
-"bs" = (/obj/hazard/spikes,/obj/markers/rain_spawn,/turf/road,/area)
-"bt" = (/obj/hazard/spikes,/obj/item/shield,/obj/markers/rain_spawn,/turf/road,/area)
-"bu" = (/turf/terrain/chainlink/cl_left,/obj/markers/rain_spawn,/turf/road,/area)
-"bv" = (/turf/terrain/chainlink,/obj/markers/rain_spawn,/turf/road,/area)
-"bw" = (/turf/terrain/chainlink/cl_right,/obj/markers/rain_spawn,/turf/road,/area)
-"bx" = (/turf/buildings,/area)
-"by" = (/turf/buildings/b2A,/area)
-"bz" = (/obj/hazard/fire{layer = 4},/turf/buildings/b2A,/area)
-"bA" = (/turf/buildings/b3A,/area)
-"bB" = (/turf/terrain/chainlink,/obj/markers/rain_spawn,/obj/markers/rain_spawn,/turf/road,/area)
-"bC" = (/turf/terrain/chainlink,/turf/terrain/grass_edges/e4,/obj/markers/rain_spawn,/turf/road,/area)
-"bD" = (/obj/markers/rain_spawn,/turf/buildings/roof/r5,/area)
-"bE" = (/turf/terrain/trashbag,/obj/markers/rain_spawn,/turf/grass,/area)
-"bF" = (/turf/terrain/grass_edges/e3,/obj/markers/rain_spawn,/turf/road,/area)
-"bG" = (/obj/barricade/barrel,/obj/markers/rain_spawn,/turf/road,/area)
-"bH" = (/turf/terrain/grass_edges/e5,/obj/hazard/fire,/obj/markers/rain_spawn,/turf/road,/area)
-"bI" = (/turf/terrain/grass_edges/e5,/obj/markers/dense,/turf/road,/area)
-"bJ" = (/turf/terrain/grass_edges/e5,/turf/terrain/trashbag,/obj/hazard/fire,/obj/markers/dense,/turf/road,/area)
-"bK" = (/turf/terrain/grass_edges/e5,/obj/markers/dense,/obj/markers/rain_spawn,/turf/road,/area)
-"bL" = (/turf/terrain/grass_edges/e5,/obj/hazard/fire{layer = 4},/obj/markers/dense,/obj/markers/rain_spawn,/turf/road,/area)
-"bM" = (/turf/terrain/grass_edges/e4,/turf/terrain/details/grass_sprouts,/obj/markers/rain_spawn,/turf/road,/area)
-"bN" = (/turf/terrain/sewer,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
-"bO" = (/turf/terrain/effects/firefly,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
-"bP" = (/obj/markers/dense,/obj/markers/rain_spawn,/turf/road,/area)
-"bQ" = (/turf/terrain/effects/firefly,/obj/markers/rain_spawn,/turf/road,/area)
-"bR" = (/obj/barricade/barrel,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
-"bS" = (/turf/terrain/details/grass_sprouts,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
-"bT" = (/turf/terrain/trashbag,/obj/hazard/fire,/obj/markers/dense,/turf/road,/area)
-"bU" = (/turf/terrain/dumpster,/obj/markers/dense,/obj/markers/rain_spawn,/turf/road,/area)
-"bV" = (/turf/terrain/trashbag,/obj/markers/dense,/obj/markers/rain_spawn,/turf/road,/area)
-"bW" = (/turf/terrain/obelisk,/obj/markers/rain_spawn,/turf/road,/area)
-"bX" = (/turf/terrain/effects/cloud,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
-"bY" = (/obj/markers/enemy_spawn,/turf/road,/area)
-"bZ" = (/turf/terrain/trashbag,/obj/markers/enemy_spawn,/turf/road,/area)
-"ca" = (/turf/terrain/trashbag,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
-"cb" = (/turf/terrain/details/grass_sprouts,/obj/markers/enemy_spawn,/turf/road,/area)
-"cc" = (/obj/markers/rain_spawn,/turf/buildings/roof/r10,/area)
-"cd" = (/obj/markers/rain_spawn,/turf/buildings/roof/r8,/area)
-"ce" = (/obj/markers/rain_spawn,/turf/buildings/roof/r9,/area)
-"cf" = (/turf/terrain/effects/cloud,/obj/markers/rain_spawn,/turf/road,/area)
-"cg" = (/turf/terrain/grass_edges/e2,/obj/markers/rain_spawn,/turf/road,/area)
-"ch" = (/turf/terrain/helipad,/obj/markers/rain_spawn,/turf/road,/area)
-"ci" = (/turf/buildings/roof/r7,/area)
-"cj" = (/turf/buildings/roof/r8,/area)
-"ck" = (/turf/buildings/roof/r9,/area)
-"cl" = (/turf/terrain/grass_edges/e8,/obj/markers/rain_spawn,/turf/road,/area)
-"cm" = (/turf/terrain/pentagram,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
-"cn" = (/turf/terrain/grass_edges/e2,/turf/terrain/details/grass_sprouts,/obj/markers/rain_spawn,/turf/road,/area)
-"co" = (/turf/terrain/grass_edges/e7,/obj/barricade/barrel,/turf/road,/area)
-"cp" = (/obj/barricade/crate,/obj/markers/rain_spawn,/turf/road,/area)
-"cq" = (/obj/markers/rain_spawn,/turf/buildings/roof/r7,/area)
-"cr" = (/turf/buildings/roof/r11,/area)
-"cs" = (/turf/terrain/details/grass_sprouts,/obj/markers/rain_spawn,/turf/grass,/area)
-"ct" = (/turf/terrain/grass_edges/e1,/obj/markers/rain_spawn,/turf/road,/area)
-"cu" = (/turf/terrain/details/grass_sprouts,/obj/markers/rain_spawn,/obj/markers/rain_spawn,/turf/road,/area)
-"cv" = (/obj/markers/rain_spawn,/turf/buildings/roof/r4,/area)
-"cw" = (/turf/terrain/tree,/turf/buildings/roof/r5,/area)
-"cx" = (/turf/terrain/effects/cloud,/turf/terrain/details/grass_sprouts,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
-"cy" = (/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/obj/markers/rain_spawn,/turf/road,/area)
-"cz" = (/turf/terrain/chainlink,/obj/markers/rain_spawn,/turf/grass,/area)
-"cA" = (/obj/markers/rain_spawn,/turf/buildings/roof/r12,/area)
-"cB" = (/obj/markers/rain_spawn,/turf/buildings/roof/r2,/area)
-"cC" = (/obj/markers/rain_spawn,/turf/buildings/roof/r3,/area)
-"cD" = (/turf/terrain/billboard{layer = 3},/turf/buildings/roof/r5,/area)
-"cE" = (/turf/terrain/details/grass_sprouts,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/obj/markers/rain_spawn,/turf/road,/area)
-"cF" = (/obj/markers/rain_spawn,/turf/buildings/roof,/area)
-"cG" = (/obj/barricade/crate,/obj/markers/rain_spawn,/turf/grass,/area)
-"cH" = (/turf/terrain/sidewalk/s9,/turf/grass,/area)
-"cI" = (/turf/terrain/grass_edges/e2,/turf/road,/area)
-"cJ" = (/obj/barricade/crate,/turf/terrain/grass_edges/e3,/obj/markers/rain_spawn,/turf/road,/area)
-"cK" = (/turf/terrain/grass_edges/e5,/turf/terrain/details/grass_sprouts,/obj/markers/rain_spawn,/turf/road,/area)
-"cL" = (/turf/terrain/grass_edges/e7,/obj/markers/rain_spawn,/turf/road,/area)
-"cM" = (/turf/buildings/b5B,/turf/buildings/details/long_window,/area)
-"cN" = (/turf/terrain/grass_edges/e4,/turf/road,/area)
-"cO" = (/obj/barricade/crate,/turf/terrain/grass_edges/e4,/obj/markers/rain_spawn,/turf/road,/area)
-"cP" = (/turf/terrain/chainlink,/turf/grass,/area)
-"cQ" = (/obj/barricade/crate,/turf/grass,/area)
-"cR" = (/turf/terrain/sidewalk/s6,/turf/grass,/area)
-"cS" = (/obj/barricade/barrel,/turf/terrain/grass_edges/e6,/obj/markers/rain_spawn,/turf/road,/area)
-"cT" = (/obj/barricade/barrel,/turf/terrain/grass_edges/e5,/obj/markers/rain_spawn,/turf/road,/area)
-"cU" = (/turf/terrain/grass_edges/e5,/obj/item/health_pack,/obj/markers/rain_spawn,/turf/road,/area)
-"cV" = (/obj/barricade/cone,/turf/terrain/grass_edges/e5,/obj/markers/rain_spawn,/turf/road,/area)
-"cW" = (/obj/barricade/barrel,/turf/terrain/grass_edges/e7,/obj/markers/rain_spawn,/turf/road,/area)
-"cX" = (/turf/terrain/effects/cloud,/turf/buildings/roof/r5,/area)
-"cY" = (/obj/markers/player_spawn,/obj/markers/rain_spawn,/turf/road,/area)
-"cZ" = (/obj/item/special/molotov,/obj/markers/rain_spawn,/turf/road,/area)
-"da" = (/turf/terrain/sidewalk/s6,/obj/barricade/barrel,/obj/markers/rain_spawn,/turf/grass,/area)
-"db" = (/turf/terrain/crashed_car,/obj/markers/dense,/obj/markers/rain_spawn,/turf/road,/area)
-"dc" = (/turf/terrain/grass_edges/e3,/turf/terrain/trashbag,/obj/markers/rain_spawn,/turf/road,/area)
-"dd" = (/turf/terrain/grass_edges/e3,/turf/terrain/details/grass_sprouts,/obj/markers/rain_spawn,/turf/road,/area)
-"de" = (/obj/item/health_pack,/obj/markers/rain_spawn,/turf/road,/area)
-"df" = (/obj/item/revive_pack,/obj/markers/rain_spawn,/turf/road,/area)
-"dg" = (/turf/terrain/sidewalk/s6,/obj/markers/rain_spawn,/turf/grass,/area)
-"dh" = (/turf/terrain/grass_edges/e3,/obj/item/strong_shield,/obj/markers/rain_spawn,/turf/road,/area)
-"di" = (/obj/markers/rain_spawn,/turf/buildings/b4B,/area)
-"dj" = (/turf/terrain/grass_edges/e2,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
-"dk" = (/turf/terrain/grass_edges/e2,/turf/terrain/pentagram,/obj/markers/rain_spawn,/turf/road,/area)
-"dl" = (/turf/terrain/pentagram,/obj/markers/rain_spawn,/turf/road,/area)
-"dm" = (/obj/markers/rain_spawn,/turf/buildings/b1B,/area)
-"dn" = (/turf/buildings/b2B,/obj/markers/rain_spawn,/turf/buildings/details/long_window,/area)
-"do" = (/turf/terrain/chainlink/cl_right,/obj/hazard/spikes,/obj/markers/rain_spawn,/turf/grass,/area)
-"dp" = (/turf/terrain/grass_edges/e3,/obj/hazard/spikes,/obj/markers/rain_spawn,/turf/road,/area)
-"dq" = (/turf/terrain/chainlink/cl_left,/obj/hazard/spikes,/obj/markers/rain_spawn,/turf/road,/area)
-"dr" = (/turf/terrain/chainlink,/turf/terrain/grass_edges/e3,/obj/markers/rain_spawn,/turf/road,/area)
-"ds" = (/turf/terrain/hedge_l,/obj/markers/rain_spawn,/turf/dirt,/area)
-"dt" = (/turf/terrain/hedge,/obj/markers/rain_spawn,/turf/dirt,/area)
-"du" = (/turf/terrain/hedge_r,/obj/markers/rain_spawn,/turf/dirt,/area)
-"dv" = (/turf/terrain/effects/firefly,/obj/markers/rain_spawn,/turf/grass,/area)
-"dw" = (/turf/terrain/grass_edges/e4,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
-"dx" = (/turf/terrain/chainlink/cl_left,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/grass,/area)
-"dy" = (/obj/barricade/cone,/obj/markers/rain_spawn,/turf/grass,/area)
-"dz" = (/turf/terrain/grass_edges/e1,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
-"dA" = (/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/grass,/area)
-"dB" = (/turf/terrain/sidewalk/s3,/obj/hazard/fire,/obj/markers/rain_spawn,/turf/grass,/area)
-"dC" = (/turf/terrain/sidewalk/s3,/obj/barricade/crate,/obj/markers/rain_spawn,/turf/grass,/area)
-"dD" = (/turf/terrain/sidewalk/s3,/obj/markers/rain_spawn,/turf/grass,/area)
-"dE" = (/turf/terrain/crosswalk/c2,/obj/markers/rain_spawn,/turf/road,/area)
-"dF" = (/turf/terrain/sidewalk/s4,/obj/markers/rain_spawn,/turf/road,/area)
-"dG" = (/turf/terrain/tree,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/grass,/area)
-"dH" = (/obj/hazard/fire,/obj/markers/rain_spawn,/turf/road,/area)
-"dI" = (/turf/terrain/crosswalk,/obj/markers/rain_spawn,/turf/road,/area)
-"dJ" = (/turf/terrain/crashed_car,/obj/markers/rain_spawn,/turf/road,/area)
-"dK" = (/obj/gore/blood,/obj/markers/rain_spawn,/turf/road,/area)
-"dL" = (/turf/terrain/car,/obj/markers/rain_spawn,/turf/road,/area)
-"dM" = (/turf/terrain/car,/obj/markers/dense,/obj/markers/rain_spawn,/turf/road,/area)
-"dN" = (/obj/hazard/portal,/obj/markers/rain_spawn,/turf/grass,/area)
-"dO" = (/obj/barricade/cone,/obj/markers/rain_spawn,/turf/road,/area)
-"dP" = (/obj/markers/enemy_spawn,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
-"dQ" = (/turf/terrain/roadline,/obj/markers/rain_spawn,/turf/road,/area)
-"dR" = (/turf/terrain/roadline,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
-"dS" = (/obj/markers/rain_spawn,/turf/buildings/roof/r11,/area)
-"dT" = (/turf/terrain/car,/obj/hazard/fire,/obj/markers/rain_spawn,/turf/road,/area)
-"dU" = (/turf/terrain/car,/obj/hazard/fire,/obj/markers/rain_spawn,/turf/grass,/area)
-"dV" = (/turf/terrain/sidewalk/s8,/obj/hazard/fire,/turf/grass,/area)
-"dW" = (/obj/barricade/cone,/turf/grass,/area)
-"dX" = (/turf/terrain/sidewalk/s8,/obj/barricade/cone,/turf/grass,/area)
-"dY" = (/obj/barricade/cone,/obj/overlays/chainlink{name = "chainlink pixel down"; pixel_y = -16},/turf/grass,/area)
-"dZ" = (/turf/terrain/sidewalk/s8,/obj/barricade/cone,/obj/overlays/chainlink{name = "chainlink pixel down"; pixel_y = -16},/turf/grass,/area)
-"ea" = (/obj/barricade/crate,/obj/overlays/chainlink{name = "chainlink pixel down"; pixel_y = -16},/turf/grass,/area)
-"eb" = (/turf/terrain/sidewalk/s8,/obj/overlays/chainlink{name = "chainlink pixel down"; pixel_y = -16},/turf/grass,/area)
-"ec" = (/obj/markers/enemy_spawn,/obj/overlays/chainlink{name = "chainlink pixel down"; pixel_y = -16},/turf/grass,/area)
-"ed" = (/turf/terrain/sidewalk/s8,/obj/markers/enemy_spawn,/obj/overlays/chainlink{name = "chainlink pixel down"; pixel_y = -16},/turf/grass,/area)
-"ee" = (/obj/overlays/chainlink{name = "chainlink pixel down"; pixel_y = -16},/turf/grass,/area)
-"ef" = (/obj/markers/enemy_spawn,/obj/overlays/chainlink{name = "chainlink pixel down"; pixel_y = -16},/turf/road,/area)
-"eg" = (/turf/terrain/sidewalk/s8,/obj/markers/enemy_spawn,/obj/overlays/chainlink{name = "chainlink pixel down"; pixel_y = -16},/turf/road,/area)
-"eh" = (/turf/otherworld/otherdirt,/area)
-"ei" = (/obj/hazard/fire,/turf/otherworld/otherdirt,/area)
-"ej" = (/turf/terrain/details/grass_sprouts,/turf/otherworld/otherdirt,/area)
-"ek" = (/turf/terrain/tree2,/turf/otherworld/otherdirt,/area)
-"el" = (/obj/hazard/edge_spike{dir = 8; name = "edge spike s"},/turf/otherworld/otherdirt,/area)
-"em" = (/obj/markers/dense,/turf/otherworld/otherdirt,/area)
-"en" = (/obj/hazard/edge_spike{dir = 4; name = "edge spike s"},/turf/otherworld/otherdirt,/area)
-"eo" = (/turf/terrain/effects/firefly,/turf/otherworld/otherdirt,/area)
-"ep" = (/obj/hazard/fire{layer = 4},/turf/otherworld/otherdirt,/area)
-"eq" = (/obj/hazard/spikes,/turf/otherworld/otherdirt,/area)
-"er" = (/obj/hazard/spikes,/obj/hazard/spikes,/turf/otherworld/otherdirt,/area)
-"es" = (/obj/markers/dense,/obj/markers/dense,/turf/otherworld/otherdirt,/area)
-"et" = (/turf/terrain/details/grass_sprouts,/turf/terrain/mausoleum,/turf/otherworld/otherdirt,/area)
-"eu" = (/obj/hazard/edge_spike,/turf/otherworld/otherdirt,/area)
-"ev" = (/turf/terrain/effects/firefly,/obj/hazard/edge_spike,/turf/otherworld/otherdirt,/area)
-"ew" = (/turf/terrain/obelisk,/turf/otherworld/otherdirt,/area)
-"ex" = (/turf/tile,/area)
-"ey" = (/obj/markers/enemy_spawn,/turf/otherworld/otherdirt,/area)
-"ez" = (/turf/big_tile,/area)
-"eA" = (/obj/hazard/portal{step_x = 8; step_y = -2},/turf/otherworld/otherdirt,/area)
-"eB" = (/turf/terrain/pentagram,/turf/otherworld/otherdirt,/area)
-"eC" = (/obj/gore/blood,/turf/otherworld/otherdirt,/area)
+"br" = (/obj/markers/rain_spawn,/obj/item/shield_tier2,/turf/road,/area)
+"bs" = (/obj/hazard/portal,/obj/markers/rain_spawn,/turf/road,/area)
+"bt" = (/obj/hazard/spikes,/obj/markers/rain_spawn,/turf/road,/area)
+"bu" = (/obj/hazard/spikes,/obj/markers/rain_spawn,/obj/item/health_pack,/turf/road,/area)
+"bv" = (/obj/hazard/spikes,/obj/item/shield_tier1,/obj/markers/rain_spawn,/turf/road,/area)
+"bw" = (/turf/terrain/chainlink/cl_left,/obj/markers/rain_spawn,/turf/road,/area)
+"bx" = (/turf/terrain/chainlink,/obj/markers/rain_spawn,/turf/road,/area)
+"by" = (/turf/terrain/chainlink/cl_right,/obj/markers/rain_spawn,/turf/road,/area)
+"bz" = (/turf/buildings,/area)
+"bA" = (/turf/buildings/b2A,/area)
+"bB" = (/obj/hazard/fire{layer = 4},/turf/buildings/b2A,/area)
+"bC" = (/turf/buildings/b3A,/area)
+"bD" = (/turf/terrain/chainlink,/obj/markers/rain_spawn,/obj/markers/rain_spawn,/turf/road,/area)
+"bE" = (/turf/terrain/chainlink,/turf/terrain/grass_edges/e4,/obj/markers/rain_spawn,/turf/road,/area)
+"bF" = (/obj/markers/rain_spawn,/turf/buildings/roof/r5,/area)
+"bG" = (/turf/terrain/trashbag,/obj/markers/rain_spawn,/turf/grass,/area)
+"bH" = (/turf/terrain/grass_edges/e3,/obj/markers/rain_spawn,/turf/road,/area)
+"bI" = (/obj/barricade/barrel,/obj/markers/rain_spawn,/turf/road,/area)
+"bJ" = (/turf/terrain/grass_edges/e5,/obj/hazard/fire,/obj/markers/rain_spawn,/turf/road,/area)
+"bK" = (/turf/terrain/grass_edges/e5,/obj/markers/dense,/turf/road,/area)
+"bL" = (/turf/terrain/grass_edges/e5,/turf/terrain/trashbag,/obj/hazard/fire,/obj/markers/dense,/turf/road,/area)
+"bM" = (/turf/terrain/grass_edges/e5,/obj/markers/dense,/obj/markers/rain_spawn,/turf/road,/area)
+"bN" = (/turf/terrain/grass_edges/e5,/obj/hazard/fire{layer = 4},/obj/markers/dense,/obj/markers/rain_spawn,/turf/road,/area)
+"bO" = (/turf/terrain/grass_edges/e4,/turf/terrain/details/grass_sprouts,/obj/markers/rain_spawn,/turf/road,/area)
+"bP" = (/turf/terrain/sewer,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
+"bQ" = (/turf/terrain/effects/firefly,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
+"bR" = (/obj/markers/dense,/obj/markers/rain_spawn,/turf/road,/area)
+"bS" = (/turf/terrain/effects/firefly,/obj/markers/rain_spawn,/turf/road,/area)
+"bT" = (/obj/barricade/barrel,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
+"bU" = (/turf/terrain/details/grass_sprouts,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
+"bV" = (/turf/terrain/trashbag,/obj/hazard/fire,/obj/markers/dense,/turf/road,/area)
+"bW" = (/turf/terrain/dumpster,/obj/markers/dense,/obj/markers/rain_spawn,/turf/road,/area)
+"bX" = (/turf/terrain/trashbag,/obj/markers/dense,/obj/markers/rain_spawn,/turf/road,/area)
+"bY" = (/obj/markers/rain_spawn,/obj/item/special/fireball,/turf/grass,/area)
+"bZ" = (/turf/terrain/obelisk,/obj/markers/rain_spawn,/turf/road,/area)
+"ca" = (/turf/terrain/effects/cloud,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
+"cb" = (/obj/markers/enemy_spawn,/turf/road,/area)
+"cc" = (/turf/terrain/trashbag,/obj/markers/enemy_spawn,/turf/road,/area)
+"cd" = (/turf/terrain/trashbag,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
+"ce" = (/turf/terrain/details/grass_sprouts,/obj/markers/enemy_spawn,/turf/road,/area)
+"cf" = (/obj/markers/rain_spawn,/turf/buildings/roof/r10,/area)
+"cg" = (/obj/markers/rain_spawn,/turf/buildings/roof/r8,/area)
+"ch" = (/obj/markers/rain_spawn,/turf/buildings/roof/r9,/area)
+"ci" = (/turf/terrain/effects/cloud,/obj/markers/rain_spawn,/turf/road,/area)
+"cj" = (/turf/terrain/grass_edges/e2,/obj/markers/rain_spawn,/turf/road,/area)
+"ck" = (/turf/terrain/helipad,/obj/markers/rain_spawn,/turf/road,/area)
+"cl" = (/turf/buildings/roof/r7,/area)
+"cm" = (/turf/buildings/roof/r8,/area)
+"cn" = (/turf/buildings/roof/r9,/area)
+"co" = (/turf/terrain/grass_edges/e8,/obj/markers/rain_spawn,/turf/road,/area)
+"cp" = (/turf/terrain/pentagram,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
+"cq" = (/turf/terrain/grass_edges/e2,/turf/terrain/details/grass_sprouts,/obj/markers/rain_spawn,/turf/road,/area)
+"cr" = (/turf/terrain/grass_edges/e7,/obj/barricade/barrel,/turf/road,/area)
+"cs" = (/obj/barricade/crate,/obj/markers/rain_spawn,/turf/road,/area)
+"ct" = (/obj/markers/rain_spawn,/turf/buildings/roof/r7,/area)
+"cu" = (/turf/buildings/roof/r11,/area)
+"cv" = (/turf/terrain/details/grass_sprouts,/obj/markers/rain_spawn,/turf/grass,/area)
+"cw" = (/turf/terrain/grass_edges/e1,/obj/markers/rain_spawn,/turf/road,/area)
+"cx" = (/turf/terrain/details/grass_sprouts,/obj/markers/rain_spawn,/obj/markers/rain_spawn,/turf/road,/area)
+"cy" = (/obj/markers/rain_spawn,/turf/buildings/roof/r4,/area)
+"cz" = (/turf/terrain/tree,/turf/buildings/roof/r5,/area)
+"cA" = (/turf/terrain/effects/cloud,/turf/terrain/details/grass_sprouts,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
+"cB" = (/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/obj/markers/rain_spawn,/turf/road,/area)
+"cC" = (/turf/terrain/chainlink,/obj/markers/rain_spawn,/turf/grass,/area)
+"cD" = (/obj/markers/rain_spawn,/turf/buildings/roof/r12,/area)
+"cE" = (/obj/markers/rain_spawn,/turf/buildings/roof/r2,/area)
+"cF" = (/obj/markers/rain_spawn,/turf/buildings/roof/r3,/area)
+"cG" = (/turf/terrain/billboard{layer = 8},/turf/buildings/roof/r5,/area)
+"cH" = (/turf/terrain/details/grass_sprouts,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/obj/markers/rain_spawn,/turf/road,/area)
+"cI" = (/obj/markers/rain_spawn,/turf/buildings/roof,/area)
+"cJ" = (/obj/markers/rain_spawn,/obj/item/shield_tier1,/turf/grass,/area)
+"cK" = (/obj/barricade/crate,/obj/markers/rain_spawn,/turf/grass,/area)
+"cL" = (/turf/terrain/sidewalk/s9,/turf/grass,/area)
+"cM" = (/turf/terrain/grass_edges/e2,/turf/road,/area)
+"cN" = (/obj/barricade/crate,/turf/terrain/grass_edges/e3,/obj/markers/rain_spawn,/turf/road,/area)
+"cO" = (/turf/terrain/grass_edges/e5,/turf/terrain/details/grass_sprouts,/obj/markers/rain_spawn,/turf/road,/area)
+"cP" = (/turf/terrain/grass_edges/e7,/obj/markers/rain_spawn,/turf/road,/area)
+"cQ" = (/turf/buildings/b5B,/turf/buildings/details/long_window,/area)
+"cR" = (/turf/terrain/grass_edges/e4,/turf/road,/area)
+"cS" = (/obj/item/gun/shotgun,/turf/grass,/area)
+"cT" = (/obj/barricade/crate,/turf/terrain/grass_edges/e4,/obj/markers/rain_spawn,/turf/road,/area)
+"cU" = (/turf/terrain/chainlink,/turf/grass,/area)
+"cV" = (/obj/barricade/crate,/turf/grass,/area)
+"cW" = (/turf/terrain/sidewalk/s6,/turf/grass,/area)
+"cX" = (/obj/barricade/barrel,/turf/terrain/grass_edges/e6,/obj/markers/rain_spawn,/turf/road,/area)
+"cY" = (/obj/barricade/barrel,/turf/terrain/grass_edges/e5,/obj/markers/rain_spawn,/turf/road,/area)
+"cZ" = (/turf/terrain/grass_edges/e5,/turf/terrain/details/grass_sprouts,/obj/markers/rain_spawn,/obj/item/special/cowbell,/turf/road,/area)
+"da" = (/turf/terrain/grass_edges/e5,/obj/item/health_pack,/obj/markers/rain_spawn,/turf/road,/area)
+"db" = (/obj/barricade/cone,/turf/terrain/grass_edges/e5,/obj/markers/rain_spawn,/turf/road,/area)
+"dc" = (/obj/barricade/barrel,/turf/terrain/grass_edges/e7,/obj/markers/rain_spawn,/turf/road,/area)
+"dd" = (/turf/terrain/effects/cloud,/turf/buildings/roof/r5,/area)
+"de" = (/obj/markers/player_spawn,/obj/markers/rain_spawn,/turf/road,/area)
+"df" = (/obj/item/special/molotov,/obj/markers/rain_spawn,/turf/road,/area)
+"dg" = (/turf/terrain/sidewalk/s6,/obj/barricade/barrel,/obj/markers/rain_spawn,/turf/grass,/area)
+"dh" = (/turf/terrain/crashed_car,/obj/markers/dense,/obj/markers/rain_spawn,/turf/road,/area)
+"di" = (/turf/terrain/grass_edges/e3,/turf/terrain/trashbag,/obj/markers/rain_spawn,/turf/road,/area)
+"dj" = (/turf/terrain/grass_edges/e3,/turf/terrain/details/grass_sprouts,/obj/markers/rain_spawn,/turf/road,/area)
+"dk" = (/obj/markers/rain_spawn,/obj/item/gun/spas_12,/turf/road,/area)
+"dl" = (/obj/item/health_pack,/obj/markers/rain_spawn,/turf/road,/area)
+"dm" = (/obj/item/revive_pack,/obj/markers/rain_spawn,/turf/road,/area)
+"dn" = (/turf/terrain/details/grass_sprouts,/obj/markers/rain_spawn,/obj/markers/enemy_spawn,/turf/road,/area)
+"do" = (/obj/markers/rain_spawn,/obj/markers/enemy_spawn,/turf/road,/area)
+"dp" = (/turf/terrain/sidewalk/s6,/obj/markers/rain_spawn,/turf/grass,/area)
+"dq" = (/turf/terrain/grass_edges/e3,/obj/item/shield_tier2,/obj/markers/rain_spawn,/turf/road,/area)
+"dr" = (/obj/markers/rain_spawn,/turf/buildings/b4B,/area)
+"ds" = (/turf/terrain/grass_edges/e2,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
+"dt" = (/turf/terrain/grass_edges/e2,/turf/terrain/pentagram,/obj/markers/rain_spawn,/turf/road,/area)
+"du" = (/turf/terrain/effects/firefly,/obj/markers/rain_spawn,/obj/markers/enemy_spawn,/turf/road,/area)
+"dv" = (/turf/terrain/pentagram,/obj/markers/rain_spawn,/turf/road,/area)
+"dw" = (/obj/markers/rain_spawn,/turf/buildings/b1B,/area)
+"dx" = (/turf/buildings/b2B,/obj/markers/rain_spawn,/turf/buildings/details/long_window,/area)
+"dy" = (/turf/terrain/chainlink/cl_right,/obj/hazard/spikes,/obj/markers/rain_spawn,/turf/grass,/area)
+"dz" = (/turf/terrain/grass_edges/e3,/obj/hazard/spikes,/obj/markers/rain_spawn,/turf/road,/area)
+"dA" = (/turf/terrain/chainlink/cl_left,/obj/hazard/spikes,/obj/markers/rain_spawn,/turf/road,/area)
+"dB" = (/turf/terrain/chainlink,/turf/terrain/grass_edges/e3,/obj/markers/rain_spawn,/turf/road,/area)
+"dC" = (/turf/terrain/hedge_l,/obj/markers/rain_spawn,/turf/dirt,/area)
+"dD" = (/turf/terrain/hedge,/obj/markers/rain_spawn,/turf/dirt,/area)
+"dE" = (/turf/terrain/hedge_r,/obj/markers/rain_spawn,/turf/dirt,/area)
+"dF" = (/turf/terrain/effects/firefly,/obj/markers/rain_spawn,/turf/grass,/area)
+"dG" = (/turf/terrain/grass_edges/e4,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
+"dH" = (/turf/terrain/chainlink/cl_left,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/grass,/area)
+"dI" = (/obj/barricade/cone,/obj/markers/rain_spawn,/turf/grass,/area)
+"dJ" = (/turf/terrain/grass_edges/e1,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
+"dK" = (/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/grass,/area)
+"dL" = (/turf/terrain/sidewalk/s3,/obj/hazard/fire,/obj/markers/rain_spawn,/turf/grass,/area)
+"dM" = (/turf/terrain/sidewalk/s3,/obj/barricade/crate,/obj/markers/rain_spawn,/turf/grass,/area)
+"dN" = (/turf/terrain/sidewalk/s3,/obj/markers/rain_spawn,/turf/grass,/area)
+"dO" = (/turf/terrain/crosswalk/c2,/obj/markers/rain_spawn,/turf/road,/area)
+"dP" = (/turf/terrain/sidewalk/s4,/obj/markers/rain_spawn,/turf/road,/area)
+"dQ" = (/turf/terrain/tree,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/grass,/area)
+"dR" = (/obj/hazard/fire,/obj/markers/rain_spawn,/turf/road,/area)
+"dS" = (/turf/terrain/crosswalk,/obj/markers/rain_spawn,/turf/road,/area)
+"dT" = (/turf/terrain/crashed_car,/obj/markers/rain_spawn,/turf/road,/area)
+"dU" = (/obj/gore/blood,/obj/markers/rain_spawn,/turf/road,/area)
+"dV" = (/turf/terrain/car,/obj/markers/rain_spawn,/turf/road,/area)
+"dW" = (/turf/terrain/car,/obj/markers/dense,/obj/markers/rain_spawn,/turf/road,/area)
+"dX" = (/obj/hazard/portal,/obj/markers/rain_spawn,/turf/grass,/area)
+"dY" = (/obj/barricade/cone,/obj/markers/rain_spawn,/turf/road,/area)
+"dZ" = (/obj/markers/enemy_spawn,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
+"ea" = (/turf/terrain/roadline,/obj/markers/rain_spawn,/turf/road,/area)
+"eb" = (/turf/terrain/roadline,/obj/markers/enemy_spawn,/obj/markers/rain_spawn,/turf/road,/area)
+"ec" = (/obj/markers/rain_spawn,/turf/buildings/roof/r11,/area)
+"ed" = (/turf/terrain/car,/obj/hazard/fire,/obj/markers/rain_spawn,/turf/road,/area)
+"ee" = (/turf/terrain/car,/obj/hazard/fire,/obj/markers/rain_spawn,/turf/grass,/area)
+"ef" = (/turf/terrain/sidewalk/s8,/obj/hazard/fire,/turf/grass,/area)
+"eg" = (/obj/barricade/cone,/turf/grass,/area)
+"eh" = (/turf/terrain/sidewalk/s8,/obj/barricade/cone,/turf/grass,/area)
+"ei" = (/obj/barricade/cone,/obj/overlays/chainlink{name = "chainlink pixel down"; pixel_y = -16},/turf/grass,/area)
+"ej" = (/turf/terrain/sidewalk/s8,/obj/barricade/cone,/obj/overlays/chainlink{name = "chainlink pixel down"; pixel_y = -16},/turf/grass,/area)
+"ek" = (/obj/barricade/crate,/obj/overlays/chainlink{name = "chainlink pixel down"; pixel_y = -16},/turf/grass,/area)
+"el" = (/turf/terrain/sidewalk/s8,/obj/overlays/chainlink{name = "chainlink pixel down"; pixel_y = -16},/turf/grass,/area)
+"em" = (/obj/markers/enemy_spawn,/obj/overlays/chainlink{name = "chainlink pixel down"; pixel_y = -16},/turf/grass,/area)
+"en" = (/turf/terrain/sidewalk/s8,/obj/markers/enemy_spawn,/obj/overlays/chainlink{name = "chainlink pixel down"; pixel_y = -16},/turf/grass,/area)
+"eo" = (/obj/overlays/chainlink{name = "chainlink pixel down"; pixel_y = -16},/turf/grass,/area)
+"ep" = (/obj/markers/enemy_spawn,/obj/overlays/chainlink{name = "chainlink pixel down"; pixel_y = -16},/turf/road,/area)
+"eq" = (/turf/terrain/sidewalk/s8,/obj/markers/enemy_spawn,/obj/overlays/chainlink{name = "chainlink pixel down"; pixel_y = -16},/turf/road,/area)
+"er" = (/turf/otherworld/otherdirt,/area)
+"es" = (/obj/hazard/fire,/turf/otherworld/otherdirt,/area)
+"et" = (/turf/terrain/details/grass_sprouts,/turf/otherworld/otherdirt,/area)
+"eu" = (/turf/terrain/tree2,/turf/otherworld/otherdirt,/area)
+"ev" = (/obj/hazard/edge_spike{dir = 8; name = "edge spike s"},/turf/otherworld/otherdirt,/area)
+"ew" = (/obj/markers/dense,/turf/otherworld/otherdirt,/area)
+"ex" = (/obj/hazard/edge_spike{dir = 4; name = "edge spike s"},/turf/otherworld/otherdirt,/area)
+"ey" = (/turf/terrain/effects/firefly,/turf/otherworld/otherdirt,/area)
+"ez" = (/obj/hazard/fire{layer = 4},/turf/otherworld/otherdirt,/area)
+"eA" = (/obj/hazard/spikes,/turf/otherworld/otherdirt,/area)
+"eB" = (/obj/hazard/spikes,/obj/hazard/spikes,/turf/otherworld/otherdirt,/area)
+"eC" = (/obj/markers/dense,/obj/markers/dense,/turf/otherworld/otherdirt,/area)
+"eD" = (/turf/terrain/details/grass_sprouts,/turf/terrain/mausoleum,/turf/otherworld/otherdirt,/area)
+"eE" = (/obj/hazard/edge_spike,/turf/otherworld/otherdirt,/area)
+"eF" = (/turf/terrain/effects/firefly,/obj/hazard/edge_spike,/turf/otherworld/otherdirt,/area)
+"eG" = (/turf/terrain/obelisk,/turf/otherworld/otherdirt,/area)
+"eH" = (/turf/tile,/area)
+"eI" = (/obj/markers/enemy_spawn,/turf/otherworld/otherdirt,/area)
+"eJ" = (/turf/big_tile,/area)
+"eK" = (/turf/terrain/pentagram,/turf/otherworld/otherdirt,/area)
+"eL" = (/obj/gore/blood,/turf/otherworld/otherdirt,/area)
 
 (1,1,1) = {"
 aaaaabacadaeaeaeaeaeaeaeafagagagagagahaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiajaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaakalaeaeaeaeaeaeaeaeaeaeaeafajaaaaaaaaaaaaaaaaaa
@@ -243,89 +252,89 @@ aaaaamanaoanananananananaoapapapapapaqararararararararararararararararararararar
 aaaaamanaoanananananananaoaEaFaFaFaGaqarararararararaHararararararararararaHararararararararararaHarararararararahaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaIaJaKaLaLaLaLaLaMaNaOaBaBaPajaaaaaaaaaaaaaaaaaa
 aaaaamanaoaQaQaQaQaQaQaQaRaSaTaTaTaUaVaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWahaXaiaiaiaiaiaXaiaiaiaiaiaXaiaiaiaiaiaiaIaYaZaLaLaLaLaLaLbaaLaLaLbbajaaaaaaaaaaaaaaaaaa
 aaaaamaQaRbcbdbebeapbfazaTbgaLbgbgbgazbhaEaFaGbfazbibibibibjbibibibibkazazazazazazazazazazazazazazazazazazazazblahaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaIaYaLaLaLaMaLaLaLbaaLaLaNbmawbnaaaaaaaaaaaaaaaa
-aaaaamapboapbfaAazazaLaLaLaLbpbqbpaLaLaLazazazaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLbraLaLaLaLbsbsbsbsbtbsbsbsbsaLaLaLbmahaiaiaiaXaiaiaiaiaiaXaiaiaiaiaiaXaiaiaiaIaYaLbpbpaLaLaLaLbaaLaNaNbmahajaaaaaaaaaaaaaaaa
-aaaaamapapbfaLaLaLaLaLaLaLaLaLbpbpaLaLaLaLaLaLaLbubvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbvbwaLaLbmbxbybybybzbzbybybzbzbybybybybybybybybybybAaYaLaLbpbubvbvbvbBbvbvbvbCahajaaaaaaaaaaaaaaaa
-bDbDambEapbFbgbgbgbgbgbgbgbgaLaLbpbpaLaLaLaLaLaLaLaLaLaLbpbpaLaLaLaLaLaLaLaLbGaLaLaLbGbGaLaLaLaLaLaLaLaLaLaLaLaLazazaybHbIbIbIbJbKbLbKbKayazazazazazazazazaLbpaLaLaLaLaLbgbabpbpbpbMahajaaaaaaaaaaaaaaaa
-bDbDambdbEbFbNbgbgbgbObgbgbgbgbgbgaLaLaLbPbPaLaLaLbQaLaLaLaLaLaLaLaLbPbPaLaLaLaLbRbgbgbgbSbgaLaLaLbPbPaLaLaLaLaLaLaLbGaNaOaBaBbTbUbPbPbVbgbgbgbgbgbgbgbgbgbSaLaLbgaLaLaLaLbaaLaLbpbMahajaaaaaaaaaaaaaaaa
-bDbDamapapbFbgbgbgbgbgbgbgbgbgbgbgaLbWaLbPbPaLaLaLaLaLaLaLaLaLaLbWaLbPbPaLaLaLaLbgbgbgbSbgbgaLbWaLbPbPaLbgbXbgbgbgaLaLbGbYbYbZbZbgbgcabgbgbSbgbgbgbgbgbObSbSaLaLaLaLaLbgbgbaaLbgaLbmahajaaaaaaaaaaaaaaaa
-bDbDamapapbFbgbgbgbgbgbgbgbgbgbgbgaLaLaLaLaLaLaLbpbpaLbpaLaLaLaLaLaLaLaLaLaLaLaLbgbSbgbSbSbgbQaLaLaLbGaLbgbgbgbgbgaLaLaLcbbYbYbYbgbgbgbgbgbgbgbgbgbgbgbScbbYbpbpaLaLaLbgaLbaaLaLaLbMahajaaaaaaaaaaaaaaaa
-bDbDcccdcdcdceaLcfaLaLaLaLaLaLaLaLaLbpaLaLaLaLaLaLaLaLbgbgbgaLaLaLaLaLaLaLaLaLbpaLaLaLcgbpaLaLaLbpaLaLaLaLaLaLaLaLaLaLaLbYcbcbbYbgbgbgbgbgbgbgbgbgbgbgbScbbYaLaLbpaLaLaLaLbaaLbgaLbmahajaaaaaaaaaaaaaaaa
-aaaabDbDbDbDamaLaLaLchaLaLaLaLaLcicjcjcjcjcjcjcjcjcjcjcjcjcjcjcjcjcjcjcjcjcjcjcjcjcjckapclaLaLbpaLcicjcjcjcjcjcjcjcjcjckbYbYbYbYbgbgbSbgbgbgbgbgbgbgbgbgbYcbbpbqaLcmaLaLaLbaaLaLaLbmbxajaaaaaaaaaaaaaaaa
-aaaabDbDbDbDamaLaLaLaLaLaLaLaLaLajaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaakapapclcnaLbpajaaaaaaaaaaaaaaaaaaakaLaLbpaLbgaLaLaLaLaLaLaLaLaLaLaLaCaCbpbpaLaLaLaLaLbabpbpaLaLcoajaaaaaaaaaaaaaaaa
-aaaabDbDbDbDamcpaLaLaLaLaLcqcdcdcraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaakapcsapapclctajaaaaaaaaaaaaaaaaaaakbpcncnbpaLaLaLaLaLaLaLaLaLaLaLaLaCaCaLaLaLbpaLaLaLcuaLaLaLaLcicraaaaaaaaaaaaaaaa
-aaaabDbDbDbDambFcpaLaLaLaLcvbDbDaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacwakbebeapcsapapajaaaaaaaaaaaaaaaaaaakbMapapclcicjcjcjcjcjcjcjcjcjcjcjcjckaLaLaLbScxbSbgcybgbpbpaLajaaaaaaaaaaaaaaaaaa
-aaaabDbDbDbDambFaLaLaLaLaLcvbDbDaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaakczczapapapapajaaaaaaaaaaaaaaaaaaakctapapapajaaaaaaaaaaaaaaaaaaaaaaaaakaLaLbpbSbSbgbgcybgbpbpaLajaaaaaaaaaaaaaaaaaa
-aaaabDcAcBcBcCbFaLaLaLaLbmcvbDbDaaaaaaaaaaaaaaaaaaaaaaaaaaabacacacacacacacacacacacacadaEaGapapapapawacacacacacacacacacadapapapapajaaaaaaaaaacDaaaaaaaaaaaaakaLaLaLbgbgbgbScEbObpaLaLajaaaaaaaaaaaaaaaaaa
-aaaabDamananaobFaLaLaLaLbmcFcBcBbnaaaaaaaaaaaaaaaaaaaaaaaaakaiaiaiaiaiaiaiaiaiaiaiaiaIapapapapcsapalaeaeaeaeaeaeaeaeaeafapcGapapajaaaaaaaaaaaaaaaaaaaaaaaaakaCaCaCbYcbbYcbbSbgbpaLaLajaaaaaaaaaaaaaaaaaa
-aaaabDamananaobFaLaLaLaLbmaqararajaaaaaaaaaaaaaaaaaaaaaaaaakaiaiaiaiaiaiaiaiaiaiaiaiaIapapapapapapalaeaeaeaeaeaeaeaeaeafcGcGcGapawacacacacacacacbnaaaaaaaaakcHaCaCcIcIaCaCbpaLaLaLaLajaaaaaaaaaaaaaaaaaa
-aaaabDamananaocJcpaLaLaLbmaqararajaaaaaaaaaaaaaaaaaaaaaaaaakaiaiaXaiaiaiaiaiaXaiaiaiaIcKcKcLapapapalaecMaeaeaecMaeaeaeafcGcGcGbdalaeaeaeaeaeaeaeajaaaaaaaaakagaCcNagagaYaCaLaLaLaLbmajaaaaaaaaaaaaaaaaaa
-aaaabDamananaocJcpbpbgcpcOaqararajaaaaaaaaaaaaaaaaaaaaaaaaakbybybybybybybybybybybybybAaLaLbMapczczasatatatatatatatatatavcPcQcQcPasatatatatatatatajaaaaaaaaakcRaCcNagagaYaCaLaLaLaLbMawbnaaaaaaaaaaaaaaaa
-aaaabDamaQaQaRbFbpbpaLcpcOaVaWaWajaaaaaaaaaaaaaaaaaaaaaaaaakcScTcTcKazazazazazcKcKcKcKaLbpaLcKazazazazazazazcKazcUazazaAazazazazcVazazcKazazcKbhcvbDbDbDbDambdaLctapapbFbPbPbPbPbpbmaqcvbDaaaaaaaaaaaaaa
-aaaabDamcScTaTaLbpaLaLaLaLazazcWajaacXaaaaaaaaaaaaaaaaaaaaakbFbGbGaLaLaLaLaLcYaLaLbpaLaLaLaLaLaLaLaLaLcZaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaZaLbpbMcvbDbDbDbDamdaapapapapbFdbbPbPbPaLbmaqcvbDaaaaaaaaaaaaaa
-acaccBcCdcaLaLaLaLbgbgaLaLbgaLbmajaaaaaaaaaaaaaaaaaaaaaaaaakddaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLcYaLaLaLaLaLaLaLaLaLbpbpaLdeaLaLaLaLaLdfaLaLaLbmcvbDbDbDbDamapapapapapbFaLaLaLaLaLbmaqcvbDaaaaaaaaaaaaaa
-aeaeanaobFaLaLaLaLbgbgaLbpbpbpbmawacacacacacacacacacacacacadbFbpaLaLaLaLbPbPaLaLaLaLcYaLaLaLaLaLaLaLaLaLaLaLaLaLbpbpbpaLbpaLbpaLaLaLaLaLaLaLaLbmcFcBcBcBcBcCdgapapbfazaLaLaLaLaLaLbmaqcvbDaaaaaaaaaaaaaa
-aeaeanaodhaLaLbpbpbpaLaLaLbpaLbmahaiaiaiaiaiaiaiaiaiaiaiaiaIddbpaLaLbWaLbPbPaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLcYaLaLbpcfaLaLbpaLaLaLaLaLaLaLaLaLbmdiananananaoapapazbSbSbgbgbgbgbgbpbmaqcvbDaaaaaaaaaaaaaa
-cMaeanaoclcgdjdkcncgcgcgbgaLbpbmahaiaiaiaiaiaiaiaiaiaiaiaiaIbFbpaLaLaLaLaLaLbpaLbQaLaLaLaLaLaLdlaLaLaLaLaLaLaLaLaLaLaLaLbpbpaLaLbpaLaLaLaLaLaLbmdmdnaQaQaQaRdgapbpbgbgbgbgbgbgbgbpbMaqcvbDaaaaaaaaaaaaaa
-aeaeanaobcapbebeapapapapbFaLaLbmahaiaXaiaiaiaiaiaiaXaiaiaiaIbFaLdeaLaLaLaLbpbpaLbpaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLbQaLbpbpbpaLaLaLaLaLaLaLaLaLaLbmbdaEaFaFaGbdapapaLbSbgbgbgbgbgdjcgctaqcvbDaaaaaaaaaaaaaa
-atataQaRczczczczczczczdodpdqbvbCbxbybybybybybybybybybybybybAdrbwaLaLaLbubvbvdsdtdtdtdtdubvbvdsdtdtdtdtdtdtdtdtdtdtdubvbvbvbvbvbvbvbvbwaLaLaLaLbmapdvbcapbebedgaLaLbgbgbgbgbSdwdxczczaVcvbDaaaaaaaaaaaaaa
-apdydycGcGapapapapapapapaLaLaLaLapapapapapbdbdbdapapapapapapaLaLaLaLaLaLapapapapapapapapapapapbdbdapdvapapapapcGapapapapapapapapapapaLaLaLaLaLaLapapapapapaLaLaLaLbgbgbgbgbgdzdAaEaFaGcvbDaaaaaaaaaaaaaa
-dBdydCdydCcGdDapdDapdDapaLaLaLaLdDapdDapdDapdDapdDapdDapdDapdEdEdEdEdEdEdDapdDapdDapdDapdDapdDapdDapdDapdDapdDapdDapdDapdDapdDapdDapdEdEdEdEdEdEdDapdDapdDaLdFaLaLbgbgbgbgdwdAdGapbebecvbDaaaaaaaaaaaaaa
-aLaLaLdHcpbgaLbQaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLbpaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLbpbpaLaLcpcpcpaLaLaLaLaLaLaLaLcfaLaLaLaLdIaLaLaLaLaLaLbgaLbpaLaLaLbmapapapapbdcvbDaaaaaaaaaaaaaa
-dJaLaLaLaLbgdKaLaLbgbgbgbgbgbgbgbgbgbgbgbgbgbQaLaLbPbPbPbPaLaLaLaLaLbgbgbgbgbgbgbgbgbgbgbgbXbgbgbgbgaLbpaLaLaLaLaLaLaLaLaLaLaLaLaLcpaLaLaLaLaLaLdIaLaLbpaLaLaLaLaLaLaLaLaLbmapapapapbdcvbDaaaaaaaaaaaaaa
-cpdLaLaLaLbgaLdKaLbgbgbgbgbgbgbgbgbgbgbgbgbgaLaLbpdMbPbPbPaLaLaLaLaLbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgaLaLaLaLaLaLaLaLaLaLaLaLaLaLcpcpcpaLaLaLaLaLdIaLbpaLbgaLaLaLaLaLaLbgaLbmapapdNapapcvbDaaaaaaaaaaaaaa
-dHaLdOdOdOdPbgaLdKbgbgbgbgbgbgbgbgbgbgbgbgbgaLaLbpbpbpaLaLaLaLaLaLaLbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgaLaLaLaLbgbgbgbgbgbgbgbgbgaLaLcpaLaLaLaLaLaLdIaLaLaLbgaLaLaLbgaLaLaLaLbpcLapapapapcvbDaaaaaaaaaaaaaa
-dHaLdQdQdQdQdRdQdQdRdRdRdRdRdRdRdRdRdRdRdRdRdQdQdQdQdQdQdQdQdQdQdQdQdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdQdQdQdQdRdRdRdRdRdRdRdRdRdQdQdQdQdQdQaLaLaLdIaLaLaLaLaLaLbgaLaLaLaLbpaLbmapapapapcvbDaaaaaaaaaaaaaa
-aLdJaLaLaLbgbgaLaLbgbgbgbgbgbgbgbgbgbgbgbgbgaLaLaLaLaLaLaLaLcpcpaLaLbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgaLaLaLaLbgbgbgbgbgbgbgbgbgaLaLaLaLaLaLaLaLaLdIaLaLaLaLaLaLaLaLaLaLaLaLaLctapapapcqdSbDaaaaaaaaaaaaaa
-dTdHaLaLaLbgbgaLaLbgbgbgbgbgbgbgbgbgbgbgbgbgaLaLaLaLaLaLaLaLcpaLaLaLbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgaLaLaLbQaLaLaLaLaLbpaLaLaLaLbpaLaLaLaLaLaLaLdIaLbpaLaLdlaLbQaLaLaLaLaLbmapapapapcvbDbDaaaaaaaaaaaaaa
-aLaLaLaLaLbgaLaLaLbgbObgbgbgbgbgbgbgbgbgbgbgaLaLaLaLaLaLaLaLaLaLaLaLbgbgbgbXbgbgbgbgbgbgbgbgbgbgbgbgaLaLaLaLaLaLaLaLbpbPbPbPbPaLbpaLaLaLaLaLaLaLdIaLaLaLaLbgaLaLaLaLaLbgaLctapapapapcvbDbDaaaaaaaaaaaaaa
-dJaLaLaLaLbgaLaLaLaLaLaLaLaLcfaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLcpcpaLdbbPbPbPbpaLaLaLaLaLaLaLaLdIaLaLaLaLaLaLaLaLbpaLaLctbcapbebeapcvbDbDaaaaaaaaaaaaaa
-cGcGdUapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapcGcGapapapapapapapapapapapapapapapaLaLaLaLaLaLaLaLaLaLaLaLapapdAdAapcvbDbDaaaaaaaaaaaaaa
-dVdWdXdYdZeaebecedecedecedecedecedecedecedecedecedecedecedecedecedecedecedecedecedecedecedecedecedecedecedeeebeeebeeebeeebeeebeeebeeebecedecedecedefegefegefegefegefegefegecedeeebeeajaaaaaaaaaaaaaaaaaa
+aaaaamapboapbfaAazazaLaLaLaLbpbqbpaLaLaLazazazaLaLaLaLaLbraLaLaLaLaLaLaLaLaLbsaLaLaLaLbtbubtbtbvbtbtbtbtaLaLaLbmahaiaiaiaXaiaiaiaiaiaXaiaiaiaiaiaXaiaiaiaIaYaLbpbpaLaLaLaLbaaLaNaNbmahajaaaaaaaaaaaaaaaa
+aaaaamapapbfaLaLaLaLaLaLaLaLaLbpbpaLaLaLaLaLaLaLbwbxbxbxbxbxbxbxbxbxbxbxbxbxbxbxbxbxbxbxbxbxbxbxbxbxbxbxbyaLaLbmbzbAbAbAbBbBbAbAbBbBbAbAbAbAbAbAbAbAbAbAbCaYaLaLbpbwbxbxbxbDbxbxbxbEahajaaaaaaaaaaaaaaaa
+bFbFambGapbHbgbgbgbgbgbgbgbgaLaLbpbpaLaLaLaLaLaLaLaLaLaLbpbpaLaLaLaLaLaLaLaLbIaLaLaLbIbIaLaLaLaLaLaLaLaLaLaLaLaLazazaybJbKbKbKbLbMbNbMbMayazazazazazazazazaLbpaLaLaLaLaLbgbabpbpbpbOahajaaaaaaaaaaaaaaaa
+bFbFambdbGbHbPbgbgbgbQbgbgbgbgbgbgaLaLaLbRbRaLaLaLbSaLaLaLaLaLaLaLaLbRbRaLaLaLaLbTbgbgbgbUbgaLaLaLbRbRaLaLaLaLaLaLaLbIaNaOaBaBbVbWbRbRbXbgbgbgbgbgbgbgbgbgbUaLaLbgaLaLaLaLbaaLaLbpbOahajaaaaaaaaaaaaaaaa
+bFbFamapbYbHbgbgbgbgbgbgbgbgbgbgbgaLbZaLbRbRaLaLaLaLaLaLaLaLaLaLbZaLbRbRaLaLaLaLbgbgbgbUbgbgaLbZaLbRbRaLbgcabgbgbgaLaLbIcbcbccccbgbgcdbgbgbUbgbgbgbgbgbQbUbUaLaLaLaLaLbgbgbaaLbgaLbmahajaaaaaaaaaaaaaaaa
+bFbFamapapbHbgbgbgbgbgbgbgbgbgbgbgaLaLaLaLaLaLaLbpbpaLbpaLaLaLaLaLaLaLaLaLaLaLaLbgbUbgbUbUbgbSaLaLaLbIaLbgbgbgbgbgaLaLaLcecbcbcbbgbgbgbgbgbgbgbgbgbgbgbUcecbbpbpaLaLaLbgaLbaaLaLaLbOahajaaaaaaaaaaaaaaaa
+bFbFcfcgcgcgchaLciaLaLaLaLaLaLaLaLaLbpaLaLaLaLaLaLaLaLbgbgbgaLaLaLaLaLaLaLaLaLbpaLaLaLcjbpaLaLaLbpaLaLaLaLaLaLaLaLaLaLaLcbcececbbgbgbgbgbgbgbgbgbgbgbgbUcecbaLaLbpaLaLaLaLbaaLbgaLbmahajaaaaaaaaaaaaaaaa
+aaaabFbFbFbFamaLaLaLckaLaLaLaLaLclcmcmcmcmcmcmcmcmcmcmcmcmcmcmcmcmcmcmcmcmcmcmcmcmcmcnapcoaLaLbpaLclcmcmcmcmcmcmcmcmcmcncbcbcbcbbgbgbUbgbgbgbgbgbgbgbgbgcbcebpbqaLcpaLaLaLbaaLaLaLbmbzajaaaaaaaaaaaaaaaa
+aaaabFbFbFbFamaLaLaLaLaLaLaLaLaLajaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaakapapcocqaLbpajaaaaaaaaaaaaaaaaaaakaLaLbpaLbgaLaLaLaLaLaLaLaLaLaLaLaCaCbpbpaLaLaLaLaLbabpbpaLaLcrajaaaaaaaaaaaaaaaa
+aaaabFbFbFbFamcsaLaLaLaLaLctcgcgcuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaakapcvapapcocwajaaaaaaaaaaaaaaaaaaakbpcqcqbpaLaLaLaLaLaLaLaLaLaLaLaLaCaCaLaLaLbpaLaLaLcxaLaLaLaLclcuaaaaaaaaaaaaaaaa
+aaaabFbFbFbFambHcsaLaLaLaLcybFbFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaczakbebeapcvapapajaaaaaaaaaaaaaaaaaaakbOapapcoclcmcmcmcmcmcmcmcmcmcmcmcmcnaLaLaLbUcAbUbgcBbgbpbpaLajaaaaaaaaaaaaaaaaaa
+aaaabFbFbFbFambHaLaLaLaLaLcybFbFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaakcCcCapapapapajaaaaaaaaaaaaaaaaaaakcwapapapajaaaaaaaaaaaaaaaaaaaaaaaaakaLaLbpbUbUbgbgcBbgbpbpaLajaaaaaaaaaaaaaaaaaa
+aaaabFcDcEcEcFbHaLaLaLaLbmcybFbFaaaaaaaaaaaaaaaaaaaaaaaaaaabacacacacacacacacacacacacadaEaGapapapapawacacacacacacacacacadapapapapajaaaaaaaaaacGaaaaaaaaaaaaakaLaLaLbgbgbgbUcHbQbpaLaLajaaaaaaaaaaaaaaaaaa
+aaaabFamananaobHaLaLaLaLbmcIcEcEbnaaaaaaaaaaaaaaaaaaaaaaaaakaiaiaiaiaiaiaiaiaiaiaiaiaIapapapcJcvapalaeaeaeaeaeaeaeaeaeafapcKapapajaaaaaaaaaaaaaaaaaaaaaaaaakaCaCaCcbcecbcebUbgbpaLaLajaaaaaaaaaaaaaaaaaa
+aaaabFamananaobHaLaLaLaLbmaqararajaaaaaaaaaaaaaaaaaaaaaaaaakaiaiaiaiaiaiaiaiaiaiaiaiaIapapapapapapalaeaeaeaeaeaeaeaeaeafcKcKcKapawacacacacacacacbnaaaaaaaaakcLaCaCcMcMaCaCbpaLaLaLaLajaaaaaaaaaaaaaaaaaa
+aaaabFamananaocNcsaLaLaLbmaqararajaaaaaaaaaaaaaaaaaaaaaaaaakaiaiaXaiaiaiaiaiaXaiaiaiaIcOcOcPapapapalaecQaeaeaecQaeaeaeafcKcKcKbdalaeaeaeaeaeaeaeajaaaaaaaaakagaCcRagcSaYaCaLaLaLaLbmajaaaaaaaaaaaaaaaaaa
+aaaabFamananaocNcsbpbgcscTaqararajaaaaaaaaaaaaaaaaaaaaaaaaakbAbAbAbAbAbAbAbAbAbAbAbAbCaLaLbOapcCcCasatatatatatatatatatavcUcVcVcUasatatatatatatatajaaaaaaaaakcWaCcRagagaYaCaLaLaLaLbOawbnaaaaaaaaaaaaaaaa
+aaaabFamaQaQaRbHbpbpaLcscTaVaWaWajaaaaaaaaaaaaaaaaaaaaaaaaakcXcYcYcOazazazazazcOcOcOcOaLbpaLcOazazazazazazazcZazdaazazaAazazazazdbazazcOazazcObhcybFbFbFbFambdaLcwapapbHbRbRbRbRbpbmaqcybFaaaaaaaaaaaaaa
+aaaabFamcXcYaTaLbpaLaLaLaLazazdcajaaddaaaaaaaaaaaaaaaaaaaaakbHbIbIaLaLaLaLaLdeaLaLbpaLaLaLaLaLaLaLaLaLdfaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaZaLbpbOcybFbFbFbFamdgapapapapbHdhbRbRbRaLbmaqcybFaaaaaaaaaaaaaa
+acaccEcFdiaLaLaLaLbgbgaLaLbgaLbmajaaaaaaaaaaaaaaaaaaaaaaaaakdjaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLdeaLaLaLaLaLaLaLdkaLbpbpaLdlaLaLaLaLaLdmaLaLaLbmcybFbFbFbFamapapapapapbHaLaLaLaLaLbmaqcybFaaaaaaaaaaaaaa
+aeaeanaobHaLaLaLaLbgbgaLbpbpbpbmawacacacacacacacacacacacacadbHbpaLaLaLaLbRbRaLaLaLaLdeaLaLaLaLaLaLaLaLaLaLaLaLaLbpbpbpaLbpaLdndodoaLaLaLaLaLaLbmcIcEcEcEcEcFdpapapbfazaLaLaLaLaLaLbmaqcybFaaaaaaaaaaaaaa
+aeaeanaodqaLaLbpbpbpaLaLaLbpaLbmahaiaiaiaiaiaiaiaiaiaiaiaiaIdjbpaLaLbZaLbRbRaLdododoaLaLaLaLaLaLaLaLaLaLaLaLdeaLaLbpciaLaLbpdododoaLaLaLaLaLaLbmdrananananaoapapazbUbUbgbgbgbgbgbpbmaqcybFaaaaaaaaaaaaaa
+cQaeanaococjdsdtcqcjcjcjbgaLbpbmahaiaiaiaiaiaiaiaiaiaiaiaiaIbHbpaLaLaLaLaLaLbpdodudoaLaLaLaLaLdvaLaLaLaLaLaLaLaLaLaLaLaLbpbpdododnaLaLaLaLaLaLbmdwdxaQaQaQaRdpapbpbgbgbgbgbgbgbgbpbOaqcybFaaaaaaaaaaaaaa
+aeaeanaobcapbebeapapapapbHaLaLbmahaiaXaiaiaiaiaiaiaXaiaiaiaIbHaLdlaLaLaLaLbpbpdodndoaLaLaLaLaLaLaLaLaLaLaLaLaLaLbSaLbpbpbpaLaLaLaLaLaLaLaLaLaLbmbdaEaFaFaGbdapapaLbUbgbgbgbgbgdscjcwaqcybFaaaaaaaaaaaaaa
+atataQaRcCcCcCcCcCcCcCdydzdAbxbEbzbAbAbAbAbAbAbAbAbAbAbAbAbCdBbyaLaLaLbwbxbxdCdDdDdDdDdEbxbxdCdDdDdDdDdDdDdDdDdDdDdEbxbxbxbxbxbxbxbxbyaLaLaLaLbmapdFbcapbebedpaLaLbgbgbgbgbUdGdHcCcCaVcybFaaaaaaaaaaaaaa
+apdIdIcKcKapapapapapapapaLaLaLaLapapapapapbdbdbdapapapapapapaLaLaLaLaLaLapapapapapapapapapapapbdbdapdFapapapapcKapapapapapapapapapapaLaLaLaLaLaLapapapapapaLaLaLaLbgbgbgbgbgdJdKaEaFaGcybFaaaaaaaaaaaaaa
+dLdIdMdIdMcKdNapdNapdNapaLaLaLaLdNapdNapdNapdNapdNapdNapdNapdOdOdOdOdOdOdNapdNapdNapdNapdNapdNapdNapdNapdNapdNapdNapdNapdNapdNapdNapdOdOdOdOdOdOdNapdNapdNaLdPaLaLbgbgbgbgdGdKdQapbebecybFaaaaaaaaaaaaaa
+aLaLaLdRcsbgaLbSaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLbpaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLbpbpaLaLcscscsaLaLaLaLaLaLaLaLciaLaLaLaLdSaLaLaLaLaLaLbgaLbpaLaLaLbmapapapapbdcybFaaaaaaaaaaaaaa
+dTaLaLaLaLbgdUaLaLbgbgbgbgbgbgbgbgbgbgbgbgbgbSaLaLbRbRbRbRaLaLaLaLaLbgbgbgbgbgbgbgbgbgbgbgcabgbgbgbgaLbpaLaLaLaLaLaLaLaLaLaLaLaLaLcsaLaLaLaLaLaLdSaLaLbpaLaLaLaLaLaLaLaLaLbmapapapapbdcybFaaaaaaaaaaaaaa
+csdVaLaLaLbgaLdUaLbgbgbgbgbgbgbgbgbgbgbgbgbgaLaLbpdWbRbRbRaLaLaLaLaLbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgaLaLaLaLaLaLaLaLaLaLaLaLaLaLcscscsaLaLaLaLaLdSaLbpaLbgaLaLaLaLaLaLbgaLbmapapdXapapcybFaaaaaaaaaaaaaa
+dRaLdYdYdYdZbgaLdUbgbgbgbgbgbgbgbgbgbgbgbgbgaLaLbpbpbpaLaLaLaLaLaLaLbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgaLaLaLaLbgbgbgbgbgbgbgbgbgaLaLcsaLaLaLaLaLaLdSaLaLaLbgaLaLaLbgaLaLaLaLbpcPapapapapcybFaaaaaaaaaaaaaa
+dRaLeaeaeaeaebeaeaebebebebebebebebebebebebebeaeaeaeaeaeaeaeaeaeaeaeaebebebebebebebebebebebebebebebebeaeaeaeaebebebebebebebebebeaeaeaeaeaeaaLaLaLdSaLaLaLaLaLaLbgaLaLaLaLbpaLbmapapapapcybFaaaaaaaaaaaaaa
+aLdTaLaLaLbgbgaLaLbgbgbgbgbgbgbgbgbgbgbgbgbgaLaLaLaLaLaLaLaLcscsaLaLbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgaLaLaLaLbgbgbgbgbgbgbgbgbgaLaLaLaLaLaLaLaLaLdSaLaLaLaLaLaLaLaLaLaLaLaLaLcwapapapctecbFaaaaaaaaaaaaaa
+eddRaLaLaLbgbgaLaLbgbgbgbgbgbgbgbgbgbgbgbgbgaLaLaLaLaLaLaLaLcsaLaLaLbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgaLaLaLbSaLaLaLaLaLbpaLaLaLaLbpaLaLaLaLaLaLaLdSaLbpaLaLdvaLbSaLaLaLaLaLbmapapapapcybFbFaaaaaaaaaaaaaa
+aLaLaLaLaLbgaLaLaLbgbQbgbgbgbgbgbgbgbgbgbgbgaLaLaLaLaLaLaLaLaLaLaLaLbgbgbgcabgbgbgbgbgbgbgbgbgbgbgbgaLaLaLaLaLaLaLaLbpbRbRbRbRaLbpaLaLaLaLaLaLaLdSaLaLaLaLbgaLaLaLaLaLbgaLcwapapapapcybFbFaaaaaaaaaaaaaa
+dTaLaLaLaLbgaLaLaLaLaLaLaLaLciaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLaLcscsaLdhbRbRbRbpaLaLaLaLaLaLaLaLdSaLaLaLaLaLaLaLaLbpaLaLcwbcapbebeapcybFbFaaaaaaaaaaaaaa
+cKcKeeapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapapcKcKapapapapapapapapapapapapapapapaLaLaLaLaLaLaLaLaLaLaLaLapapdKdKapcybFbFaaaaaaaaaaaaaa
+efegeheiejekelemenemenemenemenemenemenemenemenemenemenemenemenemenemenemenemenemenemenemenemenemenemenemeneoeleoeleoeleoeleoeleoeleoelemenemenemenepeqepeqepeqepeqepeqepeqemeneoeleoajaaaaaaaaaaaaaaaaaa
 "}
 
 (1,1,2) = {"
-eheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-eheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-eheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-eheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-eheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-eheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-eheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheieheheheheheheheheheheheheheieheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehejeheheheheheheheheheheheheheheheheheheheheiehehehejeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-eheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehekehehehelememememememememememememememememememememenehehejeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehehehehehehekehehehehekehehehehehehelemehehehehehehehehehehehehehehehehehehemeneheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehehekehehehehehekeheheheheheheoehehelemehehehehehehehehehehehehehehehehehehemeneheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehehehehekepehehehehekeheheheheheoehelemehehehehehehehehehehehehehehehehehehemenehehehehehejeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehekehehehehehekehehehehehekehehehehelemehehehehehehehehehehehehehehehehehehemeneheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehekeheheheheheheheqeqeqejehehehehehehelemehehehehehehehehehehehehehehehehehehemeneqeheheieheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehehehehehehehehereqeqehekehehehehehelemehehehehemehememememesemehemehehehehemeneheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehehekeheheheheheheheheheheheheoehehelemehehehehemememehehehehemememehehehehemenehejeheoeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehehehehekehehehehehehehehehehehehehelemehehehehemehehehehehehehehemehehehehemenehejeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehekeheheheheheheieheheheheheheheqehehehelemehehehehemehehehehehehehehemehehehehemenehehehehehehehehejeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehehekehehehehehehehehehehehehejehehelememememememememehehehehememememememememeneheheheheqeqeqeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehekeheheheheheheqeheheheheieheheheheheletemememememememehehehehememememememememenejeheheheqeqeqeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehehehehehehehehehehehehejehehememehekehejehehememehejeueueveuejehememekehehehehehememeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehekehehekeheheiehehehehehehehehewehememehehejehewehememehehehehehehewehememehehehexewejememeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-eheheheheheheheheheheheheheheheheheheheheheheheheheyehehehehehehehehehehehezehehehehejehehehehehehehehehehehezekeheheheheheheheyeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehehekeheheheheheheheheheheqeqeqehejehehehehezeheheheheheAeheheheqehejezeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehehehehehehehehehejeheheheqeqeqehehehehehehehexeheheheheheheheheheheheheiehehexeheheheheqeheyeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehekeheheheheheheiehehehehehehehehehehehexehehehejeheheheheheheheheheheheoeheheheheheheheheoejeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehehekeheheheheheheheheheoeheheheheheheoehejeheheheheBehehehehehehehehehehehehejeheheheheieheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehekehehehekeheheheheheheyehehehehehehehehehehehehehehezehehehehehehezeheheheheheheheheqeqeqehehehejeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehehehehehehehehehehehejeheheheheheieheqehehehehehehehehehehexehehehehehehehexeheheqeqeqeheyeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehekeheheheheheheheheheheheheheheiehehehehexeheheheheoehezezeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehekeieheheheheheheheheheheheqehehememehehehehehehememehehehehezehehehememehehehehehehememeheyeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehewehememehehehehewehememehehehehehehewehememehehejehewehememeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehehehehekeheheheheheheheheheheheCeheheheyehehehehejehexeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehekehehehehehehehehehehehehehehehehehehehehehehehehehehehehehezeheheheheoeheqeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehekehehehehekeheheheiehehehehehehehehejeoeheheheheyeheheheheyeheheheheheheheheyeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehehehehekeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehehekehehehehehehekehehehehekeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehehehehehehehekehehehehehehehehehehekehehehekeheheheieheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehekehehehehehehehehehehehekehehehekehehehehehehehehekehehehehehehekeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehekehehehehehekehehehehehehekehehehehehehehekeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehehehekehehehehehekehehehehehehehekehehehehehehehehekeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-ehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehehekeheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
-eheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheheh
+erererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererer
+erererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererer
+erererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererer
+erererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererer
+erererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererer
+erererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererer
+erererererererererererererererererererererererererererererererereserererererererererererereresererererererererererererererererererererererererererererererererererererererererererererererererererererer
+ererererererererererererererererererererererererererererererereretererererererererererererererererererereresererereterererererererererererererererererererererererererererererererererererererererererer
+erererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererer
+ererererererererererererererererererererererererererererererereuerererevewewewewewewewewewewewewewewewewewewewewexerereterererererererererererererererererererererererererererererererererererererererer
+ererererererererererererererererererererererereuerererereuererererererevewererererererererererererererererererewexererererererererererererererererererererererererererererererererererererererererererer
+ererererererererererererererererererereuererererereuerererererereyererevewererererererererererererererererererewexererererererererererererererererererererererererererererererererererererererererererer
+ererererererererererererererererererererereuezerererereuererererereyerevewererererererererererererererererererewexerererereretererererererererererererererererererererererererererererererererererererer
+erererererererererererererererererereuererererereuererererereuererererevewererererererererererererererererererewexererererererererererererererererererererererererererererererererererererererererererer
+ererererererererererererererererereuererererererereAeAeAetererererererevewererererererererererererererererererewexeAereresererererererererererererererererererererererererererererererererererererererer
+ererererererererererererererererererererererererereBeAeAereuerererererevewererererewereweweweweCewerewererererewexererererererererererererererererererererererererererererererererererererererererererer
+ererererererererererererererererererereuerererererererererererereyererevewererererewewewererererewewewererererewexeretereyererererererererererererererererererererererererererererererererererererererer
+ererererererererererererererererererererereuerererererererererererererevewererererewererererererererewererererewexeretererererererererererererererererererererererererererererererererererererererererer
+erererererererererererererererereuererererereresererererererereAerererevewererererewererererererererewererererewexerererererererereterererererererererererererererererererererererererererererererererer
+ererererererererererererererererererereuererererererererererereretererevewewewewewewewewererererewewewewewewewewexerererereAeAeAerererererererererererererererererererererererererererererererererererer
+ererererererererererererererererereuerererererereAererereresererererereveDewewewewewewewererererewewewewewewewewexetererereAeAeAerererererererererererererererererererererererererererererererererererer
+erererererererererererererererererererererererererererereretererewewereueretererewewereteEeEeFeEetereweweuerererererewewerererererererererererererererererererererererererererererererererererererererer
+ererererererererererererererereuerereuerereserererererererereGerewewereretereGerewewerererererereGerewewererereHeGetewewerererererererererererererererererererererererererererererererererererererererer
+ererererererererererererererererererererererererereIererererererererererereJererereretererererererererererereJeuererererererereIerererererererererererererererererererererererererererererererererererer
+ererererererererererererererererererereuerererererererererereAeAeAereterererereJererererererererereAereteJererererererererererererererererererererererererererererererererererererererererererererererer
+ererererererererererererererererererererererererereretererereAeAeAererererererereHerererererererererererereserereHerererereAereIerererererererererererererererererererererererererererererererererererer
+erererererererererererererererereuererererereresererererererererererereHerereretererererererererererereyerererererererereyeterererererererererererererererererererererererererererererererererererererer
+ererererererererererererererererererereuererererererererereyerererererereyereterererereKerererererererererererereterererereserererererererererererererererererererererererererererererererererererererer
+erererererererererererererererereuererereuerererererereIerererererererererererererereJerererererereJerererererererereAeAeAerereretererererererererererererererererererererererererererererererererererer
+erererererererererererererererererererererererererererereterererereresereAerererererererererereHererererererereHerereAeAeAereIererererererererererererererererererererererererererererererererererererer
+erererererererererererererererererereuerererererererererererererereserererereHerererereyereJeJererererererererererererererererererererererererererererererererererererererererererererererererererererer
+erererererererererererererererereuesererererererererererereAererewewererererererewewerererereJerererewewererererererewewereIerererererererererererererererererererererererererererererererererererererer
+erererererererererererererererererererererererererererererereGerewewerererereGerewewerererererereGerewewereretereGerewewerererererererererererererererererererererererererererererererererererererererer
+ererererererererererererererererererererereuererererererererererereLererereIererereretereHererererererererererererererererererererererererererererererererererererererererererererererererererererererer
+ererererererererererererererereuererererererererererererererererererererererererererererereJerererereyereAererererererererererererererererererererererererererererererererererererererererererererererer
+erererererererererererererererererereuerererereuererereserererererererereteyerererereIerererereIerererererererereIererererererererererererererererererererererererererererererererererererererererererer
+ererererererererererererererererererererereuerererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererer
+ererererererererererererererererererereuerererererereuerererereuerererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererer
+erererererererererererererererererererererererereuerererererererererereuererereuererereserererererererererererererererererererererererererererererererererererererererererererererererererererererererer
+erererererererererererererererereuererererererererererereuererereuerererererererereuerererererereuererererererererererererererererererererererererererererererererererererererererererererererererererer
+ererererererererererererererererereuererererereuerererererereuererererererereuererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererer
+erererererererererererererererererererereuererererereuererererererereuerererererererereuerererererererererererererererererererererererererererererererererererererererererererererererererererererererer
+erererererererererererererererererererererererererererererererererererererererererererererererereuererererererererererererererererererererererererererererererererererererererererererererererererererer
+erererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererererer
 "}

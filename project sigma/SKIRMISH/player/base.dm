@@ -12,6 +12,7 @@ mob/player
 		obj/shirt		= new /obj/player/shirt
 		obj/pants		= new /obj/player/pants
 		obj/hair 		= new /obj/player/hair
+		obj/vanity		= new /obj/player/vanity
 		pl_indicator	= new /obj/player/indicator
 
 
@@ -26,6 +27,7 @@ mob/player
 			pants.icon_state	= "pants[pick(1,2)]"
 			shirt.icon_state	= "shirt[rand(1,9)]"
 			hair.icon_state		= "style[rand(1,13)]"
+			vanity.icon_state	= "vanity[rand(1,3)]"
 			if(key == "Amelia Pond")
 				shirt.icon_state 	= "amelia-shirt"
 				pants.icon_state 	= "amelia-pants"
@@ -33,9 +35,10 @@ mob/player
 			if(key == "Ghost of ET")
 				hair.icon_state		= "style8"
 			if(key == "Kumorii")
-				hair.icon_state		= "style13"
-				shirt.icon_state	= "kumo-shirt"
+				hair.icon_state		= "style12"
+				shirt.icon_state	= "shirt10"
 				pants.icon_state	= "pants1"
+				vanity.icon_state	= "vanity1"
 			if(key == "Saskae7")
 				shirt.icon_state	= "shirt9"
 				pants.icon_state	= "pants2"
@@ -44,6 +47,7 @@ mob/player
 			overlays += shirt
 			overlays += pants
 			overlays += hair
+			overlays += vanity
 			underlays += pl_indicator
 
 
@@ -86,6 +90,10 @@ obj/player
 		New()
 			..()
 			icon_state	= "style[rand(1,6)]"
+	vanity
+		icon		= 'vanity.dmi' //base-arms.dmi'
+		icon_state	= ""
+		layer		= FLOAT_LAYER+0.2
 	indicator
 		icon				= 'game/misc_effects.dmi' //base-arms.dmi'
 		icon_state			= "indicator"

@@ -1,19 +1,19 @@
 // BEGIN_INTERNALS
 /*
-LAST_COMPILE_TIME: 1480316348
+LAST_COMPILE_TIME: 1480585830
+DIR: combat effects enemies environment game maps player references\#libraries 
 PACKAGE_RSC_NAME: C:\Users\Kumorii\Dropbox\SKIRMISH\skirmish_rsc.zip
-DIR: audio\music references\#libraries 
 AUTO_FILE_DIR: ON
 PACKAGE_DMB_INFO: 
 MAP_ICON_TYPE: 0
 PACKAGE_DME_NAME: C:\Users\Kumorii\Desktop\feed_src_11-28-16.zip
 LAST_COMPILE_VERSION: 511.1364
-PACKAGE_TYPE: 1
 PACKAGE_DME_START: 
-WINDOW: player\huds.dm;player\_main.dm;player\auto revive.dm
+PACKAGE_TYPE: 1
+WINDOW: effects\weather.dm;player\_Hair.dmi;player\_Clothes.dmi;player\base.dm;player\vanity.dmi;DO THIS.dm;game\enemy spawning.dm;game\matchmaking.dm
 PACKAGE_DME_INFO: 
-FILE: player\auto revive.dm
-PACKAGE_DMB_NAME: C:\Users\Kumorii\Dropbox\SKIRMISH\skirmish.zip
+FILE: effects\weather.dm
 PACKAGE_DME_DEMO: 
+PACKAGE_DMB_NAME: C:\Users\Kumorii\Dropbox\SKIRMISH\skirmish.zip
 */
 // END_INTERNALS

@@ -1,0 +1,20 @@
+client/verb
+	toggle_fullscreen()
+		if(!fs)
+			fs=1
+			winset(src,"default","titlebar=false")
+			winset(src,"default","statusbar=false")
+			winset(src,"default","can-resize=false")
+			winset(src,"default","is-minimized=true")
+			winset(src,"default","is-maximized=true")
+		else
+			fs=0
+			winset(src,"default","titlebar=true")
+			winset(src,"default","statusbar=false")
+			winset(src,"default","can-resize=false")
+			winset(src,"default","is-minimized=true")
+			winset(src,"default","is-maximized=true")
+		onResize()
+
+client/var/fs=1
+client/var/first=1

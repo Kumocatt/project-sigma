@@ -222,6 +222,7 @@ obj
 					var/obj/projectile/p 		= get_projectile("fireball", m.dir, -8, 1.5, 123, 1, 4, 1)
 				//	if(m.client) m:flick_arms("base-fireball")
 					p.loc = m.loc
+					m.gs('fireball.wav')
 					switch(m.dir)
 						if(NORTH)
 							p.step_x	= m.step_x
@@ -240,6 +241,48 @@ obj
 					sleep recharge
 					can_use = 1
 
+			glowsticks
+				recharge	= 10
+				drop_type	= /obj/item/special/glowsticks
+
+				use(mob/m)
+					can_use = 0
+					if(m.client)
+						if(m.dir != m:trigger_dir)
+							sleep world.tick_lag*2
+							m.dir 				= m:trigger_dir
+					var/obj/projectile/p 		= throw_special(/obj/projectile/thrown/glowstick, m.dir)
+			//		if(m.client) m:flick_arms("base-airstrike")
+					p.loc = m.loc
+					switch(m.dir)
+						if(NORTH)
+							p.step_x	= m.step_x
+							p.step_y	= m.step_y+16
+						if(SOUTH)
+							p.step_x	= m.step_x+6
+							p.step_y	= m.step_y-6
+						if(EAST)
+							p.step_x	= m.step_x+16
+							p.step_y	= m.step_y+6
+						if(WEST)
+							p.step_x	= m.step_x//-8
+							p.step_y	= m.step_y+6
+					p.owner	= m
+					active_projectiles += p
+					sleep recharge
+					can_use = 1
+
+
+			cowbell
+				recharge	= 30
+				drop_type	= /obj/item/special/cowbell
+
+				use(mob/m)
+					can_use	= 0
+					m.gs('cowbell.ogg')
+					m.cowbell()
+					sleep recharge
+					can_use	= 1
 
 /*
 			shuriken

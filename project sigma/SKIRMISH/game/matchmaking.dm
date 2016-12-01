@@ -1,4 +1,6 @@
 
+#define RAIN 1
+#define SNOW 2
 
 var
 	game/active_game 	= new /game	// the datum of the current active game.
@@ -41,20 +43,20 @@ game
 		*/
 		phantom_enemies		= 0		// use to toggle alpha'd enemies.
 		crawler_only		= 0		// use to make only crawlers spawn.
-		censorship			= 0		// use to give all mobs censor bars.
+		abstract_only		= 0		// use to make only abstracts spawn.
 		beholder_only		= 0		// use to make only beholders spawn.
+		censorship			= 0		// use to give all mobs censor bars.
 		explosive_enemies	= 0		// use to make all enemies explode on death.
 		blackout			= 0		// use to take all player spotlights away.
 		dis_regenerate		= 0		// use to disable health regeneration.
 		laser_madness		= 0		// use to make all projectiles lasers.
 		nyan_madness		= 0		// use to make all projectiles nyan cats.
-		invincible_one		= 0		// randomly selects and makes an enemy temporarily invincible.
-		speed_flux			= 0		// use to make random groups of enemies move at random speeds.
-		bloody_trigger		= 0		// use to make each hit on an enemy deal 2 damage to the player.
+		fire_madness		= 0		// use to make all projectiles fire bullets.
 		twisted_terror		= 0		// use to make screen rotate slowly
 		boss_mode			= 0
 		deathmatch			= 0
-		toggle_rain			= 1		// 1 if its raining
+		toggle_weather		= 1		// 1 if its weathering
+		weather_type		= SNOW	// what kind of weather; RAIN, SNOW
 
 		list/participants	= new/list()		// a list of every player that is playing.
 		list/spectators		= new/list()		// a list of every player that is spectating.
@@ -62,7 +64,7 @@ game
 		list/enemy_spawns	= new/list()
 		list/hazard_spawns	= new/list()		// a list of locs that map hazards can spawn on(i.e. lava).
 		list/portals		= new/list()		// a list of all the portals on the map.
-		list/rainy_turfs	= new/list()
+		list/weather_turfs	= new/list()
 		map/next_map	// this is the map that's currently being chosen to be played.
 
 
@@ -105,6 +107,7 @@ game
 					votes_to_skip 	= 0
 
 				for(var/mob/player/p in (participants+spectators))
+					if(i == 29) winset(p, "pane-lobby.specbutton", "is-disabled=\"false\"")
 					if("[winget(p, "pane-lobby.next-map", "text")]" != "[next_map.name]")
 						winset(p,,"pane-lobby.next-map.text=\"[next_map.name]\"")
 						winset(p,,"pane-lobby.map-info.text=\"[next_map.desc]\"")
@@ -129,14 +132,14 @@ game
 				animate(p, pixel_y = 0, alpha = 255, easing = QUAD_EASING, time = 20)
 				p.move_disabled	= 0
 				p.can_hit		= 1
-	//			p.shield()
+				p.shield(1, 0)
 
 			for(var/mob/player/p in spectators)
 				winset(p,,"child1.left=\"pane-map\"")
 				p.spectate_rand()
 			gameover= 0
 			started = 2
-			rain_loop()
+			weather_loop()
 			init_wave()
 
 
@@ -145,49 +148,33 @@ game
 			world << "<b>Wave [current_round] will begin in 15 seconds."
 			sleep 150
 			intermission = 0
-			if(current_round == 8 && participants.len > 1)
-				boss_mode = 1
-				boss_deathmatch()
+			weather_type = pick(RAIN, SNOW)
+					// first let's check for boss mode triggers.
 			if(current_round == 4)
 				boss_mode = 1
 				boss_doppleganger()
-			if(!boss_mode && prob(1))	// stackable wave types
-				if(prob(25))
-					// only phantom enemies will spawn.
-					phantom_enemies 	= 1
-				if(prob(15))
-					// only crawlers will spawn
-					crawler_only		= 1
-				if(prob(25))
-					// censor bars will be drawn on all mobs. players are also naked.
-					censorship			= 1
-				if(!beholder_only && prob(10))
-					// only beholders will spawn.
-					beholder_only		= 1
-	/*			if(prob(15))
-					// explosive enemies.
+			else if(current_round >= 5 && participants.len > 1 && prob(8))
+				boss_mode = 1
+				boss_deathmatch()
+									// if no boss mode was triggered, let's look at some wave modifiers.
+			if(!boss_mode && prob(55))
+				if(prob(25))	// phantom enemies only.
+					phantom_enemies = 1
+				if(prob(25))	// make players and feeders naked with a censor bar. **HUMOR**
+					censorship		= 1
+				if(prob(15))	// the following will decide if the wave will only spawn a certain type of enemy.
+					switch(rand(1,3))
+						if(1) crawler_only	= 1
+						if(2) beholder_only	= 1
+						if(3) abstract_only	= 1
+				if(prob(10) && !abstract_only) // make every enemy explode upon death.
 					explosive_enemies 	= 1
-				if(prob(15))
-					// dis regenerate
-					dis_regenerate		= 1
-				if(prob(10))
-					// laser madness
-					laser_madness		= 1
-				if(prob(10) && !laser_madness)
-					// nyan madness
-					nyan_madness		= 1
-				if(prob(15))
-					// invincible one
-					invincible_one		= 1
-					invincible_one()
-				if(prob(15))
-					// speed flux
-					speed_flux			= 1
-					speed_flux()
-		//		if(prob(10))
-					// bloody trigger
-		//			bloody_trigger		= 1
-*/
+				if(prob(5))		// the following will determine if the wave will have any projectile modifiers.
+					switch(rand(1,3))
+						if(1) laser_madness	= 1
+						if(2) nyan_madness	= 1
+						if(3) fire_madness	= 1
+
 			if(!boss_mode)
 				enemies_total	= (beholder_only?round(1.5*current_round):round(10*current_round+3*participants.len))
 				enemies_left	= enemies_total
@@ -224,18 +211,17 @@ game
 
 					if(h.can_phantom && (phantom_enemies || prob(10)))
 						animate(h, alpha = 110, time = 20, loop = -1, easing = ELASTIC_EASING)
-						animate(alpha = 85, time = 20, loop = -1, easing = ELASTIC_EASING)
+						animate(alpha = 90, time = 20, loop = -1, easing = ELASTIC_EASING)
 					if(explosive_enemies || prob(10))
 						h.is_explosive = 1
 					if(istype(h, /mob/npc/hostile/feeder))
-						if(prob(5)) h.shield()
+						if(prob(5)) h.shield(rand(1,9), 1)
 					sleep world.tick_lag
-				if(phantom_enemies) 	phantom_enemies 	= 0
+				if(dis_regenerate)		dis_regenerate 		= 0
 				if(crawler_only)		crawler_only		= 0
-				if(censorship)			censorship			= 0
 				if(beholder_only)		beholder_only		= 0
-				if(explosive_enemies) 	explosive_enemies 	= 0
-		//		if(blackout)			blackout			= 0
+				if(abstract_only)		beholder_only		= 0
+				if(phantom_enemies)		phantom_enemies		= 0
 
 
 
@@ -267,15 +253,12 @@ game
 				sleep 20
 				world << SOUND_WAVE_END
 				current_round ++
+				if(laser_madness)	laser_madness	= 0
+				if(nyan_madness)	nyan_madness	= 0
+				if(fire_madness)	fire_madness	= 0
 				// revive dead players, etc.
 				for(var/mob/player/p in participants)
 					if(p.censored) p.censor(1)
-					if(dis_regenerate) dis_regenerate 	= 0
-					if(laser_madness) laser_madness		= 0
-					if(nyan_madness) nyan_madness		= 0
-					if(invincible_one) invincible_one	= 0
-					if(speed_flux)		speed_flux		= 0
-					if(bloody_trigger) bloody_trigger	= 0
 					p.waveComplete.alpha = 0
 					p.waveComplete.transform = turn(p.transform,180)
 					p.client.screen += p.waveComplete
@@ -298,7 +281,6 @@ game
 						p.move_disabled	= 0
 						p.can_hit		= 1
 						p.died_already	= 0
-			//	boss_mode = 0
 				init_wave()
 
 
@@ -316,9 +298,10 @@ game
 			toggle_revive		= 1
 			laser_madness		= 0
 			nyan_madness		= 0
-			invincible_one		= 0
-			speed_flux			= 0
-			bloody_trigger		= 0
+			fire_madness		= 0
+			crawler_only		= 0
+			beholder_only		= 0
+			abstract_only		= 0
 			boss_mode			= 0
 			deathmatch			= 0
 
@@ -328,7 +311,7 @@ game
 			ai_list				= new/list()
 			active_projectiles	= new/list()
 			portals				= new/list()
-			rainy_turfs			= new/list()
+			weather_turfs		= new/list()
 			for(var/mob/player/p in participants)
 				winset(p, "pane-lobby.game-countdown", "text=\"Submitting Scores..\"")
 				winset(p,,"child1.left=\"pane-lobby\"")
@@ -357,29 +340,6 @@ game
 
 	// WAVE VARIANT PROCS --- the following procs run in the background of waves and manage the more complicated aspects of their event type.
 
-
-		invincible_one()
-			/* every few seconds make a different mob invincible.
-			*/
-			set waitfor = 0
-			var/mob/current_one	= new/list()
-			while(invincible_one)
-				if(ai_list.len > 1)
-					var/mob/m = pick(ai_list)
-					m.invincible()
-					current_one = m
-					sleep 50
-					current_one.invincible(1)
-					current_one = null
-				sleep world.tick_lag*2
-
-		speed_flux()
-			/* every few seconds makes all enemies move at a different speed.
-			*/
-			set waitfor = 0
-			while(speed_flux)
-				speed_fluxer = pick(-1,0,2)
-				sleep 50
 
 
 		boss_deathmatch()
@@ -465,10 +425,11 @@ game
 				boss1.loc			= pick(player_spawns)
 				ai_list += boss1
 			world << SOUND_WAVE_BEGIN
+			world << 'dopple.wav'
 			sleep world.tick_lag*2
 			while(started == 2)
 				if(ai_list.len == 0)
-					world << "Bosses killed!"
+					world << ">> <b>Boss Cleared!</b>"
 					break
 				sleep world.tick_lag*2
 			if(!intermission && started == 2)

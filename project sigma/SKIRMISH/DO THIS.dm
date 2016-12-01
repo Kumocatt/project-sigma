@@ -1,12 +1,55 @@
 
 done this patch:
+ - enemies can no longer spawn on dense atoms.
+ - enemies now have a death animation
+ - enemies now move faster in later rounds.
+ - clientside now renders at a silky smooth 100fps.
+ - added more misc sound effects.
+ - sound effects can now vary in frequency.
+ - added screen effect when recieving damage.
+ - bullets now have a sound effect when wizzing by a player.
+//- Screen scaling added for resizable window.
+//- Added support for fullscreen play.
+ - Disabled reviving for deathmatch rounds.
+ - Enabled wave variants again.
+ - shotgun was buffed.
+ - added a limit to how much blood can pool ontop of eachother.
+ - lightning now has thunder to go with it
+ - crossbow got buffed.
+ - Dopple has a unique sound now.
+ - Buffed the Uzi's fire rate
+ - Cowbell makes a return
+ - Glowsticks make a return
+ - AK66 now doesn't suck. It's an automatic 3 round burst now.
+ - Overhauled shield mechanics.
+/////////////
+ - Laser Madness wave modifier returns
+ - Nyan Madness wave modifier returns
+ - Added a new weapon; SPAS-12
+ - Fire overlays aren't effected by mob transformations anymore.
+ - Descresed the maximum alpha for phantom enemies.
+ - Fixed an issue where the spectate button would get stuck on disabled.
+ - Added Fire Madness wave modifer; all projectiles are firebullets.
+ - Vanity slot added to player overlays for further customization.
+ - Added snow weather type.
+ - Weather is dynamicly changed each wave.
+
 
 
 do this patch:
+ - finish the skeleton variants and make them part of a unique spooky scary skeletons wave
+ - Add Corruption that takes away the players max health
+ -
 
 
 
-- Cart was immortal briefly. somehow got out of the participants list.
+
+
+
+
+
+
+
 
 
 

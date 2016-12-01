@@ -26,6 +26,7 @@
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
+#include "audio\yutput_audio.dm"
 #include "combat\#new controls.dm"
 #include "combat\airstrike.dm"
 #include "combat\controls.dm"
@@ -35,6 +36,7 @@
 #include "combat\knockback.dm"
 #include "combat\projectiles.dm"
 #include "combat\specials.dm"
+#include "effects\_yutput gore.dm"
 #include "effects\arrow guide.dm"
 #include "effects\audio.dm"
 #include "effects\camera lead.dm"
@@ -74,6 +76,7 @@
 #include "references\#libraries\absolute positions.dm"
 #include "references\#libraries\map info.dm"
 #include "references\#libraries\map instancing.dm"
+#include "references\#libraries\maths stuff.dm"
 #include "systems\object pooling.dm"
 // END_INCLUDE
 

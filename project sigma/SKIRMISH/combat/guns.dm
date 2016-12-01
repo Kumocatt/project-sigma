@@ -37,6 +37,9 @@ proc
 			*/
 			var/obj/projectile/p 	= garbage.Grab(/obj/projectile)
 			p.icon_state			= _state
+			if(active_game.laser_madness)	p.icon_state = "laser-[pick("red","blue")]"
+			if(active_game.nyan_madness)	p.icon_state = "nyan"
+			if(active_game.fire_madness)	p.icon_state = "firebullet"
 			p.dir					= _dir
 			p.hp_modifier			= _damage
 			p.velocity				= _velocity
@@ -109,10 +112,6 @@ obj
 				crit_chance			= 30
 				drop_type			= /obj/item/gun/pistol
 
-				New()
-					..()
-					sound_effect	= SOUND_GUNFIRE2
-
 				use(mob/m)
 					can_use = 0
 					if(!mag)
@@ -127,7 +126,7 @@ obj
 						var/obj/projectile/p 		= get_projectile("bullet", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+4), kb_dist, sway)
 						if(m.client) m:flick_arms("base-pistol-attack")
 						m.drop_shell()
-						k_sound(m, sound_effect)
+						m.gs('gunshot1.wav')
 						p.loc = m.loc
 						switch(m.dir)
 							if(NORTH)
@@ -164,10 +163,6 @@ obj
 				velocity			= 0.5
 				drop_type			= /obj/item/gun/kobra
 
-				New()
-					..()
-					sound_effect	= SOUND_GUNFIRE2
-
 				use(mob/m)
 					can_use = 0
 					if(!mag)
@@ -182,7 +177,7 @@ obj
 						var/obj/projectile/p 		= get_projectile("bullet", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+4), kb_dist, sway)
 						if(m.client) m:flick_arms("base-kobra-attack")
 						m.drop_shell()
-						k_sound(m, sound_effect)
+						m.gs('gunshot1.wav')
 						p.loc = m.loc
 						switch(m.dir)
 							if(NORTH)
@@ -219,10 +214,6 @@ obj
 				velocity			= 0.5
 				drop_type			= /obj/item/gun/edge_lord
 
-		//		New()
-	//				..()
-		//			sound_effect	= SOUND_GUNFIRE2
-
 				use(mob/m)
 					can_use = 0
 					if(!mag)
@@ -236,7 +227,7 @@ obj
 						mag --
 						var/obj/projectile/p 		= get_projectile("laser-red", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+4), kb_dist, sway)
 						if(m.client) m:flick_arms("base-3dg3-10rd-attack")
-						k_sound(m, sound_effect)
+						m.gs('laser1.wav')
 						p.loc = m.loc
 						switch(m.dir)
 							if(NORTH)
@@ -273,10 +264,6 @@ obj
 				velocity			= 0.5
 				drop_type			= /obj/item/gun/pink_dream
 
-	//			New()
-	//				..()
-		//			sound_effect	= SOUND_GUNFIRE2
-
 				use(mob/m)
 					can_use = 0
 					if(!mag)
@@ -290,7 +277,7 @@ obj
 						mag --
 						var/obj/projectile/p 		= get_projectile("laser-pink", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+10), kb_dist, sway)
 						if(m.client) m:flick_arms("base-pinkdream-attack")
-						k_sound(m, sound_effect)
+						m.gs('laser1.wav')
 						p.loc = m.loc
 						switch(m.dir)
 							if(NORTH)
@@ -314,7 +301,7 @@ obj
 					can_use = 1
 
 			ak66
-				damage				= -5
+				damage				= -10
 				max_range			= 145
 				accuracy			= 30
 				recoil				= -2
@@ -325,13 +312,9 @@ obj
 				piercing			= 35
 				weight				= 1.5
 				crit_chance			= 15
-				velocity			= 1.2
+				velocity			= 0.3
 				can_strafe			= 1
 				drop_type			= /obj/item/gun/ak66
-
-				New()
-					..()
-					sound_effect	= SOUND_GUNFIRE2
 
 				use(mob/m)
 					can_use = 0
@@ -344,15 +327,17 @@ obj
 								m.dir 				= m:trigger_dir
 							//	m.move_disabled		= 1
 						else . = m.dir
-						for(var/i = 1 to 3)
+						var/i = 0 // since the gun fires in 3 round bursts we need a var to track shots
+						while((m.client ? m:trigger_down : prob(60)))
 							if(!mag || (m.client && !m:trigger_down)) break
 							mag --
+							i ++
 							if(m.client) m.dir = m:trigger_dir
 							else m.dir = .
 							var/obj/projectile/p 	= get_projectile("bullet", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+4), kb_dist, sway)
 							if(m.client) m:flick_arms("base-ak66-attack")
 							m.drop_shell()
-							k_sound(m, sound_effect)
+							m.gs('gunshot2.wav')
 							p.loc = m.loc
 							switch(m.dir)
 								if(NORTH)
@@ -371,7 +356,10 @@ obj
 							if(prob(m.crit_rate+crit_chance))
 								p.is_crit = 1
 							active_projectiles += p
-							sleep 10/fire_rate
+							if(i >= 3)
+								sleep 5
+								i = 0
+							sleep world.tick_lag*0.2
 						if(m.move_disabled) sleep;m.move_disabled = 0
 					can_use = 1
 
@@ -380,18 +368,14 @@ obj
 				max_range			= 128
 				accuracy			= 5
 				recoil				= -1
-				reload_speed		= 10
+				reload_speed		= 5
 				mag					= 1
 				mag_size			= 1
 				piercing			= 95
 				weight				= 1.2
 				crit_chance			= 45
-				velocity			= 0.5
+				velocity			= 0.2
 				drop_type			= /obj/item/gun/krossbow
-
-				New()
-					..()
-					sound_effect	= SOUND_CROSSBOW1
 
 				use(mob/m)
 					can_use = 0
@@ -406,7 +390,7 @@ obj
 						mag --
 						var/obj/projectile/p 		= get_projectile("bolt", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+10), kb_dist, sway)
 						if(m.client) m:flick_arms("base-krossbow-attack")
-						k_sound(m, sound_effect)
+						m.gs('crossbow1.ogg')
 						p.loc = m.loc
 						switch(m.dir)
 							if(NORTH)
@@ -445,10 +429,6 @@ obj
 				can_strafe			= 1
 				drop_type			= /obj/item/gun/uzi
 
-				New()
-					..()
-					sound_effect	= SOUND_GUNFIRE2
-
 				use(mob/m)
 					can_use = 0
 					if(!mag)
@@ -468,7 +448,7 @@ obj
 							var/obj/projectile/p 	= get_projectile("bullet", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+10), kb_dist, sway)
 							if(m.client) m:flick_arms("base-uzi-attack")
 							m.drop_shell()
-							k_sound(m, sound_effect)
+							m.gs('gunshot2.wav')
 							p.loc = m.loc
 							switch(m.dir)
 								if(NORTH)
@@ -487,7 +467,7 @@ obj
 							if(prob(m.crit_rate+crit_chance))
 								p.is_crit = 1
 							active_projectiles += p
-							sleep 10/fire_rate
+							sleep world.tick_lag*0.2 //10/fire_rate
 						if(m.move_disabled) sleep;m.move_disabled = 0
 					can_use = 1
 
@@ -508,10 +488,6 @@ obj
 				can_strafe			= 1
 				drop_type			= /obj/item/gun/red_baron
 
-				New()
-					..()
-					sound_effect	= SOUND_GUNFIRE1
-
 				use(mob/m)
 					can_use = 0
 					if(!mag)
@@ -531,7 +507,7 @@ obj
 							var/obj/projectile/p 	= get_projectile("bullet", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+2), kb_dist, sway)
 							if(m.client) m:flick_arms("base-redbaron-attack")
 							m.drop_shell()
-							k_sound(m, sound_effect)
+							m.gs('gunshot1.wav')
 							p.loc = m.loc
 							switch(m.dir)
 								if(NORTH)
@@ -559,18 +535,14 @@ obj
 				max_range			= 82
 				accuracy			= 1
 				recoil				= -5
-				reload_speed		= 8
+				reload_speed		= 6
 				mag					= 2
 				mag_size			= 2
 				piercing			= 0
 				weight				= 1
 				crit_chance			= 10
-				velocity			= 2.5
+				velocity			= 0.2
 				drop_type			= /obj/item/gun/shotgun
-
-				New()
-					..()
-					sound_effect	= SOUND_GUNFIRE1
 
 				use(mob/m)
 					can_use = 0
@@ -585,9 +557,10 @@ obj
 						mag --
 						if(m.client) m:flick_arms("base-shotgun-attack")
 						m.drop_shell(1)
-						k_sound(m, sound_effect)
-						for(var/i = 1 to 5)
-							var/obj/projectile/p 	= get_projectile("bullet", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+25), kb_dist, sway)
+						m.gs('gunshot1.wav')
+						var/_dir = m.dir
+						for(var/i = 1 to 4)
+							var/obj/projectile/p 	= get_projectile("bullet", _dir, damage, velocity, max_range, rand(accuracy, accuracy+25), kb_dist, 2)
 							p.loc 					= m.loc
 							switch(m.dir)
 								if(NORTH)
@@ -606,7 +579,7 @@ obj
 							if(prob(m.crit_rate+crit_chance))	// add the player and the weapon's crit chances.
 								p.is_crit = 1
 							active_projectiles += p
-							sleep world.tick_lag/2
+						//	sleep world.tick_lag/2
 						if(m.move_disabled) m.move_disabled = 0
 					can_use = 1
 
@@ -624,10 +597,6 @@ obj
 				velocity			= 1.5
 				drop_type			= /obj/item/gun/hellsredeemer
 
-				New()
-					..()
-					sound_effect	= SOUND_GUNFIRE1
-
 				use(mob/m)
 					can_use = 0
 					if(!mag)
@@ -641,7 +610,7 @@ obj
 						mag --
 						if(m.client) m:flick_arms("base-hellredeemer-attack")
 						m.drop_shell(1)
-						k_sound(m, sound_effect)
+						m.gs('gunshot1.wav')
 						for(var/i = 1 to 5)
 							var/obj/projectile/p 	= get_projectile("firebullet", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+25), kb_dist, 2)
 							p.loc 					= m.loc
@@ -683,10 +652,6 @@ obj
 				velocity			= 0.2
 				can_strafe			= 1
 				drop_type			= /obj/item/gun/flamethrower
-
-				New()
-					..()
-					sound_effect	= SOUND_GUNFIRE1
 
 				use(mob/m)
 					can_use = 0
@@ -732,7 +697,57 @@ obj
 					can_use = 1
 
 
+			spas_12
+				damage				= -30
+				max_range			= 96
+				accuracy			= 1
+				recoil				= -5
+				reload_speed		= 10
+				mag					= 5
+				mag_size			= 5
+				piercing			= 0
+				weight				= 1
+				crit_chance			= 10
+				velocity			= 0.2
+				drop_type			= /obj/item/gun/spas_12
 
+				use(mob/m)
+					can_use = 0
+					if(!mag)
+						reload(m)
+					else
+						if(m.client)
+							if(m.dir != m:trigger_dir)
+								sleep world.tick_lag*2
+								m.dir 				= m:trigger_dir
+								m.move_disabled		= 1
+						mag --
+						if(m.client) m:flick_arms("base-spas12-attack")
+						m.drop_shell(1)
+						m.gs('gunshot1.wav')
+						var/_dir = m.dir
+						for(var/i = 1 to 4)
+							var/obj/projectile/p 	= get_projectile("bullet", _dir, damage, velocity, max_range, rand(accuracy, accuracy+25), kb_dist, 2)
+							p.loc 					= m.loc
+							switch(m.dir)
+								if(NORTH)
+									p.step_x	= m.step_x
+									p.step_y	= m.step_y+16
+								if(SOUTH)
+									p.step_x	= m.step_x+6
+									p.step_y	= m.step_y-6
+								if(EAST)
+									p.step_x	= m.step_x+16
+									p.step_y	= m.step_y+6
+								if(WEST)
+									p.step_x	= m.step_x-8
+									p.step_y	= m.step_y+6
+							p.owner	= m
+							if(prob(m.crit_rate+crit_chance))	// add the player and the weapon's crit chances.
+								p.is_crit = 1
+							active_projectiles += p
+						if(m.move_disabled) m.move_disabled = 0
+					can_use = 1
 
 
 

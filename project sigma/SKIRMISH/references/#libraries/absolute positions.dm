@@ -14,8 +14,8 @@ atom
 	proc
 		//	The absolute coordinates of this atom's bottom-left corner,
 		//	+ a percentage of the atom's dimensions.
-		Px(Pc) return (x - 1 + Pc) * tile_width()
-		Py(Pc) return (y - 1 + Pc) * tile_height()
+		Px(Pc) return (x - 1 + Pc) * _tile_width()
+		Py(Pc) return (y - 1 + Pc) * _tile_height()
 
 		//	The absolute coordinates of this atom's center.
 		Cx() return Px(0.5)
@@ -24,8 +24,8 @@ atom
 
 	movable
 		//	Movables require a little bit extra, compared to statics.
-		Px(Pc) return (x - 1) * tile_width()  + bound_x + step_x + Pc * bound_width
-		Py(Pc) return (y - 1) * tile_height() + bound_y + step_y + Pc * bound_height
+		Px(Pc) return (x - 1) * _tile_width()  + bound_x + step_x + Pc * bound_width
+		Py(Pc) return (y - 1) * _tile_height() + bound_y + step_y + Pc * bound_height
 
 
 		var tmp
@@ -79,16 +79,16 @@ atom
 				if(isnull(Z)) Z = z
 				loc = null
 				if(Z)
-					var tile_width = tile_width()
-					var new_x = X / tile_width + 1
+					var _tile_width = _tile_width()
+					var new_x = X / _tile_width + 1
 					if(new_x in 0 to world.maxx + 1)
-						var tile_height = tile_height()
-						var new_y = Y / tile_height + 1
+						var _tile_height = _tile_height()
+						var new_y = Y / _tile_height + 1
 						if(new_y in 0 to world.maxy + 1)
 							SetLoc(
 								locate(new_x, new_y, Z),
-								X % tile_width - bound_x,
-								Y % tile_height - bound_y)
+								X % _tile_width - bound_x,
+								Y % _tile_height - bound_y)
 							__dec_x = X - round(X)
 							__dec_y = Y - round(Y)
 

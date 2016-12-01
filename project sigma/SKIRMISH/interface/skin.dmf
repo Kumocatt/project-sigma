@@ -63,6 +63,9 @@ macro "macro"
 		name = "W+UP"
 		command = "north-up"
 	elem 
+		name = "F1"
+		command = "toggle-fullscreen"
+	elem 
 		name = "SHIFT"
 		command = "sprint"
 
@@ -70,30 +73,28 @@ macro "macro"
 window "debugoutput"
 	elem "debugoutput"
 		type = MAIN
-		pos = 980,173
+		pos = 281,0
 		size = 265x309
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		title = "Chat / Debug"
 		statusbar = false
 		can-close = false
 		can-minimize = false
-	elem "info1"
-		type = INFO
+	elem "label3"
+		type = LABEL
 		pos = 0,0
-		size = 262x64
+		size = 265x32
 		anchor1 = 0,0
-		anchor2 = 99,21
-		text-color = #e5e5e5
-		background-color = #4e4e4e
-		is-default = true
-		drop-zone = true
+		anchor2 = 100,10
+		font-family = "Thin Pixel-7"
+		text-color = #c0c0c0
+		background-color = #272727
+		border = line
 		saved-params = ""
-		highlight-color = #3c85ff
-		tab-text-color = #e5e5e5
-		tab-background-color = #272727
+		text = "Enjoy the demo - report any bugs found to Kumorii! (^8"
+		text-wrap = true
 	elem "input2"
 		type = INPUT
 		pos = 0,281
@@ -107,8 +108,8 @@ window "debugoutput"
 		command = "lobby-chat"
 	elem "output1"
 		type = OUTPUT
-		pos = 0,64
-		size = 265x217
+		pos = 0,32
+		size = 265x249
 		anchor1 = 0,21
 		anchor2 = 100,91
 		font-family = "Thin Pixel-7"
@@ -125,6 +126,7 @@ window "default"
 		size = 832x640
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		is-default = true
 		saved-params = "pos;size;is-minimized;is-maximized"
 		statusbar = false
@@ -137,6 +139,7 @@ window "default"
 		size = 832x640
 		anchor1 = 0,0
 		anchor2 = 100,100
+		background-color = none
 		is-default = true
 		saved-params = "splitter"
 		left = "pane-map"
@@ -364,6 +367,7 @@ window "pane-map"
 		size = 832x640
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		is-default = true
 		saved-params = "pos;size;is-minimized;is-maximized"
 		titlebar = false

@@ -81,6 +81,8 @@ mob/npc
 			density			= 1
 			alpha			= 255
 			last_attacker	= null
+			transform		= matrix()
+			step_size		= initial(step_size)
 			if(targeted)
 				for(var/mob/player/p in active_game.participants)
 					p.remove_target(src)
@@ -91,6 +93,9 @@ mob/npc
 //			world << "check?"
 			ai_list -= src
 			if(last_attacker) last_attacker.kills ++
+			density	= 0
+			death_animation()
+			sleep 5
 			..()
 			active_game.enemies_left --
 			if(prob(15)) drop_loot()
@@ -155,7 +160,7 @@ mob/npc
 							if(!target) target = p
 							else if(get_dist(src, p) < get_dist(src, target))
 								target = p
-					sleep world.tick_lag*(active_game.speed_flux ? rand(2,4)+speed_fluxer : rand(2,4))
+					sleep world.tick_lag*rand(2,4)
 					resting = 0
 		puker
 			icon			= 'enemies/_Puker.dmi'
@@ -217,7 +222,7 @@ mob/npc
 							if(!target) target = p
 							else if(get_dist(src, p) < get_dist(src, target))
 								target = p
-					sleep world.tick_lag*(active_game.speed_flux ? rand(2,4)+speed_fluxer : rand(2,4))
+					sleep world.tick_lag*world.tick_lag*rand(2,4)
 					resting = 0
 
 		crawler
@@ -272,7 +277,7 @@ mob/npc
 							if(!target) target = p
 							else if(get_dist(src, p) < get_dist(src, target))
 								target = p
-					sleep world.tick_lag*(active_game.speed_flux ? 2+speed_fluxer : 2)
+					sleep world.tick_lag*2
 					resting = 0
 
 		brute
@@ -322,7 +327,7 @@ mob/npc
 							if(!target) target = p
 							else if(get_dist(src, p) < get_dist(src, target))
 								target = p
-					sleep world.tick_lag*(active_game.speed_flux ? rand(2,4)+speed_fluxer : rand(2,4))
+					sleep world.tick_lag*world.tick_lag*rand(2,4)
 					resting = 0
 			Bump(atom/a)
 				if(istype(a, /mob/npc/hostile))
@@ -446,7 +451,7 @@ mob/npc
 							if(!target) target = p
 							else if(get_dist(src, p) < get_dist(src, target))
 								target = p
-					sleep world.tick_lag*(active_game.speed_flux ? 2+speed_fluxer : 2)
+					sleep world.tick_lag*2
 					resting = 0
 			death()
 				skill1.use(src)
@@ -506,7 +511,7 @@ mob/npc
 							if(!target) target = p
 							else if(get_dist(src, p) < get_dist(src, target))
 								target = p
-					sleep world.tick_lag*(active_game.speed_flux ? 2+speed_fluxer : 2)
+					sleep world.tick_lag*2
 					resting = 0
 			death()
 				skill1.use(src)
@@ -549,15 +554,17 @@ mob/npc
 				for(var/i = 1 to 35)
 					step(src, dir)
 					if(prob(25))
+						gs('dopple.wav')
 						spontaneous_explosion(loc, 0)
 						if(totaloot < 3) totaloot++; drop_loot()
 						dir = turn(dir,pick(-45,45))
 					sleep world.tick_lag*1.5
-				animate(src, pixel_x = -2, time = 1, loop = 5, easing = ELASTIC_EASING)
-				animate(pixel_x = 2, time = 1, easing = ELASTIC_EASING)
+				animate(src, pixel_x = -2, dir = WEST, time = 1, loop = 5, easing = ELASTIC_EASING)
+				animate(pixel_x = 2, dir = EAST, time = 1, easing = ELASTIC_EASING)
 				sleep 10
+				gs('dying.wav')
 				spontaneous_explosion(loc, 0)
-				var/obj/item/gun/hellsredeemer/h = garbage.Grab(/obj/item/gun/hellsredeemer)
+				var/obj/item/gun/red_baron/h = garbage.Grab(/obj/item/gun/red_baron)
 				h.loc = loc
 				alpha = 0
 				spawn(45)
@@ -567,6 +574,7 @@ mob/npc
 				set waitfor = 0
 				if(health && !resting && !kb_init)
 					resting = 1
+					if(prob(3)) gs('dopple.wav')
 					if(target)
 						if(!target.health || !target.loc)	// if the target is dead, off map, or shaking a cowbell..
 							target = null		// .. stop targeting them.

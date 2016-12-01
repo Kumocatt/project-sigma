@@ -1,6 +1,7 @@
 
 
 client
+	fps				= 100 		/// 60 or remove if 100 doesn't work out
 	perspective		= (EYE_PERSPECTIVE | EDGE_PERSPECTIVE)
 //	control_freak 	= (CONTROL_FREAK_SKIN | CONTROL_FREAK_MACROS)
 

@@ -77,7 +77,7 @@ obj/hud
 		/*	this is a HUD object that gets cast across client.screen so day/night effects can be easily enabled/disabled for different players depending on their
 			location and such. (for example, if you're inside a cave, it shouldn't be sunny. Or if you're in a lit house at night, it shouldn't stay dark when you go inside.
 			*/
-		screen_loc		= "1:2,1"
+		screen_loc		= "SOUTH,WEST+1"
 		maptext_width	= 128
 		maptext_height	= 32
 		maptext			= "--/--"
@@ -99,7 +99,7 @@ obj/hud
 
 
 	kill_counter
-		screen_loc		= "1:2,10"
+		screen_loc		= "NORTH,WEST+1"
 		maptext_width	= 128
 		maptext_height	= 32
 		maptext			= "0 kills"

@@ -27,13 +27,14 @@ obj/hud
 		mouse_opacity 	= 0
 		var/tmp/lastenemies
 
-		refresh()
+		refresh(mob/player/p)
 
 			if(active_game.started == 2)
 				if(active_game.boss_mode)
 					if(alpha != max_darkness)
 						animate(src, alpha = max_darkness, time = 5)
 					else if(prob(3))
+						if(p) p.ps('audio/sounds/thunder.wav')
 						animate(src, alpha = 100, time = 2, easing = ELASTIC_EASING)
 						animate(alpha = max_darkness, time = 1)
 				else if(lastenemies != active_game.enemies_left)

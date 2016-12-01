@@ -27,6 +27,7 @@ obj
 		bound_height	= 3
 		plane			= 2
 		density			= 1
+		layer			= EFFECTS_LAYER
 		var/tmp
 			hp_modifier	= -1		// the hp of mobs that the projectile hits will be effected by this value. positive will heal, negative will damage.
 			penetration	= 100	// the probability of the projectile penetrating through a collided mob.
@@ -64,7 +65,7 @@ obj
 				if(m.can_hit)
 					m.knockback(6, dir)
 					m.edit_health((is_crit ? hp_modifier : hp_modifier+hp_modifier), owner)
-					if((icon_state == "firebullet" || (icon_state == "fireball" && prob(5))) && m.health) m.burn()
+					if((icon_state == "firebullet" || (icon_state == "fireball" && prob(15))) && m.health) m.burn()
 			if(istype(a, /atom/movable) && a:is_explosive && !ismob(a))
 				a:Explode(42, -100, owner)
 			GC()
@@ -87,6 +88,8 @@ obj
 							accur_assist = round((step_size*total_steps)/accuracy)
 							if(dir == EAST || dir == WEST)	step_y += sway
 							else 							step_x += sway
+						for(var/mob/player/p in obounds(src,5))				//	THIS IS FOR BULLET WHIZ SOUND EFFECT
+							if(p != owner) p.ps('bulletwhiz1.wav')
 						trail(is_crit, dir)
 						step(src, dir)
 						sleep world.tick_lag*velocity
@@ -96,7 +99,7 @@ obj
 			trail(crit = 0, _dir = null)
 				var/obj/o = new/obj
 				o.SetCenter(Cx(),Cy(),z)
-				o.icon = 'projectiles.dmi';o.icon_state = "[icon_state]-trail";o.plane = 2;o.dir = _dir
+				o.icon = 'projectiles.dmi';o.icon_state = "[icon_state]-trail";o.plane = 2;o.layer = EFFECTS_LAYER-1;o.dir = _dir
 				if(crit) 	animate(o, alpha=0, transform = turn(transform, 360), color = "red",time=5)
 				else		animate(o, alpha=0, transform = turn(transform, 360), time=5)
 				o.spawndel(5)
@@ -314,7 +317,54 @@ obj
 					if(a.density)
 						end_step = 1
 
+			glowstick
+				icon_state	= "glowstick"
+				bound_x		= 2
+				bound_y		= 2
+				bound_width	= 4
+				bound_height= 4
 
+				hp_modifier	= 0
+				penetration	= 0
+				px_range	= 64
+				accuracy	= 4	// every [accuracy] pixels, the projectile will stray 1px off from true center.
+				kb_dist		= 0
+				velocity	= 1
+				New()
+					..()
+					color = pick("#0096D6","#008080","#FF7373","#00FF00","#FF00FF")
+					draw_spotlight(x_os = -38, y_os = -38, hex = color)
+				GC()
+					end_step = 0
+					..()
+
+				take_step()
+					/*
+						called to handle the projectile's step behavior.
+					*/
+					set waitfor = 0
+					timeout = 1
+					if(step_size*total_steps >= px_range) // if the projectile has taken its maximum amount of steps..
+						spawndel(150)
+					else
+						if(loc)
+							total_steps ++
+							if(round((step_size*total_steps)/accuracy) > accur_assist) // accur_Assist is always the sum of the total pixels traveled divided by accuracy.
+								accur_assist = round((step_size*total_steps)/accuracy)
+								if(dir == EAST || dir == WEST) step_y += sway
+								else step_x += sway
+							if(dir == EAST || dir == WEST)
+								if((step_size*total_steps) < (px_range/2)) pixel_y += 1
+								else pixel_y -= 1
+							step(src, dir)
+							sleep world.tick_lag
+					timeout = 0
+				Bump(atom/a)
+					if(istype(a, /obj/projectile) || a.d_ignore || owner == a)
+						loc = get_step(src, dir)
+						return
+					if(a.density)
+						end_step = 1
 
 
 

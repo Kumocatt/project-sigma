@@ -39,7 +39,7 @@ atom
 					overlays.Add(EXPLOSION_OVERLAY)
 					for(var/i = 1 to 3)
 						smoke()
-					k_sound(src, pick(SOUND_EXPLOSION1, SOUND_EXPLOSION2))
+					src.gs(pick('explosion1.wav','explosion2.wav'))
 					drop_boom()
 					icon_state 	= null
 					density		= 0

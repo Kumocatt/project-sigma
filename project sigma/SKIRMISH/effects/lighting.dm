@@ -27,7 +27,7 @@ atom/movable
 
 
 obj/lighting_plane												// add this to the client's screen     This and the below comment are both done in the above proc
-	screen_loc 			= "1,1"
+	screen_loc 			= "CENTER"
 	plane 				= 1
 	blend_mode 			= BLEND_MULTIPLY
 	appearance_flags 	= PLANE_MASTER | NO_CLIENT_COLOR

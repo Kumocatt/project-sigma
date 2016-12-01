@@ -19,7 +19,7 @@ obj/markers
 		icon_state	= "hspawn"
 		New()
 			..()
-			active_game.rainy_turfs += loc
+			active_game.weather_turfs += loc
 			del src
 	dense
 		icon 		= 'environment/x16.dmi'

@@ -6,11 +6,6 @@ mob
 
 
 
-
-
-
-
-
 atom/movable
 	proc
 
@@ -33,7 +28,7 @@ atom/movable
 				i = how many blood drops to.. well, drop.
 			*/
 			if(!splat)
-				for(var/obj/gore/blood/bl in loc)
+				for(var/obj/gore/blood/bl in obounds(src,4))
 					. ++
 				if(. < 4) for(var/v = 0 to i)
 					var/obj/gore/blood/b	= garbage.Grab(/obj/gore/blood)

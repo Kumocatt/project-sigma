@@ -9,10 +9,11 @@ mob
 		can_die		= 1
 		can_hit		= 1
 		has_revive	= 0
-		has_shield	= 0
+		shield		= 0
 
 	proc
 		edit_health(damage, mob/dealer, bloody_mess = 0)
+			if(active_game.started != 2) return
 			if(damage > 0)			// restoring health
 				health += damage
 				if(health > base_health)
@@ -24,12 +25,12 @@ mob
 				if(dealer)
 					if(dealer.type == /mob/player && istype(src, /mob/npc/hostile))
 						src:last_attacker = dealer
-				if(has_shield)							// if they have a shield, we can avoid taking health.
-					has_shield --
-					if(!has_shield)
-						overlays.Remove(SHIELD_OVERLAY1, SHIELD_OVERLAY2)
+				if(shield)							// if they have a shield, we can avoid taking health.
+					shield(-1, (client?0:1))
 				else									// if they don't, however..
 					health += damage
+					gs(pick('hit 1.wav','hit 2.wav'))
+					if(client) src:hurtflash()
 					if(bloody_mess)	// 1 if explosion
 						//	k_sound(src, SOUND_SPLATTER)
 						drop_blood(3,1)
@@ -53,9 +54,11 @@ mob
 			density	= 0
 			can_hit	= 0
 			if(is_explosive)
-				animate(src, color = "#f4dd2c", time = 1, loop = 4)
-				animate(color = null, time=1)
-			else
+				animate(src, color = "#f4dd2c", time = 2, loop = 4)
+				animate(color = null, time=2)
+				sleep 12
+			else if(istype(src, /mob/player))
 				animate(src, alpha = 0, time = 1, loop = 4)
 				animate(alpha = 255,time=1)
-			sleep client?8:2
+				sleep 8
+				gs('dying.wav')

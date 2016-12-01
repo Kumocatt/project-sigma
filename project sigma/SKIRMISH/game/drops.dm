@@ -2,10 +2,11 @@
 proc
 	get_drop()
 		var/obj/drop_this
-		if(prob(35))	drop_this = pick(/obj/item/health_pack, /obj/item/gun/kobra, /obj/item/special/molotov, /obj/item/shield, /obj/item/gun/krossbow)
-		if(prob(25))	drop_this = pick(/obj/item/gun/uzi, /obj/item/gun/shotgun, /obj/item/gun/edge_lord, /obj/item/strong_shield, \
-											/obj/item/special/fireball, /obj/item/gun/ak66)
-		if(prob(15))	drop_this = pick(/obj/item/gun/red_baron, /obj/item/revive_pack, /obj/item/special/airstrike, /obj/item/gun/pink_dream)
+		if(prob(45))	drop_this = pick(/obj/item/health_pack, /obj/item/gun/kobra, /obj/item/special/molotov, /obj/item/shield_tier1, /obj/item/gun/krossbow, \
+											/obj/item/special/glowsticks)
+		if(prob(40))	drop_this = pick(/obj/item/gun/uzi, /obj/item/gun/shotgun, /obj/item/gun/edge_lord, /obj/item/shield_tier2, \
+											/obj/item/special/fireball, /obj/item/gun/ak66, /obj/item/special/cowbell)
+		if(prob(30))	drop_this = pick(/obj/item/gun/red_baron, /obj/item/revive_pack, /obj/item/special/airstrike, /obj/item/gun/pink_dream, /obj/item/shield_tier3)
 		return drop_this
 
 obj
@@ -39,19 +40,26 @@ obj
 				if(!p.has_revive)
 					p.has_revive = 1
 					GC()
-		shield
+		shield_tier1
 			icon_state	= "shield1"
 			drop_rate	= 50
 			effect(mob/player/p)
-				if(!p.has_shield)
-					p.shield()
+				if(p.shield < 9)
+					p.shield(1, 0)
 					GC()
-		strong_shield
+		shield_tier2
 			icon_state	= "shield2"
 			drop_rate	= 50
 			effect(mob/player/p)
-				if(!p.has_shield)
-					p.blueshield()
+				if(p.shield < 9)
+					p.shield(2, 0)
+					GC()
+		shield_tier3
+			icon_state	= "shield3"
+			drop_rate	= 50
+			effect(mob/player/p)
+				if(p.shield < 9)
+					p.shield(3, 0)
 					GC()
 
 		gun
@@ -98,7 +106,7 @@ obj
 				icon_state	= "krossbow"
 				state		= "krossbow"
 				gun_type	= /obj/weapon/gun/krossbow
-				step		= 3
+				step		= 4
 				effect(mob/player/p)
 					p.float_text("\[E] - Krossbow", 1)
 			uzi
@@ -136,6 +144,13 @@ obj
 				step		= 4
 				effect(mob/player/p)
 					p.float_text("\[E] - Flamethrower", 1)
+			spas_12
+				icon_state	= "spas12"
+				state		= "spas12"
+				gun_type	= /obj/weapon/gun/spas_12
+				step		= 4
+				effect(mob/player/p)
+					p.float_text("\[E] - SPAS-12", 1)
 
 		melee
 			var/tmp
@@ -171,3 +186,15 @@ obj
 				gun_type	= /obj/weapon/special/fireball
 				effect(mob/player/p)
 					p.float_text("\[E] - Fireball", 1)
+			glowsticks
+				icon_state	= "glowsticks"
+				state		= "glowsticks"
+				gun_type	= /obj/weapon/special/glowsticks
+				effect(mob/player/p)
+					p.float_text("\[E] - Glowsticks", 1)
+			cowbell
+				icon_state	= "cowbell"
+				state		= "cowbell"
+				gun_type	= /obj/weapon/special/cowbell
+				effect(mob/player/p)
+					p.float_text("\[E] - Cowbell", 1)

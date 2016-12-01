@@ -200,6 +200,7 @@ var
 	obj/overlays/fire/FIRE_OVERLAY			= new
 	obj/overlays/shield1/SHIELD_OVERLAY1	= new
 	obj/overlays/shield2/SHIELD_OVERLAY2	= new
+	obj/overlays/shield3/SHIELD_OVERLAY3	= new
 	obj/overlays/censor_bar/CENSOR_OVERLAY	= new
 	obj/overlays/cowbell/COWBELL_OVERLAY	= new
 	obj/overlays/reload/RELOAD_OVERLAY		= new
@@ -212,7 +213,7 @@ obj/overlays
 		plane			= 2
 		layer			= FLOAT_LAYER
 		pixel_x 		= -6
-		appearance_flags= NO_CLIENT_COLOR+KEEP_APART+RESET_COLOR
+		appearance_flags= NO_CLIENT_COLOR+KEEP_APART+RESET_COLOR+RESET_TRANSFORM
 		blend_mode		= BLEND_ADD
 
 	shield1
@@ -229,7 +230,13 @@ obj/overlays
 		layer			= FLOAT_LAYER
 		pixel_y 		= -2
 		appearance_flags= NO_CLIENT_COLOR+KEEP_APART+RESET_COLOR
-
+	shield3
+		icon 			= 'game/misc_effects.dmi'
+		icon_state 		= "shield3"
+		plane			= 2
+		layer			= FLOAT_LAYER
+		pixel_y 		= -2
+		appearance_flags= NO_CLIENT_COLOR+KEEP_APART+RESET_COLOR
 	cowbell
 		icon 			= 'game/misc_effects.dmi'
 		icon_state 		= "cowbell"
@@ -364,14 +371,18 @@ mob
 				fireproof 	= 0
 				animate(src, color = null, time = 10, loop = 1)
 
-		shield(npc_shield)
-			if(!has_shield)
-				has_shield 	= 1
-				overlays += SHIELD_OVERLAY1
-		blueshield(npc_shield)
-			if(!has_shield)
-				has_shield 	= 2
-				overlays += SHIELD_OVERLAY2
+		shield(_addpower = 0, npc_shield = 0)
+			/*
+				you can call shield() with no args and it will refresh the shield overlay to keep it accurate.
+			*/
+			shield += _addpower
+			if(shield < 0) shield = 0
+			if(shield > 9) shield = 9
+			overlays.Remove(SHIELD_OVERLAY1, SHIELD_OVERLAY2, SHIELD_OVERLAY3)
+			if(shield)
+				if(shield <= 3) overlays += SHIELD_OVERLAY1
+				else if(shield <= 6) overlays += SHIELD_OVERLAY2
+				else if(shield <= 9) overlays += SHIELD_OVERLAY3
 
 		cowbell()
 			set waitfor = 0

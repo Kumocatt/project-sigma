@@ -22,4 +22,4 @@ mob/player
 					move_disabled	= 0
 					can_hit			= 1
 					died_already	= 0
-					world << output(">> <b><font color = [namecolor]>[src]</font> was auto revived!","lobbychat")
+					world << ">> <b><font color = [namecolor]>[src]</font> was auto revived!"
