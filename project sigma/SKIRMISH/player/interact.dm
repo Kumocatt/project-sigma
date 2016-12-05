@@ -8,6 +8,8 @@ mob
 				/*
 					press e to interact with nearby things in the world.
 				*/
+				if(died_already || src in active_game.spectators)
+					specNew()
 				for(var/atom/movable/a in obounds(src, 1))
 					if((istype(a, /obj/item/gun) || istype(a, /obj/item/melee)) && a:gun_type != equipped_weapon.type)
 				//		world << "[src] got the [a]."

@@ -25,9 +25,9 @@ mob/player
 			equipped_special	= new /obj/weapon/special/grenade
 			arms.icon_state		= "base-pistol"
 			pants.icon_state	= "pants[pick(1,2)]"
-			shirt.icon_state	= "shirt[rand(1,9)]"
+			shirt.icon_state	= "shirt[rand(1,10)]"
 			hair.icon_state		= "style[rand(1,13)]"
-			vanity.icon_state	= "vanity[rand(1,3)]"
+			vanity.icon_state	= "vanity[rand(1,5)]"
 			if(key == "Amelia Pond")
 				shirt.icon_state 	= "amelia-shirt"
 				pants.icon_state 	= "amelia-pants"
@@ -35,7 +35,7 @@ mob/player
 			if(key == "Ghost of ET")
 				hair.icon_state		= "style8"
 			if(key == "Kumorii")
-				hair.icon_state		= "style12"
+				hair.icon_state		= "style5"
 				shirt.icon_state	= "shirt10"
 				pants.icon_state	= "pants1"
 				vanity.icon_state	= "vanity1"
@@ -93,7 +93,7 @@ obj/player
 	vanity
 		icon		= 'vanity.dmi' //base-arms.dmi'
 		icon_state	= ""
-		layer		= FLOAT_LAYER+0.2
+		layer		= FLOAT_LAYER+0.1
 	indicator
 		icon				= 'game/misc_effects.dmi' //base-arms.dmi'
 		icon_state			= "indicator"

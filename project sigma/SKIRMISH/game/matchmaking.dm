@@ -4,16 +4,15 @@
 
 var
 	game/active_game 	= new /game	// the datum of the current active game.
-	speed_fluxer		= 0
 
 mob/player
 	verb
 		vote_to_skip()
 			set hidden = 1
-		//	if(winget(src, "pane-lobby.to-skip", "is-checked") == "true")
-		//		active_game.votes_to_skip --
-		//	else
-		//		active_game.votes_to_skip ++
+			if(winget(src, "pane-lobby.to-skip", "is-checked") == "true")
+				active_game.votes_to_skip --
+			else
+				active_game.votes_to_skip ++
 
 
 game
@@ -66,6 +65,7 @@ game
 		list/portals		= new/list()		// a list of all the portals on the map.
 		list/weather_turfs	= new/list()
 		map/next_map	// this is the map that's currently being chosen to be played.
+		mob/top_player
 
 
 	proc
@@ -77,7 +77,6 @@ game
 				if(length(participants))
 					break
 				sleep 10
-			world << "initializing game.."
 			init_game()
 
 
@@ -158,9 +157,9 @@ game
 				boss_deathmatch()
 									// if no boss mode was triggered, let's look at some wave modifiers.
 			if(!boss_mode && prob(55))
-				if(prob(25))	// phantom enemies only.
+				if(prob(15))	// phantom enemies only.
 					phantom_enemies = 1
-				if(prob(25))	// make players and feeders naked with a censor bar. **HUMOR**
+				if(prob(10))	// make players and feeders naked with a censor bar. **HUMOR**
 					censorship		= 1
 				if(prob(15))	// the following will decide if the wave will only spawn a certain type of enemy.
 					switch(rand(1,3))
@@ -199,7 +198,8 @@ game
 					while(ai_list.len >= map_spawnlimit) sleep 5
 					if(started == 1) break
 					var/mob/npc/hostile/h 	= garbage.Grab(/mob/npc/hostile/feeder)
-					h.icon_state 			= pick("grey","pink","white","purple","green","orange")
+					h.icon_state 			= pick("grey","pink","white","purple","green","orange","blue")
+					if(prob(5)) h = garbage.Grab(/mob/npc/hostile/petite_feeder)
 					if(current_round >= 3 && prob(10))
 						h = garbage.Grab(pick(/mob/npc/hostile/brute, /mob/npc/hostile/puker))
 					if(current_round >= 5 && prob(15)) //5, 15
@@ -259,6 +259,17 @@ game
 				// revive dead players, etc.
 				for(var/mob/player/p in participants)
 					if(p.censored) p.censor(1)
+					if(top_player && top_player != p)
+						if(p.kills > top_player.kills)
+							top_player.overlays.Remove(CROWN_OVERLAY)
+							p.overlays.Add(CROWN_OVERLAY)
+							top_player = p
+						if(p.kills == top_player.kills)
+							top_player.overlays.Remove(CROWN_OVERLAY)
+							top_player = null
+					else
+						top_player = p
+						p.overlays.Add(CROWN_OVERLAY)
 					p.waveComplete.alpha = 0
 					p.waveComplete.transform = turn(p.transform,180)
 					p.client.screen += p.waveComplete
@@ -412,18 +423,21 @@ game
 			var/total = round((active_game.participants.len)/1.5)
 			if(total <= 0) total = 1
 			for(var/i = 0, i < total, i++)
-				var/mob/npc/hostile/doppleganger/boss1 = new
-				boss1.draw_nametag("<font color=red>_-DOPPLE-_") //,, -44)
-				boss1.draw_health(-5, 32)
-				boss1.arms.icon_state = "base-pistol"
-				boss1.overlays += boss1.arms
-				boss1.overlays += boss1.shirt
-				boss1.overlays += boss1.pants
-				boss1.overlays += boss1.hair
-				boss1.step_size		= 4
-				boss1.health		= boss1.base_health
-				boss1.loc			= pick(player_spawns)
-				ai_list += boss1
+				var/mob/npc/hostile/doppleganger/boss = new
+				boss.draw_nametag("<font color=red>_-DOPPLE-_") //,, -44)
+				boss.draw_health(-5, 32)
+				boss.arms.icon_state = "base-pistol"
+				boss.overlays += boss.arms
+				boss.overlays += boss.shirt
+				boss.overlays += boss.pants
+				boss.overlays += boss.hair
+				boss.step_size		= 4
+				boss.health		= boss.base_health
+				boss.loc		= pick(player_spawns)
+				for(var/mob/player/p in participants)
+					p.add_target(boss)
+					boss.targeted = 1
+				ai_list += boss
 			world << SOUND_WAVE_BEGIN
 			world << 'dopple.wav'
 			sleep world.tick_lag*2

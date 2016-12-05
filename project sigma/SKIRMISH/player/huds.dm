@@ -39,6 +39,7 @@ mob
 				client.screen += scanlines
 				client.screen += new /obj/hud/clip_status
 				client.screen += new /obj/hud/kill_counter
+				overlays += REVIVES
 				var/i = 0
 				while(src)
 					i++
@@ -50,6 +51,12 @@ mob
 							overlays -= health_disp
 							health_disp.icon_state 	= "[round((health/base_health)*29)]"
 							overlays += health_disp
+					if(REVIVES)
+						if(REVIVES.icon_state != "revive[has_revive]")
+							overlays -= REVIVES
+							REVIVES.icon_state = "revive[has_revive]"
+							overlays += REVIVES
+
 					for(var/obj/hud/h in client.screen)	// only loop through hud objects that are currently being displayed.
 						h.refresh(src)					// refresh each! If you need to reference the player in the refresh proc, just add it to the object's refresh proc's arguments.
 					sleep 1
@@ -77,10 +84,11 @@ obj/hud
 		/*	this is a HUD object that gets cast across client.screen so day/night effects can be easily enabled/disabled for different players depending on their
 			location and such. (for example, if you're inside a cave, it shouldn't be sunny. Or if you're in a lit house at night, it shouldn't stay dark when you go inside.
 			*/
-		screen_loc		= "SOUTH,WEST+1"
+		screen_loc		= "SOUTH+1,WEST"
 		maptext_width	= 128
 		maptext_height	= 32
 		maptext			= "--/--"
+		pixel_x			= 2
 		plane			= 2
 		mouse_opacity 	= 0
 		appearance_flags	= NO_CLIENT_COLOR
@@ -89,6 +97,10 @@ obj/hud
 		refresh(mob/player/p)
 
 			if(active_game.started == 2)
+				if(p.client.fs)
+					screen_loc	= "SOUTH+1,WEST+1:2"
+				else
+					screen_loc	= "SOUTH+1,WEST:2"
 				if(istype(p.equipped_weapon, /obj/weapon/gun))
 					if(p.equipped_weapon:mag != last_mag)
 						last_mag 	= p.equipped_weapon:mag
@@ -99,10 +111,11 @@ obj/hud
 
 
 	kill_counter
-		screen_loc		= "NORTH,WEST+1"
+		screen_loc		= "NORTH-1,WEST"
 		maptext_width	= 128
 		maptext_height	= 32
 		maptext			= "0 kills"
+		pixel_x			= 2
 		plane			= 2
 		mouse_opacity 	= 0
 		appearance_flags	= NO_CLIENT_COLOR
@@ -111,6 +124,10 @@ obj/hud
 		refresh(mob/player/p)
 
 			if(active_game.started == 2)
+				if(p.client.fs)
+					screen_loc	= "NORTH-1,WEST+1:2"
+				else
+					screen_loc	= "NORTH-1,WEST:2"
 				if(last_kills != p.kills)
 					last_kills = p.kills
 					maptext	= "[last_kills] kills"

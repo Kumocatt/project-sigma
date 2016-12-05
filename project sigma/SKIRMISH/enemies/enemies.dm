@@ -693,7 +693,61 @@ mob/npc
 								target = p
 					sleep world.tick_lag*2
 					resting = 0
+		petite_feeder
+			icon			= 'enemies/_Zombie.dmi'
+			icon_state		= "girl"
+			density			= 1
+			step_size		= 3
+			base_health		= 10
+			var/obj/shirt	= new/obj
+			New()
+				..()
+				shirt.icon			= 'enemies/_Zombie.dmi'
+				shirt.icon_state	= "girlclothes1"
+				shirt.layer			= MOB_LAYER
+				overlays += shirt
 
+			ai_check()
+				set waitfor = 0
+				if((health > 0) && !resting && !kb_init)
+					resting = 1
+					if(target)
+						if(!target.health || target.cowbell || !target.loc)	// if the target is dead, off map, or shaking a cowbell..
+							target = null									// .. stop targeting them.
+						else
+							var/step_dir = step_away(src, target)				// just log this because.
+							if(prob(get_dist(src, target)*2))						// here we'll see if any other potential targets are closer.
+								for(var/mob/player/p in active_game.participants)	// the further the target, the more likely to check for a new one.
+									if(p == target || !p.health || !p.loc || p.cowbell) continue
+									if(get_dist(src, p) < get_dist(src, target))
+										target = p
+							if(bounds_dist(src, target) <= 2)
+								flick("[icon_state]-attack", src)
+								flick("[shirt.icon_state]-attack", shirt)
+								target.knockback(6, step_dir)
+								target.edit_health(-20)
+								sleep 10
+							else if(!kb_init)
+								step(src, step_dir)
+								if(last_loc == loc)
+									same_loc_steps ++
+									if(same_loc_steps > 60)
+										. = 1
+										for(var/mob/player/p in active_game.participants)
+											if(get_dist(p, src) < 25) . = 0; break
+										if(.) same_loc_steps = 0; respawn()
+								else
+									last_loc 		= loc
+									same_loc_steps	= 0
+					if(!target)
+						if(prob(45)) step(src, pick(dir, turn(dir, pick(-45, 45))))
+						for(var/mob/player/p in active_game.participants)
+							if(!p.health || !p.loc || p.cowbell) continue
+							if(!target) target = p
+							else if(get_dist(src, p) < get_dist(src, target))
+								target = p
+					sleep world.tick_lag*1.5
+					resting = 0
 
 
 

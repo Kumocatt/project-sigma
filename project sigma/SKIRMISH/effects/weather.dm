@@ -23,7 +23,7 @@ turf
 			set waitfor = 0
 			var/obj/weather/r = garbage.Grab(/obj/weather/rain)
 			r.loc = src
-			animate(r,icon_state = "rain[pick(1,3)]", transform = transform*4, pixel_y = 400, pixel_x = 8, alpha = 0, loop = 1)
+			animate(r,icon_state = "rain[pick(1,3)]", transform = transform*2, pixel_y = 400, pixel_x = 8, alpha = 0, loop = 1)
 			animate(transform = matrix(), pixel_y = 5, pixel_x = -8, alpha = 210, time = 10.8)
 			animate(icon_state = "rainland", time = rand(1.2, 4.8))
 			spawn(17) if(active_game.started == 2)
@@ -33,8 +33,8 @@ turf
 			set waitfor = 0
 			var/obj/weather/r = garbage.Grab(/obj/weather/snow)
 			r.loc = src
-			animate(r,icon_state = "snow[pick(1,3)]", transform = transform*8, pixel_y = 400, pixel_x = 8, alpha = 0, loop = 1)
-			animate(transform = transform/6, pixel_y = 300, pixel_x = -8, alpha = 210, time = 30.4)
+			animate(r,icon_state = "snow[pick(1,3)]", transform = transform*6, pixel_y = 400, pixel_x = 8, alpha = 0, loop = 1)
+			animate(transform = transform/4, pixel_y = 300, pixel_x = -8, alpha = 210, time = 30.4)
 			animate(transform = matrix(), pixel_y = 150, pixel_x = 8, alpha = 210, time = 30.4)
 			animate(pixel_y	= 0, pixel_x = -8, alpha = 210, time = 26.4)
 			animate(icon_state = "snowland", alpha = 0, time = 20)

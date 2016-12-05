@@ -8,7 +8,7 @@ mob
 		health		= 0
 		can_die		= 1
 		can_hit		= 1
-		has_revive	= 0
+		has_revive	= 0		// CAN HAVE A MAXIMUM OF TWO REVIVES. this number reflects the total amount the player has
 		shield		= 0
 
 	proc
@@ -42,7 +42,7 @@ mob
 					if(can_die)
 						if(client && (has_revive || active_game.intermission))
 							world << "<b>[src] was revived!"
-							has_revive	= 0
+							has_revive	--
 							health 		= base_health
 							can_hit 	= 1
 						else

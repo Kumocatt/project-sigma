@@ -25,7 +25,7 @@ mob/player
 				if(p == src) continue
 				if(p.health && !p.died_already) spec_list += p
 			if(spec_list.len > 1)
-				client.eye 	= pick(spec_list)
+				client.eye 	= pick(spec_list-client.eye)
 				src << "spectating: [client.eye]"
 			else
 				client.eye 	= src
@@ -34,5 +34,6 @@ mob/player
 	verb
 		specNew()
 			set hidden = 1
-			if(!health || src in active_game.spectators)
+			if(died_already || src in active_game.spectators)
+				src << "spectate new!"
 				spectate_new()

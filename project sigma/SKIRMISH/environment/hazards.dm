@@ -186,10 +186,11 @@ obj/hazard
 		icon		= '_new x16.dmi'
 		icon_state	= "spikes"
 		layer		= TURF_LAYER+0.2
-		Crossed(atom/movable/a)
+		Cross(atom/movable/a)
 			if(ismob(a))
 				a:edit_health(-25)
 				a:knockback(4, get_dir(src,a))
+			return 0
 
 		GC()
 			..()
@@ -204,6 +205,9 @@ var
 	obj/overlays/censor_bar/CENSOR_OVERLAY	= new
 	obj/overlays/cowbell/COWBELL_OVERLAY	= new
 	obj/overlays/reload/RELOAD_OVERLAY		= new
+	obj/overlays/revive_indicator/REVIVES	= new
+	obj/overlays/crown/CROWN_OVERLAY		= new
+
 
 
 obj/overlays
@@ -244,7 +248,7 @@ obj/overlays
 		layer			= FLOAT_LAYER
 		pixel_y 		= 32
 		pixel_x			= -4
-		appearance_flags= NO_CLIENT_COLOR+KEEP_APART+RESET_COLOR
+		appearance_flags= NO_CLIENT_COLOR+KEEP_APART+RESET_COLOR+RESET_TRANSFORM
 	crown
 		icon 			= 'game/misc_effects.dmi'
 		icon_state 		= "crown"
@@ -252,7 +256,7 @@ obj/overlays
 		layer			= FLOAT_LAYER
 		pixel_y 		= 32
 		pixel_x			= -4
-		appearance_flags= NO_CLIENT_COLOR+KEEP_APART+RESET_COLOR
+		appearance_flags= NO_CLIENT_COLOR+KEEP_APART+RESET_COLOR+RESET_TRANSFORM
 	censor_bar
 		icon				= 'game/misc_effects.dmi'
 		icon_state			= "censorbar"
@@ -265,7 +269,15 @@ obj/overlays
 		plane			= 2
 		layer			= FLOAT_LAYER
 		pixel_y 		= -2
-		appearance_flags= NO_CLIENT_COLOR+KEEP_APART+RESET_COLOR
+		appearance_flags= NO_CLIENT_COLOR+KEEP_APART+RESET_COLOR+RESET_TRANSFORM
+	revive_indicator
+		icon 			= 'game/misc_effects.dmi'
+		icon_state 		= "revive1"
+		plane			= 2
+		layer			= FLOAT_LAYER
+		pixel_y 		= 14
+		pixel_x			= -13
+		appearance_flags= NO_CLIENT_COLOR+KEEP_APART+RESET_COLOR+RESET_TRANSFORM
 
 
 atom/movable

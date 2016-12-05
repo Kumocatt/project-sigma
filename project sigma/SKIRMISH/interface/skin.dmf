@@ -387,8 +387,6 @@ window "pane-map"
 		is-default = true
 		drop-zone = true
 		saved-params = "icon-size"
-		icon-size = 64
 		letterbox = false
-		zoom = 4
 		style = "BODY {font-family:UberBit7;font-size:12pt}\n.desc {font-size:12pt;font-family:UberBit7;}\n.small {font-size:12pt;}\n.big {font-size:24pt;}\n.realbig {font-size:36pt;}"
 

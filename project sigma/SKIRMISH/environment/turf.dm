@@ -183,6 +183,16 @@ turf
 				New()
 					..()
 					icon_state	= "sprouts[rand(1,4)]"
+			ledge
+				// you can hope off a ledge, but can't climb back up it.
+				icon		= '_new x16.dmi'
+				icon_state	= "ledge-south"
+				layer		= TURF_LAYER+0.2
+				Enter(atom/movable/m)
+					if(ismob(m))
+						if(get_general_dir(m, src) == SOUTH)
+							return 1
+						else return 0
 		hedge
 			icon		= '_new x16.dmi'
 			icon_state	= "hedge b"
@@ -348,6 +358,7 @@ turf
 			New()
 				..()
 				overlays += new /obj/overlays/mausoleum
+
 /*
 
 

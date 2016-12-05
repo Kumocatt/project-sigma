@@ -8,11 +8,11 @@ client
 
 
 mob
+	var/tmp
+		kills = 0
 	player
-		var
-			tmp
-				died_already= 0
-				kills		= 0
+		var/tmp
+			died_already = 0
 	//	Stat()
 	//		stat("Wave:",active_game.current_round)
 	//		stat("Enemies:","[active_game.enemies_left]/[active_game.enemies_total]")

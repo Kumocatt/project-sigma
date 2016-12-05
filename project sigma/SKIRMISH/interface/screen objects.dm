@@ -23,13 +23,13 @@ obj
 			icon				= 'backdrop.png'
 		wave_complete
 			icon				= 'wavecomplete.png'
-			screen_loc			= "1,1"
+			screen_loc			= "SOUTHWEST"
 		wave_start
 			icon				= 'wavestart.png'
-			screen_loc			= "1,1"
+			screen_loc			= "SOUTHWEST"
 		deathmatch
 			icon				= 'deathmatchwave.png'
-			screen_loc			= "1,1"
+			screen_loc			= "SOUTHWEST"
 		scanlines
 			icon				= 'interface/x16.dmi'
 			icon_state			= "scanlines"

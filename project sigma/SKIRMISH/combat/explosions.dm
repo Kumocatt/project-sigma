@@ -43,22 +43,17 @@ atom
 					drop_boom()
 					icon_state 	= null
 					density		= 0
-					for(var/mob/m in obounds(src, blastbounds))
-						m.knockback(7,get_dir(src, m))
-						if(m.client) m:screenshake()
-						if(!m.explosion_proof && (istype(m, /mob/npc) || (istype(m, /mob/player) && (pk || active_game.deathmatch || owner && !owner.client))) && m != src)
-							spawn m.edit_health(damage, owner, 1)
-
-					var/list/blowup_chain = new/list()
-					for(var/obj/o in obounds(src, blastbounds))
-						if(o.is_explosive && o.exploded == 0)		// don't re blow up qeued explosions.
-							o.exploded = 2
-							blowup_chain += o
-						else if(istype(o, /obj/barricade/crate))
-							spawn o:Break()
-					if(blowup_chain.len)
-						for(var/obj/b in blowup_chain)
-							spawn b.Explode(blastbounds, damage, owner)
+					for(var/atom/movable/a in obounds(src, blastbounds))
+						if(ismob(a))
+							a:knockback(7, get_dir(src, a))
+							if(a:client) a:screenshake()
+							if(!a:explosion_proof && (istype(a, /mob/npc) || (istype(a, /mob/player) && (pk || active_game.deathmatch || owner && !owner.client)))) // && a != src)
+								spawn a:edit_health(damage, owner, 1)
+						if(isobj(a))
+							if(a:is_explosive && !a:exploded)
+								spawn a.Explode(blastbounds, damage, owner)
+							else if(istype(a, /obj/barricade/crate))
+								spawn a:Break()
 					spawn(5)
 						overlays.Cut()
 						if(istype(src, /obj/barricade/barrel) && !exploded)

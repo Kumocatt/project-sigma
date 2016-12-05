@@ -37,8 +37,8 @@ obj
 			icon_state	= "revive"
 			drop_rate	= 50
 			effect(mob/player/p)
-				if(!p.has_revive)
-					p.has_revive = 1
+				if(p.has_revive < 2)
+					p.has_revive ++
 					GC()
 		shield_tier1
 			icon_state	= "shield1"

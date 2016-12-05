@@ -8,8 +8,8 @@ done this patch:
  - sound effects can now vary in frequency.
  - added screen effect when recieving damage.
  - bullets now have a sound effect when wizzing by a player.
-//- Screen scaling added for resizable window.
-//- Added support for fullscreen play.
+ - Screen scaling added for resizable window.
+ - Added support for fullscreen play.
  - Disabled reviving for deathmatch rounds.
  - Enabled wave variants again.
  - shotgun was buffed.
@@ -33,7 +33,15 @@ done this patch:
  - Vanity slot added to player overlays for further customization.
  - Added snow weather type.
  - Weather is dynamicly changed each wave.
-
+ - Cleaned up the old vanity overlays.
+ - Added an overlay indicator to show how many revives a player has.
+ - Added a new map; Hallowed
+ - Bosses now have tracking arrows.
+ - added blue feeders
+ - added petite feeders
+ - fixed explosions
+ - players with the most kills now get a crown overlay.
+ - can now toggle who you're spectating with E.
 
 
 do this patch:

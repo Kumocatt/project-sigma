@@ -1,6 +1,6 @@
 #define TILE_WIDTH 16
 #define TILE_HEIGHT 16
-#define MAX_VIEW_TILES 130
+#define MAX_VIEW_TILES 195
 
 #define floor(x) round(x)
 #define ceil(x) (-round(-x))
@@ -39,6 +39,7 @@ client
 
 mob
 	Login()
+		winset(src,"default","size=832x640")
 		client.onResize()
 		return ..()
 

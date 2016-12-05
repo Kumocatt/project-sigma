@@ -7,7 +7,7 @@ proc
 			var/mob/player/p
 
 			while(!_loc && active_game.started == 2)
-				if(active_game.participants)
+				if(active_game.participants.len)
 					p = pick(active_game.participants)
 					if(p.loc)
 						for(var/obj/markers/enemy_spawn/espawn in oview(15,p))
