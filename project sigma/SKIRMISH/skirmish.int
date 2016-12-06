@@ -1,7 +1,7 @@
 // BEGIN_INTERNALS
 /*
-LAST_COMPILE_TIME: 1480919416
-DIR: interface player references\#libraries 
+LAST_COMPILE_TIME: 1480979393
+DIR: game interface maps player references\#libraries 
 PACKAGE_RSC_NAME: C:\Users\Kumorii\Dropbox\SKIRMISH\skirmish_rsc.zip
 AUTO_FILE_DIR: ON
 PACKAGE_DMB_INFO: 
@@ -10,7 +10,7 @@ PACKAGE_DME_NAME: C:\Users\Kumorii\Desktop\feed_src_11-28-16.zip
 LAST_COMPILE_VERSION: 511.1364
 PACKAGE_DME_START: 
 PACKAGE_TYPE: 1
-WINDOW: DO THIS.dm;interface\ter scaling.dm;interface\_setup.dm;interface\fullscreen.dm;interface\skin.dmf;interface\screen objects.dm;player\huds.dm
+WINDOW: DO THIS.dm;maps\hallowed.dmm;interface\lobby.dm;interface\_setup.dm;player\_main.dm
 PACKAGE_DME_INFO: 
 FILE: DO THIS.dm
 PACKAGE_DME_DEMO: 

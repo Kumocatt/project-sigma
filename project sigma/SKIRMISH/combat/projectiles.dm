@@ -57,7 +57,10 @@ obj
 
 		Bump(atom/a)
 			if(istype(a, /obj/projectile) || a.d_ignore || owner == a)
-				loc = get_step(src, dir)
+				if(dir == WEST) step_x -= step_size
+				if(dir == EAST) step_x += step_size
+				if(dir == NORTH)step_y += step_size
+				if(dir == SOUTH)step_y -= step_size
 				return
 			if(ismob(a))
 				loc			= null

@@ -712,7 +712,7 @@ mob/npc
 				if((health > 0) && !resting && !kb_init)
 					resting = 1
 					if(target)
-						if(!target.health || target.cowbell || !target.loc)	// if the target is dead, off map, or shaking a cowbell..
+						if(!target.health || target.cowbell || !target.loc || get_dist(src, target) > 20)	// if the target is dead, off map, or shaking a cowbell..
 							target = null									// .. stop targeting them.
 						else
 							var/step_dir = step_away(src, target)				// just log this because.

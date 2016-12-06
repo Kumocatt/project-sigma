@@ -9,7 +9,8 @@ client
 
 mob
 	var/tmp
-		kills = 0
+		kills 		= 0
+		connected	= 0
 	player
 		var/tmp
 			died_already = 0
@@ -20,7 +21,10 @@ mob
 		Login()
 			..()
 			winset(src,null,"hwmode=true;")
-			if(winget(src,null,"hwmode")=="false") del src
+			if(winget(src,null,"hwmode")=="false")
+				src << "<b><font color = red>Oops! Unfortunately Feed can only be played with hardware rendering mode enabled!"
+				del src
+			connected = 1
 			src << MUSIC_KNIVES
 			loc = locate(1,1,1)
 			MovementLoop()
@@ -50,6 +54,7 @@ mob
 
 
 		Logout()
+			if(!connected) return
 			remove_spectators()
 			..()
 			world << "<b>-- <font color = [namecolor]>[src]</font> disconnected."

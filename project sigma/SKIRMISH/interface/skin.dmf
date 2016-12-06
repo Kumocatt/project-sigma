@@ -73,15 +73,15 @@ macro "macro"
 window "debugoutput"
 	elem "debugoutput"
 		type = MAIN
-		pos = 281,0
+		pos = 342,44
 		size = 265x309
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		title = "Chat / Debug"
 		statusbar = false
 		can-close = false
-		can-minimize = false
 	elem "label3"
 		type = LABEL
 		pos = 0,0
@@ -126,7 +126,6 @@ window "default"
 		size = 832x640
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		is-default = true
 		saved-params = "pos;size;is-minimized;is-maximized"
 		statusbar = false
@@ -139,7 +138,6 @@ window "default"
 		size = 832x640
 		anchor1 = 0,0
 		anchor2 = 100,100
-		background-color = none
 		is-default = true
 		saved-params = "splitter"
 		left = "pane-map"
@@ -175,17 +173,6 @@ window "pane-lobby"
 		command = "toggle-spectate"
 		is-flat = true
 		button-type = checkbox
-	elem "label4"
-		type = LABEL
-		pos = 552,144
-		size = 104x20
-		anchor1 = 66,23
-		anchor2 = 79,26
-		text-color = #4e4e4e
-		background-color = #272727
-		saved-params = ""
-		text = "Map Best: Wave ---"
-		align = left
 	elem "map-info"
 		type = LABEL
 		pos = 552,104
@@ -267,8 +254,8 @@ window "pane-lobby"
 		type = INPUT
 		pos = 16,604
 		size = 520x20
-		anchor1 = none
-		anchor2 = none
+		anchor1 = 2,94
+		anchor2 = 64,98
 		text-color = #e5e5e5
 		background-color = #272727
 		border = line
@@ -278,7 +265,7 @@ window "pane-lobby"
 		type = GRID
 		pos = 552,184
 		size = 264x368
-		anchor1 = 66,23
+		anchor1 = 66,29
 		anchor2 = 98,86
 		text-color = #e5e5e5
 		background-color = #151515
@@ -354,7 +341,7 @@ window "pane-lobby"
 		pos = 16,16
 		size = 520x584
 		anchor1 = 2,3
-		anchor2 = 64,96
+		anchor2 = 64,94
 		text-color = #e5e5e5
 		background-color = #151515
 		border = line

@@ -42,6 +42,7 @@ done this patch:
  - fixed explosions
  - players with the most kills now get a crown overlay.
  - can now toggle who you're spectating with E.
+ - projectiles no longer go hyperspeed when crossing d_ignore objects.
 
 
 do this patch:

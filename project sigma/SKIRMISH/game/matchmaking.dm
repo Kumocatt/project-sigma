@@ -199,7 +199,7 @@ game
 					if(started == 1) break
 					var/mob/npc/hostile/h 	= garbage.Grab(/mob/npc/hostile/feeder)
 					h.icon_state 			= pick("grey","pink","white","purple","green","orange","blue")
-					if(prob(5)) h = garbage.Grab(/mob/npc/hostile/petite_feeder)
+				//	if(prob(5)) h = garbage.Grab(/mob/npc/hostile/petite_feeder)
 					if(current_round >= 3 && prob(10))
 						h = garbage.Grab(pick(/mob/npc/hostile/brute, /mob/npc/hostile/puker))
 					if(current_round >= 5 && prob(15)) //5, 15
@@ -207,6 +207,8 @@ game
 					if(crawler_only || current_round >= 2 && prob(35))
 						h = garbage.Grab(/mob/npc/hostile/crawler)
 						h.icon_state = pick("grey","white")
+					if(abstract_only)
+						h = garbage.Grab(pick(/mob/npc/hostile/abstract, /mob/npc/hostile/abstract2))
 					spawn_en(h)
 
 					if(h.can_phantom && (phantom_enemies || prob(10)))
