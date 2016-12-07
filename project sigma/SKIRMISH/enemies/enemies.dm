@@ -30,9 +30,14 @@ mob/npc
 		can_phantom		= 1	// 0 if the enemy is immune to phantom status
 	proc
 		ai_check()
-			/*
-				this is where you add the npcs behavior.
-			*/
+			// this is where you add the npcs behavior.
+			if(!target) // target selection
+				if(prob(45)) step(src, pick(dir, turn(dir, pick(-45, 45))))
+				for(var/mob/player/p in active_game.participants)
+					if(!p.health || !p.loc || p.cowbell) continue
+					if(!target) target = p
+					else if(get_dist(src, p) < get_dist(src, target))
+						target = p
 		drop_loot()
 			var/obj/item/drop_this	= get_drop()
 			if(drop_this)
@@ -105,7 +110,86 @@ mob/npc
 			GC()
 			active_game.progress_check()
 
-
+		charger
+			icon			= 'enemies/_Charger.dmi'
+			icon_state		= "charger"
+			density			= 1
+			step_size		= 4
+			base_health		= 20
+			is_explosive	= 1
+			var/obj/blood	= new/obj
+			var/bodcolor	= null
+			var/charging	= 0
+			New()
+				..()
+				bodcolor			= rgb(rand(100,200),rand(100,200),rand(100,200))
+				blood.icon			= 'enemies/_Charger.dmi'
+				blood.icon_state	= "blood"
+				blood.layer			= MOB_LAYER
+				overlays			+= blood
+				icon				+= bodcolor
+			ai_check()
+				set waitfor = 0
+				if((health > 0) && !resting && !kb_init)
+					resting = 1
+					if(prob(5)) k_sound(src, pick(SOUND_GROWL1, SOUND_GROWL2))
+					if(target)
+						if(!target.health || target.cowbell || !target.loc)	// if the target is dead, off map, or shaking a cowbell..
+							target = null									// .. stop targeting them.
+						else
+							var/step_dir = get_dir(src, target)				// just log this because.
+							if(prob(get_dist(src, target)*2))						// here we'll see if any other potential targets are closer.
+								for(var/mob/player/p in active_game.participants)	// the further the target, the more likely to check for a new one.
+									if(p == target || !p.health || !p.loc || p.cowbell) continue
+									if(get_dist(src, p) < get_dist(src, target))
+										target = p
+							if((bounds_dist(src, target) <= 20) && !charging)
+								charging				= 1
+								var/obj/mouthanim		= new/obj
+								var/obj/tummyanim		= new/obj
+								var/obj/mouth			= new/obj
+								var/obj/tummy			= new/obj
+								mouthanim.icon			= 'enemies/_Charger.dmi'
+								mouthanim.icon_state	= "mouth_anim"
+								mouthanim.layer			= MOB_LAYER
+								tummyanim.icon 			= 'enemies/_Charger.dmi'
+								tummyanim.icon_state	= "tummy_anim"
+								tummyanim.layer			= MOB_LAYER
+								tummyanim.icon			+= bodcolor
+								mouth.icon				= 'enemies/_Charger.dmi'
+								mouth.icon_state		= "mouth"
+								mouth.layer				= MOB_LAYER
+								tummy.icon 				= 'enemies/_Charger.dmi'
+								tummy.icon_state		= "tummy"
+								tummy.layer				= MOB_LAYER
+								tummy.icon				+= bodcolor
+								overlays				+= mouthanim
+								overlays				+= tummyanim
+								sleep(5.6)
+								overlays				-= mouthanim
+								overlays				-= tummyanim
+								overlays				+= mouth
+								overlays				+= tummy
+							if(bounds_dist(src, target) <= 2)
+								Explode(30,-30,1)
+								death()
+							else if(!kb_init)
+								step(src, step_dir)
+								if(last_loc == loc)
+									same_loc_steps ++
+									if(same_loc_steps > 60)
+										. = 1
+										for(var/mob/player/p in active_game.participants)
+											if(get_dist(p, src) < 25) . = 0; break
+										if(.) same_loc_steps = 0; respawn()
+								else
+									last_loc 		= loc
+									same_loc_steps	= 0
+					else ..()
+					if(!charging) sleep world.tick_lag*rand(2,4)
+					else
+						sleep world.tick_lag
+					resting = 0
 		feeder
 			icon			= 'enemies/_Zombie.dmi'
 			icon_state		= "grey"
@@ -119,7 +203,6 @@ mob/npc
 				shirt.icon_state	= "shirt[rand(1,3)]"
 				shirt.layer			= MOB_LAYER
 				overlays += shirt
-
 			ai_check()
 				set waitfor = 0
 				if((health > 0) && !resting && !kb_init)
@@ -153,13 +236,7 @@ mob/npc
 								else
 									last_loc 		= loc
 									same_loc_steps	= 0
-					if(!target)
-						if(prob(45)) step(src, pick(dir, turn(dir, pick(-45, 45))))
-						for(var/mob/player/p in active_game.participants)
-							if(!p.health || !p.loc || p.cowbell) continue
-							if(!target) target = p
-							else if(get_dist(src, p) < get_dist(src, target))
-								target = p
+					else ..()
 					sleep world.tick_lag*rand(2,4)
 					resting = 0
 		puker
@@ -215,13 +292,7 @@ mob/npc
 								else
 									last_loc 		= loc
 									same_loc_steps	= 0
-					if(!target)
-						if(prob(45)) step(src, pick(dir, turn(dir, pick(-45, 45))))
-						for(var/mob/player/p in active_game.participants)
-							if(!p.health || !p.loc || p.cowbell) continue
-							if(!target) target = p
-							else if(get_dist(src, p) < get_dist(src, target))
-								target = p
+					else ..()
 					sleep world.tick_lag*world.tick_lag*rand(2,4)
 					resting = 0
 
@@ -270,13 +341,7 @@ mob/npc
 									else
 										last_loc 		= loc
 										same_loc_steps	= 0
-					if(!target)
-						if(prob(45)) step(src, pick(dir, turn(dir, pick(-45, 45))))
-						for(var/mob/player/p in active_game.participants)
-							if(!p.health || !p.loc || p.cowbell) continue
-							if(!target) target = p
-							else if(get_dist(src, p) < get_dist(src, target))
-								target = p
+					else ..()
 					sleep world.tick_lag*2
 					resting = 0
 
@@ -320,13 +385,7 @@ mob/npc
 								else
 									last_loc 		= loc
 									same_loc_steps	= 0
-					if(!target)
-						if(prob(45)) step(src, pick(dir, turn(dir, pick(-45, 45))))
-						for(var/mob/player/p in active_game.participants)
-							if(!p.health || !p.loc || p.cowbell) continue
-							if(!target) target = p
-							else if(get_dist(src, p) < get_dist(src, target))
-								target = p
+					else ..()
 					sleep world.tick_lag*world.tick_lag*rand(2,4)
 					resting = 0
 			Bump(atom/a)
@@ -386,13 +445,7 @@ mob/npc
 								else
 									last_loc 		= loc
 									same_loc_steps	= 0
-					if(!target)
-						if(prob(45)) step(src, pick(dir, turn(dir, pick(-45, 45))))
-						for(var/mob/player/p in active_game.participants)
-							if(!p.health || !p.loc || p.cowbell) continue
-							if(!target) target = p
-							else if(get_dist(src, p) < get_dist(src, target))
-								target = p
+					else ..()
 					sleep world.tick_lag
 					resting = 0
 
@@ -444,13 +497,7 @@ mob/npc
 								else
 									last_loc 		= loc
 									same_loc_steps	= 0
-					if(!target)
-						if(prob(45)) step(src, pick(dir, turn(dir, pick(-90, 90))))
-						for(var/mob/player/p in active_game.participants)
-							if(!p.health || !p.loc || p.cowbell) continue
-							if(!target) target = p
-							else if(get_dist(src, p) < get_dist(src, target))
-								target = p
+					else ..()
 					sleep world.tick_lag*2
 					resting = 0
 			death()
@@ -504,13 +551,7 @@ mob/npc
 								else
 									last_loc 		= loc
 									same_loc_steps	= 0
-					if(!target)
-						if(prob(45)) step(src, pick(dir, turn(dir, pick(-45, 45))))
-						for(var/mob/player/p in active_game.participants)
-							if(!p.health || !p.loc || p.cowbell) continue
-							if(!target) target = p
-							else if(get_dist(src, p) < get_dist(src, target))
-								target = p
+					else ..()
 					sleep world.tick_lag*2
 					resting = 0
 			death()
@@ -684,13 +725,7 @@ mob/npc
 								sleep 20
 							else if(!kb_init)
 								step(src, step_dir)
-					if(!target)
-						if(prob(45)) step(src, pick(dir, turn(dir, pick(-45, 45))))
-						for(var/mob/player/p in active_game.participants)
-							if(!p.health || !p.loc || p.cowbell) continue
-							if(!target) target = p
-							else if(get_dist(src, p) < get_dist(src, target))
-								target = p
+					else ..()
 					sleep world.tick_lag*2
 					resting = 0
 
