@@ -171,6 +171,7 @@ mob/npc
 								overlays				+= mouth
 								overlays				+= tummy
 							if(bounds_dist(src, target) <= 2)
+								charging = 0
 								Explode(30,-30,1)
 								death()
 							else if(!kb_init)
