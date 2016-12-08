@@ -205,10 +205,15 @@ game
 					if(current_round >= 5 && prob(15)) //5, 15
 						h = garbage.Grab(pick(/mob/npc/hostile/hellbat, /mob/npc/hostile/abstract, /mob/npc/hostile/abstract2, /mob/npc/hostile/beholder))
 					if(crawler_only || current_round >= 2 && prob(35))
+<<<<<<< HEAD
 						h = garbage.Grab(/mob/npc/hostile/crawler)
 						h.icon_state = pick("grey","white")
 					if(abstract_only)
 						h = garbage.Grab(pick(/mob/npc/hostile/abstract, /mob/npc/hostile/abstract2))
+=======
+						h = garbage.Grab(pick(/mob/npc/hostile/crawler,/mob/npc/hostile/charger))
+						if(istype(h,/mob/npc/hostile/crawler)) h.icon_state = pick("grey","white")
+>>>>>>> origin/master
 					spawn_en(h)
 
 					if(h.can_phantom && (phantom_enemies || prob(10)))
