@@ -747,6 +747,7 @@ obj
 								p.is_crit = 1
 							active_projectiles += p
 						if(m.move_disabled) m.move_disabled = 0
+						sleep 5
 					can_use = 1
 
 

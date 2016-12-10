@@ -14,6 +14,7 @@ proc
 					switch(active_game.weather_type)
 						if(1)	t.rain()
 						if(2)	t.snow()
+						if(3)	t.bloodrain()
 					sleep world.tick_lag
 				else sleep 10
 
@@ -41,6 +42,16 @@ turf
 			spawn(110) if(active_game.started == 2)
 				active_game.weather_turfs += src
 				r.GC()
+		bloodrain()
+			set waitfor = 0
+			var/obj/weather/r = garbage.Grab(/obj/weather/bloodrain)
+			r.loc = src
+			animate(r,icon_state = "bloodrain[pick(1,3)]", transform = transform*2, pixel_y = 400, pixel_x = 8, alpha = 0, loop = 1)
+			animate(transform = matrix(), pixel_y = 5, pixel_x = -8, alpha = 210, time = 10.8)
+			animate(icon_state = "bloodrainland", time = rand(1.2, 4.8))
+			spawn(17) if(active_game.started == 2)
+				active_game.weather_turfs += src
+				r.GC()
 
 obj/weather
 	icon	= 'weather.dmi'
@@ -53,4 +64,7 @@ obj/weather
 		icon_state	= "snow1"
 		is_garbage	= 1
 		plane		= 2
-
+	bloodrain
+		icon_state	= "bloodrain1"
+		is_garbage	= 1
+		plane		= 2

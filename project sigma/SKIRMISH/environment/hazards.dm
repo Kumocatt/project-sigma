@@ -7,7 +7,7 @@ proc
 				count ++
 			return count
 atom/movable
-	proc/drop_fire(flames = 4, mob/owner)
+	proc/drop_fire(flames = 4, mob/owner, ds = 100)
 		/*
 			called to spawn fire around a given object.
 		*/
@@ -18,21 +18,19 @@ atom/movable
 			var/turf/t = pick(turf_list)
 			switch(fire_count(t))
 				if(0)
-				//	var/image/spotlight_r/a		= /image/spotlight_r
 					var/obj/hazard/fire/f 		= garbage.Grab(/obj/hazard/fire)
 					f.owner						= owner
 					f.loc						= t
-				//	f.overlays += a
 					f.step_x					= 0
 					f.step_y					= 0
-					f.spawndel(100)
+					f.spawndel(ds)
 				if(1)
 					var/obj/hazard/fire/f 		= garbage.Grab(/obj/hazard/fire)
 					f.owner						= owner
 					f.loc						= t
 					f.step_x					= 0
 					f.step_y					= 8
-					f.spawndel(100)
+					f.spawndel(ds)
 
 
 
@@ -190,7 +188,7 @@ obj/hazard
 			if(ismob(a))
 				a:edit_health(-25)
 				a:knockback(4, get_dir(src,a))
-			return 0
+				return 0
 
 		GC()
 			..()
@@ -389,12 +387,12 @@ mob
 			*/
 			shield += _addpower
 			if(shield < 0) shield = 0
-			if(shield > 9) shield = 9
+			if(shield > 3) shield = 3
 			overlays.Remove(SHIELD_OVERLAY1, SHIELD_OVERLAY2, SHIELD_OVERLAY3)
 			if(shield)
-				if(shield <= 3) overlays += SHIELD_OVERLAY1
-				else if(shield <= 6) overlays += SHIELD_OVERLAY2
-				else if(shield <= 9) overlays += SHIELD_OVERLAY3
+				if(shield == 1) overlays += SHIELD_OVERLAY1
+				else if(shield == 2) overlays += SHIELD_OVERLAY2
+				else if(shield == 3) overlays += SHIELD_OVERLAY3
 
 		cowbell()
 			set waitfor = 0

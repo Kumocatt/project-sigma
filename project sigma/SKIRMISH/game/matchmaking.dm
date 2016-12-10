@@ -1,6 +1,7 @@
 
 #define RAIN 1
 #define SNOW 2
+#define BLOODRAIN 3
 
 var
 	game/active_game 	= new /game	// the datum of the current active game.
@@ -44,6 +45,8 @@ game
 		crawler_only		= 0		// use to make only crawlers spawn.
 		abstract_only		= 0		// use to make only abstracts spawn.
 		beholder_only		= 0		// use to make only beholders spawn.
+		blaze_only			= 0		// use to make only blazes spawn.
+
 		censorship			= 0		// use to give all mobs censor bars.
 		explosive_enemies	= 0		// use to make all enemies explode on death.
 		blackout			= 0		// use to take all player spotlights away.
@@ -55,7 +58,7 @@ game
 		boss_mode			= 0
 		deathmatch			= 0
 		toggle_weather		= 1		// 1 if its weathering
-		weather_type		= SNOW	// what kind of weather; RAIN, SNOW
+		weather_type		= BLOODRAIN	// what kind of weather; RAIN, SNOW, BLOODRAIN
 
 		list/participants	= new/list()		// a list of every player that is playing.
 		list/spectators		= new/list()		// a list of every player that is spectating.
@@ -147,7 +150,7 @@ game
 			world << "<b>Wave [current_round] will begin in 15 seconds."
 			sleep 150
 			intermission = 0
-			weather_type = pick(RAIN, SNOW)
+			weather_type = pick(RAIN, SNOW, BLOODRAIN)
 					// first let's check for boss mode triggers.
 			if(current_round == 4)
 				boss_mode = 1
@@ -162,10 +165,11 @@ game
 				if(prob(10))	// make players and feeders naked with a censor bar. **HUMOR**
 					censorship		= 1
 				if(prob(15))	// the following will decide if the wave will only spawn a certain type of enemy.
-					switch(rand(1,3))
+					switch(rand(1,4))
 						if(1) crawler_only	= 1
 						if(2) beholder_only	= 1
 						if(3) abstract_only	= 1
+						if(4) blaze_only	= 1
 				if(prob(10) && !abstract_only) // make every enemy explode upon death.
 					explosive_enemies 	= 1
 				if(prob(5))		// the following will determine if the wave will have any projectile modifiers.
@@ -175,7 +179,7 @@ game
 						if(3) fire_madness	= 1
 
 			if(!boss_mode)
-				enemies_total	= (beholder_only?round(1.5*current_round):round(10*current_round+3*participants.len))
+				enemies_total	= (beholder_only||blaze_only?round(1.5*current_round):round(10*current_round+3*participants.len))
 				enemies_left	= enemies_total
 				world << SOUND_WAVE_BEGIN
 				for(var/mob/player/p in active_game.participants)
@@ -188,7 +192,7 @@ game
 						sleep 5
 						p.client.screen -= p.waveStart
 				sleep world.tick_lag
-				world << pick( MUSIC_FAST_ACE, MUSIC_RETRO140, MUSIC_ROCKER, MUSIC_HORROR1, MUSIC_DnB1)
+				world << pick( MUSIC_FAST_ACE, MUSIC_RETRO140, MUSIC_ROCKER, MUSIC_HORROR1, MUSIC_DnB1, MUSIC_SPOOBOOKY)
 				sleep world.tick_lag
 
 				if(censorship) for(var/mob/player/p in participants)
@@ -203,17 +207,24 @@ game
 					if(current_round >= 3 && prob(10))
 						h = garbage.Grab(pick(/mob/npc/hostile/brute, /mob/npc/hostile/puker))
 					if(current_round >= 5 && prob(15)) //5, 15
-						h = garbage.Grab(pick(/mob/npc/hostile/hellbat, /mob/npc/hostile/abstract, /mob/npc/hostile/abstract2, /mob/npc/hostile/beholder))
+						h = garbage.Grab(pick(/mob/npc/hostile/hellbat, /mob/npc/hostile/abstract, /mob/npc/hostile/abstract2, /mob/npc/hostile/beholder, \
+												/mob/npc/hostile/shade, /mob/npc/hostile/blaze))
+					if(current_round >= 10 && prob(10))
+						h = garbage.Grab(/mob/npc/hostile/slammer)
+					if(current_round >= 2 && prob(10))
+						h = garbage.Grab(/mob/npc/hostile/charger)
+
 					if(crawler_only || current_round >= 2 && prob(35))
-<<<<<<< HEAD
 						h = garbage.Grab(/mob/npc/hostile/crawler)
 						h.icon_state = pick("grey","white")
 					if(abstract_only)
 						h = garbage.Grab(pick(/mob/npc/hostile/abstract, /mob/npc/hostile/abstract2))
-=======
-						h = garbage.Grab(pick(/mob/npc/hostile/crawler,/mob/npc/hostile/charger))
-						if(istype(h,/mob/npc/hostile/crawler)) h.icon_state = pick("grey","white")
->>>>>>> origin/master
+					if(blaze_only)
+						h = garbage.Grab(/mob/npc/hostile/blaze)
+
+					if(prob(45))
+						h = garbage.Grab(/mob/npc/hostile/shade)
+
 					spawn_en(h)
 
 					if(h.can_phantom && (phantom_enemies || prob(10)))
@@ -222,12 +233,13 @@ game
 					if(explosive_enemies || prob(10))
 						h.is_explosive = 1
 					if(istype(h, /mob/npc/hostile/feeder))
-						if(prob(5)) h.shield(rand(1,9), 1)
+						if(prob(5)) h.shield(rand(1,3), 1)
 					sleep world.tick_lag
 				if(dis_regenerate)		dis_regenerate 		= 0
 				if(crawler_only)		crawler_only		= 0
 				if(beholder_only)		beholder_only		= 0
-				if(abstract_only)		beholder_only		= 0
+				if(abstract_only)		abstract_only		= 0
+				if(blaze_only)			blaze_only			= 0
 				if(phantom_enemies)		phantom_enemies		= 0
 
 
@@ -320,6 +332,7 @@ game
 			crawler_only		= 0
 			beholder_only		= 0
 			abstract_only		= 0
+			blaze_only			= 0
 			boss_mode			= 0
 			deathmatch			= 0
 
@@ -378,13 +391,26 @@ game
 					p.client.screen -= p.deathmatch
 			sleep world.tick_lag
 			world << MUSIC_ESCAPE_FROM_CITY
+			var/timer = 0	// used to track the deathmatch duration to initiate sudden death when needed.
 			while(started == 2)
+				timer ++
 				var/living_players = 0
+				if(timer == 300) world << "Sudden Death!"
 				for(var/mob/player/p in participants)
-					if(p.health) living_players ++
+					if(p.health)
+						living_players ++
+					if(timer >= 300) // 300*20 = one minute roughly
+						//sudden death time
+						missile_strike(p.loc)
 				if(living_players <= 1)
+					if(living_players) for(var/mob/player/p in participants)
+						if(p.health && !p.died_already)
+							p << "you win!"
+							p.shield(3)
+							p.has_revive = 2
+							break
 					break
-				sleep world.tick_lag*2
+				sleep 20
 			sleep 25 // this is here to give time for the last player that died to get processed.
 			if(!intermission)
 				intermission = 1

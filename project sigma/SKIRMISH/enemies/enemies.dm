@@ -41,9 +41,11 @@ mob/npc
 		drop_loot()
 			var/obj/item/drop_this	= get_drop()
 			if(drop_this)
-				var/obj/_drop 	= garbage.Grab(drop_this)
-				_drop.loc 		= loc
-				_drop.spawndel(600)
+				var/obj/item/_drop 	= garbage.Grab(drop_this)
+				if(prob(_drop.drop_rate))
+					_drop.loc 	= loc
+					_drop.spawndel(600)
+				else _drop.GC()
 
 
 
@@ -93,7 +95,6 @@ mob/npc
 					p.remove_target(src)
 				targeted = 0
 
-
 		death()
 //			world << "check?"
 			ai_list -= src
@@ -110,13 +111,168 @@ mob/npc
 			GC()
 			active_game.progress_check()
 
+
+		shade
+			icon			= 'enemies/shade.dmi'
+			icon_state		= "shade"
+			density			= 1
+			step_size		= 3
+			base_health		= 25
+			fireproof		= 1
+			can_censor		= 0
+			var/obj/weapon/special/skill1 = new /obj/weapon/special/shadowball
+
+			ai_check()
+				set waitfor = 0
+				if(health && !resting && !kb_init)
+					resting = 1
+					if(target)
+						if(!target.health || target.cowbell || !target.loc)	// if the target is dead, off map, or shaking a cowbell..
+							target = null									// .. stop targeting them.
+						else
+							var/step_dir = get_dir(src, target)				// just log this because.
+							if(prob(get_dist(src, target)*2))						// here we'll see if any other potential targets are closer.
+								for(var/mob/player/p in active_game.participants)	// the further the target, the more likely to check for a new one.
+									if(p == target || !p.health || !p.loc || p.cowbell) continue
+									if(get_dist(src, p) < get_dist(src, target))
+										target = p
+							if(get_dist(src, target) <= 1)
+								if(!step_away(src, target))
+									smoke()
+									smoke()
+									smoke()
+									animate(src, alpha = 0, time = 3, loop = 1)
+									loc = pick(active_game.enemy_spawns)
+									animate(src, alpha = 255, time = 3, loop = 1)
+							else if(get_dist(src, target) < 6 && skill1.can_use && shot_lineup())
+								dir = get_general_dir(src, target)
+								flick("shade-attack", src)
+								sleep 2.2
+								skill1.use(src)
+								sleep 3
+							else if(!kb_init)
+								step(src, step_dir)
+								if(last_loc == loc)
+									same_loc_steps ++
+									if(same_loc_steps > 100)
+										. = 1
+										for(var/mob/player/p in active_game.participants)
+											if(get_dist(p, src) < 25) . = 0; break
+										if(.) same_loc_steps = 0; respawn()
+								else
+									last_loc 		= loc
+									same_loc_steps	= 0
+					else ..()
+					sleep world.tick_lag
+					resting = 0
+
+
+		slammer
+			icon			= 'enemies/slammer.dmi'
+			icon_state		= "slammer"
+			density			= 1
+			step_size		= 4
+			base_health		= 35
+
+
+			ai_check()
+				set waitfor = 0
+				if((health > 0) && !resting && !kb_init)
+					resting = 1
+					if(target)
+						if(!target.health || target.cowbell || !target.loc)	// if the target is dead, off map, or shaking a cowbell..
+							target = null									// .. stop targeting them.
+						else
+							var/step_dir = get_dir(src, target)				// just log this because.
+							if(prob(get_dist(src, target)*2))						// here we'll see if any other potential targets are closer.
+								for(var/mob/player/p in active_game.participants)	// the further the target, the more likely to check for a new one.
+									if(p == target || !p.health || !p.loc || p.cowbell) continue
+									if(get_dist(src, p) < get_dist(src, target))
+										target = p
+							if(bounds_dist(src, target) <= 2)
+								flick("[icon_state]-attack", src)
+								target.knockback(8, step_dir)
+								target.edit_health(-30)
+								sleep 10
+							else if(!kb_init)
+								step(src, step_dir)
+								if(last_loc == loc)
+									same_loc_steps ++
+									if(same_loc_steps > 100)
+										. = 1
+										for(var/mob/player/p in active_game.participants)
+											if(get_dist(p, src) < 25) . = 0; break
+										if(.) same_loc_steps = 0; respawn()
+								else
+									last_loc 		= loc
+									same_loc_steps	= 0
+					else ..()
+					sleep world.tick_lag*3
+					resting = 0
+
+
+		blaze
+			icon			= 'enemies/_Blaze.dmi'
+			icon_state		= "blaze"
+			density			= 1
+			step_size		= 4
+			base_health		= 25
+			fireproof		= 1
+			can_censor		= 0
+			can_phantom		= 0
+			var/obj/weapon/special/skill1 = new /obj/weapon/special/fireblast
+
+			ai_check()
+				set waitfor = 0
+				if(health && !resting && !kb_init)
+					resting = 1
+					if(target)
+						if(!target.health || target.cowbell || !target.loc)	// if the target is dead, off map, or shaking a cowbell..
+							target = null									// .. stop targeting them.
+						else
+							var/step_dir = get_dir(src, target)				// just log this because.
+							if(prob(get_dist(src, target)*2))						// here we'll see if any other potential targets are closer.
+								for(var/mob/player/p in active_game.participants)	// the further the target, the more likely to check for a new one.
+									if(p == target || !p.health || !p.loc || p.cowbell) continue
+									if(get_dist(src, p) < get_dist(src, target))
+										target = p
+							if(bounds_dist(src, target) <= 2)
+								flick("blaze-attack", src)
+								sleep 3
+								target.knockback(6, step_dir)
+								target.edit_health(-20)
+								target.burn(src)
+								sleep 10
+							else if(prob(25) && get_dist(src, target) < 5 && skill1.can_use && shot_lineup())
+								dir = get_general_dir(src, target)
+								flick("blaze-attack", src)
+								sleep 1.2
+								skill1.use(src)
+								sleep 3
+							else if(!kb_init)
+								step(src, step_dir)
+								if(prob(30)) drop_fire(1, src, 5)
+								if(last_loc == loc)
+									same_loc_steps ++
+									if(same_loc_steps > 100)
+										. = 1
+										for(var/mob/player/p in active_game.participants)
+											if(get_dist(p, src) < 25) . = 0; break
+										if(.) same_loc_steps = 0; respawn()
+								else
+									last_loc 		= loc
+									same_loc_steps	= 0
+					else ..()
+					sleep world.tick_lag
+					resting = 0
+
 		charger
 			icon			= 'enemies/_Charger.dmi'
 			icon_state		= "charger"
 			density			= 1
 			step_size		= 4
 			base_health		= 20
-			is_explosive	= 1
+			is_explosive	= 0
 			var/obj/blood	= new/obj
 			var/bodcolor	= null
 			var/charging	= 0
@@ -178,7 +334,7 @@ mob/npc
 								step(src, step_dir)
 								if(last_loc == loc)
 									same_loc_steps ++
-									if(same_loc_steps > 60)
+									if(same_loc_steps > 100)
 										. = 1
 										for(var/mob/player/p in active_game.participants)
 											if(get_dist(p, src) < 25) . = 0; break
@@ -229,7 +385,7 @@ mob/npc
 								step(src, step_dir)
 								if(last_loc == loc)
 									same_loc_steps ++
-									if(same_loc_steps > 60)
+									if(same_loc_steps > 100)
 										. = 1
 										for(var/mob/player/p in active_game.participants)
 											if(get_dist(p, src) < 25) . = 0; break
@@ -285,7 +441,7 @@ mob/npc
 								step(src, step_dir)
 								if(last_loc == loc)
 									same_loc_steps ++
-									if(same_loc_steps > 60)
+									if(same_loc_steps > 100)
 										. = 1
 										for(var/mob/player/p in active_game.participants)
 											if(get_dist(p, src) < 25) . = 0; break
@@ -334,7 +490,7 @@ mob/npc
 									step(src, step_dir)
 									if(last_loc == loc)
 										same_loc_steps ++
-										if(same_loc_steps > 60)
+										if(same_loc_steps > 100)
 											. = 1
 											for(var/mob/player/p in active_game.participants)
 												if(get_dist(p, src) < 25) . = 0; break

@@ -18,10 +18,13 @@ mob
 					animate(src, pixel_y = 8, time = 2, loop = 1)
 					animate(pixel_y = 0, time = world.tick_lag*2, loop = 1, easing = BOUNCE_EASING)
 					src << SOUND_JUMP
-					for(var/i = 1 to 6)
+					if(key1)
+						for(var/i = 1 to 6)
+							dust()
+							step(src, dir, step_size+2)
+							sleep world.tick_lag
+					else
 						dust()
-						step(src, dir, step_size+2)
-						sleep world.tick_lag
 					if(.) fireproof	= 0
 					can_hit		= 1
 					sleep 5

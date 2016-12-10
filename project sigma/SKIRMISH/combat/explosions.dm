@@ -7,7 +7,7 @@ obj/explosion_overlay
 	icon_state 		= "explosion"
 	plane			= 2
 	pixel_x 		= -8
-	appearance_flags= NO_CLIENT_COLOR
+	appearance_flags= NO_CLIENT_COLOR+RESET_TRANSFORM
 	New()
 		..()
 		draw_spotlight(x_os = -30, y_os = -38, hex = "#FFCC00")
