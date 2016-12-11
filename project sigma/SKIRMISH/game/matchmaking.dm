@@ -117,6 +117,7 @@ game
 					winset(p, "pane-lobby.to-skip", "text=[votes_to_skip]/[needed_skips]")
 					winset(p, "pane-lobby.game-countdown", "text=\"Game in [i]..\"")
 					if(i == 5) winset(p, "pane-lobby.specbutton", "is-disabled=\"true\"")
+					sleep world.tick_lag
 				sleep 10
 				if(i == 1 && !participants.len)
 					world << "waiting for participants.."
@@ -221,9 +222,6 @@ game
 						h = garbage.Grab(pick(/mob/npc/hostile/abstract, /mob/npc/hostile/abstract2))
 					if(blaze_only)
 						h = garbage.Grab(/mob/npc/hostile/blaze)
-
-					if(prob(45))
-						h = garbage.Grab(/mob/npc/hostile/shade)
 
 					spawn_en(h)
 

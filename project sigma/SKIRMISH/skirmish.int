@@ -1,19 +1,19 @@
 // BEGIN_INTERNALS
 /*
-LAST_COMPILE_TIME: 1480979393
+LAST_COMPILE_TIME: 1481414673
+DIR: combat effects enemies environment game interface maps misc player systems 
 PACKAGE_RSC_NAME: C:\Users\Kumorii\Dropbox\SKIRMISH\skirmish_rsc.zip
-DIR: combat enemies environment game interface maps misc player references references\#libraries systems 
 AUTO_FILE_DIR: ON
 PACKAGE_DMB_INFO: 
 MAP_ICON_TYPE: 0
 PACKAGE_DME_NAME: C:\Users\Kumorii\Desktop\feed_src_11-28-16.zip
-LAST_COMPILE_VERSION: 511.1364
-PACKAGE_TYPE: 1
+LAST_COMPILE_VERSION: 511.1365
 PACKAGE_DME_START: 
-WINDOW: game\enemy spawning.dm;interface\lobby.dm;interface\screen objects.dm;interface\wavecomplete.png
+PACKAGE_TYPE: 1
+WINDOW: DO THIS.dm
 PACKAGE_DME_INFO: 
-FILE: interface\wavecomplete.png
-PACKAGE_DMB_NAME: C:\Users\Kumorii\Dropbox\SKIRMISH\skirmish.zip
+FILE: DO THIS.dm
 PACKAGE_DME_DEMO: 
+PACKAGE_DMB_NAME: C:\Users\Kumorii\Dropbox\SKIRMISH\skirmish.zip
 */
 // END_INTERNALS

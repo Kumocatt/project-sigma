@@ -43,6 +43,22 @@ done this patch:
  - players with the most kills now get a crown overlay.
  - can now toggle who you're spectating with E.
  - projectiles no longer go hyperspeed when crossing d_ignore objects.
+ - Blaze enemy added.
+ - Shade enemy added.
+ - improved the loot drop system.
+ - Added a blaze_only wave modifier.
+ - fixed an issue that would make only Abstracts spawn late-game.
+ - added sudden death mode to pvp deathmatches.( missiles will consistently come down on a player's location.)
+ - added missile_strike(turf) proc.
+ - added hud display for the current wave.
+ - added a fireblast special ability.
+ - added bloodrain weather condition.
+ - added slammer enemy (yut put)
+ - shields now cap at 3 hits instead of 9.
+ - dashing while idle will now make players jump in place.
+ - added a few new vanity items.
+ - finished the batman costume.
+
 
 
 do this patch:
