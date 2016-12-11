@@ -188,11 +188,12 @@ turf
 				icon		= '_new x16.dmi'
 				icon_state	= "ledge-south"
 				layer		= TURF_LAYER+0.2
-				Enter(atom/movable/m)
+				Cross(atom/movable/m)
 					if(ismob(m))
 						if(get_general_dir(m, src) == SOUTH)
 							return 1
 						else return 0
+					else return 1
 		hedge
 			icon		= '_new x16.dmi'
 			icon_state	= "hedge b"

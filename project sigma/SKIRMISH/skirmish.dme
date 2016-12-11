@@ -3,6 +3,10 @@
 // New source code should be placed in .dm files: choose File/New --> Code File.
 
 // BEGIN_INTERNALS
+/*
+FILE: 
+AUTO_FILE_DIR: ON
+*/
 // END_INTERNALS
 
 // BEGIN_FILE_DIR
@@ -10,7 +14,6 @@
 #define FILE_DIR "audio"
 #define FILE_DIR "audio/music"
 #define FILE_DIR "audio/sounds"
-#define FILE_DIR "audio/sounds/misc"
 #define FILE_DIR "combat"
 #define FILE_DIR "effects"
 #define FILE_DIR "enemies"
@@ -18,7 +21,6 @@
 #define FILE_DIR "game"
 #define FILE_DIR "interface"
 #define FILE_DIR "player"
-#define FILE_DIR "promo & teasers"
 #define FILE_DIR "systems"
 // END_FILE_DIR
 

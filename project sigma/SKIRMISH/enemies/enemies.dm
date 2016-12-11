@@ -67,12 +67,7 @@ mob/npc
 			step_to(src, target)
 			ig_bump = 0
 	hostile
-		Click()
-			..()
-			usr << "[src] quickinfo:"
-			usr << "hp: [health] / [base_health]"
-			usr << "can_hit: [can_hit]"
-			usr << "target: [target]"
+
 		var/tmp
 			mob/player/last_attacker
 			turf/last_loc
