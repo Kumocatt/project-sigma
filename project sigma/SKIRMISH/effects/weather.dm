@@ -1,6 +1,6 @@
 
 
-#define RENDER_WEATHER 0
+#define RENDER_WEATHER 1
 
 proc
 	weather_loop()
@@ -15,8 +15,19 @@ proc
 						if(1)	t.rain()
 						if(2)	t.snow()
 						if(3)	t.bloodrain()
-					sleep world.tick_lag
+					sleep world.tick_lag*2
 				else sleep 10
+
+	fetch_participant()
+		var/i = 1
+		var/mob/player/p
+		while(active_game.started == 2)
+			if(active_game.participants.len > 1)
+				i = rand(1, active_game.participants.len)
+				p = active_game.participants[i]
+				if(p.health) return p
+			sleep world.tick_lag
+
 
 turf
 	proc

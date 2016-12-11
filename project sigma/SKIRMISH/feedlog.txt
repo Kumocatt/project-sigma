@@ -1,0 +1,130 @@
+runtime error: Cannot read null.loc
+proc name: spawn en (/proc/spawn_en)
+  source file: enemy spawning.dm,12
+  usr: (src)
+  src: null
+  call stack:
+spawn en(the feeder (/mob/npc/hostile/feeder))
+/game (/game): init wave()
+/game (/game): init game()
+/game (/game): wait loop()
+runtime error: Cannot read null.loc
+proc name: spawn en (/proc/spawn_en)
+  source file: enemy spawning.dm,12
+  usr: (src)
+  src: null
+  call stack:
+spawn en(the feeder (/mob/npc/hostile/feeder))
+/game (/game): init wave()
+/game (/game): init game()
+/game (/game): wait loop()
+runtime error: Cannot read null.loc
+proc name: spawn en (/proc/spawn_en)
+  source file: enemy spawning.dm,12
+  usr: (src)
+  src: null
+  call stack:
+spawn en(the feeder (/mob/npc/hostile/feeder))
+/game (/game): init wave()
+/game (/game): init game()
+/game (/game): wait loop()
+runtime error: Cannot read null.loc
+proc name: spawn en (/proc/spawn_en)
+  source file: enemy spawning.dm,12
+  usr: (src)
+  src: null
+  call stack:
+spawn en(the feeder (/mob/npc/hostile/feeder))
+/game (/game): init wave()
+/game (/game): init game()
+/game (/game): wait loop()
+runtime error: Cannot read null.loc
+proc name: spawn en (/proc/spawn_en)
+  source file: enemy spawning.dm,12
+  usr: (src)
+  src: null
+  call stack:
+spawn en(the feeder (/mob/npc/hostile/feeder))
+/game (/game): init wave()
+/game (/game): init game()
+/game (/game): wait loop()
+runtime error: Cannot read null.loc
+proc name: spawn en (/proc/spawn_en)
+  source file: enemy spawning.dm,12
+  usr: (src)
+  src: null
+  call stack:
+spawn en(the feeder (/mob/npc/hostile/feeder))
+/game (/game): init wave()
+/game (/game): init game()
+/game (/game): wait loop()
+runtime error: Cannot read null.loc
+proc name: spawn en (/proc/spawn_en)
+  source file: enemy spawning.dm,12
+  usr: (src)
+  src: null
+  call stack:
+spawn en(the feeder (/mob/npc/hostile/feeder))
+/game (/game): init wave()
+/game (/game): init game()
+/game (/game): wait loop()
+runtime error: Cannot read null.loc
+proc name: spawn en (/proc/spawn_en)
+  source file: enemy spawning.dm,12
+  usr: (src)
+  src: null
+  call stack:
+spawn en(the feeder (/mob/npc/hostile/feeder))
+/game (/game): init wave()
+/game (/game): init game()
+/game (/game): wait loop()
+runtime error: Cannot read null.loc
+proc name: spawn en (/proc/spawn_en)
+  source file: enemy spawning.dm,12
+  usr: (src)
+  src: null
+  call stack:
+spawn en(the feeder (/mob/npc/hostile/feeder))
+/game (/game): init wave()
+/game (/game): init game()
+/game (/game): wait loop()
+runtime error: Cannot read null.loc
+proc name: spawn en (/proc/spawn_en)
+  source file: enemy spawning.dm,12
+  usr: (src)
+  src: null
+  call stack:
+spawn en(the feeder (/mob/npc/hostile/feeder))
+/game (/game): init wave()
+/game (/game): init game()
+/game (/game): wait loop()
+runtime error: Cannot read null.loc
+proc name: spawn en (/proc/spawn_en)
+  source file: enemy spawning.dm,12
+  usr: (src)
+  src: null
+  call stack:
+spawn en(the feeder (/mob/npc/hostile/feeder))
+/game (/game): init wave()
+/game (/game): init game()
+/game (/game): wait loop()
+runtime error: Cannot read null.loc
+proc name: spawn en (/proc/spawn_en)
+  source file: enemy spawning.dm,12
+  usr: (src)
+  src: null
+  call stack:
+spawn en(the feeder (/mob/npc/hostile/feeder))
+/game (/game): init wave()
+/game (/game): init game()
+/game (/game): wait loop()
+runtime error: Cannot read null.loc
+proc name: spawn en (/proc/spawn_en)
+  source file: enemy spawning.dm,12
+  usr: (src)
+  src: null
+  call stack:
+spawn en(the feeder (/mob/npc/hostile/feeder))
+/game (/game): init wave()
+/game (/game): init game()
+/game (/game): wait loop()

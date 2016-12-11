@@ -25,6 +25,8 @@ proc
 		L += typesof(/mob/npc)
 		L += typesof(/obj/item)
 		L += /obj/weather/rain
+		L += /obj/weather/snow
+		L += /obj/weather/bloodrain
 		for(var/T in L)
 			var/objectPool/sub_type/O = new/objectPool/sub_type
 			for(var/i = 1, i <= ORECYCLE, i++) O.npool += new T

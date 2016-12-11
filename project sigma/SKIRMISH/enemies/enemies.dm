@@ -158,7 +158,7 @@ mob/npc
 									last_loc 		= loc
 									same_loc_steps	= 0
 					else ..()
-					sleep world.tick_lag
+					sleep world.tick_lag*2
 					resting = 0
 
 
