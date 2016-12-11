@@ -1,6 +1,6 @@
 
 
-#define RENDER_WEATHER 1
+#define RENDER_WEATHER 0
 
 proc
 	weather_loop()
