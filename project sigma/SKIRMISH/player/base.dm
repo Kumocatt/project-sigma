@@ -25,9 +25,9 @@ mob/player
 			equipped_special	= new /obj/weapon/special/grenade
 			arms.icon_state		= "base-pistol"
 			pants.icon_state	= "pants[pick(1,2)]"
-			shirt.icon_state	= "shirt[rand(1,11)]"
+			shirt.icon_state	= "shirt[rand(1,10)]"
 			hair.icon_state		= "style[rand(1,13)]"
-			vanity.icon_state	= "vanity[rand(1,9)]"
+			vanity.icon_state	= "vanity[rand(1,5)]"
 			if(key == "Amelia Pond")
 				shirt.icon_state 	= "amelia-shirt"
 				pants.icon_state 	= "amelia-pants"
@@ -35,7 +35,7 @@ mob/player
 			if(key == "Ghost of ET")
 				hair.icon_state		= "style8"
 			if(key == "Kumorii")
-				hair.icon_state		= "style10"
+				hair.icon_state		= "style5"
 				shirt.icon_state	= "shirt10"
 				pants.icon_state	= "pants1"
 				vanity.icon_state	= "vanity1"
@@ -43,7 +43,6 @@ mob/player
 				shirt.icon_state	= "shirt9"
 				pants.icon_state	= "pants2"
 			if(hair.icon_state == "style11" || hair.icon_state == "style13") hair.pixel_x = -5
-			else hair.pixel_x = 0
 			overlays += arms
 			overlays += shirt
 			overlays += pants

@@ -189,6 +189,7 @@ obj/hazard
 				a:edit_health(-25)
 				a:knockback(4, get_dir(src,a))
 				return 0
+
 		GC()
 			..()
 	boom_marker	// used to create explosions on the fly.
@@ -420,3 +421,19 @@ mob
 				slowed 		= 0
 				step_size	= init_stize
 		//		overlays -= SLOWED_OVERLAY
+		invincible(remove = 0)
+			set waitfor	= 0
+			if(!invincible)
+				invincible 	= 1
+				can_hit		= 0
+				fireproof	= 1
+				while(health && invincible)
+					twinkle()
+					sleep 5
+				invincible 	= 0
+				can_hit		= 1
+				fireproof	= initial(fireproof)
+			else if(remove)
+				invincible 	= 0
+				can_hit		= 1
+				fireproof	= initial(fireproof)

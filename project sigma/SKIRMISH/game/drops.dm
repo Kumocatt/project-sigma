@@ -4,8 +4,8 @@ proc
 		var/obj/item/drop_this = /obj/item/health_pack
 		switch(rand(1,3))
 			if(1) // tier one items
-				drop_this 			= pick( /obj/item/health_pack, /obj/item/gun/kobra, /obj/item/special/molotov, /obj/item/shield_tier1, /obj/item/special/glowsticks, \
-											/obj/item/gun/shotgun, /obj/item/gun/ak66, /obj/item/special/grenade )
+				drop_this 		= pick( /obj/item/health_pack, /obj/item/gun/kobra, /obj/item/special/molotov, /obj/item/shield_tier1, /obj/item/special/glowsticks, \
+										/obj/item/gun/shotgun, /obj/item/gun/ak66, /obj/item/special/grenade )
 			if(2)
 				if(prob(75))
 					drop_this 		= pick( /obj/item/health_pack, /obj/item/gun/edge_lord, /obj/item/gun/spas_12, /obj/item/shield_tier2, /obj/item/gun/krossbow,\
@@ -53,21 +53,21 @@ obj
 			icon_state	= "shield1"
 			drop_rate	= 50
 			effect(mob/player/p)
-				if(p.shield < 3)
+				if(p.shield < 9)
 					p.shield(1, 0)
 					GC()
 		shield_tier2
 			icon_state	= "shield2"
 			drop_rate	= 50
 			effect(mob/player/p)
-				if(p.shield < 3)
+				if(p.shield < 9)
 					p.shield(2, 0)
 					GC()
 		shield_tier3
 			icon_state	= "shield3"
 			drop_rate	= 50
 			effect(mob/player/p)
-				if(p.shield < 3)
+				if(p.shield < 9)
 					p.shield(3, 0)
 					GC()
 
