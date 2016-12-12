@@ -1,5 +1,21 @@
 
 done this patch:
+
+
+ - fixed a memory leak where projectiles wouldn't stop stepping even after being collected.
+ - world tick_lag is now 2 instead of 0.2
+
+
+
+
+
+
+
+
+
+
+old patches:
+
  - enemies can no longer spawn on dense atoms.
  - enemies now have a death animation
  - enemies now move faster in later rounds.
@@ -22,7 +38,6 @@ done this patch:
  - Glowsticks make a return
  - AK66 now doesn't suck. It's an automatic 3 round burst now.
  - Overhauled shield mechanics.
-/////////////
  - Laser Madness wave modifier returns
  - Nyan Madness wave modifier returns
  - Added a new weapon; SPAS-12
@@ -61,21 +76,11 @@ done this patch:
 
 
 
+
 do this patch:
  - finish the skeleton variants and make them part of a unique spooky scary skeletons wave
  - Add Corruption that takes away the players max health
  -
-
-
-
-
-
-
-
-
-
-
-
 
 
 - Callouts: And it'd fit the small/cutesy restrictions.

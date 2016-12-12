@@ -259,6 +259,7 @@ game
 						world << sound(null, 0, 0, 3)
 						spawn end_game()
 						return
+					sleep world.tick_lag
 				if(enemies_left == 5)
 					for(var/mob/player/m in participants)
 						if(m.health)
@@ -341,6 +342,8 @@ game
 			active_projectiles	= new/list()
 			portals				= new/list()
 			weather_turfs		= new/list()
+			top_player.overlays -= CROWN_OVERLAY
+			top_player 			= null
 			for(var/mob/player/p in participants)
 				winset(p, "pane-lobby.game-countdown", "text=\"Submitting Scores..\"")
 				winset(p,,"child1.left=\"pane-lobby\"")

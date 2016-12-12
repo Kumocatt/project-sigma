@@ -9,7 +9,7 @@ world
 	turf			= /turf/grass
 	map_format		= TOPDOWN_MAP
 	loop_checks 	= 0
-	tick_lag		= 0.2
+	tick_lag		= 2
 	icon_size		= 16
 	fps				= 40
 	hub				= "Kumorii.Feed"

@@ -10,7 +10,11 @@ proc
 		set waitfor = 0
 		for()
 			if(active_projectiles.len) for(var/obj/projectile/p in active_projectiles)
-				if(!p.timeout) p.take_step()
+				if(!p.timeout)
+					p.take_step()
+				if(!(p.loc))
+					active_projectiles -= p							// projectiles cleaned here.
+			//		world << "Projectile stuck in limbo; culled."
 			sleep world.tick_lag
 
 atom
@@ -61,17 +65,17 @@ obj
 				if(dir == EAST) step_x += step_size
 				if(dir == NORTH)step_y += step_size
 				if(dir == SOUTH)step_y -= step_size
-				return
-			if(ismob(a))
-				loc			= null
-				var/mob/m 	= a
-				if(m.can_hit)
-					m.knockback(6, dir)
-					m.edit_health((is_crit ? hp_modifier : hp_modifier+hp_modifier), owner)
-					if((icon_state == "firebullet" || (icon_state == "fireball" && prob(15))) && m.health) m.burn()
-			if(istype(a, /atom/movable) && a:is_explosive && !ismob(a))
-				a:Explode(42, -100, owner)
-			GC()
+			else
+				loc	= null
+				if(ismob(a))
+					var/mob/m 	= a
+					if(m.can_hit)
+						m.knockback(6, dir)
+						m.edit_health((is_crit ? hp_modifier : hp_modifier+hp_modifier), owner)
+						if((icon_state == "firebullet" || (icon_state == "fireball" && prob(15))) && m.health) m.burn()
+				if(istype(a, /atom/movable) && a:is_explosive && !ismob(a))
+					a:Explode(42, -100, owner)
+				GC()
 
 
 
@@ -368,224 +372,3 @@ obj
 						return
 					if(a.density)
 						end_step = 1
-
-
-
-
-
-
-
-
-
-
-/*
-		shuriken
-			icon		= '_Bullets.dmi'
-			icon_state	= "shuriken"
-			density		= 1
-			step_size	= 5
-			bound_width	= 8
-			bound_height= 8
-	/*		init_step()
-				set waitfor = 0
-				active_projectiles -= src
-				if(last_step < max_step)
-					if(!loc)
-						return
-					last_step ++
-					if((last_step && accuracy) && round(last_step/accuracy) > accuracy_helper)
-						accuracy_helper = round(last_step/accuracy)
-						if(dir == EAST || dir == WEST)	step_y += sway
-						else 							step_x += sway
-					step(src, dir)
-					sleep world.tick_lag*1.5
-					active_projectiles += src
-				else
-					GC()*/
-
-		fireball
-			icon		= 'projectiles.dmi'
-			icon_state	= "fireball"
-			density		= 1
-			step_size	= 3
-			bound_width	= 8
-			bound_height= 8
-			plane		= 2
-			appearance_flags = NO_CLIENT_COLOR
-			blend_mode	= BLEND_ADD
-	/*		init_step()
-				set waitfor = 0
-				active_projectiles -= src
-				if(last_step < max_step)
-					if(!loc)
-						return
-					last_step ++
-					if((last_step && accuracy) && round(last_step/accuracy) > accuracy_helper)
-						accuracy_helper = round(last_step/accuracy)
-						if(dir == EAST || dir == WEST)	step_y += sway
-						else 							step_x += sway
-					step(src, dir)
-					sleep world.tick_lag*1.5
-					active_projectiles += src
-				else
-					GC()
-			Bump(atom/a)
-				if(istype(a, /obj/projectile))
-					loc = get_step(src, dir)
-					return
-				if(a.d_ignore)
-					loc = get_step(src, dir)
-					return
-				if(ismob(a))
-					loc	= null
-					var/mob/m = a
-					if(m.can_hit)
-						m.knockback(3,dir)
-						m.edit_health((is_crit ? damage : damage+damage), owner)
-						m.burn(owner)
-				GC()
-
-
-		molotov
-			icon		= '_Bullets.dmi'
-			icon_state	= "molotov"
-			density		= 1
-			step_size	= 2
-			bound_width	= 8
-			bound_height= 8
-
-			init_step()
-				set waitfor = 0
-				active_projectiles -= src
-				if(last_step < max_step)
-					if(!loc)
-						return
-					last_step ++
-					if((last_step && accuracy) && round(last_step/accuracy) > accuracy_helper)
-						accuracy_helper = round(last_step/accuracy)
-						if(dir == EAST || dir == WEST)	step_y += sway
-						else 							step_x += sway
-					step(src, dir)
-					sleep world.tick_lag*1.5
-					active_projectiles += src
-				else
-					drop_fire(6, owner)
-					GC()
-			Bump(atom/a)
-				if(istype(a, /obj/projectile))
-					loc = get_step(src, dir)
-					return
-				if(a.d_ignore)
-					loc = get_step(src, dir)
-					return
-				drop_fire(6, owner)
-				GC()
-*/
-		firewall
-			icon		= 'projectiles.dmi'
-			icon_state	= "firewall"
-			density		= 1
-			step_size	= 2
-			bound_width	= 8
-			bound_height= 8
-/*
-			init_step()
-				set waitfor = 0
-				active_projectiles -= src
-				if(last_step < max_step)
-					if(!loc)
-						return
-					last_step ++
-					if((last_step && accuracy) && round(last_step/accuracy) > accuracy_helper)
-						accuracy_helper = round(last_step/accuracy)
-						if(dir == EAST || dir == WEST)	step_y += sway
-						else 							step_x += sway
-					step(src, dir)
-					sleep world.tick_lag*1.5
-					active_projectiles += src
-				else
-					drop_fire(6, owner)
-					GC()
-			Bump(atom/a)
-				if(istype(a, /obj/projectile))
-					loc = get_step(src, dir)
-					return
-				if(a.d_ignore)
-					loc = get_step(src, dir)
-					return
-				drop_fire(6, owner)
-				GC()
-
-			drop_fire()
-				var/list/turf_list 	= new /list()
-				var/turf/init_t		= loc
-				turf_list += init_t
-				if(dir == NORTH || dir == SOUTH)
-					/*left and right spread.
-					*/
-					for(var/i = 1 to 3)
-						turf_list += locate(init_t.x+i, init_t.y, init_t.z)
-						turf_list += locate(init_t.x-i, init_t.y, init_t.z)
-				else
-					for(var/i = 1 to 3)
-						turf_list += locate(init_t.x, init_t.y+i, init_t.z)
-						turf_list += locate(init_t.x, init_t.y-i, init_t.z)
-				for(var/turf/t in turf_list)
-					if(!t.density)
-						switch(fire_count(t))
-							if(0)
-						//		var/image/spotlight_o/a		= /image/spotlight_o
-								var/obj/hazard/fire/f 		= garbage.Grab(/obj/hazard/fire)
-								f.owner						= owner
-								f.loc						= t
-						//		a.loc						= f.loc
-								f.step_x					= 0
-								f.step_y					= 0
-								f.spawndel(150)
-							if(1)
-								var/obj/hazard/fire/f 		= garbage.Grab(/obj/hazard/fire)
-								f.owner						= owner
-								f.loc						= t
-								f.step_x					= 0
-								f.step_y					= 8
-								f.spawndel(150)
-*/
-
-		glowstick_b
-			icon		= 'projectiles.dmi'
-			icon_state	= "glowstick-b"
-			density		= 1
-			step_size	= 4
-			var/end_move= 0
-			New()
-				..()
-				draw_spotlight(x_os = -38, y_os = -38, hex = "#3399FF")
-			GC()
-				end_move = 0
-				..()
-			init_step()
-				set waitfor = 0
-				active_projectiles -= src
-				if(last_step < max_step && !end_move)
-					if(!loc)
-						return
-					last_step ++
-					if((last_step && accuracy) && round(last_step/accuracy) > accuracy_helper)
-						accuracy_helper = round(last_step/accuracy)
-						if(dir == EAST || dir == WEST)	step_y += sway
-						else 							step_x += sway
-					if(!end_move)
-						step(src, dir)
-					sleep world.tick_lag*1.5
-					active_projectiles += src
-				else
-					density	= 0
-					spawndel(300)
-			Bump(atom/a)
-				if(istype(a, /obj/projectile))
-					loc = get_step(src, dir)
-					return
-				if(a.d_ignore)
-					loc = get_step(src, dir)
-					return
-				end_move = 1   */
