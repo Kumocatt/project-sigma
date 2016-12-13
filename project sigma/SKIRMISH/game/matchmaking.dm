@@ -150,13 +150,14 @@ game
 			if(!participants.len && !spectators.len) world.Reboot()
 			world << "<b>Wave [current_round] will begin in 15 seconds."
 			sleep 150
+			if(!participants.len && !spectators.len) world.Reboot()
 			intermission = 0
 			weather_type = pick(RAIN, SNOW, BLOODRAIN)
 					// first let's check for boss mode triggers.
 			if(current_round == 4)
 				boss_mode = 1
 				boss_doppleganger()
-			else if(current_round >= 5 && participants.len > 1 && prob(8))
+			else if(current_round >= 5 && participants.len > 1 && prob(25))
 				boss_mode = 1
 				boss_deathmatch()
 									// if no boss mode was triggered, let's look at some wave modifiers.
@@ -194,11 +195,9 @@ game
 						p.client.screen -= p.waveStart
 				sleep world.tick_lag
 				world << pick( MUSIC_FAST_ACE, MUSIC_RETRO140, MUSIC_ROCKER, MUSIC_HORROR1, MUSIC_DnB1, MUSIC_SPOOBOOKY)
-				sleep world.tick_lag
 
 				if(censorship) for(var/mob/player/p in participants)
 					p.censor()
-
 				for(var/i = 1 to enemies_total)								// enemy spawning.
 					while(ai_list.len >= map_spawnlimit) sleep 5
 					if(started == 1) break
@@ -265,7 +264,7 @@ game
 						if(m.health)
 							for(var/mob/npc/hostile/h in ai_list)
 								m.add_target(h)
-								h.targeted = 1
+								h.targeted = 1//////////////////////////////////////////////////////////////////////////////
 			else if(!intermission)
 				intermission = 1
 				sleep 20
@@ -469,8 +468,9 @@ game
 				boss.health		= boss.base_health
 				boss.loc		= pick(player_spawns)
 				for(var/mob/player/p in participants)
-					p.add_target(boss)
-					boss.targeted = 1
+					if(p.health)
+						p.add_target(boss)
+						boss.targeted = 1
 				ai_list += boss
 			world << SOUND_WAVE_BEGIN
 			world << 'dopple.wav'

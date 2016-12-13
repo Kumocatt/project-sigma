@@ -15,7 +15,7 @@ proc
 						if(1)	t.rain()
 						if(2)	t.snow()
 						if(3)	t.bloodrain()
-					sleep world.tick_lag*2
+					sleep world.tick_lag
 				else sleep 10
 
 	fetch_participant()

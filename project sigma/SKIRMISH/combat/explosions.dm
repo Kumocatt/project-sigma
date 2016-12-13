@@ -47,7 +47,7 @@ atom
 						if(ismob(a))
 							a:knockback(7, get_dir(src, a))
 							if(a:client) a:screenshake()
-							if(!a:explosion_proof && (istype(a, /mob/npc) || (istype(a, /mob/player) && (pk || active_game.deathmatch || owner && !owner.client)))) // && a != src)
+							if(!a:explosion_proof && (istype(a, /mob/npc) || (istype(a, /mob/player) && (pk || active_game.deathmatch || owner && !owner.client))))
 								spawn a:edit_health(damage, owner, 1)
 						if(isobj(a))
 							if(a:is_explosive && !a:exploded)

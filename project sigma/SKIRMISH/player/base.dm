@@ -39,10 +39,15 @@ mob/player
 				shirt.icon_state	= "shirt10"
 				pants.icon_state	= "pants1"
 				vanity.icon_state	= "vanity1"
+			if(key == "Yut Put")
+				hair.icon_state		= "style14"
+				shirt.icon_state	= "shirt12"
+				pants.icon_state	= "pants1"
+			//	vanity.icon_state	= "vanity1"
 			if(key == "Saskae7")
 				shirt.icon_state	= "shirt9"
 				pants.icon_state	= "pants2"
-			if(hair.icon_state == "style11" || hair.icon_state == "style13") hair.pixel_x = -5
+			if(hair.icon_state == "style11" || hair.icon_state == "style13"|| hair.icon_state == "style14") hair.pixel_x = -5
 			else hair.pixel_x = 0
 			overlays += arms
 			overlays += shirt

@@ -12,8 +12,8 @@ obj/markers
 		icon_state	= "espawn"
 		New()
 			..()
-			active_game.enemy_spawns += src
-			icon_state = null
+			active_game.enemy_spawns += loc//src
+			del src //icon_state = null
 	rain_spawn
 		icon		= 'environment/x16.dmi'
 		icon_state	= "hspawn"

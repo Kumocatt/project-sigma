@@ -35,7 +35,7 @@ mob/npc
 				if(prob(45)) step(src, pick(dir, turn(dir, pick(-45, 45))))
 				for(var/mob/player/p in active_game.participants)
 					if(!p.health || !p.loc || p.cowbell) continue
-					if(!target) target = p
+					if(!target) if(get_dist(src, p) <= 12) target = p
 					else if(get_dist(src, p) < get_dist(src, target))
 						target = p
 		drop_loot()
@@ -131,7 +131,7 @@ mob/npc
 									if(p == target || !p.health || !p.loc || p.cowbell) continue
 									if(get_dist(src, p) < get_dist(src, target))
 										target = p
-							if(get_dist(src, target) <= 1)
+							if(get_dist(src, target) <= 2)
 								if(!step_away(src, target))
 									smoke()
 									smoke()
@@ -323,7 +323,7 @@ mob/npc
 								overlays				+= tummy
 							if(bounds_dist(src, target) <= 2)
 								charging = 0
-								Explode(30,-30,1)
+								Explode(30,-30,src,1)
 								death()
 							else if(!kb_init)
 								step(src, step_dir)
@@ -738,6 +738,10 @@ mob/npc
 				overlays += /image/spotlight
 			death()
 				ai_list -= src
+				if(targeted)
+					for(var/mob/player/p in active_game.participants)
+						p.remove_target(src)
+					targeted = 0
 				if(ai_list.len == 0) for(var/mob/player/c in active_game.participants)
 					c.client.eye = src
 					spawn(35)

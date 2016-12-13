@@ -54,24 +54,32 @@ mob
 
 
 		Logout()
-			if(!connected) return
-			remove_spectators()
-			..()
-			world << "<b>-- <font color = [namecolor]>[src]</font> disconnected."
-			active_game.participants << output("<b>-- <font color = [namecolor]>[src]</font> disconnected.","lobbychat")
-			active_game.spectators << output("<b>-- <font color = [namecolor]>[src]</font> disconnected.","lobbychat")
-			if(src in active_game.spectators)
-				active_game.spectators -= src
-			if(src in active_game.participants)
-				active_game.participants -= src
-				if(active_game.started == 2) spawn active_game.progress_check()
-			active_game.update_grid()
+			if(!active_game.participants.len && !active_game.spectators.len)
+				world.Reboot()
+			if(connected)
+				remove_spectators()
+				..()
+				world << "<b>-- <font color = [namecolor]>[src]</font> disconnected."
+				active_game.participants << output("<b>-- <font color = [namecolor]>[src]</font> disconnected.","lobbychat")
+				active_game.spectators << output("<b>-- <font color = [namecolor]>[src]</font> disconnected.","lobbychat")
+				if(src in active_game.spectators)
+					active_game.spectators -= src
+				if(src in active_game.participants)
+					active_game.participants -= src
+					if(active_game.started == 2) spawn active_game.progress_check()
+				active_game.update_grid()
+				if(!active_game.participants.len && !active_game.spectators.len)
+					world.Reboot()
 			del src
 
 
 		death()
 			if(client.eye != src || died_already) return
 			died_already 	= 1
+			if(targeted)
+				for(var/mob/player/p in active_game.participants)
+					p.remove_target(src)
+				targeted = 0
 			..()
 			remove_spectators()
 			if(censored)	censor(1)

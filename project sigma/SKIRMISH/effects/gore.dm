@@ -30,7 +30,7 @@ atom/movable
 			if(!splat)
 				for(var/obj/gore/blood/bl in obounds(src,4))
 					. ++
-				if(. < 4) for(var/v = 0 to i)
+				if(. < 5) for(var/v = 0 to i)
 					var/obj/gore/blood/b	= garbage.Grab(/obj/gore/blood)
 					b.icon					= 'gore.dmi'
 					b.icon_state			= "blood[rand(1,10)]"

@@ -33,8 +33,7 @@ mob
 					if(client) src:hurtflash()
 					if(bloody_mess)	// 1 if explosion
 						//	k_sound(src, SOUND_SPLATTER)
-						drop_blood(3,1)
-						drop_blood(10)
+						drop_blood(5,1)
 					else
 						drop_blood(3)
 				if(health <= 0)

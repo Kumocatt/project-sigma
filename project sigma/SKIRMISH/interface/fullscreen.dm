@@ -30,5 +30,4 @@ client/verb
 		can_fs = 1
 
 client/var/fs=0
-client/var/first=1
 client/var/can_fs=1
