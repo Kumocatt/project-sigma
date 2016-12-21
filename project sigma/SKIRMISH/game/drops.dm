@@ -190,6 +190,13 @@ obj
 				drop_rate	= 75
 				effect(mob/player/p)
 					p.float_text("\[E] - Grenades", 1)
+			sticky_grenade
+				icon_state	= "sticky_grenade"
+				state		= "sticky_grenade"
+				gun_type	= /obj/weapon/special/grenade/sticky_grenade
+				drop_rate	= 75
+				effect(mob/player/p)
+					p.float_text("\[E] - Grenades", 1)
 			molotov
 				icon_state	= "molotov"
 				state		= "molotov"

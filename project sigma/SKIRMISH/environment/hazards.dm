@@ -174,11 +174,6 @@ obj/hazard
 			if(a.can_teleport && icon_state == "portal-open")
 				flick("portal-use",src)
 				a:portal(owner)
-				active_game.portals.Remove(src)
-				icon_state = "portal-closed"
-				sleep 60
-				active_game.portals.Add(src)
-				icon_state = "portal-open"
 
 	edge_spike
 		icon		= '_new x16.dmi'

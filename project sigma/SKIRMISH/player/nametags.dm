@@ -44,7 +44,7 @@ obj/nametag
 	pixel_y				= -20	// x and y offsets to center the maptext bounds on src. totes obvi.
 	pixel_x				= -56
 	plane				= 3
-	appearance_flags	= NO_CLIENT_COLOR+KEEP_APART
+	appearance_flags	= NO_CLIENT_COLOR+KEEP_APART+RESET_TRANSFORM
 	layer				= MOB_LAYER
 	var
 		disp_text					// The text to be displayed. can be removed, honestly. It's just there to simplify future ideas.

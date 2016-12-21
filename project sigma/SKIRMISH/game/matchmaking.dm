@@ -136,18 +136,20 @@ game
 				p.move_disabled	= 0
 				p.can_hit		= 1
 				p.shield(1, 0)
-
 			for(var/mob/player/p in spectators)
 				winset(p,,"child1.left=\"pane-map\"")
 				p.spectate_rand()
-			gameover= 0
-			started = 2
+			intermission	= 1
+			gameover		= 0
+			started 		= 2
 			weather_loop()
+			spawn_support()
 			init_wave()
 
 
 		init_wave()
 			if(!participants.len && !spectators.len) world.Reboot()
+			ressurect_ai()
 			world << "<b>Wave [current_round] will begin in 15 seconds."
 			sleep 150
 			if(!participants.len && !spectators.len) world.Reboot()
@@ -157,7 +159,7 @@ game
 			if(current_round == 4)
 				boss_mode = 1
 				boss_doppleganger()
-			else if(current_round >= 5 && participants.len > 1 && prob(25))
+			else if(participants.len > 1 && (current_round == 8 || (current_round >= 5 && prob(25))))
 				boss_mode = 1
 				boss_deathmatch()
 									// if no boss mode was triggered, let's look at some wave modifiers.
@@ -201,27 +203,40 @@ game
 				for(var/i = 1 to enemies_total)								// enemy spawning.
 					while(ai_list.len >= map_spawnlimit) sleep 5
 					if(started == 1) break
-					var/mob/npc/hostile/h 	= garbage.Grab(/mob/npc/hostile/feeder)
-					h.icon_state 			= pick("grey","pink","white","purple","green","orange","blue")
-				//	if(prob(5)) h = garbage.Grab(/mob/npc/hostile/petite_feeder)
-					if(current_round >= 3 && prob(10))
-						h = garbage.Grab(pick(/mob/npc/hostile/brute, /mob/npc/hostile/puker))
-					if(current_round >= 5 && prob(15)) //5, 15
-						h = garbage.Grab(pick(/mob/npc/hostile/hellbat, /mob/npc/hostile/abstract, /mob/npc/hostile/abstract2, /mob/npc/hostile/beholder, \
-												/mob/npc/hostile/shade, /mob/npc/hostile/blaze))
-					if(current_round >= 10 && prob(10))
-						h = garbage.Grab(/mob/npc/hostile/slammer)
-					if(current_round >= 2 && prob(10))
-						h = garbage.Grab(/mob/npc/hostile/charger)
-
-					if(crawler_only || current_round >= 2 && prob(35))
-						h = garbage.Grab(/mob/npc/hostile/crawler)
-						h.icon_state = pick("grey","white")
-					if(abstract_only)
-						h = garbage.Grab(pick(/mob/npc/hostile/abstract, /mob/npc/hostile/abstract2))
-					if(blaze_only)
-						h = garbage.Grab(/mob/npc/hostile/blaze)
-
+					var/mob/npc/hostile/h	// this is the enemy that gets spawned.. don't call garbage.Grab() unless it's a final decision.
+					while(!h)
+						if(crawler_only)
+							h 			 = garbage.Grab(/mob/npc/hostile/crawler)
+							h.icon_state = pick("grey","white")
+							break
+						if(abstract_only)
+							h = garbage.Grab(pick(/mob/npc/hostile/abstract, /mob/npc/hostile/abstract2))
+							break
+						if(blaze_only)
+							h = garbage.Grab(/mob/npc/hostile/blaze)
+							break
+						if(current_round >= 10)
+							if(prob(10))
+								h = garbage.Grab(/mob/npc/hostile/slammer)
+								break
+						if(current_round >= 5)
+							if(prob(15))
+								h = garbage.Grab(pick(	/mob/npc/hostile/hellbat, /mob/npc/hostile/abstract, /mob/npc/hostile/abstract2, /mob/npc/hostile/beholder, \
+														/mob/npc/hostile/shade, /mob/npc/hostile/blaze	))
+								break
+						if(current_round >= 3)
+							if(prob(10))
+								h = garbage.Grab(pick( /mob/npc/hostile/brute, /mob/npc/hostile/puker, /mob/npc/hostile/charger ))
+								break
+						if(current_round >= 2)
+							if(prob(35))
+								h 				= garbage.Grab(/mob/npc/hostile/crawler)
+								h.icon_state 	= pick("grey","white")
+								break
+						if(!h)
+							h				= garbage.Grab(/mob/npc/hostile/feeder)
+							h.icon_state	= pick("grey","pink","white","purple","green","orange","blue")
+							break
 					spawn_en(h)
 
 					if(h.can_phantom && (phantom_enemies || prob(10)))
@@ -249,7 +264,7 @@ game
 				return
 			if(boss_mode || enemies_left)
 				var/mob/player/p
-				for(var/i = 1 to participants.len)
+				if(participants.len) if(!support_ai.len) for(var/i = 1 to participants.len)
 					p = participants[i]
 					if(p.health) break
 					if(!p.health && i == participants.len)
@@ -259,7 +274,11 @@ game
 						spawn end_game()
 						return
 					sleep world.tick_lag
-				if(enemies_left == 5)
+				else
+					world << "failsafe: no participants."
+					spawn end_game()
+					return
+				if(enemies_left == 5&& !boss_mode)
 					for(var/mob/player/m in participants)
 						if(m.health)
 							for(var/mob/npc/hostile/h in ai_list)
@@ -341,8 +360,11 @@ game
 			active_projectiles	= new/list()
 			portals				= new/list()
 			weather_turfs		= new/list()
-			top_player.overlays -= CROWN_OVERLAY
-			top_player 			= null
+			support_ai			= new/list()
+			res_ai				= new/list()
+			if(top_player)
+				top_player.overlays -= CROWN_OVERLAY
+				top_player 			= null
 			for(var/mob/player/p in participants)
 				winset(p, "pane-lobby.game-countdown", "text=\"Submitting Scores..\"")
 				winset(p,,"child1.left=\"pane-lobby\"")
@@ -363,12 +385,30 @@ game
 						a.GC()
 					else del a
 				new /turf(t)
-			world.maxx	= 14
-			world.maxy	= 11
+			world.maxx	= 30
+			world.maxy	= 30
 			//	sleep world.tick_lag
 			init_game()
 
-
+		spawn_support()
+			var/mob/npc/support/kett/v = new
+			v.draw_nametag("Kett") //,, -44)
+			v.draw_health(-5, 32)
+			v.arms.icon_state 	= "base-uzi"
+			v.shirt.icon_state	= "shirt4"
+			v.hair.icon_state	= "ket1"
+			v.vanity.icon_state	= "vanity8"
+			v.pants.icon_state	= "pants1"
+			v.overlays += v.arms
+			v.overlays += v.shirt
+			v.overlays += v.pants
+			v.overlays += v.hair
+			v.overlays += v.vanity
+			v.step_size	= 4
+			v.health	= v.base_health
+			v.loc		= pick(player_spawns)
+			v.alive 	= 1
+			support_ai += v
 	// WAVE VARIANT PROCS --- the following procs run in the background of waves and manage the more complicated aspects of their event type.
 
 
@@ -464,6 +504,7 @@ game
 				boss.overlays += boss.shirt
 				boss.overlays += boss.pants
 				boss.overlays += boss.hair
+				boss.overlays += boss.vanity
 				boss.step_size		= 4
 				boss.health		= boss.base_health
 				boss.loc		= pick(player_spawns)

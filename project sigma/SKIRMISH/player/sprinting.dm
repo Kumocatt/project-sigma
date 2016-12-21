@@ -15,8 +15,8 @@ mob
 					if(!on_fire && !fireproof || on_fire && prob(15))
 						. = 1
 						fireproof = 1
-					animate(src, pixel_y = 8, time = 2, loop = 1)
-					animate(pixel_y = 0, time = world.tick_lag*2, loop = 1, easing = BOUNCE_EASING)
+					animate(src, pixel_z = 8, time = 2, loop = 1)
+					animate(pixel_z = 0, time = world.tick_lag*2, loop = 1, easing = BOUNCE_EASING)
 					src << SOUND_JUMP
 					if(key1)
 						for(var/i = 1 to 6)

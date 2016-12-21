@@ -128,3 +128,23 @@ spawn en(the feeder (/mob/npc/hostile/feeder))
 /game (/game): init wave()
 /game (/game): init game()
 /game (/game): wait loop()
+runtime error: Cannot read null.overlays
+proc name: take step (/obj/projectile/thrown/grenade/take_step)
+  source file: projectiles.dm,208
+  usr: null
+  src: the sticky grenade (/obj/projectile/thrown/grenade/sticky_grenade)
+  src.loc: the grass (77,35,2) (/turf/grass)
+  call stack:
+the sticky grenade (/obj/projectile/thrown/grenade/sticky_grenade): take step()
+the sticky grenade (/obj/projectile/thrown/grenade/sticky_grenade): take step()
+projectile loop()
+runtime error: Cannot read null.overlays
+proc name: take step (/obj/projectile/thrown/grenade/take_step)
+  source file: projectiles.dm,208
+  usr: null
+  src: the sticky grenade (/obj/projectile/thrown/grenade/sticky_grenade)
+  src.loc: the grass (73,26,2) (/turf/grass)
+  call stack:
+the sticky grenade (/obj/projectile/thrown/grenade/sticky_grenade): take step()
+the sticky grenade (/obj/projectile/thrown/grenade/sticky_grenade): take step()
+projectile loop()

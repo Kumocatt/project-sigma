@@ -14,9 +14,6 @@ mob
 	player
 		var/tmp
 			died_already = 0
-	//	Stat()
-	//		stat("Wave:",active_game.current_round)
-	//		stat("Enemies:","[active_game.enemies_left]/[active_game.enemies_total]")
 
 		Login()
 			..()
@@ -31,8 +28,8 @@ mob
 			draw_base()
 			sleep 10
 			active_game.participants += src
-			src << output("<center>Welcome to mystery game! Keep in mind this is a work in progress so pardon the wet paint!","lobbychat")
-			src << output("<center><b><u>Controls</u><br>W,A,S,D to move.<br>Arrow keys to shoot.<br>Shift to dash.<br>Space+Arrow keys to use specials.<br>E to pickup weapons/spectate new.</b>","lobbychat")
+			src << output("<center><u>## Welcome to Feed! ##</u></center>","lobbychat")
+			src << output("<center><b><u>Controls</u><br>W,A,S,D to move.<br>Arrow keys to shoot.<br>Shift to dash.<br>Space+Arrow keys to use specials.<br>E to pickup weapons/spectate new.</b><hr>","lobbychat")
 			if(active_game.started == 2) // if game is already going on..
 				winset(src,,"child1.left=\"pane-map\"")
 				world << "<b>++ <font color = [namecolor]>[src]</font> connected.</b>"

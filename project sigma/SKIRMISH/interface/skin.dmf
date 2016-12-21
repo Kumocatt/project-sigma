@@ -77,7 +77,6 @@ window "debugoutput"
 		size = 265x309
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		title = "Chat / Debug"
 		statusbar = false
@@ -126,6 +125,7 @@ window "default"
 		size = 832x640
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		is-default = true
 		saved-params = "pos;size;is-minimized;is-maximized"
 		statusbar = false
@@ -138,6 +138,7 @@ window "default"
 		size = 832x640
 		anchor1 = 0,0
 		anchor2 = 100,100
+		background-color = none
 		is-default = true
 		saved-params = "splitter"
 		left = "pane-map"
@@ -372,8 +373,9 @@ window "pane-map"
 		font-family = "UberBit7"
 		text-color = none
 		is-default = true
-		drop-zone = true
 		saved-params = "icon-size"
+		icon-size = 16
 		letterbox = false
+		zoom = 1
 		style = "BODY {font-family:UberBit7;font-size:12pt}\n.desc {font-size:12pt;font-family:UberBit7;}\n.small {font-size:12pt;}\n.big {font-size:24pt;}\n.realbig {font-size:36pt;}"
 

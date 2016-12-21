@@ -199,8 +199,17 @@ obj
 					*/
 					set waitfor = 0
 					timeout = 1
-					if(step_size*total_steps >= px_range) // if the projectile has taken its maximum amount of steps..
-						sleep 15
+					if(step_size*total_steps >= px_range || end_step) // if the projectile has taken its maximum amount of steps..
+						density	= 0
+						if(istype(src,/obj/projectile/thrown/grenade/sticky_grenade) && end_step)
+							var/obj/projectile/thrown/grenade/sticky_grenade/s = src
+							var/atom/a = s.stuck
+							a.overlays += src
+							loc = locate(0,0,0)
+							sleep(15)
+							a.overlays -= src
+							loc = a.loc
+						else sleep 15
 						Explode(42, -50, owner)
 					else
 						if(loc)
@@ -220,7 +229,23 @@ obj
 						loc = get_step(src, dir)
 						return
 					if(a.density)
-						end_step = 1
+						end_step 	= 1
+				sticky_grenade
+					icon = '_Bullets.dmi'
+					icon_state	= "sticky_grenade"
+					accuracy = 20
+					px_range = 50
+					var
+						atom/movable/stuck
+						tick = 15
+					Bump(atom/a)
+						if(istype(a, /obj/projectile) || a.d_ignore || owner == a)
+							loc = get_step(src, dir)
+							return
+						if(a.density)
+							stuck = a
+							end_step = 1
+
 
 
 			molotov
@@ -300,7 +325,8 @@ obj
 					*/
 					set waitfor = 0
 					timeout = 1
-					if(step_size*total_steps >= px_range) // if the projectile has taken its maximum amount of steps..
+					if(step_size*total_steps >= px_range || end_step) // if the projectile has taken its maximum amount of steps..
+						density	= 0
 						sleep 15
 						airstrike(loc, owner)
 						spawndel(5)
@@ -351,7 +377,8 @@ obj
 					*/
 					set waitfor = 0
 					timeout = 1
-					if(step_size*total_steps >= px_range) // if the projectile has taken its maximum amount of steps..
+					if(step_size*total_steps >= px_range || end_step) // if the projectile has taken its maximum amount of steps..
+						density	= 0
 						spawndel(150)
 					else
 						if(loc)

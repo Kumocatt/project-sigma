@@ -77,7 +77,7 @@ obj/hud
 	health_meter
 		icon				= 'meterhealth.dmi'
 		icon_state			= "14"
-		appearance_flags	= NO_CLIENT_COLOR
+		appearance_flags	= NO_CLIENT_COLOR+RESET_TRANSFORM
 		plane				= 2
 
 

@@ -9,8 +9,6 @@ client
     var
         view_width
         view_height
-        buffer_x
-        buffer_y
         map_zoom
     verb
         onResize()
@@ -30,9 +28,6 @@ client
                 if(!(view_width%2)) ++view_width
                 view_height = ceil(map_height/TILE_HEIGHT/map_zoom)
                 if(!(view_height%2)) ++view_height
-
-            buffer_x = floor((view_width*tile_width - map_width/map_zoom)/2)
-            buffer_y = floor((view_height*tile_height - map_height/map_zoom)/2)
 
             src.view = "[view_width]x[view_height]"
             winset(src,"map1","zoom=[map_zoom];")

@@ -1,31 +1,19 @@
 // BEGIN_INTERNALS
 /*
-<<<<<<< HEAD
-LAST_COMPILE_TIME: 1481492824
-PACKAGE_RSC_NAME: C:\Users\Kumorii\Dropbox\SKIRMISH\skirmish_rsc.zip
-DIR: combat effects enemies environment game interface maps misc player systems 
-=======
-LAST_COMPILE_TIME: 1481486354
-PACKAGE_RSC_NAME: C:\Users\Kumorii\Dropbox\SKIRMISH\skirmish_rsc.zip
+LAST_COMPILE_TIME: 1482356792
 DIR: combat effects enemies environment game interface maps misc player references references\#libraries systems 
->>>>>>> 313718ee9d7e50c267d3e0f3f23fbd196a37f1f5
+PACKAGE_RSC_NAME: C:\Users\Kumorii\Dropbox\SKIRMISH\skirmish_rsc.zip
 AUTO_FILE_DIR: ON
 PACKAGE_DMB_INFO: 
 MAP_ICON_TYPE: 0
 PACKAGE_DME_NAME: C:\Users\Kumorii\Desktop\feed_src_12-11-16NEWEST.zip
-LAST_COMPILE_VERSION: 511.1365
-PACKAGE_TYPE: 1
+LAST_COMPILE_VERSION: 511.1364
 PACKAGE_DME_START: 
-<<<<<<< HEAD
-WINDOW: DO THIS.dm;combat\projectiles.dm;effects\weather.dm;systems\object pooling.dm
+PACKAGE_TYPE: 1
+WINDOW: effects\weather.dm;combat\explosions.dm;combat\projectiles.dm;game\matchmaking.dm;combat\specials.dm;combat\_Bullets.dmi;player\movement.dm;player\_main.dm;combat\projectiles.dmi;enemies\enemies.dm;environment\turf.dm;game\drops.dm;game\items.dmi
 PACKAGE_DME_INFO: 
-FILE: systems\object pooling.dm
-=======
-WINDOW: effects\weather.dm
-PACKAGE_DME_INFO: 
-FILE: effects\weather.dm
->>>>>>> 313718ee9d7e50c267d3e0f3f23fbd196a37f1f5
-PACKAGE_DMB_NAME: C:\Users\Kumorii\Dropbox\SKIRMISH\skirmish.zip
+FILE: combat\specials.dm
 PACKAGE_DME_DEMO: 
+PACKAGE_DMB_NAME: C:\Users\Kumorii\Dropbox\SKIRMISH\skirmish.zip
 */
 // END_INTERNALS

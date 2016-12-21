@@ -1,7 +1,7 @@
 
 var
 	tmp
-		list/ai_list	= new/list()
+		list/ai_list = new/list()
 
 
 proc
@@ -32,8 +32,8 @@ mob/npc
 		ai_check()
 			// this is where you add the npcs behavior.
 			if(!target) // target selection
-				if(prob(45)) step(src, pick(dir, turn(dir, pick(-45, 45))))
-				for(var/mob/player/p in active_game.participants)
+				if(prob(55)) step(src, pick(dir, turn(dir, pick(-45, 45))))
+				for(var/mob/p in (active_game.participants+support_ai))
 					if(!p.health || !p.loc || p.cowbell) continue
 					if(!target) if(get_dist(src, p) <= 12) target = p
 					else if(get_dist(src, p) < get_dist(src, target))
@@ -64,7 +64,7 @@ mob/npc
 				step(b, dir)
 		if(!ig_bump && target && world.cpu < 60)
 			ig_bump = 1
-			step_to(src, target)
+			step_to(src, target, 0,0)
 			ig_bump = 0
 	hostile
 
@@ -127,7 +127,7 @@ mob/npc
 						else
 							var/step_dir = get_dir(src, target)				// just log this because.
 							if(prob(get_dist(src, target)*2))						// here we'll see if any other potential targets are closer.
-								for(var/mob/player/p in active_game.participants)	// the further the target, the more likely to check for a new one.
+								for(var/mob/p in (active_game.participants+support_ai))	// the further the target, the more likely to check for a new one.
 									if(p == target || !p.health || !p.loc || p.cowbell) continue
 									if(get_dist(src, p) < get_dist(src, target))
 										target = p
@@ -180,7 +180,7 @@ mob/npc
 						else
 							var/step_dir = get_dir(src, target)				// just log this because.
 							if(prob(get_dist(src, target)*2))						// here we'll see if any other potential targets are closer.
-								for(var/mob/player/p in active_game.participants)	// the further the target, the more likely to check for a new one.
+								for(var/mob/p in (active_game.participants+support_ai))	// the further the target, the more likely to check for a new one.
 									if(p == target || !p.health || !p.loc || p.cowbell) continue
 									if(get_dist(src, p) < get_dist(src, target))
 										target = p
@@ -227,7 +227,7 @@ mob/npc
 						else
 							var/step_dir = get_dir(src, target)				// just log this because.
 							if(prob(get_dist(src, target)*2))						// here we'll see if any other potential targets are closer.
-								for(var/mob/player/p in active_game.participants)	// the further the target, the more likely to check for a new one.
+								for(var/mob/p in (active_game.participants+support_ai))	// the further the target, the more likely to check for a new one.
 									if(p == target || !p.health || !p.loc || p.cowbell) continue
 									if(get_dist(src, p) < get_dist(src, target))
 										target = p
@@ -267,7 +267,7 @@ mob/npc
 			density			= 1
 			step_size		= 4
 			base_health		= 20
-			is_explosive	= 0
+			is_explosive	= 1
 			var/obj/blood	= new/obj
 			var/bodcolor	= null
 			var/charging	= 0
@@ -290,7 +290,7 @@ mob/npc
 						else
 							var/step_dir = get_dir(src, target)				// just log this because.
 							if(prob(get_dist(src, target)*2))						// here we'll see if any other potential targets are closer.
-								for(var/mob/player/p in active_game.participants)	// the further the target, the more likely to check for a new one.
+								for(var/mob/p in (active_game.participants+support_ai))	// the further the target, the more likely to check for a new one.
 									if(p == target || !p.health || !p.loc || p.cowbell) continue
 									if(get_dist(src, p) < get_dist(src, target))
 										target = p
@@ -366,7 +366,7 @@ mob/npc
 						else
 							var/step_dir = get_dir(src, target)				// just log this because.
 							if(prob(get_dist(src, target)*2))						// here we'll see if any other potential targets are closer.
-								for(var/mob/player/p in active_game.participants)	// the further the target, the more likely to check for a new one.
+								for(var/mob/p in (active_game.participants+support_ai))	// the further the target, the more likely to check for a new one.
 									if(p == target || !p.health || !p.loc || p.cowbell) continue
 									if(get_dist(src, p) < get_dist(src, target))
 										target = p
@@ -418,7 +418,7 @@ mob/npc
 						else
 							var/step_dir = get_dir(src, target)				// just log this because.
 							if(prob(get_dist(src, target)*2))						// here we'll see if any other potential targets are closer.
-								for(var/mob/player/p in active_game.participants)	// the further the target, the more likely to check for a new one.
+								for(var/mob/p in (active_game.participants+support_ai))	// the further the target, the more likely to check for a new one.
 									if(p == target || !p.health || !p.loc || p.cowbell) continue
 									if(get_dist(src, p) < get_dist(src, target))
 										target = p
@@ -466,7 +466,7 @@ mob/npc
 						else
 							var/step_dir = get_dir(src, target)				// just log this because.
 							if(prob(get_dist(src, target)*2))						// here we'll see if any other potential targets are closer.
-								for(var/mob/player/p in active_game.participants)	// the further the target, the more likely to check for a new one.
+								for(var/mob/p in (active_game.participants+support_ai))	// the further the target, the more likely to check for a new one.
 									if(p == target || !p.health || !p.loc || p.cowbell) continue
 									if(get_dist(src, p) < get_dist(src, target))
 										target = p
@@ -516,7 +516,7 @@ mob/npc
 						else
 							var/step_dir = get_dir(src, target)				// just log this because.
 							if(prob(get_dist(src, target)*2))						// here we'll see if any other potential targets are closer.
-								for(var/mob/player/p in active_game.participants)	// the further the target, the more likely to check for a new one.
+								for(var/mob/p in (active_game.participants+support_ai))	// the further the target, the more likely to check for a new one.
 									if(p == target || !p.health || !p.loc || p.cowbell) continue
 									if(get_dist(src, p) < get_dist(src, target))
 										target = p
@@ -568,7 +568,7 @@ mob/npc
 						else
 							var/step_dir = get_dir(src, target)				// just log this because.
 							if(prob(get_dist(src, target)*2))						// here we'll see if any other potential targets are closer.
-								for(var/mob/player/p in active_game.participants)	// the further the target, the more likely to check for a new one.
+								for(var/mob/p in (active_game.participants+support_ai))	// the further the target, the more likely to check for a new one.
 									if(p == target || !p.health || !p.loc || p.cowbell) continue
 									if(get_dist(src, p) < get_dist(src, target))
 										target = p
@@ -623,7 +623,7 @@ mob/npc
 						else
 							var/step_dir = get_general_dir(src, target)				// just log this because.
 							if(prob(get_dist(src, target)*2))						// here we'll see if any other potential targets are closer.
-								for(var/mob/player/p in active_game.participants)	// the further the target, the more likely to check for a new one.
+								for(var/mob/p in (active_game.participants+support_ai))	// the further the target, the more likely to check for a new one.
 									if(p == target || !p.health || !p.loc || p.cowbell) continue
 									if(get_dist(src, p) < get_dist(src, target))
 										target = p
@@ -677,7 +677,7 @@ mob/npc
 						else
 							var/step_dir = get_dir(src, target)				// just log this because.
 							if(prob(get_dist(src, target)*2))						// here we'll see if any other potential targets are closer.
-								for(var/mob/player/p in active_game.participants)	// the further the target, the more likely to check for a new one.
+								for(var/mob/p in (active_game.participants+support_ai))	// the further the target, the more likely to check for a new one.
 									if(p == target || !p.health || !p.loc || p.cowbell) continue
 									if(get_dist(src, p) < get_dist(src, target))
 										target = p
@@ -733,9 +733,11 @@ mob/npc
 				obj/shirt	= new /obj/player/shirt
 				obj/pants	= new /obj/player/pants
 				obj/hair 	= new /obj/player/hair
+				obj/vanity	= new /obj/player/vanity
 			New()
 				..()
 				overlays += /image/spotlight
+
 			death()
 				ai_list -= src
 				if(targeted)
@@ -778,11 +780,11 @@ mob/npc
 						else
 							var/step_dir = get_dir(src, target)				// just log this because.
 							if(prob(get_dist(src, target)*2))						// here we'll see if any other potential targets are closer.
-								for(var/mob/player/p in active_game.participants)	// the further the target, the more likely to check for a new one.
+								for(var/mob/p in (active_game.participants+support_ai))	// the further the target, the more likely to check for a new one.
 									if(p == target || !p.health || !p.loc) continue
 									if(get_dist(src, p) < get_dist(src, target))
 										target = p
-										skill3.use(src)
+										if(p.client) skill3.use(src)
 							if(bounds_dist(src, target) <= 2)	// if super close, melee attack.
 								target.knockback(8, step_dir)
 								target.edit_health(-10)
@@ -807,14 +809,14 @@ mob/npc
 
 					if(!target)
 						if(prob(45)) step(src, pick(dir, turn(dir, pick(-45, 45))))
-						for(var/mob/player/p in active_game.participants)
+						for(var/mob/p in (active_game.participants+support_ai))
 							if(!p.health || !p.loc) continue
 							if(!target)
 								target = p
-								skill3.use(src)
+								if(p.client) skill3.use(src)
 							else if(get_dist(src, p) < get_dist(src, target))
 								target = p
-								skill3.use(src)
+								if(p.client) skill3.use(src)
 					sleep world.tick_lag*1.5
 					resting = 0
 			proc
@@ -860,7 +862,7 @@ mob/npc
 						else
 							var/step_dir = get_dir(src, target)				// just log this because.
 							if(prob(get_dist(src, target)*2))						// here we'll see if any other potential targets are closer.
-								for(var/mob/player/p in active_game.participants)	// the further the target, the more likely to check for a new one.
+								for(var/mob/p in (active_game.participants+support_ai))	// the further the target, the more likely to check for a new one.
 									if(p == target || !p.health || !p.loc || p.cowbell) continue
 									if(get_dist(src, p) < get_dist(src, target))
 										target = p
@@ -908,7 +910,7 @@ mob/npc
 						else
 							var/step_dir = step_away(src, target)				// just log this because.
 							if(prob(get_dist(src, target)*2))						// here we'll see if any other potential targets are closer.
-								for(var/mob/player/p in active_game.participants)	// the further the target, the more likely to check for a new one.
+								for(var/mob/p in (active_game.participants+support_ai))	// the further the target, the more likely to check for a new one.
 									if(p == target || !p.health || !p.loc || p.cowbell) continue
 									if(get_dist(src, p) < get_dist(src, target))
 										target = p
@@ -949,15 +951,23 @@ mob/npc
 					// if tiles are lined up, line up the pixel coordinates!
 					if(NORTH, SOUTH)
 						if(target.step_x > step_x)	// target is further right on their tile than src.
-							step(src, EAST, 8)
+							for(var/i = 1, i < pick(2,4), i++)
+								step(src, EAST, 4)
+								sleep world.tick_lag
 						else
-							step(src, WEST, 8)
+							for(var/i = 1, i < pick(2,4), i++)
+								step(src, WEST, 4)
+								sleep world.tick_lag
 						return 1
 					if(EAST, WEST)
 						if(target.step_y > step_y)	// target is further north on their tile than src.
-							step(src, NORTH, 8)
+							for(var/i = 1, i < pick(2,4), i++)
+								step(src, NORTH, 8)
+								sleep world.tick_lag
 						else
-							step(src, SOUTH, 8)
+							for(var/i = 1, i < pick(2,4), i++)
+								step(src, SOUTH, 8)
+								sleep world.tick_lag
 						return 1
 				// otherwise, line up tiles.
 					if(NORTHEAST)
@@ -969,7 +979,7 @@ mob/npc
 							if(get_dir(src, target) == NORTH || get_dir(src, target) == EAST)
 								return 0
 							loops --
-							sleep world.tick_lag*2
+							sleep world.tick_lag
 					if(NORTHWEST)
 						var/i 		= pick(1,0)
 						var/loops	= 3
@@ -979,7 +989,7 @@ mob/npc
 							if(get_dir(src, target) == NORTH || get_dir(src, target) == WEST)
 								return 0
 							loops --
-							sleep world.tick_lag*2
+							sleep world.tick_lag
 					if(SOUTHEAST)
 						var/i 		= pick(1,0)
 						var/loops	= 3
@@ -989,7 +999,7 @@ mob/npc
 							if(get_dir(src, target) == SOUTH || get_dir(src, target) == EAST)
 								return 0
 							loops --
-							sleep world.tick_lag*2
+							sleep world.tick_lag
 					if(SOUTHWEST)
 						var/i 		= pick(1,0)
 						var/loops	= 3
@@ -999,7 +1009,7 @@ mob/npc
 							if(get_dir(src, target) == SOUTH || get_dir(src, target) == WEST)
 								return 0
 							loops --
-							sleep world.tick_lag*2
+							sleep world.tick_lag
 			return 0
 
 

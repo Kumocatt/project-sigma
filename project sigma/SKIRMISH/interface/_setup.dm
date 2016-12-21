@@ -25,3 +25,4 @@ proc
 		pre_recycle()
 		ai_loop()
 		projectile_loop()
+		support_loop()

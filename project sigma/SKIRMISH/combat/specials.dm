@@ -40,6 +40,34 @@ obj
 					active_projectiles += p
 					sleep recharge
 					can_use = 1
+				sticky_grenade
+					drop_type	= /obj/item/special/sticky_grenade
+					use(mob/m)
+						can_use = 0
+						if(m.client)
+							if(m.dir != m:trigger_dir)
+								sleep world.tick_lag*2
+								m.dir 				= m:trigger_dir
+						var/obj/projectile/p 		= throw_special(/obj/projectile/thrown/grenade/sticky_grenade, m.dir)
+						if(m.client) m:flick_arms("base-grenade")
+						p.loc = m.loc
+						switch(m.dir)
+							if(NORTH)
+								p.step_x	= m.step_x
+								p.step_y	= m.step_y+16
+							if(SOUTH)
+								p.step_x	= m.step_x+6
+								p.step_y	= m.step_y-6
+							if(EAST)
+								p.step_x	= m.step_x+16
+								p.step_y	= m.step_y+6
+							if(WEST)
+								p.step_x	= m.step_x//-8
+								p.step_y	= m.step_y+6
+						p.owner	= m
+						active_projectiles += p
+						sleep recharge
+						can_use = 1
 
 
 			molotov
@@ -99,6 +127,9 @@ obj
 						d.overlays.Remove(d.pants)
 						d.pants.icon_state = d.target:pants.icon_state
 						d.overlays.Add(d.pants)
+						d.overlays.Remove(d.vanity)
+						d.vanity.icon_state= d.target:vanity.icon_state
+						d.overlays.Add(d.vanity)
 						d.overlays.Remove(d.nametag)
 						d.nametag.change_text("[d.target]")
 						d.overlays.Add(d.nametag)

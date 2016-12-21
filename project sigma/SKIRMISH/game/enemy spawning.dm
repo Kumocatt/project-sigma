@@ -4,14 +4,14 @@ proc
 	spawn_en(mob/npc/hostile/h)
 		if(h)
 			var/obj/_loc
-			var/mob/player/p
+			var/mob/p
 
 			while(!_loc && active_game.started == 2)
 				if(active_game.participants.len)
-					p = pick(active_game.participants)
+					p = pick(active_game.participants+support_ai)
 					if(p && p.loc)
 						for(var/turf/espawn in oview(15,p)) //obj/markers/enemy_spawn/espawn in oview(15,p))
-							if(get_dist(espawn, p) > 5 && (espawn in active_game.enemy_spawns))
+							if(get_dist(espawn, p) > 10 && (espawn in active_game.enemy_spawns))
 								. = 1
 								for(var/atom/movable/a in espawn)//.loc)		// prevent enemies from spawning on top of other enemies, players, and barricades
 									if(a.density) . = 0;break
@@ -39,7 +39,7 @@ mob/npc
 					p = pick(active_game.participants)
 					if(p && p.loc)
 						for(var/turf/espawn in oview(15, p))
-							if(get_dist(espawn, p) > 5 && (espawn in active_game.enemy_spawns))
+							if(get_dist(espawn, p) > 10 && (espawn in active_game.enemy_spawns))
 								. = 1
 								for(var/atom/movable/a in espawn.loc)
 									if(a.density) . = 0;break

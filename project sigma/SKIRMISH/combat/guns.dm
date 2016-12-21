@@ -445,7 +445,7 @@ obj
 							mag --
 							if(m.client) m.dir = m:trigger_dir
 							else m.dir = .
-							var/obj/projectile/p 	= get_projectile("bullet", m.dir, damage, velocity, max_range, rand(accuracy, accuracy+10), kb_dist, sway)
+							var/obj/projectile/p 	= get_projectile("bullet", ., damage, velocity, max_range, rand(accuracy, accuracy+10), kb_dist, sway)
 							if(m.client) m:flick_arms("base-uzi-attack")
 							m.drop_shell()
 							m.gs('gunshot2.wav')
@@ -467,7 +467,7 @@ obj
 							if(prob(m.crit_rate+crit_chance))
 								p.is_crit = 1
 							active_projectiles += p
-							sleep world.tick_lag*0.2 //10/fire_rate
+							sleep 1 //10/fire_rate
 						if(m.move_disabled) sleep;m.move_disabled = 0
 					can_use = 1
 
@@ -560,8 +560,8 @@ obj
 						m.gs('gunshot1.wav')
 						var/_dir = m.dir
 						for(var/i = 1 to 4)
-							var/obj/projectile/p 	= get_projectile("bullet", _dir, damage, velocity, max_range, rand(accuracy, accuracy+25), kb_dist, 2)
-							p.loc 					= m.loc
+							var/obj/projectile/p = get_projectile("bullet", _dir, damage, velocity, max_range, rand(accuracy,accuracy+25), kb_dist, 2)
+							p.loc = m.loc
 							switch(m.dir)
 								if(NORTH)
 									p.step_x	= m.step_x
